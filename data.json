@@ -3931,7 +3931,9 @@
    ],
    "relatedTools": [],
    "limitations": "Requires organisational commitment and resources. May miss shadow AI deployments.",
-   "id": "ai-use-case-inventory-and-risk-classification"
+   "id": "ai-use-case-inventory-and-risk-classification",
+   "nistFunction": "MAP",
+   "iso42001Area": "A.4 Resources"
   },
   {
    "name": "AI Acceptable-Use Policy",
@@ -3949,7 +3951,9 @@
     "Data loss prevention (DLP) systems"
    ],
    "limitations": "Cannot prevent all shadow AI use. Requires technical controls (DLP, network monitoring) for enforcement.",
-   "id": "ai-acceptable-use-policy"
+   "id": "ai-acceptable-use-policy",
+   "nistFunction": "GOVERN",
+   "iso42001Area": "A.2 AI policies"
   },
   {
    "name": "MCP SDK Version Audit and Patching",
@@ -3971,7 +3975,9 @@
     "kontext-cli"
    ],
    "limitations": "Architectural fix may require MCP protocol redesign; version patching is partial mitigation",
-   "id": "mcp-sdk-version-audit-and-patching"
+   "id": "mcp-sdk-version-audit-and-patching",
+   "nistFunction": "MANAGE",
+   "iso42001Area": "A.6 System life cycle"
   },
   {
    "name": "MCP Server Network Segmentation",
@@ -3992,7 +3998,9 @@
     "Cilium"
    ],
    "limitations": "Segmentation is a compensating control — does not fix the underlying vulnerability",
-   "id": "mcp-server-network-segmentation"
+   "id": "mcp-server-network-segmentation",
+   "nistFunction": "MANAGE",
+   "iso42001Area": "A.6 System life cycle"
   },
   {
    "name": "AI Impact Assessment (DTA Standard)",
@@ -4012,7 +4020,9 @@
     "DTA AI Impact Assessment Tool"
    ],
    "limitations": "Assessment quality depends on assessor expertise; does not address runtime risks",
-   "id": "ai-impact-assessment-dta-standard"
+   "id": "ai-impact-assessment-dta-standard",
+   "nistFunction": "MAP",
+   "iso42001Area": "A.5 Impact assessment"
   },
   {
    "name": "Agent tool-call security gateway",
@@ -4035,7 +4045,9 @@
     "LLM red-team tools"
    ],
    "limitations": "Does not eliminate model deception or business-logic misuse; requires comprehensive tool inventory and continuous update.",
-   "id": "agent-tool-call-security-gateway"
+   "id": "agent-tool-call-security-gateway",
+   "nistFunction": "MANAGE",
+   "iso42001Area": "A.6 System life cycle"
   },
   {
    "name": "AI privacy deployment assessment",
@@ -4058,7 +4070,9 @@
     "DLP"
    ],
    "limitations": "Depends on vendor transparency and may not catch downstream inference or emergent model behaviour.",
-   "id": "ai-privacy-deployment-assessment"
+   "id": "ai-privacy-deployment-assessment",
+   "nistFunction": "MAP",
+   "iso42001Area": "A.5 Impact assessment"
   },
   {
    "name": "Agentic AI Human Intervention and Safe Shutdown",
@@ -4081,7 +4095,9 @@
     "MCP gateway controls"
    ],
    "limitations": "Human intervention controls can fail if telemetry is incomplete, authority is unclear, or the agent acts faster than monitoring/approval processes.",
-   "id": "agentic-ai-human-intervention-and-safe-shutdown"
+   "id": "agentic-ai-human-intervention-and-safe-shutdown",
+   "nistFunction": "MANAGE",
+   "iso42001Area": "A.9 Responsible use"
   },
   {
    "name": "ADM Transparency Readiness Review",
@@ -4103,7 +4119,9 @@
     "Privacy impact assessment tooling"
    ],
    "limitations": "Final OAIC guidance is expected later in 2026; interpretations may change.",
-   "id": "adm-transparency-readiness-review"
+   "id": "adm-transparency-readiness-review",
+   "nistFunction": "GOVERN",
+   "iso42001Area": "A.8 Interested-party info"
   },
   {
    "name": "OWASP Agentic Top 10 Compliance Programme",
@@ -4126,7 +4144,9 @@
     "MCP server security scanners (e.g., community tools)"
    ],
    "limitations": "Agentic Top 10 is new (December 2025) and will evolve. Skills Top 10 is still in proposal. Reference implementations and certified tools are limited.",
-   "id": "owasp-agentic-top-10-compliance-programme"
+   "id": "owasp-agentic-top-10-compliance-programme",
+   "nistFunction": "GOVERN",
+   "iso42001Area": "A.6 System life cycle"
   },
   {
    "name": "EU AI Act Digital Omnibus Compliance Re-baseline",
@@ -4148,7 +4168,9 @@
     "EU AI Act compliance platforms"
    ],
    "limitations": "Provisional status means deferral could be modified or reversed. Sector-specific product regulations in Annex I may have separate compliance deadlines.",
-   "id": "eu-ai-act-digital-omnibus-compliance-re-baseline"
+   "id": "eu-ai-act-digital-omnibus-compliance-re-baseline",
+   "nistFunction": "GOVERN",
+   "iso42001Area": "A.6 System life cycle"
   },
   {
    "name": "APP 1 ADM Transparency Disclosure (OAIC 10 December 2026)",
@@ -4175,7 +4197,9 @@
     "custom ADM disclosure generator"
    ],
    "limitations": "Privacy policy is one channel; users may not see disclosures; the OAIC's final guidance on generative AI edge cases is pending; cross-jurisdictional ADM disclosures (EU, US) may differ.",
-   "id": "app-1-adm-transparency-disclosure-oaic-10-december-2026"
+   "id": "app-1-adm-transparency-disclosure-oaic-10-december-2026",
+   "nistFunction": "GOVERN",
+   "iso42001Area": "A.8 Interested-party info"
   },
   {
    "name": "AI use-case inventory and risk tiering",
@@ -4200,7 +4224,9 @@
     "AI inventory tools"
    ],
    "limitations": "Inventory quality depends on procurement and change discipline.",
-   "id": "ai-use-case-inventory-and-risk-tiering"
+   "id": "ai-use-case-inventory-and-risk-tiering",
+   "nistFunction": "MAP",
+   "iso42001Area": "A.4 Resources"
   },
   {
    "name": "ADM transparency workflow",
@@ -4224,7 +4250,9 @@
     "Workflow automation"
    ],
    "limitations": "Hard to maintain if product teams bypass governance gates.",
-   "id": "adm-transparency-workflow"
+   "id": "adm-transparency-workflow",
+   "nistFunction": "GOVERN",
+   "iso42001Area": "A.8 Interested-party info"
   },
   {
    "name": "Agentic AI red-teaming and tool-abuse testing",
@@ -4250,7 +4278,9 @@
     "LLM gateways"
    ],
    "limitations": "Coverage can miss emergent multi-step failure modes.",
-   "id": "agentic-ai-red-teaming-and-tool-abuse-testing"
+   "id": "agentic-ai-red-teaming-and-tool-abuse-testing",
+   "nistFunction": "MEASURE",
+   "iso42001Area": "A.6 System life cycle"
   },
   {
    "name": "Out-of-band verification for high-risk transactions",
@@ -4275,7 +4305,9 @@
     "Provenance tools"
    ],
    "limitations": "Adds friction and may not stop fast-moving social engineering alone.",
-   "id": "out-of-band-verification-for-high-risk-transactions"
+   "id": "out-of-band-verification-for-high-risk-transactions",
+   "nistFunction": "MANAGE",
+   "iso42001Area": "A.6 System life cycle"
   },
   {
    "name": "Vendor assurance pack for frontier models",
@@ -4300,7 +4332,9 @@
     "AI governance platforms"
    ],
    "limitations": "Vendor disclosures can be incomplete without independent validation.",
-   "id": "vendor-assurance-pack-for-frontier-models"
+   "id": "vendor-assurance-pack-for-frontier-models",
+   "nistFunction": "GOVERN",
+   "iso42001Area": "A.10 Third parties"
   },
   {
    "name": "Agentic vendor assurance and access governance",
@@ -4329,7 +4363,9 @@
     "DLP"
    ],
    "limitations": "Vendor telemetry and partner certifications do not prove safe real-world operation.",
-   "id": "agentic-vendor-assurance-and-access-governance"
+   "id": "agentic-vendor-assurance-and-access-governance",
+   "nistFunction": "GOVERN",
+   "iso42001Area": "A.10 Third parties"
   },
   {
    "name": "AI trust and liability disclosure workflow",
@@ -4357,7 +4393,9 @@
     "Audit trail platforms"
    ],
    "limitations": "Disclosure alone does not reduce model risk or liability exposure.",
-   "id": "ai-trust-and-liability-disclosure-workflow"
+   "id": "ai-trust-and-liability-disclosure-workflow",
+   "nistFunction": "GOVERN",
+   "iso42001Area": "A.8 Interested-party info"
   },
   {
    "name": "AI system inventory and risk tiering",
@@ -4378,7 +4416,9 @@
     "https://incidentdatabase.ai/rss.xml"
    ],
    "limitations": "Can drift out of date unless procurement and engineering are tightly linked.",
-   "id": "ai-system-inventory-and-risk-tiering"
+   "id": "ai-system-inventory-and-risk-tiering",
+   "nistFunction": "MAP",
+   "iso42001Area": "A.4 Resources"
   },
   {
    "name": "AI pre-launch assurance gate",
@@ -4397,7 +4437,9 @@
     "https://www.ai.gov.au/news-and-insights/blog/ai-adoption-insights-december-2025-february-2026"
    ],
    "limitations": "Slows releases if teams do not standardise test packs and approval workflows.",
-   "id": "ai-pre-launch-assurance-gate"
+   "id": "ai-pre-launch-assurance-gate",
+   "nistFunction": "MEASURE",
+   "iso42001Area": "A.6 System life cycle"
   },
   {
    "name": "AI-specific cyber red-team coverage",
@@ -4416,7 +4458,9 @@
     "https://www.asic.gov.au/about-asic/news-centre/find-a-media-release/2026-releases/26-092mr-asic-calls-for-urgent-cyber-uplift-as-ai-accelerates-cyber-threats/"
    ],
    "limitations": "Needs recurring re-testing as tool access and model behaviour change.",
-   "id": "ai-specific-cyber-red-team-coverage"
+   "id": "ai-specific-cyber-red-team-coverage",
+   "nistFunction": "MEASURE",
+   "iso42001Area": "A.9 Responsible use"
   },
   {
    "name": "ADM transparency and appeal workflow",
@@ -4435,7 +4479,9 @@
     "https://www.dta.gov.au/ai-transparency-statement"
    ],
    "limitations": "Disclosure is only useful if users can actually understand and contest the decision.",
-   "id": "adm-transparency-and-appeal-workflow"
+   "id": "adm-transparency-and-appeal-workflow",
+   "nistFunction": "GOVERN",
+   "iso42001Area": "A.8 Interested-party info"
   },
   {
    "name": "ADM Disclosure and Contestability Workflow",
@@ -4460,7 +4506,9 @@
     "records management"
    ],
    "limitations": "Hard to maintain if decision workflows change faster than policy updates.",
-   "id": "adm-disclosure-and-contestability-workflow"
+   "id": "adm-disclosure-and-contestability-workflow",
+   "nistFunction": "GOVERN",
+   "iso42001Area": "A.8 Interested-party info"
   },
   {
    "name": "Continuous AI Security Monitoring and Prompt Regression Testing",
@@ -4483,7 +4531,9 @@
     "agent gateways"
    ],
    "limitations": "Can miss novel attacks and requires good telemetry.",
-   "id": "continuous-ai-security-monitoring-and-prompt-regression-test"
+   "id": "continuous-ai-security-monitoring-and-prompt-regression-test",
+   "nistFunction": "MEASURE",
+   "iso42001Area": "A.6 System life cycle"
   },
   {
    "name": "Synthetic-Media Provenance and Impersonation Response",
@@ -4506,7 +4556,9 @@
     "case-management tools"
    ],
    "limitations": "Detection can lag generation; provenance depends on ecosystem adoption and may not be available for every asset.",
-   "id": "synthetic-media-provenance-and-impersonation-response"
+   "id": "synthetic-media-provenance-and-impersonation-response",
+   "nistFunction": "MANAGE",
+   "iso42001Area": "A.6 System life cycle"
   },
   {
    "name": "Sandboxed agent containment with egress control",
@@ -4527,7 +4579,9 @@
     "policy engines"
    ],
    "limitations": "Containment reduces blast radius but does not eliminate model error or insider misuse.",
-   "id": "sandboxed-agent-containment-with-egress-control"
+   "id": "sandboxed-agent-containment-with-egress-control",
+   "nistFunction": "MANAGE",
+   "iso42001Area": "A.6 System life cycle"
   },
   {
    "name": "Continuous-monitor-and-update AI security program",
@@ -4548,7 +4602,9 @@
     "SIEM/SOAR integrations"
    ],
    "limitations": "Requires steady resourcing and does not fully solve novel attack techniques.",
-   "id": "continuous-monitor-and-update-ai-security-program"
+   "id": "continuous-monitor-and-update-ai-security-program",
+   "nistFunction": "MEASURE",
+   "iso42001Area": "A.6 System life cycle"
   },
   {
    "name": "Board-level AI inventory and accountability map",
@@ -4570,7 +4626,9 @@
     "workflow approvals"
    ],
    "limitations": "Inventory quality depends on business self-reporting and procurement coverage.",
-   "id": "board-level-ai-inventory-and-accountability-map"
+   "id": "board-level-ai-inventory-and-accountability-map",
+   "nistFunction": "MAP",
+   "iso42001Area": "A.3 Internal organization"
   },
   {
    "name": "SBOM and dependency integrity verification",
@@ -4591,7 +4649,9 @@
     "SCA tools"
    ],
    "limitations": "Only as strong as the completeness and freshness of the SBOM inputs.",
-   "id": "sbom-and-dependency-integrity-verification"
+   "id": "sbom-and-dependency-integrity-verification",
+   "nistFunction": "MANAGE",
+   "iso42001Area": "A.6 System life cycle"
   },
   {
    "name": "Live AI inventory and use-case register",
@@ -4613,7 +4673,9 @@
     "Procurement workflow systems"
    ],
    "limitations": "Only works if business units disclose shadow AI and updates are enforced",
-   "id": "live-ai-inventory-and-use-case-register"
+   "id": "live-ai-inventory-and-use-case-register",
+   "nistFunction": "MAP",
+   "iso42001Area": "A.4 Resources"
   },
   {
    "name": "Board AI literacy and challenge pack",
@@ -4634,7 +4696,9 @@
     "Risk registers"
    ],
    "limitations": "Can degrade into a reporting exercise unless directors ask hard questions",
-   "id": "board-ai-literacy-and-challenge-pack"
+   "id": "board-ai-literacy-and-challenge-pack",
+   "nistFunction": "GOVERN",
+   "iso42001Area": "A.3 Internal organization"
   },
   {
    "name": "Agent containment and least privilege",
@@ -4657,7 +4721,9 @@
     "Egress firewalls"
    ],
    "limitations": "Hard to implement across heterogeneous tool stacks without architecture changes",
-   "id": "agent-containment-and-least-privilege"
+   "id": "agent-containment-and-least-privilege",
+   "nistFunction": "MANAGE",
+   "iso42001Area": "A.6 System life cycle"
   },
   {
    "name": "Prompt-injection and supply-chain red teaming",
@@ -4679,7 +4745,9 @@
     "Dependency scanning"
    ],
    "limitations": "Coverage will always lag novel attacker techniques unless maintained continuously",
-   "id": "prompt-injection-and-supply-chain-red-teaming"
+   "id": "prompt-injection-and-supply-chain-red-teaming",
+   "nistFunction": "MEASURE",
+   "iso42001Area": "A.6 System life cycle"
   },
   {
    "name": "Transparency, human review, and contestability controls",
@@ -4702,7 +4770,9 @@
     "Workflow orchestration"
    ],
    "limitations": "Human review can be superficial unless reviewers have authority and evidence.",
-   "id": "transparency-human-review-and-contestability-controls"
+   "id": "transparency-human-review-and-contestability-controls",
+   "nistFunction": "GOVERN",
+   "iso42001Area": "A.8 Interested-party info"
   },
   {
    "name": "Agent containment baseline",
@@ -4719,7 +4789,9 @@
    ],
    "relatedTools": [],
    "limitations": "Will not eliminate all misuse; requires continuous tuning as agent capability changes.",
-   "id": "agent-containment-baseline"
+   "id": "agent-containment-baseline",
+   "nistFunction": "MANAGE",
+   "iso42001Area": "A.6 System life cycle"
   },
   {
    "name": "High-impact AI review gate",
@@ -4734,7 +4806,9 @@
    "relatedStandards": [],
    "relatedTools": [],
    "limitations": "Human review can be slow; design must avoid creating a false promise of perfect safety.",
-   "id": "high-impact-ai-review-gate"
+   "id": "high-impact-ai-review-gate",
+   "nistFunction": "MEASURE",
+   "iso42001Area": "A.9 Responsible use"
   },
   {
    "name": "Provenance and disclosure controls",
@@ -4749,7 +4823,9 @@
    "relatedStandards": [],
    "relatedTools": [],
    "limitations": "Provenance can be stripped or lost across platforms; requires ecosystem support.",
-   "id": "provenance-and-disclosure-controls"
+   "id": "provenance-and-disclosure-controls",
+   "nistFunction": "GOVERN",
+   "iso42001Area": "A.8 Interested-party info"
   },
   {
    "name": "AI incident logging and rollback",
@@ -4764,7 +4840,9 @@
    "relatedStandards": [],
    "relatedTools": [],
    "limitations": "Logging alone is not containment; must be paired with response authority and controls.",
-   "id": "ai-incident-logging-and-rollback"
+   "id": "ai-incident-logging-and-rollback",
+   "nistFunction": "MANAGE",
+   "iso42001Area": "A.6 System life cycle"
   },
   {
    "name": "Age-assurance and account-gating workflow",
@@ -4787,7 +4865,9 @@
     "case-management tooling"
    ],
    "limitations": "Age checks can create friction, false positives, and privacy trade-offs; effectiveness depends on the platform’s product design and user base.",
-   "id": "age-assurance-and-account-gating-workflow"
+   "id": "age-assurance-and-account-gating-workflow",
+   "nistFunction": "MANAGE",
+   "iso42001Area": "A.9 Responsible use"
   },
   {
    "name": "Synthetic-image abuse intake and takedown workflow",
@@ -4811,7 +4891,9 @@
     "retention controls"
    ],
    "limitations": "Removal can be slow across mirrored copies; synthetic content detection is imperfect and must be paired with response workflows.",
-   "id": "synthetic-image-abuse-intake-and-takedown-workflow"
+   "id": "synthetic-image-abuse-intake-and-takedown-workflow",
+   "nistFunction": "MANAGE",
+   "iso42001Area": "A.8 Interested-party info"
   },
   {
    "name": "AI transparency statement and accountable-official workflow",
@@ -4834,7 +4916,9 @@
     "GRC tooling"
    ],
    "limitations": "A transparency statement is only effective if it is current, complete, and tied to real operational ownership.",
-   "id": "ai-transparency-statement-and-accountable-official-workflow"
+   "id": "ai-transparency-statement-and-accountable-official-workflow",
+   "nistFunction": "GOVERN",
+   "iso42001Area": "A.8 Interested-party info"
   },
   {
    "name": "Named accountable owner and AI transparency statement",
@@ -4856,7 +4940,9 @@
     "policy management tools"
    ],
    "limitations": "Disclosure can be accurate yet still miss shadow AI or downstream misuse.",
-   "id": "named-accountable-owner-and-ai-transparency-statement"
+   "id": "named-accountable-owner-and-ai-transparency-statement",
+   "nistFunction": "GOVERN",
+   "iso42001Area": "A.8 Interested-party info"
   },
   {
    "name": "Prompt-injection-resistant agent design",
@@ -4879,7 +4965,9 @@
     "Red-team platforms"
    ],
    "limitations": "No control fully prevents model error or user misuse; least privilege remains essential.",
-   "id": "prompt-injection-resistant-agent-design"
+   "id": "prompt-injection-resistant-agent-design",
+   "nistFunction": "MANAGE",
+   "iso42001Area": "A.6 System life cycle"
   },
   {
    "name": "AI-abuse telemetry and MITRE mapping",
@@ -4901,7 +4989,9 @@
     "Model monitoring"
    ],
    "limitations": "Detection is retrospective and will miss novel abuse until patterns are learned.",
-   "id": "ai-abuse-telemetry-and-mitre-mapping"
+   "id": "ai-abuse-telemetry-and-mitre-mapping",
+   "nistFunction": "MEASURE",
+   "iso42001Area": "A.6 System life cycle"
   },
   {
    "name": "Scoped channel and tool access for collaborative agents",
@@ -4923,7 +5013,9 @@
     "agent gateways"
    ],
    "limitations": "Still depends on humans avoiding over-broad channel and tool grants.",
-   "id": "scoped-channel-and-tool-access-for-collaborative-agents"
+   "id": "scoped-channel-and-tool-access-for-collaborative-agents",
+   "nistFunction": "MANAGE",
+   "iso42001Area": "A.6 System life cycle"
   },
   {
    "name": "Human approval gate for destructive actions",
@@ -4944,7 +5036,9 @@
     "change-management systems"
    ],
    "limitations": "Can slow legitimate work if not carefully tuned.",
-   "id": "human-approval-gate-for-destructive-actions"
+   "id": "human-approval-gate-for-destructive-actions",
+   "nistFunction": "MANAGE",
+   "iso42001Area": "A.9 Responsible use"
   },
   {
    "name": "AI inventory and transparency statement control",
@@ -4966,7 +5060,9 @@
     "AI inventory tooling"
    ],
    "limitations": "Disclosure alone does not guarantee technical safety or privacy compliance.",
-   "id": "ai-inventory-and-transparency-statement-control"
+   "id": "ai-inventory-and-transparency-statement-control",
+   "nistFunction": "MAP",
+   "iso42001Area": "A.8 Interested-party info"
   },
   {
    "name": "Privacy minimisation and deletion workflow",
@@ -4988,7 +5084,9 @@
     "data catalogues"
    ],
    "limitations": "Hard to guarantee across downstream vendors and cached artifacts.",
-   "id": "privacy-minimisation-and-deletion-workflow"
+   "id": "privacy-minimisation-and-deletion-workflow",
+   "nistFunction": "MANAGE",
+   "iso42001Area": "A.7 Data"
   },
   {
    "name": "Cyber-abuse telemetry and response playbook",
@@ -5010,7 +5108,9 @@
     "rate limiting"
    ],
    "limitations": "Detection coverage may lag adversarial adaptation.",
-   "id": "cyber-abuse-telemetry-and-response-playbook"
+   "id": "cyber-abuse-telemetry-and-response-playbook",
+   "nistFunction": "MANAGE",
+   "iso42001Area": "A.6 System life cycle"
   },
   {
    "name": "AI chatbot safety gate",
@@ -5032,7 +5132,9 @@
    ],
    "relatedTools": [],
    "limitations": "Cannot eliminate harm if the product is designed for open-ended companionship.",
-   "id": "ai-chatbot-safety-gate"
+   "id": "ai-chatbot-safety-gate",
+   "nistFunction": "MANAGE",
+   "iso42001Area": "A.6 System life cycle"
   },
   {
    "name": "Agent tool-use containment",
@@ -5053,7 +5155,9 @@
    ],
    "relatedTools": [],
    "limitations": "Hard to prove complete safety when tools can reach live systems.",
-   "id": "agent-tool-use-containment"
+   "id": "agent-tool-use-containment",
+   "nistFunction": "MANAGE",
+   "iso42001Area": "A.9 Responsible use"
   },
   {
    "name": "Provenance and human-verification workflow",
@@ -5074,7 +5178,9 @@
    ],
    "relatedTools": [],
    "limitations": "Provenance systems are only useful if upstream content carries usable signals.",
-   "id": "provenance-and-human-verification-workflow"
+   "id": "provenance-and-human-verification-workflow",
+   "nistFunction": "MANAGE",
+   "iso42001Area": "A.9 Responsible use"
   },
   {
    "name": "AI obligations map and change watch",
@@ -5096,7 +5202,9 @@
    ],
    "relatedTools": [],
    "limitations": "Requires continual monitoring; stale mappings become misleading quickly.",
-   "id": "ai-obligations-map-and-change-watch"
+   "id": "ai-obligations-map-and-change-watch",
+   "nistFunction": "MAP",
+   "iso42001Area": "A.6 System life cycle"
   },
   {
    "name": "Vendor due-diligence evidence pack",
@@ -5117,7 +5225,9 @@
    ],
    "relatedTools": [],
    "limitations": "Vendor documentation can lag product reality; independent testing is still needed.",
-   "id": "vendor-due-diligence-evidence-pack"
+   "id": "vendor-due-diligence-evidence-pack",
+   "nistFunction": "GOVERN",
+   "iso42001Area": "A.10 Third parties"
   },
   {
    "name": "AI review gate",
@@ -5139,7 +5249,9 @@
    ],
    "relatedTools": [],
    "limitations": "Only works if teams actually route AI projects through it.",
-   "id": "ai-review-gate"
+   "id": "ai-review-gate",
+   "nistFunction": "MEASURE",
+   "iso42001Area": "A.6 System life cycle"
   },
   {
    "name": "Agent containment and approvals",
@@ -5160,7 +5272,9 @@
    ],
    "relatedTools": [],
    "limitations": "Hard to guarantee safety if tools can act on live systems.",
-   "id": "agent-containment-and-approvals"
+   "id": "agent-containment-and-approvals",
+   "nistFunction": "MANAGE",
+   "iso42001Area": "A.9 Responsible use"
   },
   {
    "name": "Transparency-statement maintenance",
@@ -5181,7 +5295,9 @@
    ],
    "relatedTools": [],
    "limitations": "Statements can lag if change management is weak.",
-   "id": "transparency-statement-maintenance"
+   "id": "transparency-statement-maintenance",
+   "nistFunction": "GOVERN",
+   "iso42001Area": "A.8 Interested-party info"
   },
   {
    "name": "Chatbot safety gate",
@@ -5202,7 +5318,9 @@
    ],
    "relatedTools": [],
    "limitations": "Cannot fully eliminate harm in open-ended conversation products.",
-   "id": "chatbot-safety-gate"
+   "id": "chatbot-safety-gate",
+   "nistFunction": "MANAGE",
+   "iso42001Area": "A.6 System life cycle"
   },
   {
    "name": "Browser-agent least privilege and egress control",
@@ -5225,7 +5343,9 @@
     "MITRE ATLAS"
    ],
    "limitations": "Does not remove the need for human approval on material actions.",
-   "id": "browser-agent-least-privilege-and-egress-control"
+   "id": "browser-agent-least-privilege-and-egress-control",
+   "nistFunction": "MANAGE",
+   "iso42001Area": "A.6 System life cycle"
   },
   {
    "name": "Human approval for material agent actions",
@@ -5246,7 +5366,9 @@
     "Audit logs"
    ],
    "limitations": "Can slow automation and may be bypassed if escalation paths are unclear.",
-   "id": "human-approval-for-material-agent-actions"
+   "id": "human-approval-for-material-agent-actions",
+   "nistFunction": "MANAGE",
+   "iso42001Area": "A.9 Responsible use"
   },
   {
    "name": "Model capability regression and exploit-eval gate",
@@ -5269,7 +5391,9 @@
     "SCONE-bench"
    ],
    "limitations": "Benchmarks lag reality and cannot fully predict novel abuse patterns.",
-   "id": "model-capability-regression-and-exploit-eval-gate"
+   "id": "model-capability-regression-and-exploit-eval-gate",
+   "nistFunction": "MEASURE",
+   "iso42001Area": "A.6 System life cycle"
   },
   {
    "name": "Vendor claims verification checklist",
@@ -5290,7 +5414,9 @@
     "GRC platforms"
    ],
    "limitations": "Vendor-provided evidence still needs independent validation where possible.",
-   "id": "vendor-claims-verification-checklist"
+   "id": "vendor-claims-verification-checklist",
+   "nistFunction": "GOVERN",
+   "iso42001Area": "A.10 Third parties"
   },
   {
    "name": "Independent safety and standards review",
@@ -5312,7 +5438,9 @@
     "Control testing"
    ],
    "limitations": "Useful only if the underlying AI inventory is current.",
-   "id": "independent-safety-and-standards-review"
+   "id": "independent-safety-and-standards-review",
+   "nistFunction": "MEASURE",
+   "iso42001Area": "A.6 System life cycle"
   },
   {
    "name": "Scoped Agent Access Control",
@@ -5335,7 +5463,9 @@
     "evaluation harnesses"
    ],
    "limitations": "Does not prevent all prompt injection or user error.",
-   "id": "scoped-agent-access-control"
+   "id": "scoped-agent-access-control",
+   "nistFunction": "MANAGE",
+   "iso42001Area": "A.6 System life cycle"
   },
   {
    "name": "Agent Red-Teaming and Sandbox Review",
@@ -5358,7 +5488,9 @@
     "ExploitBench-style harnesses"
    ],
    "limitations": "Cannot guarantee safety against all future exploit techniques.",
-   "id": "agent-red-teaming-and-sandbox-review"
+   "id": "agent-red-teaming-and-sandbox-review",
+   "nistFunction": "MANAGE",
+   "iso42001Area": "A.6 System life cycle"
   },
   {
    "name": "Independent Assurance Gate",
@@ -5381,7 +5513,9 @@
     "evaluation dashboards"
    ],
    "limitations": "Assurance quality still depends on the rigor of the tests used.",
-   "id": "independent-assurance-gate"
+   "id": "independent-assurance-gate",
+   "nistFunction": "MEASURE",
+   "iso42001Area": "A.6 System life cycle"
   },
   {
    "name": "Portability and Exit Readiness",
@@ -5402,7 +5536,9 @@
     "cloud portability tooling"
    ],
    "limitations": "Portability is harder when workflows depend on proprietary toolchains.",
-   "id": "portability-and-exit-readiness"
+   "id": "portability-and-exit-readiness",
+   "nistFunction": "GOVERN",
+   "iso42001Area": "A.10 Third parties"
   },
   {
    "name": "Agent permission scoping and action logging",
@@ -5424,7 +5560,9 @@
     "OpenAI Codex"
    ],
    "limitations": "Logging alone does not stop side effects; human review is still needed for high-impact actions.",
-   "id": "agent-permission-scoping-and-action-logging"
+   "id": "agent-permission-scoping-and-action-logging",
+   "nistFunction": "MEASURE",
+   "iso42001Area": "A.6 System life cycle"
   },
   {
    "name": "Pre-release deployment simulation and eval gate",
@@ -5445,7 +5583,9 @@
     "OpenAI safe completions"
    ],
    "limitations": "Vendor evaluation results may not generalise to your data, users, or operational constraints.",
-   "id": "pre-release-deployment-simulation-and-eval-gate"
+   "id": "pre-release-deployment-simulation-and-eval-gate",
+   "nistFunction": "MEASURE",
+   "iso42001Area": "A.6 System life cycle"
   },
   {
    "name": "Third-party assurance and procurement evidence gate",
@@ -5466,7 +5606,9 @@
     "AI inventory tooling"
    ],
    "limitations": "Procurement reviews can be too coarse if technical teams are not involved.",
-   "id": "third-party-assurance-and-procurement-evidence-gate"
+   "id": "third-party-assurance-and-procurement-evidence-gate",
+   "nistFunction": "GOVERN",
+   "iso42001Area": "A.10 Third parties"
   },
   {
    "name": "Privacy impact and transparency checklist",
@@ -5487,7 +5629,9 @@
     "AI governance tools"
    ],
    "limitations": "Transparent notices do not substitute for minimisation and access controls.",
-   "id": "privacy-impact-and-transparency-checklist"
+   "id": "privacy-impact-and-transparency-checklist",
+   "nistFunction": "GOVERN",
+   "iso42001Area": "A.8 Interested-party info"
   },
   {
    "name": "AI use-case register with named executive sponsor",
@@ -5507,7 +5651,9 @@
     "AI inventory tooling"
    ],
    "limitations": "Only effective if teams actually keep the register updated",
-   "id": "ai-use-case-register-with-named-executive-sponsor"
+   "id": "ai-use-case-register-with-named-executive-sponsor",
+   "nistFunction": "MAP",
+   "iso42001Area": "A.4 Resources"
   },
   {
    "name": "Continuous monitoring and rollback for deployed AI",
@@ -5528,7 +5674,9 @@
     "feature flags"
    ],
    "limitations": "Monitoring is only useful when owners are empowered to pause or roll back",
-   "id": "continuous-monitoring-and-rollback-for-deployed-ai"
+   "id": "continuous-monitoring-and-rollback-for-deployed-ai",
+   "nistFunction": "MANAGE",
+   "iso42001Area": "A.6 System life cycle"
   },
   {
    "name": "Human approval gates for high-impact outputs",
@@ -5548,7 +5696,9 @@
     "Code review systems"
    ],
    "limitations": "May slow delivery if not scoped by risk tier",
-   "id": "human-approval-gates-for-high-impact-outputs"
+   "id": "human-approval-gates-for-high-impact-outputs",
+   "nistFunction": "MANAGE",
+   "iso42001Area": "A.9 Responsible use"
   },
   {
    "name": "Transparency statement and privacy notice refresh",
@@ -5568,7 +5718,9 @@
     "PIA template"
    ],
    "limitations": "A good notice does not guarantee good practice",
-   "id": "transparency-statement-and-privacy-notice-refresh"
+   "id": "transparency-statement-and-privacy-notice-refresh",
+   "nistFunction": "GOVERN",
+   "iso42001Area": "A.8 Interested-party info"
   },
   {
    "name": "AI / agent inventory with named owners",
@@ -5591,7 +5743,9 @@
     "AI inventory tools"
    ],
    "limitations": "Only works if teams declare shadow AI and refresh records when use cases change.",
-   "id": "ai-agent-inventory-with-named-owners"
+   "id": "ai-agent-inventory-with-named-owners",
+   "nistFunction": "MAP",
+   "iso42001Area": "A.4 Resources"
   },
   {
    "name": "Deployment simulation / replay testing",
@@ -5614,7 +5768,9 @@
     "Safety dashboard"
    ],
    "limitations": "Cannot prove safety; it only improves the odds of catching failure modes before deployment.",
-   "id": "deployment-simulation-replay-testing"
+   "id": "deployment-simulation-replay-testing",
+   "nistFunction": "MEASURE",
+   "iso42001Area": "A.6 System life cycle"
   },
   {
    "name": "Least-privilege tool access and approval gating",
@@ -5636,7 +5792,9 @@
     "Sandbox runtime"
    ],
    "limitations": "Can slow down workflows if approvals are too coarse or too slow.",
-   "id": "least-privilege-tool-access-and-approval-gating"
+   "id": "least-privilege-tool-access-and-approval-gating",
+   "nistFunction": "MANAGE",
+   "iso42001Area": "A.6 System life cycle"
   },
   {
    "name": "ADM transparency mapping and privacy-policy refresh",
@@ -5658,7 +5816,9 @@
     "Privacy compliance tooling"
    ],
    "limitations": "Needs executive sponsorship because it touches multiple business functions.",
-   "id": "adm-transparency-mapping-and-privacy-policy-refresh"
+   "id": "adm-transparency-mapping-and-privacy-policy-refresh",
+   "nistFunction": "MAP",
+   "iso42001Area": "A.8 Interested-party info"
   },
   {
    "name": "Supplier continuity and exit planning",
@@ -5680,7 +5840,9 @@
     "Runbook"
    ],
    "limitations": "Secondary providers may not match the primary model's quality or safety profile.",
-   "id": "supplier-continuity-and-exit-planning"
+   "id": "supplier-continuity-and-exit-planning",
+   "nistFunction": "GOVERN",
+   "iso42001Area": "A.10 Third parties"
   },
   {
    "name": "Agent sandboxing and approval gates",
@@ -5701,7 +5863,9 @@
     "OpenAI deployment simulation"
    ],
    "limitations": "Can slow workflows and still depends on good tool design",
-   "id": "agent-sandboxing-and-approval-gates"
+   "id": "agent-sandboxing-and-approval-gates",
+   "nistFunction": "MANAGE",
+   "iso42001Area": "A.9 Responsible use"
   },
   {
    "name": "ADM inventory and disclosure mapping",
@@ -5722,7 +5886,9 @@
     "GRC workflow tools"
    ],
    "limitations": "Requires cross-functional ownership and ongoing maintenance",
-   "id": "adm-inventory-and-disclosure-mapping"
+   "id": "adm-inventory-and-disclosure-mapping",
+   "nistFunction": "MAP",
+   "iso42001Area": "A.8 Interested-party info"
   },
   {
    "name": "Model continuity and fallback routing",
@@ -5743,7 +5909,9 @@
     "Vendor risk platforms"
    ],
    "limitations": "Multiple-model support adds complexity and cost",
-   "id": "model-continuity-and-fallback-routing"
+   "id": "model-continuity-and-fallback-routing",
+   "nistFunction": "MANAGE",
+   "iso42001Area": "A.6 System life cycle"
   },
   {
    "name": "Synthetic media and companion safety controls",
@@ -5765,7 +5933,9 @@
     "Moderation systems"
    ],
    "limitations": "Detection is imperfect and abuse tactics evolve quickly",
-   "id": "synthetic-media-and-companion-safety-controls"
+   "id": "synthetic-media-and-companion-safety-controls",
+   "nistFunction": "MANAGE",
+   "iso42001Area": "A.6 System life cycle"
   },
   {
    "name": "Unified AI Inventory and Owner Register",
@@ -5791,7 +5961,9 @@
     "procurement systems"
    ],
    "limitations": "Only works if business teams actually disclose use cases and vendors.",
-   "id": "unified-ai-inventory-and-owner-register"
+   "id": "unified-ai-inventory-and-owner-register",
+   "nistFunction": "MAP",
+   "iso42001Area": "A.4 Resources"
   },
   {
    "name": "Agent Tool-Use Sandboxing and Approval Gate",
@@ -5816,7 +5988,9 @@
     "secret managers"
    ],
    "limitations": "Can reduce utility if approval paths are too slow.",
-   "id": "agent-tool-use-sandboxing-and-approval-gate"
+   "id": "agent-tool-use-sandboxing-and-approval-gate",
+   "nistFunction": "MANAGE",
+   "iso42001Area": "A.6 System life cycle"
   },
   {
    "name": "Deployment-Like Evaluation and Replay Testing",
@@ -5842,7 +6016,9 @@
     "red-team platforms"
    ],
    "limitations": "Requires representative data and careful privacy handling.",
-   "id": "deployment-like-evaluation-and-replay-testing"
+   "id": "deployment-like-evaluation-and-replay-testing",
+   "nistFunction": "MEASURE",
+   "iso42001Area": "A.6 System life cycle"
   },
   {
    "name": "Companion-Bot Safety and Abuse Response",
@@ -5867,7 +6043,9 @@
     "provenance tooling"
    ],
    "limitations": "False positives and user friction can be significant.",
-   "id": "companion-bot-safety-and-abuse-response"
+   "id": "companion-bot-safety-and-abuse-response",
+   "nistFunction": "MANAGE",
+   "iso42001Area": "A.6 System life cycle"
   },
   {
    "name": "Agent least-privilege sandboxing",
@@ -5888,7 +6066,9 @@
     "Anthropic Claude Code Security"
    ],
    "limitations": "Does not stop social engineering or approved-but-bad requests; still requires human judgment.",
-   "id": "agent-least-privilege-sandboxing"
+   "id": "agent-least-privilege-sandboxing",
+   "nistFunction": "MANAGE",
+   "iso42001Area": "A.6 System life cycle"
   },
   {
    "name": "ADM register and disclosure mapping",
@@ -5909,7 +6089,9 @@
     "Internal GRC tooling"
    ],
    "limitations": "Good inventory hygiene does not by itself guarantee lawful disclosure wording or fair outcomes.",
-   "id": "adm-register-and-disclosure-mapping"
+   "id": "adm-register-and-disclosure-mapping",
+   "nistFunction": "MAP",
+   "iso42001Area": "A.8 Interested-party info"
   },
   {
    "name": "AI-accelerated phishing and fraud simulation",
@@ -5930,7 +6112,9 @@
     "Phishing simulation platforms"
    ],
    "limitations": "Simulations improve readiness but cannot eliminate novel adversary tradecraft.",
-   "id": "ai-accelerated-phishing-and-fraud-simulation"
+   "id": "ai-accelerated-phishing-and-fraud-simulation",
+   "nistFunction": "MEASURE",
+   "iso42001Area": "A.6 System life cycle"
   },
   {
    "name": "Child-safety and synthetic-media response playbook",
@@ -5951,7 +6135,9 @@
     "Content moderation tooling"
    ],
    "limitations": "Effectiveness depends on enforcement, user reporting, and the reliability of age-assurance methods.",
-   "id": "child-safety-and-synthetic-media-response-playbook"
+   "id": "child-safety-and-synthetic-media-response-playbook",
+   "nistFunction": "MANAGE",
+   "iso42001Area": "A.6 System life cycle"
   }
  ],
  "vendors": [

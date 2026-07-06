@@ -97,6 +97,26 @@ compat but should no longer be written).
 }
 ```
 
+## Control
+
+As v1 (name, risk, description, implementation, owner, testingMethod,
+frequency, maturity, evidenceRequired, limitations, relatedTools,
+relatedStandards) plus the taxonomy fields the Control Library is organized by:
+
+- `nistFunction`: `GOVERN | MAP | MEASURE | MANAGE` — NIST AI RMF 1.0 function.
+  GOVERN = policies, accountability, third-party governance, transparency
+  obligations. MAP = inventories, classification, impact assessment.
+  MEASURE = testing, evals, red-teaming, monitoring, audit. MANAGE = risk
+  treatment: technical protections, containment, approvals, incident response.
+- `iso42001Area`: one of the ISO/IEC 42001:2023 Annex A control-objective areas,
+  written as `"A.2 AI policies"`, `"A.3 Internal organization"`, `"A.4 Resources"`,
+  `"A.5 Impact assessment"`, `"A.6 System life cycle"`, `"A.7 Data"`,
+  `"A.8 Interested-party info"`, `"A.9 Responsible use"`, `"A.10 Third parties"`.
+
+Both are indicative analyst classifications, not certified crosswalks. Every
+new control must carry both; `classify_controls.py` holds the keyword rules
+and override table used for the initial pass.
+
 ## Source
 
 As v1 (title, author, institution, date, link, sourceType, geography, domain,

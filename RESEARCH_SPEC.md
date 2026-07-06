@@ -122,6 +122,21 @@ transition endings. Remove or annotate deadlines that pass or get deferred
 - `direction`: `increasing | stable | decreasing` — justified by an event from
   this cycle, otherwise leave as-is.
 
+## 6b. Control taxonomy discipline
+
+Every control carries `nistFunction` (NIST AI RMF: GOVERN/MAP/MEASURE/MANAGE)
+and `iso42001Area` (ISO/IEC 42001 Annex A area — see SCHEMA.md for the exact
+labels). Classify new controls on creation; when unsure, match against the
+rules in `classify_controls.py`. Controls are entities too: near-duplicate
+controls ("AI use-case inventory and risk tiering" vs "AI system inventory and
+risk tiering") get merged under the canonical-entity rule, not accumulated.
+
+**Reference control libraries to mine when adding controls** (cite the source
+on the control): ISO/IEC 42001 Annex A / B; NIST AI RMF Playbook actions;
+CSA AI Controls Matrix (AICM); OWASP LLM Top 10 + Agentic Top 10 mitigations;
+MITRE ATLAS mitigations; NIST SP 800-53 AI overlays as they land. Prefer
+adapting a recognized control to inventing one.
+
 ## 7. The practice lens (`soWhat`)
 
 Every brief item, regulation, and risk carries `soWhat`: **one sentence, public-safe**, phrased as what a competent organisation should do — an evidence artifact to

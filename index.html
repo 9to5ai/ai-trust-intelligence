@@ -740,6 +740,43 @@ kbd.k { font-family: var(--mono); font-size: 11px; border: 1px solid var(--hairl
 .mix-row .mv { font-family: var(--mono); font-size: 10.5px; color: var(--text-2); text-align: right; }
 .mix-flag { margin-top: 10px; font-size: 12px; color: var(--orange); font-family: var(--mono); letter-spacing: 0.02em; }
 
+/* ═══════════════ Control fabric ═══════════════ */
+.fn-board { display: grid; grid-template-columns: repeat(4, minmax(0,1fr)); gap: 12px; margin-bottom: 22px; }
+@media (max-width: 860px) { .fn-board { grid-template-columns: repeat(2, minmax(0,1fr)); } }
+.fn-tile {
+  position: relative; display: block; width: 100%; text-align: left;
+  padding: 16px 16px 14px; border: 1px solid var(--hairline); border-radius: 12px;
+  background: var(--surface); overflow: hidden;
+  transition: border-color 0.18s, transform 0.18s, background 0.18s;
+}
+.fn-tile::before { content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 3px; background: var(--fn-c, var(--accent)); }
+.fn-tile:hover { transform: translateY(-2px); border-color: var(--hairline-strong); }
+.fn-tile[aria-pressed="true"] { border-color: var(--fn-c, var(--accent)); background: var(--surface-2); box-shadow: 0 0 0 1px var(--fn-c, var(--accent)) inset; }
+.fn-tile .fn-name { font-family: var(--mono); font-size: 11px; font-weight: 600; letter-spacing: 0.16em; color: var(--fn-c, var(--accent)); }
+.fn-tile .fn-count { font-family: var(--mono); font-size: 30px; font-weight: 500; letter-spacing: -0.03em; line-height: 1.15; margin: 4px 0 2px; }
+.fn-tile .fn-desc { font-size: 11.5px; color: var(--text-3); line-height: 1.45; }
+.fn-govern { --fn-c: var(--accent); }
+.fn-map { --fn-c: var(--cyan); }
+.fn-measure { --fn-c: var(--purple); }
+.fn-manage { --fn-c: var(--green); }
+.citem.c-govern { border-left: 3px solid var(--accent); }
+.citem.c-map { border-left: 3px solid var(--cyan); }
+.citem.c-measure { border-left: 3px solid var(--purple); }
+.citem.c-manage { border-left: 3px solid var(--green); }
+.cov-row { display: grid; grid-template-columns: 150px minmax(0,1fr) minmax(0,1fr); gap: 12px; align-items: center; padding: 6px 0; }
+.cov-row .cl { font-size: 12.5px; font-weight: 600; color: var(--text-2); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.cov-cell { display: flex; align-items: center; gap: 8px; }
+.cov-track { display: block; flex: 1; height: 10px; }
+.cov-fill { display: block; height: 100%; border-radius: 0 3px 3px 0; min-width: 2px; }
+.cov-n { font-family: var(--mono); font-size: 10.5px; color: var(--text-2); min-width: 22px; }
+.cov-head { display: grid; grid-template-columns: 150px minmax(0,1fr) minmax(0,1fr); gap: 12px; font-family: var(--mono); font-size: 9px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--text-3); padding-bottom: 6px; border-bottom: 1px solid var(--hairline); margin-bottom: 6px; }
+.cov-gap { font-family: var(--mono); font-size: 10px; color: var(--orange); }
+@media (max-width: 700px) { .cov-row, .cov-head { grid-template-columns: 110px minmax(0,1fr) minmax(0,1fr); gap: 8px; } }
+.ctl-fact-grid { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 4px 18px; margin: 10px 0; }
+@media (max-width: 700px) { .ctl-fact-grid { grid-template-columns: 1fr; } }
+.ctl-fact { font-size: 12.5px; color: var(--text-2); line-height: 1.55; }
+.ctl-fact strong { color: var(--text); font-weight: 700; }
+
 /* ═══════════════ Sparkline ═══════════════ */
 .spark-wrap { display: inline-flex; align-items: center; gap: 10px; margin-top: 14px; font-family: var(--mono); font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-3); }
 .spark-wrap svg { display: block; }
@@ -899,7 +936,7 @@ const filterState = {
   regulations: { jur: null, q: '', sortKey: 'date', sortDir: -1 },
   sources: { q: '', sortKey: 'date', sortDir: -1 },
   vendors: { q: '' },
-  controls: { q: '' },
+  controls: { q: '', fn: null, area: null },
   standards: { q: '' }
 };
 
@@ -1156,7 +1193,7 @@ function jumpToControl(name) {
     q = words.slice(0, 2).join(' ');
     if (!matches(q)) q = words.find(w => matches(w)) || '';
   }
-  filterState.controls.q = q;
+  filterState.controls = { q, fn: null, area: null };
   navigate('controls');
 }
 
@@ -1689,35 +1726,135 @@ function renderRiskList() {
   }).join('');
 }
 
-/* ═══════════════ Controls ═══════════════ */
+/* ═══════════════ Controls (control fabric) ═══════════════ */
+const NIST_FN = {
+  GOVERN: { cls: 'govern', badge: 'b-yellow', desc: 'Policies, accountability, third-party governance, transparency obligations.' },
+  MAP: { cls: 'map', badge: 'b-cyan', desc: 'Know what you have: inventories, classification, impact assessment.' },
+  MEASURE: { cls: 'measure', badge: 'b-purple', desc: 'Prove it works: testing, evals, red-teaming, monitoring, audit.' },
+  MANAGE: { cls: 'manage', badge: 'b-green', desc: 'Treat the risk: containment, approvals, response, recovery.' }
+};
+function controlFn(c) {
+  const f = String(c.nistFunction || '').toUpperCase();
+  return NIST_FN[f] ? f : null;
+}
 function renderControls() {
   const sec = SECTIONS.find(s => s.id === 'controls');
   const controls = data.controls || [];
-  let h = secHead(sec, `<span>${controls.length} controls</span>`);
+  const fs = filterState.controls;
+  let h = secHead(sec, `<span>${controls.length} controls</span><span>NIST AI RMF × ISO/IEC 42001</span>`);
   if (!controls.length) return h + emptyState('🛡️', 'The control library will be populated by the nightly research workflow.');
-  h += `<div class="toolbar"><input class="search-input" type="search" placeholder="Filter controls…" value="${esc(filterState.controls.q)}" oninput="filterState.controls.q=this.value;renderControlList()"><span class="result-count" id="controlCount"></span></div>`;
+
+  const fnCounts = {};
+  controls.forEach(c => { const f = controlFn(c); if (f) fnCounts[f] = (fnCounts[f] || 0) + 1; });
+  const hasTaxonomy = Object.keys(fnCounts).length > 0;
+
+  if (hasTaxonomy) {
+    h += `<div class="fn-board">`;
+    for (const [f, meta] of Object.entries(NIST_FN)) {
+      h += `<button class="fn-tile fn-${meta.cls}" aria-pressed="${fs.fn === f}" onclick="toggleControlFn('${f}')">
+        <span class="fn-name">${f}</span><span class="fn-count" style="display:block">${fnCounts[f] || 0}</span>
+        <span class="fn-desc">${meta.desc}</span></button>`;
+    }
+    h += `</div>`;
+
+    // Coverage: risks vs controls per theme — where is the library thin?
+    const riskTheme = {}, ctlTheme = {};
+    const riskByName = {};
+    (data.risks || []).forEach(r => {
+      const t = r.theme || coarseCategory(r.category);
+      riskTheme[t] = (riskTheme[t] || 0) + 1;
+      riskByName[String(r.name || '').toLowerCase().replace(/[^a-z0-9]+/g, ' ').trim()] = t;
+    });
+    controls.forEach(c => {
+      const key = String(c.risk || '').toLowerCase().replace(/[^a-z0-9]+/g, ' ').trim();
+      const t = riskByName[key] || coarseCategory(c.risk);
+      ctlTheme[t] = (ctlTheme[t] || 0) + 1;
+    });
+    const themes = [...new Set([...Object.keys(riskTheme), ...Object.keys(ctlTheme)])].sort((a, b) => (riskTheme[b] || 0) - (riskTheme[a] || 0));
+    const maxR = Math.max(...themes.map(t => riskTheme[t] || 0), 1);
+    const maxC = Math.max(...themes.map(t => ctlTheme[t] || 0), 1);
+    h += `<div class="matrix-card block">${blockHead('Coverage check', 'Tracked risks vs controls that address them, by theme. Thin rows are where the library needs sourcing next.')}`;
+    h += `<div class="cov-head"><span>Theme</span><span>Risks tracked</span><span>Controls addressing</span></div>`;
+    for (const t of themes) {
+      const r = riskTheme[t] || 0, c = ctlTheme[t] || 0;
+      const thin = r >= 3 && c * 3 <= r;
+      h += `<div class="cov-row"><span class="cl">${esc(t)}</span>
+        <span class="cov-cell"><span class="cov-track"><span class="cov-fill" style="width:${Math.round(r / maxR * 100)}%;background:var(--red)"></span></span><span class="cov-n">${r}</span></span>
+        <span class="cov-cell"><span class="cov-track"><span class="cov-fill" style="width:${Math.round(c / maxC * 100)}%;background:var(--green)"></span></span><span class="cov-n">${c}</span>${thin ? '<span class="cov-gap">⚠ thin</span>' : ''}</span></div>`;
+    }
+    h += `</div>`;
+  }
+
+  h += `<div class="toolbar"><input class="search-input" type="search" placeholder="Filter controls…" value="${esc(fs.q)}" oninput="filterState.controls.q=this.value;renderControlList()"><span class="result-count" id="controlCount"></span></div>`;
+  const areas = [...new Set(controls.map(c => c.iso42001Area).filter(Boolean))]
+    .sort((a, b) => (parseFloat(String(a).replace('A.', '')) || 0) - (parseFloat(String(b).replace('A.', '')) || 0));
+  if (areas.length) {
+    h += `<div class="toolbar"><div class="chip-row"><span class="chip-label">ISO 42001</span>`;
+    for (const a of areas) h += `<button class="chip" data-filter="area" data-val="${esc(a)}" aria-pressed="${fs.area === a}" onclick="toggleControlArea('${esc(a)}')">${esc(a)}</button>`;
+    h += `</div></div>`;
+  }
   h += `<div class="stack" id="controlList"></div>`;
   requestAnimationFrame(renderControlList);
   return h;
 }
+function toggleControlFn(f) {
+  const fs = filterState.controls;
+  fs.fn = fs.fn === f ? null : f;
+  document.querySelectorAll('.fn-tile').forEach(t => t.setAttribute('aria-pressed', String(t.querySelector('.fn-name').textContent === fs.fn)));
+  renderControlList();
+}
+function toggleControlArea(a) {
+  const fs = filterState.controls;
+  fs.area = fs.area === a ? null : a;
+  document.querySelectorAll('.chip[data-filter="area"]').forEach(c => c.setAttribute('aria-pressed', String(c.dataset.val === fs.area)));
+  renderControlList();
+}
+function resetControlFilters() {
+  filterState.controls = { q: '', fn: null, area: null };
+  renderSection('controls');
+}
 function renderControlList() {
   const el = document.getElementById('controlList');
   if (!el) return;
-  const q = filterState.controls.q.trim().toLowerCase();
+  const fs = filterState.controls;
+  const q = (fs.q || '').trim().toLowerCase();
   const controls = data.controls || [];
-  const vis = controls.map((c, i) => ({ c, i })).filter(({ c }) =>
-    !q || ((c.name || '') + ' ' + (c.description || '') + ' ' + (c.risk || '')).toLowerCase().includes(q));
+  const vis = controls.map((c, i) => ({ c, i })).filter(({ c }) => {
+    if (fs.fn && controlFn(c) !== fs.fn) return false;
+    if (fs.area && c.iso42001Area !== fs.area) return false;
+    if (q && !((c.name || '') + ' ' + (c.description || '') + ' ' + (c.risk || '')).toLowerCase().includes(q)) return false;
+    return true;
+  });
   const countEl = document.getElementById('controlCount');
-  if (countEl) countEl.textContent = `${vis.length} of ${controls.length} shown`;
-  if (!vis.length) { el.innerHTML = emptyState('🔍', 'No controls match this search.'); return; }
+  const filtered = fs.fn || fs.area || q;
+  if (countEl) countEl.innerHTML = `${vis.length} of ${controls.length} shown ${filtered ? '· <button class="reset-link" onclick="resetControlFilters()">Reset</button>' : ''}`;
+  if (!vis.length) { el.innerHTML = emptyState('🔍', 'No controls match these filters.'); return; }
   el.innerHTML = vis.map(({ c, i }) => {
-    let b = `<div class="card" data-jump="control-${i}"><h4>${esc(c.name || c.title || 'Control')}</h4>`;
-    if (c.risk) b += `<div class="meta-row" style="margin:0 0 8px">${badge('addresses: ' + c.risk, 'b-dim')}</div>`;
+    const f = controlFn(c);
+    const meta = f ? NIST_FN[f] : null;
+    let b = `<div class="citem ${meta ? 'c-' + meta.cls : ''}" data-jump="control-${i}">`;
+    b += `<button class="citem-head" aria-expanded="false" onclick="toggleC(this)"><div>`;
+    b += `<div class="ci-title">${esc(c.name || c.title || 'Control')}</div>`;
+    b += `<div class="meta-row">`;
+    if (f) b += badge(f, meta.badge);
+    if (c.iso42001Area) b += badge(c.iso42001Area, 'b-dim');
+    if (c.maturity) b += badge(c.maturity, /established|mature|common/i.test(c.maturity) ? 'b-green' : 'b-orange');
+    if (c.risk) b += badge('addresses: ' + (c.risk.length > 44 ? c.risk.slice(0, 42) + '…' : c.risk), 'b-dim');
+    b += `</div></div><span class="chev" aria-hidden="true">▼</span></button>`;
+    b += `<div class="citem-body" hidden>`;
     b += `<p>${esc(c.description || '')}</p>`;
-    if (c.implementation) b += `<p style="margin-top:6px"><strong style="color:var(--text)">How:</strong> ${esc(c.implementation)}</p>`;
-    const tags = [...(c.relatedTools || []).map(t => ['🔧', t]), ...(c.relatedStandards || []).map(s => ['📐', s])];
-    if (tags.length) b += `<div class="meta-row">${tags.map(([ic, t]) => badge(ic + ' ' + t, 'b-dim')).join('')}</div>`;
+    if (c.implementation) b += `<p><strong>How to implement:</strong> ${esc(c.implementation)}</p>`;
+    b += `<div class="ctl-fact-grid">`;
+    if (c.owner) b += `<div class="ctl-fact"><strong>Owner:</strong> ${esc(c.owner)}</div>`;
+    if (c.frequency) b += `<div class="ctl-fact"><strong>Frequency:</strong> ${esc(c.frequency)}</div>`;
+    if (c.testingMethod) b += `<div class="ctl-fact"><strong>How to test it:</strong> ${esc(c.testingMethod)}</div>`;
+    if (c.evidenceRequired) b += `<div class="ctl-fact"><strong>Evidence to keep:</strong> ${esc(joinList(c.evidenceRequired))}</div>`;
     b += `</div>`;
+    if (c.limitations) b += `<p><strong>Limitations:</strong> ${esc(c.limitations)}</p>`;
+    const tags = [...(c.relatedStandards || []).map(s => ['📐', s]), ...(c.relatedTools || []).map(t => ['🔧', t])];
+    if (tags.length) b += `<div class="meta-row">${tags.slice(0, 8).map(([ic, t]) => badge(ic + ' ' + (String(t).length > 46 ? String(t).slice(0, 44) + '…' : t), 'b-dim')).join('')}</div>`;
+    b += lens(c.soWhat);
+    b += `</div></div>`;
     return b;
   }).join('');
 }
@@ -2345,7 +2482,7 @@ function jumpTo(idx) {
   if (it.section === 'regulations') filterState.regulations = { jur: null, q: '', sortKey: 'date', sortDir: -1 };
   if (it.section === 'sources') filterState.sources = { q: '', sortKey: 'date', sortDir: -1 };
   if (it.section === 'vendors') filterState.vendors.q = '';
-  if (it.section === 'controls') filterState.controls.q = '';
+  if (it.section === 'controls') filterState.controls = { q: '', fn: null, area: null };
   if (it.section === 'standards') filterState.standards.q = '';
   navigate(it.section);
   const typeKey = { Risk: 'risk', Regulation: 'regulation', Framework: 'standard', Vendor: 'vendor', Incident: 'incident', Control: 'control', Source: 'source' }[it.type];
