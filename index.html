@@ -1,0 +1,2406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>AI Trust Intelligence</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #0a0e17;
+  --bg-card: #111827;
+  --bg-card-hover: #1a2332;
+  --bg-nav: #0d1117;
+  --border: #1e293b;
+  --text: #e2e8f0;
+  --text-muted: #94a3b8;
+  --text-dim: #64748b;
+  --accent: #3b82f6;
+  --accent-glow: rgba(59,130,246,0.15);
+  --green: #22c55e;
+  --green-bg: rgba(34,197,94,0.1);
+  --yellow: #eab308;
+  --yellow-bg: rgba(234,179,8,0.1);
+  --red: #ef4444;
+  --red-bg: rgba(239,68,68,0.1);
+  --orange: #f97316;
+  --orange-bg: rgba(249,115,22,0.1);
+  --purple: #a855f7;
+  --purple-bg: rgba(168,85,247,0.1);
+  --cyan: #06b6d4;
+  --cyan-bg: rgba(6,182,212,0.1);
+  --radius: 12px;
+  --radius-sm: 8px;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+/* ── Layout ── */
+.app { display: flex; min-height: 100vh; }
+
+/* ── Sidebar Navigation ── */
+.sidebar {
+  width: 260px;
+  flex-shrink: 0;
+  background: var(--bg-nav);
+  border-right: 1px solid var(--border);
+  padding: 20px 0;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  overflow-y: auto;
+  z-index: 100;
+}
+.sidebar-brand {
+  padding: 0 20px 20px;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 12px;
+}
+.sidebar-brand h1 {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--accent);
+  letter-spacing: -0.3px;
+}
+.sidebar-brand small {
+  display: block;
+  font-size: 10px;
+  color: var(--text-dim);
+  margin-top: 2px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+.nav-group { padding: 0 12px; margin-bottom: 4px; }
+.nav-group-title {
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  color: var(--text-dim);
+  padding: 8px 8px 4px;
+  font-weight: 600;
+}
+.nav-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 12px;
+  border-radius: var(--radius-sm);
+  color: var(--text-muted);
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+.nav-item:hover { background: var(--bg-card-hover); color: var(--text); }
+.nav-item.active {
+  background: var(--accent-glow);
+  color: var(--accent);
+  font-weight: 600;
+}
+.nav-item .icon { font-size: 14px; width: 20px; text-align: center; }
+.nav-item .badge {
+  margin-left: auto;
+  font-size: 10px;
+  padding: 1px 6px;
+  border-radius: 10px;
+  font-weight: 600;
+}
+
+/* ── Main Content ── */
+.main {
+  flex: 1;
+  padding: 0;
+  min-width: 0;
+}
+
+/* ── Section ── */
+.section {
+  display: none;
+  padding: 32px 40px;
+  max-width: 1200px;
+}
+.section.active { display: block; }
+.section-header {
+  margin-bottom: 28px;
+}
+.section-header h2 {
+  font-size: 26px;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  margin-bottom: 4px;
+}
+.section-header p {
+  color: var(--text-muted);
+  font-size: 14px;
+}
+.last-updated {
+  display: inline-block;
+  font-size: 11px;
+  color: var(--text-dim);
+  background: var(--bg-card);
+  padding: 4px 10px;
+  border-radius: 20px;
+  margin-top: 8px;
+}
+
+/* ── Cards ── */
+.card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 20px;
+  margin-bottom: 16px;
+  transition: border-color 0.2s;
+}
+.card:hover { border-color: #2d3a50; }
+.card-title {
+  font-size: 15px;
+  font-weight: 600;
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.card-text { font-size: 13px; color: var(--text-muted); line-height: 1.7; }
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  gap: 16px;
+}
+
+/* ── Badges ── */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  font-size: 10px;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 10px;
+  letter-spacing: 0.2px;
+  text-transform: uppercase;
+}
+.badge-critical { background: var(--red-bg); color: var(--red); }
+.badge-high { background: var(--orange-bg); color: var(--orange); }
+.badge-medium { background: var(--yellow-bg); color: var(--yellow); }
+.badge-low { background: var(--cyan-bg); color: var(--cyan); }
+.badge-australia { background: var(--green-bg); color: var(--green); }
+.badge-confidence { background: var(--purple-bg); color: var(--purple); }
+
+/* ── Priority Badge ── */
+.priority-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 10px;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 10px;
+}
+.priority-critical { background: var(--red-bg); color: var(--red); }
+.priority-high { background: var(--orange-bg); color: var(--orange); }
+.priority-medium { background: var(--yellow-bg); color: var(--yellow); }
+.priority-low { background: var(--cyan-bg); color: var(--cyan); }
+
+/* ── Executive Brief Section ── */
+.exec-card {
+  background: linear-gradient(135deg, var(--bg-card) 0%, #0f1729 100%);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 24px;
+  margin-bottom: 16px;
+}
+.exec-card h3 {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: var(--accent);
+}
+.exec-card p, .exec-card li {
+  font-size: 13px;
+  color: var(--text-muted);
+  line-height: 1.7;
+}
+.top-dev-item {
+  border-left: 3px solid var(--accent);
+  padding-left: 16px;
+  margin-bottom: 20px;
+}
+.top-dev-item .num {
+  font-size: 11px;
+  color: var(--text-dim);
+  font-weight: 600;
+}
+.top-dev-item h4 { font-size: 15px; font-weight: 600; margin: 4px 0 6px; }
+.top-dev-item p { font-size: 13px; color: var(--text-muted); line-height: 1.7; }
+.top-dev-item .meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 8px;
+}
+.top-dev-item .sources {
+  margin-top: 8px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+.top-dev-item .sources a {
+  font-size: 12px;
+  color: var(--accent);
+  text-decoration: none;
+  border: 1px solid rgba(59,130,246,0.2);
+  padding: 2px 8px;
+  border-radius: 6px;
+  transition: all 0.15s;
+}
+.top-dev-item .sources a:hover {
+  background: var(--accent-glow);
+  border-color: var(--accent);
+  text-decoration: underline;
+}
+
+/* ── One-liner banner ── */
+.one-liner {
+  background: linear-gradient(135deg, var(--accent-glow), transparent);
+  border: 1px solid rgba(59,130,246,0.2);
+  border-radius: var(--radius);
+  padding: 16px 20px;
+  margin-bottom: 24px;
+  font-size: 14px;
+  color: var(--accent);
+  font-weight: 500;
+}
+
+/* ── Alert banners ── */
+.alert-critical {
+  background: var(--red-bg);
+  border: 1px solid rgba(239,68,68,0.2);
+  border-radius: var(--radius);
+  padding: 16px 20px;
+  margin-bottom: 16px;
+}
+.alert-critical h4 { color: var(--red); font-size: 14px; margin-bottom: 4px; }
+.alert-critical p { font-size: 13px; color: var(--text-muted); }
+.alert-high {
+  background: var(--orange-bg);
+  border: 1px solid rgba(249,115,22,0.2);
+  border-radius: var(--radius);
+  padding: 16px 20px;
+  margin-bottom: 16px;
+}
+.alert-high h4 { color: var(--orange); font-size: 14px; }
+
+/* ── Tables (simple) ── */
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+}
+.data-table th {
+  text-align: left;
+  padding: 10px 12px;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--text-dim);
+  border-bottom: 1px solid var(--border);
+  font-weight: 600;
+}
+.data-table td {
+  padding: 10px 12px;
+  border-bottom: 1px solid var(--border);
+  color: var(--text-muted);
+  vertical-align: top;
+}
+.data-table tr:hover td { background: var(--bg-card-hover); }
+.data-table .td-title { color: var(--text); font-weight: 500; }
+
+/* ── Detail rows (collapsible) ── */
+.detail-row { display: none; }
+.detail-row.open { display: table-row; }
+.detail-row td { padding: 12px 12px 20px; background: rgba(17,24,39,0.5); }
+.detail-content { font-size: 13px; color: var(--text-muted); line-height: 1.7; max-width: 600px; }
+.detail-content strong { color: var(--text); }
+.expand-btn {
+  cursor: pointer;
+  color: var(--accent);
+  font-size: 12px;
+  font-weight: 500;
+  background: none;
+  border: none;
+  padding: 4px 0;
+}
+.expand-btn:hover { text-decoration: underline; }
+
+/* ── Recommendation sections ── */
+.rec-group { margin-bottom: 24px; }
+.rec-group h4 {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 8px;
+}
+.rec-group ul { list-style: none; }
+.rec-group li {
+  padding: 8px 12px;
+  border-left: 2px solid var(--accent);
+  margin-bottom: 6px;
+  font-size: 13px;
+  color: var(--text-muted);
+  background: var(--bg-card);
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+}
+
+/* ── Source item ── */
+.source-item {
+  padding: 10px 12px;
+  border-left: 2px solid var(--border);
+  margin-bottom: 8px;
+  font-size: 12px;
+  color: var(--text-muted);
+}
+.source-item a { color: var(--accent); text-decoration: none; }
+.source-item a:hover { text-decoration: underline; }
+.source-item .src-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  margin-top: 4px;
+}
+
+/* ── Inline source links ── */
+.source-links {
+  margin-top: 8px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+.source-links a {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  font-size: 11px;
+  color: var(--accent);
+  text-decoration: none;
+  border: 1px solid rgba(59,130,246,0.2);
+  padding: 3px 8px;
+  border-radius: 6px;
+  transition: all 0.15s;
+  white-space: nowrap;
+  max-width: 280px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.source-links a:hover {
+  background: var(--accent-glow);
+  border-color: var(--accent);
+  text-decoration: underline;
+}
+.source-links .src-text {
+  font-size: 11px;
+  color: var(--text-dim);
+  padding: 3px 8px;
+}
+
+/* ── Vendor card ── */
+.vendor-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 18px;
+}
+.vendor-card .vendor-name { font-size: 15px; font-weight: 600; margin-bottom: 4px; }
+.vendor-card .vendor-cat {
+  font-size: 11px;
+  color: var(--text-dim);
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+  margin-bottom: 8px;
+}
+.vendor-card .vendor-desc { font-size: 13px; color: var(--text-muted); line-height: 1.6; margin-bottom: 10px; }
+.vendor-card .vendor-tags { display: flex; flex-wrap: wrap; gap: 4px; }
+.vendor-card .vendor-url {
+  margin-top: 8px;
+  font-size: 12px;
+}
+.vendor-card .vendor-url a { color: var(--accent); text-decoration: none; }
+.vendor-card .vendor-url a:hover { text-decoration: underline; }
+
+/* ── Risk register item ── */
+.risk-item {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 16px;
+  margin-bottom: 12px;
+}
+.risk-item .risk-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  cursor: pointer;
+}
+.risk-item .risk-name { font-size: 14px; font-weight: 600; flex: 1; }
+.risk-item .risk-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  margin-top: 6px;
+}
+.risk-detail { display: none; margin-top: 12px; padding-top: 12px; border-top: 1px solid var(--border); }
+.risk-detail.open { display: block; }
+.risk-detail p { font-size: 13px; color: var(--text-muted); margin-bottom: 6px; }
+
+/* ── Control item ── */
+.control-item {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 16px;
+  margin-bottom: 10px;
+}
+.control-item .control-name { font-size: 14px; font-weight: 600; }
+.control-item .control-risk { font-size: 12px; color: var(--text-dim); margin: 2px 0 6px; }
+.control-item .control-desc { font-size: 13px; color: var(--text-muted); }
+
+/* ── Incident tracker ── */
+.incident-item {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 16px;
+  margin-bottom: 10px;
+}
+.incident-item .incident-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  cursor: pointer;
+}
+.incident-item .incident-name { font-size: 14px; font-weight: 600; }
+.incident-item .incident-date { font-size: 12px; color: var(--text-dim); }
+.incident-item .incident-detail { display: none; margin-top: 10px; }
+.incident-item .incident-detail.open { display: block; }
+.incident-item .incident-detail p { font-size: 13px; color: var(--text-muted); margin-bottom: 4px; }
+
+/* ── Dashboard stats ── */
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 12px;
+  margin-bottom: 24px;
+}
+.stat-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 16px;
+  text-align: center;
+}
+.stat-card .stat-value {
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 1;
+  margin-bottom: 4px;
+}
+.stat-card .stat-label {
+  font-size: 11px;
+  color: var(--text-dim);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* ── Changelog ── */
+.changelog-item {
+  display: flex;
+  gap: 12px;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--border);
+}
+.changelog-item:last-child { border-bottom: none; }
+.changelog-date {
+  font-size: 12px;
+  color: var(--text-dim);
+  font-weight: 600;
+  min-width: 90px;
+  font-family: 'JetBrains Mono', monospace;
+}
+.changelog-content h4 { font-size: 14px; font-weight: 600; margin-bottom: 2px; }
+.changelog-content p { font-size: 13px; color: var(--text-muted); }
+
+/* ── Open Questions ── */
+.questions-list { list-style: none; }
+.questions-list li {
+  padding: 12px 16px;
+  border-left: 2px solid var(--yellow);
+  margin-bottom: 10px;
+  background: var(--bg-card);
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  font-size: 13px;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+/* ── Watch section ── */
+.watch-item {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 16px;
+  margin-bottom: 10px;
+}
+.watch-item h4 { font-size: 14px; font-weight: 600; margin-bottom: 4px; }
+.watch-item p { font-size: 13px; color: var(--text-muted); }
+
+/* ── Empty state ── */
+.empty-state {
+  text-align: center;
+  padding: 60px 20px;
+  color: var(--text-dim);
+}
+.empty-state .empty-icon { font-size: 40px; margin-bottom: 12px; }
+.empty-state p { font-size: 14px; }
+
+/* ── Region cards ── */
+.region-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 16px;
+}
+.region-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 18px;
+}
+.region-card h4 { font-size: 15px; font-weight: 600; margin-bottom: 4px; }
+.region-card .region-summary { font-size: 13px; color: var(--text-muted); margin-bottom: 8px; }
+.region-card .region-dev { font-size: 12px; color: var(--text-dim); padding: 6px 0; border-top: 1px solid var(--border); }
+
+/* ── Search bar ── */
+.search-bar {
+  width: 100%;
+  max-width: 400px;
+  padding: 10px 14px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border);
+  background: var(--bg-card);
+  color: var(--text);
+  font-size: 13px;
+  font-family: 'Inter', sans-serif;
+  margin-bottom: 20px;
+}
+.search-bar:focus { outline: none; border-color: var(--accent); }
+.search-bar::placeholder { color: var(--text-dim); }
+
+/* ── Mobile bottom nav ── */
+.mobile-nav {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: var(--bg-nav);
+  border-top: 1px solid var(--border);
+  z-index: 200;
+  overflow-x: auto;
+  padding: 0 4px;
+}
+.mobile-nav::-webkit-scrollbar { display: none; }
+.mobile-nav-item {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  padding: 8px 12px;
+  font-size: 10px;
+  color: var(--text-dim);
+  text-decoration: none;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: color 0.15s;
+}
+.mobile-nav-item.active { color: var(--accent); }
+.mobile-nav-item .icon { font-size: 18px; }
+
+.mobile-nav-toggle {
+  display: none;
+  position: fixed;
+  top: 12px;
+  left: 12px;
+  z-index: 150;
+  background: var(--bg-nav);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 8px 10px;
+  color: var(--text);
+  cursor: pointer;
+  font-size: 18px;
+}
+
+/* ── Responsive ── */
+@media (max-width: 900px) {
+  .sidebar { display: none; }
+  .mobile-nav { display: flex; }
+  .mobile-nav-toggle { display: block; }
+  .section { padding: 20px 16px 80px; }
+  .section-header h2 { font-size: 22px; }
+  .card-grid { grid-template-columns: 1fr; }
+  .dashboard-grid { grid-template-columns: repeat(2, 1fr); }
+  .region-grid { grid-template-columns: 1fr; }
+  .data-table { font-size: 12px; }
+  .data-table th, .data-table td { padding: 8px 6px; }
+  .sidebar.open { display: block; position: fixed; top: 0; left: 0; height: 100vh; z-index: 300; }
+  .sidebar-overlay.open { display: block; }
+}
+
+.sidebar-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+  z-index: 250;
+}
+
+/* ── Scrollbar ── */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
+
+/* ── Loading / error ── */
+.loading { text-align: center; padding: 60px 20px; color: var(--text-dim); }
+.loading .spinner { display: inline-block; width: 32px; height: 32px; border: 3px solid var(--border); border-top-color: var(--accent); border-radius: 50%; animation: spin 0.8s linear infinite; margin-bottom: 12px; }
+@keyframes spin { to { transform: rotate(360deg); } }
+
+/* === Premium intelligence redesign overrides === */
+:root {
+  color-scheme: dark;
+  --bg: #060a10;
+  --bg-card: rgba(12, 18, 28, 0.82);
+  --bg-card-hover: rgba(20, 29, 43, 0.96);
+  --bg-nav: rgba(8, 13, 20, 0.72);
+  --border: rgba(154, 172, 194, 0.16);
+  --text: #eef4f8;
+  --text-muted: #a7b6c8;
+  --text-dim: #75859a;
+  --accent: #f3c46b;
+  --accent-glow: rgba(243, 196, 107, 0.18);
+  --green: #7fd8c4;
+  --green-bg: rgba(127, 216, 196, 0.12);
+  --yellow: #f3c46b;
+  --yellow-bg: rgba(243, 196, 107, 0.12);
+  --red: #ff8ea1;
+  --red-bg: rgba(255, 142, 161, 0.12);
+  --orange: #f2a868;
+  --orange-bg: rgba(242, 168, 104, 0.12);
+  --purple: #b79cff;
+  --purple-bg: rgba(183, 156, 255, 0.12);
+  --cyan: #78cfff;
+  --cyan-bg: rgba(120, 207, 255, 0.12);
+  --radius: 18px;
+  --radius-sm: 12px;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Manrope', -apple-system, BlinkMacSystemFont, sans-serif;
+  background:
+    radial-gradient(circle at 12% 10%, rgba(125, 217, 182, 0.12), transparent 24%),
+    radial-gradient(circle at 86% 12%, rgba(121, 215, 255, 0.10), transparent 22%),
+    radial-gradient(circle at 56% 92%, rgba(183, 156, 255, 0.08), transparent 28%),
+    var(--bg);
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.03), transparent 24%, rgba(255, 255, 255, 0.02) 60%, transparent 100%);
+  opacity: 0.4;
+}
+
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background-image: radial-gradient(rgba(255, 255, 255, 0.04) 0.7px, transparent 0.7px);
+  background-size: 4px 4px;
+  opacity: 0.08;
+  mix-blend-mode: soft-light;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+:focus-visible {
+  outline: 2px solid rgba(125, 217, 182, 0.9);
+  outline-offset: 3px;
+}
+
+.app {
+  display: grid;
+  grid-template-columns: 304px minmax(0, 1fr);
+  gap: 24px;
+  width: min(1600px, calc(100% - 32px));
+  margin: 0 auto;
+  min-height: 100vh;
+}
+
+.sidebar {
+  width: auto;
+  position: sticky;
+  top: 16px;
+  height: calc(100vh - 32px);
+  overflow: auto;
+  background: linear-gradient(180deg, rgba(13, 18, 27, 0.78), rgba(8, 13, 20, 0.92));
+  border: 1px solid rgba(154, 172, 194, 0.14);
+  border-radius: 24px;
+  padding: 18px 14px;
+  box-shadow: 0 32px 110px rgba(0, 0, 0, 0.32);
+  backdrop-filter: blur(20px) saturate(150%);
+  -webkit-backdrop-filter: blur(20px) saturate(150%);
+}
+
+.sidebar-brand {
+  padding: 4px 8px 18px;
+  margin-bottom: 12px;
+  border-bottom: 1px solid rgba(154, 172, 194, 0.12);
+}
+
+.sidebar-brand h1 {
+  font-size: 18px;
+  line-height: 1.1;
+  color: var(--text);
+}
+
+.sidebar-brand small {
+  margin-top: 6px;
+  color: var(--text-dim);
+  letter-spacing: 0.16em;
+}
+
+.nav-group {
+  padding: 0;
+  margin-bottom: 10px;
+}
+
+.nav-group-title {
+  color: var(--text-dim);
+  letter-spacing: 0.14em;
+  font-size: 10px;
+  padding: 10px 10px 6px;
+}
+
+.nav-item {
+  border: 1px solid transparent;
+  border-radius: 14px;
+  padding: 10px 12px;
+  margin-bottom: 4px;
+  background: transparent;
+  transition: transform 180ms ease, background 180ms ease, border-color 180ms ease, color 180ms ease;
+}
+
+.nav-item:hover {
+  transform: translateX(2px);
+  background: rgba(255, 255, 255, 0.03);
+  border-color: rgba(154, 172, 194, 0.12);
+}
+
+.nav-item.active {
+  color: #04130d;
+  background: linear-gradient(135deg, rgba(125, 217, 182, 0.98), rgba(160, 242, 212, 0.92));
+  box-shadow: 0 18px 45px rgba(125, 217, 182, 0.18);
+}
+
+.main {
+  min-width: 0;
+  padding: 0 0 24px;
+}
+
+#sections {
+  display: block;
+}
+
+.section {
+  display: block !important;
+  width: 100%;
+  max-width: 1240px;
+  margin: 0 auto 24px;
+  padding: 0;
+  scroll-margin-top: 16px;
+}
+
+.section:last-child {
+  margin-bottom: 40px;
+}
+
+.section-header {
+  margin: 0 0 16px;
+}
+
+.section-header h2 {
+  font-size: clamp(1.6rem, 1.2vw + 1.3rem, 2.5rem);
+  line-height: 1.02;
+  letter-spacing: -0.05em;
+  margin-bottom: 8px;
+}
+
+.section-header p {
+  max-width: 66ch;
+  color: var(--text-muted);
+}
+
+.last-updated {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 10px;
+  padding: 6px 10px;
+  border-radius: 999px;
+  border: 1px solid rgba(154, 172, 194, 0.14);
+  background: rgba(255, 255, 255, 0.03);
+  color: var(--text-dim);
+}
+
+.hero-panel {
+  display: grid;
+  grid-template-columns: minmax(0, 1.45fr) minmax(320px, 0.95fr);
+  gap: 22px;
+  padding: 28px;
+  margin-bottom: 18px;
+  border-radius: 22px;
+  border: 1px solid rgba(154, 172, 194, 0.16);
+  background:
+    linear-gradient(180deg, rgba(14, 21, 33, 0.94), rgba(9, 14, 22, 0.96)),
+    radial-gradient(circle at top left, rgba(243, 196, 107, 0.08), transparent 32%),
+    radial-gradient(circle at bottom right, rgba(120, 207, 255, 0.08), transparent 30%);
+  box-shadow: 0 28px 90px rgba(0, 0, 0, 0.28);
+  backdrop-filter: blur(18px) saturate(140%);
+  -webkit-backdrop-filter: blur(18px) saturate(140%);
+}
+
+.command-rail {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 0 0 16px;
+}
+
+.command-rail span {
+  display: inline-flex;
+  align-items: center;
+  min-height: 30px;
+  padding: 0 10px;
+  border-radius: 999px;
+  border: 1px solid rgba(154, 172, 194, 0.14);
+  background: rgba(255, 255, 255, 0.03);
+  color: var(--text-dim);
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.hero-kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.hero-kicker::before {
+  content: '';
+  width: 30px;
+  height: 1px;
+  background: rgba(243, 196, 107, 0.8);
+}
+
+.hero-title {
+  margin: 12px 0 14px;
+  font-size: clamp(2.4rem, 5vw, 5rem);
+  line-height: 0.94;
+  letter-spacing: -0.09em;
+}
+
+.hero-lead {
+  max-width: 62ch;
+  color: var(--text-muted);
+  font-size: 1.02rem;
+  line-height: 1.75;
+}
+
+.hero-signal {
+  margin-top: 18px;
+  border-radius: 20px;
+  background: linear-gradient(135deg, rgba(243, 196, 107, 0.12), rgba(120, 207, 255, 0.08));
+  border-color: rgba(243, 196, 107, 0.18);
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 18px;
+}
+
+.hero-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: 0 16px;
+  border-radius: 999px;
+  border: 1px solid rgba(154, 172, 194, 0.18);
+  background: rgba(255, 255, 255, 0.03);
+  color: var(--text);
+  font-weight: 700;
+  transition: transform 180ms ease, border-color 180ms ease, background 180ms ease, color 180ms ease;
+}
+
+.hero-button:hover {
+  transform: translateY(-1px);
+  border-color: rgba(243, 196, 107, 0.35);
+}
+
+.hero-button-primary {
+  background: linear-gradient(135deg, rgba(243, 196, 107, 1), rgba(255, 226, 160, 0.92));
+  color: #0e1218;
+  border-color: transparent;
+  box-shadow: 0 18px 40px rgba(243, 196, 107, 0.18);
+}
+
+.hero-button-secondary {
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.hero-button-ghost {
+  background: transparent;
+}
+
+.hero-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 18px;
+}
+
+.hero-pill {
+  display: inline-flex;
+  align-items: center;
+  min-height: 30px;
+  padding: 0 10px;
+  border-radius: 999px;
+  border: 1px solid rgba(154, 172, 194, 0.14);
+  background: rgba(255, 255, 255, 0.03);
+  color: var(--text-dim);
+  font-size: 12px;
+}
+
+.hero-aside {
+  display: grid;
+  gap: 14px;
+}
+
+.aside-card {
+  border-radius: 22px;
+  border: 1px solid rgba(154, 172, 194, 0.14);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0.02));
+  padding: 18px;
+}
+
+.aside-card-accent {
+  background: linear-gradient(180deg, rgba(125, 217, 182, 0.12), rgba(255, 255, 255, 0.02));
+}
+
+.aside-label,
+.mini-label,
+.stat-label {
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+}
+
+.aside-value {
+  font-size: 1.4rem;
+  line-height: 1.1;
+  margin: 6px 0 8px;
+  letter-spacing: -0.04em;
+}
+
+.aside-note {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  line-height: 1.65;
+}
+
+.hero-stats {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.stat-card {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(154, 172, 194, 0.14);
+  border-radius: 18px;
+  padding: 14px;
+  text-align: left;
+}
+
+.stat-value {
+  font-size: 2rem;
+  line-height: 1;
+  letter-spacing: -0.06em;
+  margin: 8px 0 2px;
+  font-weight: 800;
+}
+
+.stat-footnote {
+  font-size: 12px;
+  color: var(--text-dim);
+}
+
+.hero-mini-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.mini-card {
+  border-radius: 18px;
+  border: 1px solid rgba(154, 172, 194, 0.14);
+  background: rgba(255, 255, 255, 0.03);
+  padding: 14px;
+}
+
+.mini-card strong {
+  display: block;
+  margin: 8px 0 2px;
+  font-size: 1.35rem;
+  letter-spacing: -0.04em;
+}
+
+.mini-card span:last-child {
+  display: block;
+  color: var(--text-dim);
+  font-size: 12px;
+}
+
+.section-strip {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 0 0 20px;
+}
+
+.section-strip a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 34px;
+  padding: 0 12px;
+  border-radius: 999px;
+  border: 1px solid rgba(154, 172, 194, 0.14);
+  background: rgba(255, 255, 255, 0.03);
+  color: var(--text-muted);
+  font-size: 12px;
+  transition: transform 160ms ease, border-color 160ms ease, color 160ms ease, background 160ms ease;
+}
+
+.section-strip a:hover {
+  transform: translateY(-1px);
+  color: var(--text);
+  border-color: rgba(125, 217, 182, 0.24);
+  background: rgba(125, 217, 182, 0.08);
+}
+
+.section-block {
+  margin-bottom: 20px;
+}
+
+.alert-grid,
+.development-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.alert-critical,
+.top-dev-item,
+.rec-group,
+.watch-item,
+.card,
+.vendor-card,
+.risk-item,
+.control-item,
+.region-card,
+.stat-card,
+.mini-card,
+.aside-card,
+.empty-state,
+.loading,
+.data-table,
+.dashboard-grid {
+  border-radius: 18px;
+}
+
+.alert-critical,
+.top-dev-item,
+.rec-group,
+.watch-item,
+.card,
+.vendor-card,
+.risk-item,
+.control-item,
+.region-card {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(154, 172, 194, 0.14);
+  box-shadow: none;
+}
+
+.alert-critical {
+  padding: 18px;
+  margin-bottom: 0;
+}
+
+.alert-critical h4 {
+  font-size: 14px;
+  margin-bottom: 6px;
+  color: var(--red);
+}
+
+.alert-critical p {
+  color: var(--text-muted);
+}
+
+.top-dev-item {
+  padding: 18px;
+  margin-bottom: 0;
+  border-left: 1px solid rgba(125, 217, 182, 0.2);
+}
+
+.top-dev-item .num {
+  color: var(--text-dim);
+  font-family: 'IBM Plex Mono', monospace;
+}
+
+.top-dev-item h4 {
+  margin: 8px 0 10px;
+  font-size: 1.1rem;
+  line-height: 1.25;
+  letter-spacing: -0.03em;
+}
+
+.top-dev-item p {
+  color: var(--text-muted);
+}
+
+.top-dev-item .meta,
+.hero-pills,
+.source-links,
+.vendor-tags,
+.risk-meta,
+.top-dev-item .sources {
+  gap: 8px;
+}
+
+.rec-group {
+  padding: 18px;
+}
+
+.rec-group h4,
+.watch-item h4,
+.vendor-card .vendor-name,
+.risk-item .risk-name,
+.control-item .control-name,
+.region-card h4 {
+  letter-spacing: -0.02em;
+}
+
+.rec-group ul,
+.questions-list {
+  margin: 10px 0 0;
+  padding-left: 18px;
+  color: var(--text-muted);
+}
+
+.questions-list li,
+.rec-group li {
+  margin-bottom: 8px;
+}
+
+.card,
+.vendor-card,
+.risk-item,
+.control-item,
+.watch-item,
+.region-card {
+  padding: 18px;
+  margin-bottom: 0;
+}
+
+.card-grid,
+.region-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 14px;
+}
+
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 14px;
+  margin-bottom: 18px;
+}
+
+.dashboard-grid .stat-card {
+  padding: 18px;
+}
+
+.dashboard-grid .stat-value {
+  margin-top: 10px;
+}
+
+.one-liner {
+  border: 1px solid rgba(125, 217, 182, 0.16);
+  background: linear-gradient(135deg, rgba(125, 217, 182, 0.10), rgba(121, 215, 255, 0.05));
+  color: var(--text);
+  padding: 16px 18px;
+  margin-bottom: 16px;
+}
+
+.search-bar {
+  width: 100%;
+  max-width: 480px;
+  min-height: 46px;
+  padding: 0 14px;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(154, 172, 194, 0.16);
+  color: var(--text);
+  font-family: inherit;
+}
+
+.search-bar::placeholder {
+  color: var(--text-dim);
+}
+
+.search-bar:focus {
+  outline: none;
+  border-color: rgba(125, 217, 182, 0.35);
+}
+
+.data-table {
+  overflow: hidden;
+  border: 1px solid rgba(154, 172, 194, 0.14);
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.data-table th {
+  background: rgba(255, 255, 255, 0.03);
+  color: var(--text-dim);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-size: 10px;
+}
+
+.data-table td {
+  border-bottom: 1px solid rgba(154, 172, 194, 0.10);
+  color: var(--text-muted);
+}
+
+.data-table tr:hover td {
+  background: rgba(125, 217, 182, 0.04);
+}
+
+.data-table .td-title {
+  color: var(--text);
+}
+
+.detail-row {
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.detail-content {
+  color: var(--text-muted);
+}
+
+.vendor-card .vendor-desc,
+.control-item .control-desc,
+.risk-detail p,
+.region-card .region-summary,
+.watch-item p {
+  color: var(--text-muted);
+  line-height: 1.65;
+}
+
+.risk-detail,
+.incident-detail {
+  border-top-color: rgba(154, 172, 194, 0.12);
+}
+
+.empty-state {
+  border: 1px dashed rgba(154, 172, 194, 0.24);
+  background: rgba(255, 255, 255, 0.025);
+  padding: 56px 20px;
+  text-align: center;
+  color: var(--text-dim);
+}
+
+.empty-state h3 {
+  margin: 12px 0 8px;
+  font-size: 1.1rem;
+  color: var(--text);
+}
+
+.empty-state p {
+  max-width: 58ch;
+  margin: 0 auto;
+  color: var(--text-muted);
+}
+
+.empty-state .empty-icon {
+  font-size: 34px;
+}
+
+.loading {
+  padding: 72px 20px;
+  text-align: center;
+  color: var(--text-dim);
+}
+
+.loading .spinner {
+  width: 36px;
+  height: 36px;
+  border-width: 3px;
+}
+
+.mobile-nav {
+  display: none;
+  position: fixed;
+  left: 50%;
+  bottom: 14px;
+  transform: translateX(-50%);
+  width: min(96vw, 960px);
+  padding: 8px;
+  border-radius: 20px;
+  border: 1px solid rgba(154, 172, 194, 0.16);
+  background: rgba(8, 13, 20, 0.82);
+  backdrop-filter: blur(20px) saturate(140%);
+  -webkit-backdrop-filter: blur(20px) saturate(140%);
+  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.34);
+  overflow-x: auto;
+  z-index: 200;
+}
+
+.mobile-nav-item {
+  border-radius: 14px;
+  padding: 10px 12px;
+}
+
+.mobile-nav-item.active {
+  background: rgba(125, 217, 182, 0.12);
+  color: var(--accent);
+}
+
+.mobile-nav-toggle {
+  display: none;
+  top: 14px;
+  left: 14px;
+  width: 44px;
+  height: 44px;
+  border-radius: 14px;
+  border: 1px solid rgba(154, 172, 194, 0.16);
+  background: rgba(8, 13, 20, 0.82);
+  backdrop-filter: blur(16px) saturate(140%);
+  -webkit-backdrop-filter: blur(16px) saturate(140%);
+}
+
+.sidebar-overlay {
+  background: rgba(0, 0, 0, 0.48);
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.02);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(154, 172, 194, 0.22);
+  border-radius: 999px;
+}
+
+@media (max-width: 1100px) {
+  .app {
+    grid-template-columns: 1fr;
+    width: min(1200px, calc(100% - 20px));
+  }
+
+  .sidebar {
+    display: none;
+  }
+
+  .mobile-nav-toggle {
+    display: grid;
+    place-items: center;
+  }
+
+  .mobile-nav {
+    display: flex;
+  }
+
+  .hero-panel {
+    grid-template-columns: 1fr;
+    padding: 22px;
+  }
+
+  .dashboard-grid,
+  .alert-grid,
+  .development-grid,
+  .card-grid,
+  .region-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 720px) {
+  .section {
+    margin-bottom: 18px;
+  }
+
+  .hero-panel {
+    padding: 18px;
+    border-radius: 24px;
+  }
+
+  .hero-title {
+    font-size: clamp(2.2rem, 12vw, 3.5rem);
+  }
+
+  .hero-stats,
+  .hero-mini-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .section-header h2 {
+    font-size: 1.8rem;
+  }
+
+  .mobile-nav {
+    width: calc(100vw - 16px);
+    bottom: 8px;
+  }
+}
+
+</style>
+</head>
+<body>
+
+<div class="sidebar-overlay" id="sidebarOverlay" onclick="toggleSidebar()"></div>
+
+<button class="mobile-nav-toggle" onclick="toggleSidebar()">☰</button>
+
+<div class="app">
+  <!-- Sidebar -->
+  <nav class="sidebar" id="sidebar">
+    <div class="sidebar-brand">
+      <h1>AI Trust Intelligence</h1>
+      <small>Living Intelligence Report</small>
+    </div>
+    <div class="nav-group">
+      <div class="nav-group-title">Daily Brief</div>
+      <a class="nav-item active" data-section="home" onclick="navigate('home')"><span class="icon">📋</span> Executive Brief</a>
+    </div>
+    <div class="nav-group">
+      <div class="nav-group-title">Intelligence</div>
+      <a class="nav-item" data-section="dashboard" onclick="navigate('dashboard')"><span class="icon">📊</span> Market Pulse</a>
+      <a class="nav-item" data-section="risks" onclick="navigate('risks')"><span class="icon">⚠️</span> Risk Queue</a>
+      <a class="nav-item" data-section="controls" onclick="navigate('controls')"><span class="icon">🛡️</span> Control Library</a>
+      <a class="nav-item" data-section="incidents" onclick="navigate('incidents')"><span class="icon">🔴</span> Incident Log</a>
+    </div>
+    <div class="nav-group">
+      <div class="nav-group-title">Regulation & Standards</div>
+      <a class="nav-item" data-section="regulations" onclick="navigate('regulations')"><span class="icon">⚖️</span> Regulatory Radar</a>
+      <a class="nav-item" data-section="standards" onclick="navigate('standards')"><span class="icon">📐</span> Framework Stack</a>
+    </div>
+    <div class="nav-group">
+      <div class="nav-group-title">Security & Assurance</div>
+      <a class="nav-item" data-section="security" onclick="navigate('security')"><span class="icon">🔒</span> Threat Radar</a>
+      <a class="nav-item" data-section="assurance" onclick="navigate('assurance')"><span class="icon">✅</span> Assurance Ledger</a>
+    </div>
+    <div class="nav-group">
+      <div class="nav-group-title">Geography</div>
+      <a class="nav-item" data-section="australia" onclick="navigate('australia')"><span class="icon">🇦🇺</span> Australia Desk</a>
+      <a class="nav-item" data-section="global" onclick="navigate('global')"><span class="icon">🌐</span> Global Watchlist</a>
+    </div>
+    <div class="nav-group">
+      <div class="nav-group-title">Ecosystem</div>
+      <a class="nav-item" data-section="vendors" onclick="navigate('vendors')"><span class="icon">🏪</span> Vendor Map</a>
+    </div>
+    <div class="nav-group">
+      <div class="nav-group-title">Meta</div>
+      <a class="nav-item" data-section="sources" onclick="navigate('sources')"><span class="icon">📚</span> Evidence Base</a>
+      <a class="nav-item" data-section="changelog" onclick="navigate('changelog')"><span class="icon">📝</span> Change Log</a>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <main class="main" id="mainContent">
+    <div class="loading" id="loading">
+      <div class="spinner"></div>
+      <p>Loading intelligence data...</p>
+    </div>
+    <div id="sections"></div>
+  </main>
+</div>
+
+<!-- Mobile Bottom Nav -->
+<nav class="mobile-nav" id="mobileNav">
+  <a class="mobile-nav-item active" data-section="home" onclick="navigate('home')"><span class="icon">📋</span>Brief</a>
+  <a class="mobile-nav-item" data-section="dashboard" onclick="navigate('dashboard')"><span class="icon">📊</span>Pulse</a>
+  <a class="mobile-nav-item" data-section="risks" onclick="navigate('risks')"><span class="icon">⚠️</span>Risks</a>
+  <a class="mobile-nav-item" data-section="regulations" onclick="navigate('regulations')"><span class="icon">⚖️</span>Regs</a>
+  <a class="mobile-nav-item" data-section="security" onclick="navigate('security')"><span class="icon">🔒</span>Threats</a>
+  <a class="mobile-nav-item" data-section="vendors" onclick="navigate('vendors')"><span class="icon">🏪</span>Vendors</a>
+  <a class="mobile-nav-item" data-section="australia" onclick="navigate('australia')"><span class="icon">🇦🇺</span>AU</a>
+  <a class="mobile-nav-item" data-section="global" onclick="navigate('global')"><span class="icon">🌐</span>Global</a>
+  <a class="mobile-nav-item" data-section="incidents" onclick="navigate('incidents')"><span class="icon">🔴</span>Log</a>
+  <a class="mobile-nav-item" data-section="changelog" onclick="navigate('changelog')"><span class="icon">📝</span>Log</a>
+</nav>
+
+<script>
+// ─── State ───
+let data = null;
+let currentSection = 'home';
+
+// ─── Navigation ───
+function navigate(section) {
+  currentSection = section;
+  document.querySelectorAll('.nav-item, .mobile-nav-item').forEach(el => {
+    el.classList.toggle('active', el.dataset.section === section);
+  });
+  const target = document.getElementById('section-' + section);
+  if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  if (window.innerWidth <= 900) toggleSidebar(false);
+  history.replaceState(null, '', '#' + section);
+}
+
+function toggleSidebar(force) {
+  const s = document.getElementById('sidebar');
+  const o = document.getElementById('sidebarOverlay');
+  if (typeof force === 'boolean') {
+    s.classList.toggle('open', force);
+    o.classList.toggle('open', force);
+  } else {
+    s.classList.toggle('open');
+    o.classList.toggle('open');
+  }
+}
+
+// ─── Helpers ───
+function badge(text, cls) {
+  return `<span class="badge ${cls}">${text}</span>`;
+}
+function priorityBadge(p) {
+  const map = {critical: 'priority-critical', high: 'priority-high', medium: 'priority-medium', low: 'priority-low'};
+  return `<span class="priority-badge ${map[p] || 'priority-medium'}">${p || 'unknown'}</span>`;
+}
+function confidenceBadge(c) {
+  if (!c) return '';
+  return badge(c, 'badge-confidence');
+}
+function evidenceBadge(g) {
+  if (!g) return '';
+  const cls = {A: 'badge-critical', B: 'badge-high', C: 'badge-medium', D: 'badge-low'};
+  return badge('E' + g, cls[g] || 'badge-low');
+}
+function australiaBadge() { return badge('AU', 'badge-australia'); }
+function esc(s) {
+  if (!s) return '';
+  return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/\"/g,'&quot;');
+}
+
+/**
+ * Render sources as clickable hyperlinks.
+ * Accepts:
+ *   - Array of URL strings: ["https://example.com/report"]
+ *   - Array of text+URL objects: [{url:"https://...", label:"Report Name"}]
+ *   - Array of mixed: ["https://example.com", "Text description (no link)"]
+ *   - Single string
+ *   - Single object
+ */
+function renderSourceLinks(src) {
+  if (!src) return '';
+  const arr = Array.isArray(src) ? src : [src];
+  if (arr.length === 0) return '';
+  const links = arr.map(s => {
+    if (typeof s === 'string') {
+      // Is it a URL?
+      if (s.startsWith('http://') || s.startsWith('https://')) {
+        return `<a href="${esc(s)}" target="_blank" rel="noopener">${esc(s.replace(/^https?:\/\//, ''))}</a>`;
+      }
+      // Try to extract URL from text like "Title — https://..." or "Title (https://...)"
+      const urlMatch = s.match(/https?:\/\/[^\s,;)]+/);
+      if (urlMatch) {
+        const url = urlMatch[0];
+        const label = s.replace(url, '').replace(/[\s—–\-—,;()]*$/, '').trim();
+        return `<a href="${esc(url)}" target="_blank" rel="noopener">${esc(label || url.replace(/^https?:\/\//, ''))}</a>`;
+      }
+      return `<span class="src-text">🔗 ${esc(s)}</span>`;
+    }
+    // Object with url/link and label/title/name
+    const url = s.url || s.link || '';
+    const label = s.label || s.title || s.name || url;
+    if (url && (url.startsWith('http://') || url.startsWith('https://'))) {
+      return `<a href="${esc(url)}" target="_blank" rel="noopener">${esc(label)}</a>`;
+    }
+    return `<span class="src-text">🔗 ${esc(label)}</span>`;
+  });
+  return `<div class="source-links">${links.join('')}</div>`;
+}
+
+// ─── Template Renders ───
+
+function countItems(value) {
+  return Array.isArray(value) ? value.length : 0;
+}
+
+function postureTone(value) {
+  const v = String(value || '').toLowerCase();
+  if (v.includes('high') || v.includes('elevated') || v.includes('tightening') || v.includes('critical')) return 'red';
+  if (v.includes('medium') || v.includes('moderate') || v.includes('watch')) return 'yellow';
+  if (v.includes('low') || v.includes('stable') || v.includes('improving')) return 'green';
+  return 'green';
+}
+
+function renderHome() {
+  const b = data.executiveBrief || {};
+  const d = data.trustDashboard || {};
+  const devs = b.topDevelopments || [];
+  const alerts = b.criticalAlerts || [];
+  const actions = b.recommendedActions || {};
+  const questions = b.openQuestions || [];
+  const sourcesCount = countItems(data.sources);
+  const riskCount = countItems(data.risks);
+  const regCount = countItems(data.regulations);
+  const stdCount = countItems(data.standards);
+  const incCount = countItems(data.incidents);
+  const vendorCount = countItems(data.vendors);
+  const actionCount = Object.values(actions).reduce((sum, arr) => sum + countItems(arr), 0);
+  const hasData = devs.length > 0 || alerts.length > 0;
+  const posture = d.riskPosture || 'Building';
+
+  let html = `<div class="section active" id="section-home">`;
+  html += `<div class="command-rail"><span>Terminal live</span><span>${riskCount} risks</span><span>${regCount} regulations</span><span>${vendorCount} vendors</span><span>${sourcesCount} evidence items</span></div>`;
+  html += `<div class="hero-panel">`;
+  html += `<div class="hero-copy">`;
+  html += `<div class="hero-kicker">Terminal overview</div>`;
+  html += `<h2 class="hero-title">AI Trust Intelligence Terminal</h2>`;
+  html += `<p class="hero-lead">Track posture, regulatory change, security exposure, and vendor risk in a Bloomberg-style market board built for fast scanning and evidence-led decisions.</p>`;
+  if (b.oneLiner) html += `<div class="one-liner hero-signal">${esc(b.oneLiner)}</div>`;
+  html += `<div class="hero-actions">`;
+  html += `<a class="hero-button hero-button-primary" href="#section-dashboard" onclick="navigate('dashboard');return false;">Open market pulse</a>`;
+  html += `<a class="hero-button hero-button-secondary" href="#section-sources" onclick="navigate('sources');return false;">Review evidence</a>`;
+  html += `<a class="hero-button hero-button-ghost" href="#section-risks" onclick="navigate('risks');return false;">View risk queue</a>`;
+  html += `</div>`;
+  html += `<div class="hero-pills">`;
+  html += `<span class="hero-pill">Updated ${esc(data.lastUpdated || 'now')}</span>`;
+  html += `<span class="hero-pill">Posture ${esc(posture)}</span>`;
+  html += `<span class="hero-pill">${actionCount} action items</span>`;
+  if (d.australiaSignal) html += `<span class="hero-pill">AU focus</span>`;
+  html += `</div>`;
+  html += `</div>`;
+  html += `<aside class="hero-aside">`;
+  html += `<div class="aside-card aside-card-accent"><div class="aside-label">Risk posture</div><div class="aside-value">${esc(posture)}</div><div class="aside-note">${esc(d.overallSignal || 'Signal board for the current research cycle.')}</div></div>`;
+  html += `<div class="hero-stats">`;
+  html += `<div class="stat-card"><div class="stat-label">Risks</div><div class="stat-value">${riskCount}</div><div class="stat-footnote">tracked</div></div>`;
+  html += `<div class="stat-card"><div class="stat-label">Regulations</div><div class="stat-value">${regCount}</div><div class="stat-footnote">in view</div></div>`;
+  html += `<div class="stat-card"><div class="stat-label">Sources</div><div class="stat-value">${sourcesCount}</div><div class="stat-footnote">reviewed</div></div>`;
+  html += `<div class="stat-card"><div class="stat-label">Vendors</div><div class="stat-value">${vendorCount}</div><div class="stat-footnote">mapped</div></div>`;
+  html += `</div>`;
+  html += `<div class="hero-mini-grid">`;
+  html += `<div class="mini-card"><span class="mini-label">Incidents</span><strong>${incCount}</strong><span>tracked failure modes</span></div>`;
+  html += `<div class="mini-card"><span class="mini-label">Standards</span><strong>${stdCount}</strong><span>framework references</span></div>`;
+  html += `</div>`;
+  html += `</aside>`;
+  html += `</div>`;
+
+  html += `<div class="section-strip">`;
+  html += `<a href="#section-dashboard" onclick="navigate('dashboard');return false;">Market pulse</a>`;
+  html += `<a href="#section-risks" onclick="navigate('risks');return false;">Risk queue</a>`;
+  html += `<a href="#section-regulations" onclick="navigate('regulations');return false;">Regulatory radar</a>`;
+  html += `<a href="#section-security" onclick="navigate('security');return false;">Threat radar</a>`;
+  html += `<a href="#section-australia" onclick="navigate('australia');return false;">Australia desk</a>`;
+  html += `<a href="#section-global" onclick="navigate('global');return false;">Global watch</a>`;
+  html += `<a href="#section-vendors" onclick="navigate('vendors');return false;">Vendor map</a>`;
+  html += `<a href="#section-sources" onclick="navigate('sources');return false;">Evidence base</a>`;
+  html += `</div>`;
+
+  if (!hasData) {
+    html += `<div class="empty-state"><div class="empty-icon">⌁</div><h3>Waiting for the first research cycle</h3><p>The structure is ready. Once the nightly job runs, this section will fill with source-backed intelligence.</p></div>`;
+  }
+
+  // Critical alerts
+  if (alerts.length > 0) {
+    html += `<div class="section-block"><h3 style="font-size:18px;font-weight:600;margin:0 0 12px">Priority Alerts</h3><div class="alert-grid">`;
+    for (const a of alerts) {
+      const title = typeof a === 'string' ? 'Alert' : (a.title || 'Alert');
+      const text = typeof a === 'string' ? a : (a.text || '');
+      const src = typeof a === 'object' ? (a.sources || a.source) : null;
+      html += `<div class="alert-critical"><h4>🚨 ${esc(title)}</h4><p>${esc(text)}</p>`;
+      if (src) html += renderSourceLinks(src);
+      html += `</div>`;
+    }
+    html += `</div></div>`;
+  }
+
+  // Top developments
+  if (devs.length > 0) {
+    html += `<div class="section-block"><h3 style="font-size:18px;font-weight:600;margin:0 0 12px">Top Developments</h3><div class="development-grid">`;
+    devs.forEach((d, i) => {
+      html += `<div class="top-dev-item">`;
+      html += `<span class="num">#${i+1}</span>`;
+      html += `<h4>${esc(d.title || d.what || '')}</h4>`;
+      html += `<p>${esc(d.text || d.whyMatters || d.summary || d.description || d.what || '')}</p>`;
+      html += `<div class="meta">`;
+      if (d.priority) html += priorityBadge(d.priority);
+      if (d.confidence) html += confidenceBadge(d.confidence);
+      if (d.australiaRelevance) html += australiaBadge();
+      html += `</div>`;
+      if (d.recommendedAction || d.action) {
+        html += `<p style="margin-top:6px;font-size:12px;color:var(--accent)"><strong>→ ${esc(d.recommendedAction || d.action)}</strong></p>`;
+      }
+      if (d.sources) html += renderSourceLinks(d.sources);
+      html += `</div>`;
+    });
+    html += `</div></div>`;
+  }
+
+  // Actions by audience
+  const hasActions = Object.values(actions).some(a => a && a.length > 0);
+  if (hasActions) {
+    html += `<h3 style="font-size:18px;font-weight:600;margin:24px 0 16px">Recommended Actions</h3>`;
+    const labels = {
+      boards: 'Boards', executives: 'Executives', riskCompliance: 'Risk and Compliance',
+      securityTeams: 'Security Teams', productEngineering: 'Product and Engineering',
+      procurement: 'Procurement', policymakers: 'Policymakers', investors: 'Investors'
+    };
+    for (const [key, label] of Object.entries(labels)) {
+      const items = actions[key];
+      if (items && items.length > 0) {
+        html += `<div class="rec-group"><h4>${label}</h4><ul>`;
+        items.forEach(item => {
+          html += `<li>${esc(item)}</li>`;
+        });
+        html += `</ul></div>`;
+      }
+    }
+  }
+
+  // Open questions
+  if (questions.length > 0) {
+    html += `<h3 style="font-size:18px;font-weight:600;margin:24px 0 12px">Open Questions</h3>`;
+    html += `<ul class="questions-list">`;
+    questions.forEach(q => {
+      html += `<li>${esc(typeof q === 'string' ? q : q.question || q.text || '')}</li>`;
+    });
+    html += `</ul>`;
+  }
+
+  html += `</div>`;
+  return html;
+}
+
+function renderDashboard() {
+  const d = data.trustDashboard || {};
+  const hasData = (d.emergingRisks && d.emergingRisks.length > 0) ||
+                  (d.improvingAreas && d.improvingAreas.length > 0) ||
+                  (d.uncertainAreas && d.uncertainAreas.length > 0);
+  let html = `<div class="section" id="section-dashboard"><div class="section-header"><h2>Market Pulse</h2><p>At-a-glance view of posture, emerging risk, and signal direction across the intelligence stack.</p></div>`;
+
+  if (!hasData) {
+    html += `<div class="empty-state"><div class="empty-icon">📊</div><p>Awaiting first research cycle. Check back after 4:00 AM AEDT.</p></div>`;
+    html += `</div>`;
+    return html;
+  }
+
+  html += `<div class="one-liner">${esc(d.overallSignal || '')}</div>`;
+
+  html += `<div class="dashboard-grid">`;
+  html += `<div class="stat-card"><div class="stat-value" style="color:var(--${postureTone(d.riskPosture)})">${esc(d.riskPosture || '—')}</div><div class="stat-label">Risk Posture</div></div>`;
+  html += `<div class="stat-card"><div class="stat-value" style="color:var(--accent)">${d.emergingRisks ? d.emergingRisks.length : 0}</div><div class="stat-label">Emerging Risks</div></div>`;
+  html += `<div class="stat-card"><div class="stat-value" style="color:var(--green)">${d.improvingAreas ? d.improvingAreas.length : 0}</div><div class="stat-label">Improving Areas</div></div>`;
+  html += `<div class="stat-card"><div class="stat-value" style="color:var(--yellow)">${d.uncertainAreas ? d.uncertainAreas.length : 0}</div><div class="stat-label">Uncertain Areas</div></div>`;
+  html += `</div>`;
+
+  if (d.emergingRisks && d.emergingRisks.length > 0) {
+    html += `<h3 style="font-size:16px;font-weight:600;margin:16px 0 8px">🚨 Emerging Risks</h3>`;
+    d.emergingRisks.forEach(r => {
+      const text = typeof r === 'string' ? r : (r.text || r.title || '');
+      const src = typeof r === 'object' ? (r.sources || r.source) : null;
+      html += `<div class="card"><div class="card-title">${esc(typeof r === 'string' ? '' : r.title || '')}</div><div class="card-text">${esc(text)}</div>`;
+      if (src) html += renderSourceLinks(src);
+      html += `</div>`;
+    });
+  }
+
+  if (d.improvingAreas && d.improvingAreas.length > 0) {
+    html += `<h3 style="font-size:16px;font-weight:600;margin:16px 0 8px">✅ Improving Areas</h3>`;
+    d.improvingAreas.forEach(a => {
+      const text = typeof a === 'string' ? a : (a.text || a.title || '');
+      const src = typeof a === 'object' ? (a.sources || a.source) : null;
+      html += `<div class="card"><div class="card-title">${esc(typeof a === 'string' ? '' : a.title || '')}</div><div class="card-text">${esc(text)}</div>`;
+      if (src) html += renderSourceLinks(src);
+      html += `</div>`;
+    });
+  }
+
+  html += `<div style="margin-top:20px;display:flex;flex-wrap:wrap;gap:20px">`;
+  if (d.australiaSignal) {
+    html += `<div style="flex:1;min-width:200px"><h4 style="font-size:14px;font-weight:600;margin-bottom:4px;color:var(--green)">🇦🇺 Australia Signal</h4><p style="font-size:13px;color:var(--text-muted)">${esc(d.australiaSignal)}</p></div>`;
+  }
+  if (d.globalSignal) {
+    html += `<div style="flex:1;min-width:200px"><h4 style="font-size:14px;font-weight:600;margin-bottom:4px;color:var(--accent)">🌐 Global Signal</h4><p style="font-size:13px;color:var(--text-muted)">${esc(d.globalSignal)}</p></div>`;
+  }
+  html += `</div>`;
+
+  html += `</div>`;
+  return html;
+}
+
+function renderRisks() {
+  const risks = data.risks || [];
+  const hasData = risks.length > 0;
+  let html = `<div class="section" id="section-risks"><div class="section-header"><h2>Active Risk Queue</h2><p>Prioritised AI risk queue with likelihood, impact, controls, and trend direction.</p>`;
+  html += `<span style="display:inline-block;margin-top:4px;font-size:13px;color:var(--text-dim)">${risks.length} tracked risks</span></div>`;
+
+  if (!hasData) {
+    html += `<div class="empty-state"><div class="empty-icon">⚠️</div><p>No risks tracked yet. The first nightly research cycle will populate the register.</p></div></div>`;
+    return html;
+  }
+
+  risks.forEach((r, i) => {
+    html += `<div class="risk-item">`;
+    html += `<div class="risk-header" onclick="toggleRisk(${i})">`;
+    html += `<div style="flex:1"><div class="risk-name">${esc(r.name || r.title || 'Risk ' + (i+1))}</div>`;
+    html += `<div class="risk-meta">`;
+    if (r.category) html += badge(r.category, 'badge-medium');
+    if (r.likelihood) html += badge('L:' + r.likelihood, 'badge-low');
+    if (r.impact) html += badge('I:' + r.impact, r.impact === 'High' || r.impact === 'Critical' ? 'badge-critical' : 'badge-high');
+    if (r.trend) html += badge(r.trend, r.trend === 'increasing' ? 'badge-critical' : r.trend === 'decreasing' ? 'badge-australia' : 'badge-medium');
+    if (r.confidence) html += confidenceBadge(r.confidence);
+    html += `</div></div>`;
+    html += `<span style="color:var(--text-dim);font-size:11px;cursor:pointer" onclick="toggleRisk(${i})">▼</span>`;
+    html += `</div>`;
+    html += `<div class="risk-detail" id="risk-${i}">`;
+    html += `<p><strong>Description:</strong> ${esc(r.description || '')}</p>`;
+    if (r.affectedStakeholders) html += `<p><strong>Affected:</strong> ${esc(typeof r.affectedStakeholders === 'string' ? r.affectedStakeholders : (Array.isArray(r.affectedStakeholders) ? r.affectedStakeholders.join(', ') : ''))}</p>`;
+    if (r.controls && r.controls.length > 0) html += `<p><strong>Controls:</strong> ${r.controls.map(c => esc(typeof c === 'string' ? c : c.name || c)).join(', ')}</p>`;
+    if (r.examples && r.examples.length > 0) html += `<p><strong>Examples:</strong> ${r.examples.map(e => esc(typeof e === 'string' ? e : e.text || e)).join('; ')}</p>`;
+    if (r.sources && r.sources.length > 0) {
+      html += `<p><strong>Sources:</strong></p>`;
+      html += renderSourceLinks(r.sources);
+    }
+    html += `</div>`;
+    html += `</div>`;
+  });
+
+  html += `</div>`;
+  return html;
+}
+
+function renderControls() {
+  const controls = data.controls || [];
+  const hasData = controls.length > 0;
+  let html = `<div class="section" id="section-controls"><div class="section-header"><h2>Control Desk</h2><p>Practical AI governance and security controls with implementation guidance.</p>`;
+  if (hasData) html += `<span style="display:inline-block;margin-top:4px;font-size:13px;color:var(--text-dim)">${controls.length} controls</span>`;
+  html += `</div>`;
+
+  if (!hasData) {
+    html += `<div class="empty-state"><div class="empty-icon">🛡️</div><p>Control library will be populated by the nightly research workflow.</p></div></div>`;
+    return html;
+  }
+
+  controls.forEach(c => {
+    html += `<div class="control-item">`;
+    html += `<div class="control-name">${esc(c.name || c.title || 'Control')}</div>`;
+    if (c.risk) html += `<div class="control-risk">Addresses: ${esc(c.risk)}</div>`;
+    html += `<div class="control-desc">${esc(c.description || '')}</div>`;
+    if (c.relatedTools && c.relatedTools.length > 0) {
+      html += `<div class="source-links" style="margin-top:8px">`;
+      c.relatedTools.forEach(t => html += `<span style="font-size:11px;color:var(--text-dim);padding:2px 6px;border:1px solid var(--border);border-radius:4px">🔧 ${esc(t)}</span>`);
+      html += `</div>`;
+    }
+    if (c.relatedStandards && c.relatedStandards.length > 0) {
+      html += `<div class="source-links" style="margin-top:4px">`;
+      c.relatedStandards.forEach(s => html += `<span style="font-size:11px;color:var(--text-dim);padding:2px 6px;border:1px solid var(--border);border-radius:4px">📐 ${esc(s)}</span>`);
+      html += `</div>`;
+    }
+    html += `</div>`;
+  });
+
+  html += `</div>`;
+  return html;
+}
+
+function renderIncidents() {
+  const incidents = data.incidents || [];
+  const hasData = incidents.length > 0;
+  let html = `<div class="section" id="section-incidents"><div class="section-header"><h2>Incident Log</h2><p>AI incidents, security failures, governance failures, and misuse cases.</p>`;
+  if (hasData) html += `<span style="display:inline-block;margin-top:4px;font-size:13px;color:var(--text-dim)">${incidents.length} tracked incidents</span>`;
+  html += `</div>`;
+
+  if (!hasData) {
+    html += `<div class="empty-state"><div class="empty-icon">🔴</div><p>No incidents tracked yet. The nightly research workflow will identify and log relevant incidents.</p></div></div>`;
+    return html;
+  }
+
+  incidents.forEach((inc, i) => {
+    html += `<div class="incident-item">`;
+    html += `<div class="incident-header" onclick="toggleIncident(${i})">`;
+    html += `<div class="incident-name">${esc(inc.name || inc.title || 'Incident')}</div>`;
+    html += `<div><span class="incident-date">${esc(inc.date || '')}</span> <span style="font-size:11px;margin-left:8px;color:var(--text-dim)">▼</span></div>`;
+    html += `</div>`;
+    html += `<div style="margin-top:4px">`;
+    if (inc.geography) html += badge(inc.geography, 'badge-medium');
+    if (inc.failureMode) html += badge(inc.failureMode, 'badge-high');
+    if (inc.impact) html += badge(inc.impact, 'badge-critical');
+    if (inc.confidence) html += confidenceBadge(inc.confidence);
+    html += `</div>`;
+    html += `<div class="incident-detail" id="incident-${i}">`;
+    html += `<p><strong>What happened:</strong> ${esc(inc.description || inc.what || '')}</p>`;
+    if (inc.rootCause) html += `<p><strong>Root cause:</strong> ${esc(inc.rootCause)}</p>`;
+    if (inc.lesson) html += `<p><strong>Lesson:</strong> ${esc(inc.lesson)}</p>`;
+    if (inc.controls && inc.controls.length > 0) html += `<p><strong>Controls that failed:</strong> ${inc.controls.map(c => esc(typeof c === 'string' ? c : c.name || c)).join(', ')}</p>`;
+    if (inc.sources && inc.sources.length > 0) {
+      html += `<p><strong>Sources:</strong></p>`;
+      html += renderSourceLinks(inc.sources);
+    }
+    html += `</div>`;
+    html += `</div>`;
+  });
+
+  html += `</div>`;
+  return html;
+}
+
+function renderRegulations() {
+  const regs = data.regulations || [];
+  const hasData = regs.length > 0;
+  let html = `<div class="section" id="section-regulations"><div class="section-header"><h2>Regulatory Radar</h2><p>AI laws, consultations, guidance, and enforcement actions across jurisdictions.</p>`;
+  if (hasData) html += `<span style="display:inline-block;margin-top:4px;font-size:13px;color:var(--text-dim)">${regs.length} tracked instruments</span>`;
+  html += `</div>`;
+
+  if (!hasData) {
+    html += `<div class="empty-state"><div class="empty-icon">⚖️</div><p>Regulatory tracker will be populated by the nightly research workflow.</p></div></div>`;
+    return html;
+  }
+
+  html += `<input class="search-bar" type="text" placeholder="Search regulations..." oninput="filterTable('regTable', this.value)">`;
+  html += `<table class="data-table" id="regTable"><thead><tr>`;
+  html += `<th>Jurisdiction</th><th>Title</th><th>Status</th><th>Date</th><th>Obligations</th></tr></thead><tbody>`;
+
+  regs.forEach((r, i) => {
+    html += `<tr onclick="toggleRegDetail(${i})" style="cursor:pointer">`;
+    html += `<td>${esc(r.jurisdiction || '')}</td>`;
+    html += `<td class="td-title">${esc(r.title || r.name || '')}</td>`;
+    html += `<td>${r.status ? badge(r.status, r.status === 'enacted' || r.status === 'in force' ? 'badge-australia' : r.status === 'proposed' || r.status === 'draft' ? 'badge-high' : 'badge-medium') : ''}</td>`;
+    html += `<td style="font-size:12px">${esc(r.date || '')}</td>`;
+    html += `<td style="font-size:12px">${esc((Array.isArray(r.obligations) ? r.obligations.join(', ') : (r.obligations || '')).substring(0, 80))}</td>`;
+    html += `</tr>`;
+    html += `<tr class="detail-row" id="regDetail-${i}"><td colspan="5"><div class="detail-content">`;
+    if (r.summary) html += `<p><strong>Summary:</strong> ${esc(r.summary)}</p>`;
+    if (r.affected) html += `<p><strong>Affected:</strong> ${esc(r.affected)}</p>`;
+    if (r.timeline) html += `<p><strong>Timeline:</strong> ${esc(r.timeline)}</p>`;
+    if (r.enforcementRisk) html += `<p><strong>Enforcement risk:</strong> ${esc(r.enforcementRisk)}</p>`;
+    if (r.australiaRelevance) html += `<p><strong>AU relevance:</strong> ${esc(r.australiaRelevance)}</p>`;
+    if (r.sources && r.sources.length > 0) {
+      html += `<p><strong>Sources:</strong></p>`;
+      html += renderSourceLinks(r.sources);
+    }
+    html += `</div></td></tr>`;
+  });
+
+  html += `</tbody></table></div>`;
+  return html;
+}
+
+function renderStandards() {
+  const stds = data.standards || [];
+  const hasData = stds.length > 0;
+  let html = `<div class="section" id="section-standards"><div class="section-header"><h2>Framework Library</h2><p>AI risk, assurance, governance, security, and evaluation frameworks.</p>`;
+  if (hasData) html += `<span style="display:inline-block;margin-top:4px;font-size:13px;color:var(--text-dim)">${stds.length} tracked standards</span>`;
+  html += `</div>`;
+
+  if (!hasData) {
+    html += `<div class="empty-state"><div class="empty-icon">📐</div><p>Standards tracker will be populated by the nightly research workflow.</p></div></div>`;
+    return html;
+  }
+
+  stds.forEach(s => {
+    html += `<div class="card">`;
+    html += `<div class="card-title">${esc(s.name || s.title || '')}`;
+    if (s.issuer) html += ` <span style="font-weight:400;color:var(--text-dim);font-size:13px">— ${esc(s.issuer)}</span>`;
+    html += `</div>`;
+    if (s.category) html += `<div style="margin-bottom:6px">${badge(s.category, 'badge-medium')}</div>`;
+    html += `<div class="card-text">${esc(s.description || '')}</div>`;
+    if (s.url) {
+      html += `<div style="margin-top:8px;font-size:12px"><a href="${esc(s.url)}" target="_blank" style="color:var(--accent);text-decoration:none">View standard →</a></div>`;
+    }
+    html += `</div>`;
+  });
+
+  html += `</div>`;
+  return html;
+}
+
+function renderSecurity() {
+  const sw = data.securityWatch || {};
+  const items = sw.items || [];
+  const advisories = sw.advisories || [];
+  const hasData = items.length > 0 || advisories.length > 0;
+  let html = `<div class="section" id="section-security"><div class="section-header"><h2>Threat Radar</h2><p>AI security developments, vulnerabilities, threats, and defensive trends.</p></div>`;
+
+  if (!hasData) {
+    html += `<div class="empty-state"><div class="empty-icon">🔒</div><p>Security watch will be updated by the nightly research workflow.</p></div></div>`;
+    return html;
+  }
+
+  if (sw.summary) html += `<div class="one-liner">${esc(sw.summary)}</div>`;
+
+  if (items.length > 0) {
+    html += `<h3 style="font-size:16px;font-weight:600;margin:16px 0 10px">Security Developments</h3>`;
+    items.forEach(item => {
+      const title = item.title || '';
+      const text = item.text || item.description || '';
+      const src = item.sources || item.source;
+      html += `<div class="watch-item"><h4>${esc(title)}</h4><p>${esc(text)}</p>`;
+      if (src) html += renderSourceLinks(src);
+      html += `</div>`;
+    });
+  }
+
+  if (advisories.length > 0) {
+    html += `<h3 style="font-size:16px;font-weight:600;margin:16px 0 10px">Security Advisories</h3>`;
+    advisories.forEach(a => {
+      const title = a.title || '';
+      const text = a.text || a.description || '';
+      const src = a.sources || a.source;
+      html += `<div class="watch-item"><h4>${esc(title)}</h4><p>${esc(text)}</p>`;
+      if (src) html += renderSourceLinks(src);
+      html += `</div>`;
+    });
+  }
+
+  html += `</div>`;
+  return html;
+}
+
+function renderAssurance() {
+  const aw = data.assuranceWatch || {};
+  const items = aw.items || [];
+  const hasData = items.length > 0;
+  let html = `<div class="section" id="section-assurance"><div class="section-header"><h2>Assurance Ledger</h2><p>Audits, evaluations, certification, testing, monitoring, and assurance developments.</p></div>`;
+
+  if (!hasData) {
+    html += `<div class="empty-state"><div class="empty-icon">✅</div><p>Assurance watch will be populated by the nightly research workflow.</p></div></div>`;
+    return html;
+  }
+
+  if (aw.summary) html += `<div class="one-liner">${esc(aw.summary)}</div>`;
+
+  items.forEach(item => {
+    const title = item.title || '';
+    const text = item.text || item.description || '';
+    const src = item.sources || item.source;
+    html += `<div class="watch-item"><h4>${esc(title)}</h4><p>${esc(text)}</p>`;
+    if (src) html += renderSourceLinks(src);
+    html += `</div>`;
+  });
+
+  html += `</div>`;
+  return html;
+}
+
+function renderAustralia() {
+  const au = data.australiaFocus || {};
+  const sections = ['regulatory', 'publicSector', 'enterprise', 'legalCompliance', 'standards', 'vendors', 'gaps'];
+  const labels = {
+    regulatory: 'Regulatory Developments', publicSector: 'Public Sector AI Governance',
+    enterprise: 'Enterprise Implications', legalCompliance: 'Legal & Compliance',
+    standards: 'Standards & Assurance', vendors: 'Relevant Vendors & Tools',
+    gaps: 'Gaps in AI Governance Maturity'
+  };
+  const hasData = sections.some(s => (au[s] || []).length > 0);
+  let html = `<div class="section" id="section-australia"><div class="section-header"><h2>🇦🇺 Australia Desk</h2><p>Australian AI governance, regulation, risks, and enterprise landscape.</p></div>`;
+
+  if (!hasData) {
+    html += `<div class="empty-state"><div class="empty-icon">🇦🇺</div><p>Australia section will be populated by the nightly research workflow, which prioritises Australian sources.</p></div></div>`;
+    return html;
+  }
+
+  if (au.summary) html += `<div class="one-liner">${esc(au.summary)}</div>`;
+
+  for (const s of sections) {
+    const items = au[s] || [];
+    if (items.length > 0) {
+      html += `<h3 style="font-size:16px;font-weight:600;margin:16px 0 8px">${labels[s]}</h3>`;
+      items.forEach(item => {
+        const text = typeof item === 'string' ? item : item.text || item.title || '';
+        const title = typeof item === 'string' ? '' : item.title || '';
+        const src = typeof item === 'object' ? (item.sources || item.source) : null;
+        html += `<div class="card">`;
+        if (title) html += `<div class="card-title">${esc(title)}</div>`;
+        html += `<div class="card-text">${esc(text)}</div>`;
+        if (src) html += renderSourceLinks(src);
+        html += `</div>`;
+      });
+    }
+  }
+
+  html += `</div>`;
+  return html;
+}
+
+function renderGlobal() {
+  const gw = data.globalWatch || {};
+  const regions = [
+    {key: 'us', label: '🇺🇸 United States'},
+    {key: 'eu', label: '🇪🇺 European Union'},
+    {key: 'uk', label: '🇬🇧 United Kingdom'},
+    {key: 'singapore', label: '🇸🇬 Singapore'},
+    {key: 'china', label: '🇨🇳 China'},
+    {key: 'oecdMultilateral', label: '🌐 OECD & Multilateral'},
+    {key: 'labs', label: '🤖 Major AI Labs'}
+  ];
+  const hasData = regions.some(r => gw[r.key] && gw[r.key].developments && gw[r.key].developments.length > 0);
+  let html = `<div class="section" id="section-global"><div class="section-header"><h2>🌐 Global Watchlist</h2><p>Global AI governance, regulatory, and ecosystem developments.</p></div>`;
+
+  if (!hasData) {
+    html += `<div class="empty-state"><div class="empty-icon">🌐</div><p>Global watch will be populated by the nightly research workflow.</p></div></div>`;
+    return html;
+  }
+
+  html += `<div class="region-grid">`;
+  for (const r of regions) {
+    const region = gw[r.key];
+    if (!region) continue;
+    const devs = region.developments || [];
+    html += `<div class="region-card">`;
+    html += `<h4>${r.label}</h4>`;
+    html += `<div class="region-summary">${esc(region.summary || 'No summary.')}</div>`;
+    for (const d of devs) {
+      const text = typeof d === 'string' ? d : (d.text || d.title || '');
+      const src = typeof d === 'object' ? (d.sources || d.source) : null;
+      html += `<div class="region-dev">${esc(text)}`;
+      if (src) html += renderSourceLinks(src);
+      html += `</div>`;
+    }
+    html += `</div>`;
+  }
+  html += `</div>`;
+
+  html += `</div>`;
+  return html;
+}
+
+function renderVendors() {
+  const vendors = data.vendors || [];
+  const hasData = vendors.length > 0;
+  let html = `<div class="section" id="section-vendors"><div class="section-header"><h2>🏪 Vendor Map</h2><p>AI governance, risk, security, assurance, and evaluation tools, platforms, and service providers.</p>`;
+  if (hasData) html += `<span style="display:inline-block;margin-top:4px;font-size:13px;color:var(--text-dim)">${vendors.length} tracked vendors/tools</span>`;
+  html += `</div>`;
+
+  if (!hasData) {
+    html += `<div class="empty-state"><div class="empty-icon">🏪</div><p>Vendor and tooling landscape will be populated by the nightly research workflow.</p></div></div>`;
+    return html;
+  }
+
+  html += `<input class="search-bar" type="text" placeholder="Search vendors, tools, categories..." oninput="filterCards('vendorGrid', this.value)">`;
+  html += `<div class="card-grid" id="vendorGrid">`;
+
+  vendors.forEach(v => {
+    html += `<div class="vendor-card">`;
+    html += `<div class="vendor-name">${esc(v.name || '')}`;
+    if (v.maturity) html += ` <span style="font-weight:400;font-size:11px;color:var(--text-dim)">(${esc(v.maturity)})</span>`;
+    html += `</div>`;
+    if (v.category) html += `<div class="vendor-cat">${esc(v.category)}</div>`;
+    if (v.description) html += `<div class="vendor-desc">${esc(v.description)}</div>`;
+    if (v.url) {
+      html += `<div class="vendor-url"><a href="${esc(v.url)}" target="_blank" rel="noopener">🌐 Visit website →</a></div>`;
+    }
+    html += `<div class="vendor-tags">`;
+    if (v.geography) html += badge(v.geography, 'badge-medium');
+    if (v.maturity) html += badge(v.maturity, v.maturity === 'mature' ? 'badge-australia' : v.maturity === 'emerging' ? 'badge-high' : 'badge-low');
+    if (v.useCase) html += badge(v.useCase, 'badge-confidence');
+    html += `</div>`;
+    if (v.strengths || v.weaknesses) {
+      html += `<div style="margin-top:8px;font-size:12px;color:var(--text-dim)">`;
+      if (v.strengths) html += `<span style="color:var(--green)">+ ${esc(v.strengths)}</span><br>`;
+      if (v.weaknesses) html += `<span style="color:var(--red)">− ${esc(v.weaknesses)}</span>`;
+      html += `</div>`;
+    }
+    // Vendor sources
+    if (v.sources) html += renderSourceLinks(v.sources);
+    html += `</div>`;
+  });
+
+  html += `</div></div>`;
+  return html;
+}
+
+function renderSources() {
+  const sources = data.sources || [];
+  const hasData = sources.length > 0;
+  let html = `<div class="section" id="section-sources"><div class="section-header"><h2>📚 Evidence Base</h2><p>All sources reviewed in nightly research cycles.</p>`;
+  if (hasData) html += `<span style="display:inline-block;margin-top:4px;font-size:13px;color:var(--text-dim)">${sources.length} sources</span>`;
+  html += `</div>`;
+
+  if (!hasData) {
+    html += `<div class="empty-state"><div class="empty-icon">📚</div><p>Sources will be populated by the nightly research workflow.</p></div></div>`;
+    return html;
+  }
+
+  html += `<input class="search-bar" type="text" placeholder="Search sources..." oninput="filterTable('srcTable', this.value)">`;
+  html += `<table class="data-table" id="srcTable"><thead><tr>`;
+  html += `<th>Title</th><th>Source</th><th>Date</th><th>Geography</th><th>Priority</th></tr></thead><tbody>`;
+
+  sources.forEach(s => {
+    const title = s.title || s.name || '';
+    const author = s.author || s.institution || '';
+    html += `<tr>`;
+    html += `<td class="td-title">${s.link ? `<a href="${esc(s.link)}" target="_blank" style="color:var(--accent);text-decoration:none">${esc(title)}</a>` : esc(title)}</td>`;
+    html += `<td style="font-size:12px">${esc(author)}</td>`;
+    html += `<td style="font-size:12px">${esc(s.date || '')}</td>`;
+    html += `<td>${s.geography ? badge(s.geography, 'badge-medium') : ''}</td>`;
+    html += `<td>${s.priority ? priorityBadge(s.priority) : ''}</td>`;
+    html += `</tr>`;
+  });
+
+  html += `</tbody></table></div>`;
+  return html;
+}
+
+function renderChangelog() {
+  const log = data.changelog || [];
+  let html = `<div class="section" id="section-changelog"><div class="section-header"><h2>📝 Change Log</h2><p>What changed across all tracked domains.</p>`;
+  if (log.length > 0) html += `<span style="display:inline-block;margin-top:4px;font-size:13px;color:var(--text-dim)">${log.length} entries</span>`;
+  html += `</div>`;
+
+  if (log.length === 0) {
+    html += `<div class="empty-state"><div class="empty-icon">📝</div><p>No changes yet. Changelog entries are added by each nightly run.</p></div></div>`;
+    return html;
+  }
+
+  log.forEach(entry => {
+    html += `<div class="changelog-item">`;
+    html += `<div class="changelog-date">${esc(entry.date || '')}</div>`;
+    html += `<div class="changelog-content"><h4>${esc(entry.title || '')}</h4><p>${esc(entry.details || entry.text || '')}</p></div>`;
+    html += `</div>`;
+  });
+
+  html += `</div>`;
+  return html;
+}
+
+// ─── Toggle Functions ───
+function toggleRisk(i) {
+  const el = document.getElementById('risk-' + i);
+  if (el) el.classList.toggle('open');
+}
+function toggleIncident(i) {
+  const el = document.getElementById('incident-' + i);
+  if (el) el.classList.toggle('open');
+}
+function toggleRegDetail(i) {
+  const el = document.getElementById('regDetail-' + i);
+  if (el) el.classList.toggle('open');
+}
+
+// ─── Filtering ───
+function filterTable(tableId, query) {
+  const q = query.toLowerCase();
+  const table = document.getElementById(tableId);
+  if (!table) return;
+  const rows = table.querySelectorAll('tbody tr:not(.detail-row)');
+  rows.forEach(row => {
+    const text = row.textContent.toLowerCase();
+    row.style.display = text.includes(q) ? '' : 'none';
+  });
+}
+
+function filterCards(gridId, query) {
+  const q = query.toLowerCase();
+  const grid = document.getElementById(gridId);
+  if (!grid) return;
+  const cards = grid.querySelectorAll('.vendor-card, .card');
+  cards.forEach(card => {
+    const text = card.textContent.toLowerCase();
+    card.style.display = text.includes(q) ? '' : 'none';
+  });
+}
+
+// ─── Load Data ───
+async function loadData() {
+  try {
+    const res = await fetch('/data.json');
+    if (!res.ok) throw new Error('HTTP ' + res.status);
+    data = await res.json();
+    renderAll();
+  } catch (e) {
+    document.getElementById('loading').innerHTML = `<p style="color:var(--red)">⚠️ Failed to load intelligence data. The site may still be deploying. Try refreshing in a moment.</p>`;
+    console.error('Data load error:', e);
+    // Try inline fallback
+    try {
+      const fallbackRes = await fetch('data.json');
+      if (fallbackRes.ok) data = await fallbackRes.json();
+      renderAll();
+    } catch(e2) {
+      console.error('Fallback also failed:', e2);
+    }
+  }
+}
+
+function renderAll() {
+  document.getElementById('loading').style.display = 'none';
+  const container = document.getElementById('sections');
+  container.innerHTML = renderHome() + renderDashboard() + renderRisks() + renderRegulations() + renderSecurity() + renderAssurance() + renderAustralia() + renderGlobal() + renderVendors() + renderControls() + renderIncidents() + renderSources() + renderChangelog();
+
+
+  // Restore section from hash
+  const hash = location.hash.replace('#', '');
+  if (hash) navigate(hash);
+}
+
+// ─── Init ───
+loadData();
+</script>
+</body>
+</html>
