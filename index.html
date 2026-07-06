@@ -1854,6 +1854,7 @@ function renderControlList() {
     const tags = [...(c.relatedStandards || []).map(s => ['📐', s]), ...(c.relatedTools || []).map(t => ['🔧', t])];
     if (tags.length) b += `<div class="meta-row">${tags.slice(0, 8).map(([ic, t]) => badge(ic + ' ' + (String(t).length > 46 ? String(t).slice(0, 44) + '…' : t), 'b-dim')).join('')}</div>`;
     b += lens(c.soWhat);
+    if (c.sources && c.sources.length) b += renderSourceLinks(c.sources);
     b += `</div></div>`;
     return b;
   }).join('');

@@ -3916,2228 +3916,1365 @@
  ],
  "controls": [
   {
-   "name": "AI Use Case Inventory and Risk Classification",
-   "risk": "Regulatory Fragmentation Risk",
-   "description": "Comprehensive cataloguing of all AI use cases across the organisation with classification by risk level (minimal, limited, high-risk, unacceptable per EU AI Act or equivalent).",
-   "implementation": "Build and maintain a register of all AI systems, their purpose, data inputs, decisions made, and affected stakeholders. Classify by risk tier. Review quarterly.",
+   "name": "AI policy, approved and reviewed",
+   "nistFunction": "GOVERN",
+   "iso42001Area": "A.2 AI policies",
+   "risk": "Governance and accountability risk from ungoverned AI adoption",
+   "maturity": "Established",
+   "description": "A management-approved policy for developing and using AI, aligned with organisational strategy, risk appetite, and other policies, reviewed on a defined cycle.",
+   "implementation": "Draft against ISO 42001 A.2; have the executive owner and board approve; publish internally; set an annual review trigger plus event-driven review on major regulatory change.",
    "owner": "Chief Risk Officer / Head of AI Governance",
-   "evidenceRequired": "AI inventory register with risk classifications, review dates, and change history",
-   "testingMethod": "Quarterly audit of AI inventory completeness and classification accuracy",
-   "frequency": "Quarterly",
-   "maturity": "Emerging",
+   "testingMethod": "Check approval records, version history, and review-cycle evidence; interview staff for awareness.",
+   "frequency": "Annual review",
+   "evidenceRequired": "Approved policy, review log, board minute",
    "relatedStandards": [
-    "NIST AI RMF Govern/Map functions",
-    "EU AI Act risk classification"
+    "ISO 42001 A.2.2-A.2.4",
+    "NIST AI RMF GOVERN 1",
+    "AU VAISS Guardrail 1"
    ],
    "relatedTools": [],
-   "limitations": "Requires organisational commitment and resources. May miss shadow AI deployments.",
-   "id": "ai-use-case-inventory-and-risk-classification",
-   "nistFunction": "MAP",
-   "iso42001Area": "A.4 Resources"
+   "sources": [
+    "https://www.iso.org/standard/42001",
+    "https://www.industry.gov.au/publications/voluntary-ai-safety-standard/10-guardrails"
+   ],
+   "soWhat": "The first artifact any auditor, regulator, or enterprise customer asks for — without it every other control looks improvised.",
+   "id": "ai-policy-approved-and-reviewed",
+   "firstSeen": "2026-07-07",
+   "lastUpdated": "2026-07-07",
+   "status": "new"
   },
   {
-   "name": "AI Acceptable-Use Policy",
-   "risk": "Shadow AI and Ungoverned AI Adoption",
-   "description": "Organisational policy defining permitted and prohibited AI uses, data handling requirements, approval workflows, and consequences for non-compliance.",
-   "implementation": "Develop and communicate policy covering: approved AI tools, prohibited uses (e.g., sensitive data input), employee responsibilities, reporting obligations, and enforcement mechanisms.",
-   "owner": "CISO / General Counsel",
-   "evidenceRequired": "Published policy, employee acknowledgement records, training completion records",
-   "testingMethod": "Periodic employee awareness testing and monitoring for unauthorised AI tool usage",
-   "frequency": "Annual review with continuous monitoring",
+   "name": "AI acceptable-use standard for staff",
+   "nistFunction": "GOVERN",
+   "iso42001Area": "A.2 AI policies",
+   "risk": "Shadow AI and ungoverned adoption risk",
    "maturity": "Established",
-   "relatedStandards": [],
-   "relatedTools": [
-    "AI discovery/SaaS management tools",
-    "Data loss prevention (DLP) systems"
-   ],
-   "limitations": "Cannot prevent all shadow AI use. Requires technical controls (DLP, network monitoring) for enforcement.",
-   "id": "ai-acceptable-use-policy",
-   "nistFunction": "GOVERN",
-   "iso42001Area": "A.2 AI policies"
-  },
-  {
-   "name": "MCP SDK Version Audit and Patching",
-   "risk": "MCP SDK Supply Chain Vulnerability (CVE-2026-30624)",
-   "description": "Inventory all MCP servers and SDK versions across the organisation. Apply available patches from Anthropic. Monitor for new advisories. The architectural nature of the flaw means version patching is a necessary but potentially insufficient control.",
-   "implementation": "Automated scanning for MCP SDK versions; dependency management with version pinning; patch management SLA",
-   "owner": "Security Team / Engineering Lead",
-   "testingMethod": "Automated dependency scanning; penetration testing of MCP server deployments",
-   "frequency": "Continuous (scanning) / Event-driven (patching)",
-   "maturity": "Standard",
+   "description": "Rules for what staff may and may not do with AI tools: approved tools, prohibited data, disclosure expectations, and consequences.",
+   "implementation": "Publish an acceptable-use standard covering public chatbots, coding agents, and uploads of client or personal data; pair with an approved-tools register and a fast approval path so the safe route is the easy route.",
+   "owner": "CISO / HR",
+   "testingMethod": "Sample staff attestations; test that prohibited flows (e.g. pasting client data into unapproved tools) are blocked or detected.",
+   "frequency": "Annual refresh; onboarding for all new staff",
+   "evidenceRequired": "Standard, attestation records, DLP alerts",
    "relatedStandards": [
-    "NIST CSF 2.0 (Vulnerability Management)",
-    "OWASP TOP 10 (A06:2021)"
+    "ISO 42001 A.2.2 / A.9.2",
+    "CSA AICM: Human Resources",
+    "NIST AI RMF GOVERN 4"
    ],
-   "relatedTools": [
-    "GitHub Dependabot",
-    "Snyk",
-    "Trivy",
-    "kontext-cli"
+   "relatedTools": [],
+   "sources": [
+    "https://cloudsecurityalliance.org/artifacts/ai-controls-matrix-v1-1",
+    "https://www.iso.org/standard/42001"
    ],
-   "limitations": "Architectural fix may require MCP protocol redesign; version patching is partial mitigation",
-   "id": "mcp-sdk-version-audit-and-patching",
-   "nistFunction": "MANAGE",
-   "iso42001Area": "A.6 System life cycle"
+   "soWhat": "Shadow AI is found in every engagement — an enforced acceptable-use standard plus an easy approval path is the control that actually changes behaviour.",
+   "id": "ai-acceptable-use-standard-for-staff",
+   "firstSeen": "2026-07-07",
+   "lastUpdated": "2026-07-07",
+   "status": "new"
   },
   {
-   "name": "MCP Server Network Segmentation",
-   "risk": "MCP SDK Supply Chain Vulnerability (CVE-2026-30624)",
-   "description": "Deploy MCP servers in isolated network segments with strict egress controls. Prevent lateral movement from compromised MCP endpoints. Implement zero-trust networking for agent-to-server communication.",
-   "implementation": "Network microsegmentation; egress filtering; mTLS for agent-server authentication",
-   "owner": "Network Security Team",
-   "testingMethod": "Network segmentation testing; penetration testing from compromised MCP server",
+   "name": "Named AI accountable executive and RACI",
+   "nistFunction": "GOVERN",
+   "iso42001Area": "A.3 Internal organization",
+   "risk": "Governance and accountability risk",
+   "maturity": "Established",
+   "description": "A named senior owner for AI risk with documented roles and responsibilities across the AI life cycle, including who can approve, pause, or retire a system.",
+   "implementation": "Assign an accountable executive; build a RACI covering development, deployment, monitoring, and incident response; wire it into position descriptions and delegations.",
+   "owner": "CEO / Board",
+   "testingMethod": "Verify the RACI exists, names real people, and matches delegations; test with a scenario walkthrough.",
+   "frequency": "Review on org change; at least annually",
+   "evidenceRequired": "RACI, delegation instrument, position descriptions",
+   "relatedStandards": [
+    "ISO 42001 A.3.2",
+    "NIST AI RMF GOVERN 2",
+    "AU VAISS Guardrail 1"
+   ],
+   "relatedTools": [],
+   "sources": [
+    "https://www.iso.org/standard/42001",
+    "https://www.industry.gov.au/publications/voluntary-ai-safety-standard/10-guardrails"
+   ],
+   "soWhat": "APRA's central complaint is that no one owns AI risk — a named executive with a real RACI answers the board-accountability question before it's asked.",
+   "id": "named-ai-accountable-executive-and-raci",
+   "firstSeen": "2026-07-07",
+   "lastUpdated": "2026-07-07",
+   "status": "new"
+  },
+  {
+   "name": "AI concern and whistleblowing channel",
+   "nistFunction": "GOVERN",
+   "iso42001Area": "A.3 Internal organization",
+   "risk": "Governance and safety-culture risk",
+   "maturity": "Emerging",
+   "description": "A protected route for staff to report AI concerns — unsafe behaviour, misuse, ethics issues — with triage and feedback loops.",
+   "implementation": "Extend the existing whistleblowing channel to explicitly cover AI concerns; train triage staff; report themes to the AI governance committee.",
+   "owner": "Chief Risk Officer",
+   "testingMethod": "Test the channel end-to-end with a synthetic concern; check triage SLAs and closure records.",
+   "frequency": "Continuous; quarterly reporting",
+   "evidenceRequired": "Channel records, triage log, committee minutes",
+   "relatedStandards": [
+    "ISO 42001 A.3.3",
+    "NIST AI RMF GOVERN 4.3"
+   ],
+   "relatedTools": [],
+   "sources": [
+    "https://www.iso.org/standard/42001"
+   ],
+   "soWhat": "Frontier-lab incidents keep showing that staff knew first — a working concerns channel is cheap early warning.",
+   "id": "ai-concern-and-whistleblowing-channel",
+   "firstSeen": "2026-07-07",
+   "lastUpdated": "2026-07-07",
+   "status": "new"
+  },
+  {
+   "name": "Board AI literacy and challenge programme",
+   "nistFunction": "GOVERN",
+   "iso42001Area": "A.3 Internal organization",
+   "risk": "Board oversight and governance risk",
+   "maturity": "Emerging",
+   "description": "Structured board education on AI capability, risk, and obligations, so directors can credibly challenge management on AI decisions.",
+   "implementation": "Run board sessions on the AI inventory, top risks, and obligations calendar; provide a standing AI risk dashboard; document challenge in minutes.",
+   "owner": "Company Secretary / CRO",
+   "testingMethod": "Review board papers and minutes for evidence of informed challenge.",
+   "frequency": "Half-yearly",
+   "evidenceRequired": "Board pack, minutes, attendance",
+   "relatedStandards": [
+    "NIST AI RMF GOVERN 2 / 3",
+    "APRA CPS 510 direction",
+    "AU VAISS Guardrail 1"
+   ],
+   "relatedTools": [],
+   "sources": [
+    "https://www.apra.gov.au/news-and-publications/apra-letter-to-industry-artificial-intelligence-ai",
+    "https://www.industry.gov.au/publications/voluntary-ai-safety-standard/10-guardrails"
+   ],
+   "soWhat": "Regulators now read board minutes for AI challenge — this control creates the evidence they're looking for.",
+   "id": "board-ai-literacy-and-challenge-programme",
+   "firstSeen": "2026-07-07",
+   "lastUpdated": "2026-07-07",
+   "status": "new"
+  },
+  {
+   "name": "Regulatory obligations register and change watch",
+   "nistFunction": "GOVERN",
+   "iso42001Area": "A.2 AI policies",
+   "risk": "Regulatory fragmentation and compliance risk",
+   "maturity": "Established",
+   "description": "A living register of AI-relevant legal obligations (EU AI Act, APP 1 ADM, sector rules) with owners, deadlines, and a watch process for change.",
+   "implementation": "Stand up an obligations register keyed to jurisdictions and systems; assign owners; review the Horizon calendar monthly and re-baseline on regulatory change.",
+   "owner": "General Counsel / Compliance",
+   "testingMethod": "Sample obligations for currency and ownership; reconcile against the compliance calendar.",
+   "frequency": "Monthly watch; quarterly full review",
+   "evidenceRequired": "Obligations register, review minutes, deadline calendar",
+   "relatedStandards": [
+    "ISO 42001 A.2.3",
+    "NIST AI RMF GOVERN 1.1",
+    "EU AI Act",
+    "OAIC APP 1"
+   ],
+   "relatedTools": [],
+   "sources": [
+    "https://www.oaic.gov.au/privacy/australian-privacy-principles",
+    "https://www.nist.gov/itl/ai-risk-management-framework"
+   ],
+   "soWhat": "Turns regulatory noise into a dated work plan — the same artifact this site's Horizon section renders.",
+   "id": "regulatory-obligations-register-and-change-watch",
+   "firstSeen": "2026-07-07",
+   "lastUpdated": "2026-07-07",
+   "status": "new"
+  },
+  {
+   "name": "AI conformity records and audit trail",
+   "nistFunction": "GOVERN",
+   "iso42001Area": "A.2 AI policies",
+   "risk": "Compliance evidence and audit-readiness risk",
+   "maturity": "Emerging",
+   "description": "Records demonstrating each guardrail and obligation is met, maintained so a third party could assess compliance without archaeology.",
+   "implementation": "Define an evidence map per obligation (what artifact, where, who maintains); store centrally with retention rules; index by system.",
+   "owner": "Compliance / Internal Audit",
+   "testingMethod": "Pick three obligations and pull the evidence pack cold — time how long it takes.",
+   "frequency": "Continuous; annual audit",
+   "evidenceRequired": "Evidence index, sampled artifacts, audit report",
+   "relatedStandards": [
+    "AU VAISS Guardrail 9",
+    "ISO 42001 Clause 9",
+    "CSA AICM: Audit and Assurance"
+   ],
+   "relatedTools": [],
+   "sources": [
+    "https://www.industry.gov.au/publications/voluntary-ai-safety-standard/10-guardrails",
+    "https://cloudsecurityalliance.org/artifacts/ai-controls-matrix-v1-1"
+   ],
+   "soWhat": "The difference between being compliant and being able to prove it in a week — sell readiness assessments against this gap.",
+   "id": "ai-conformity-records-and-audit-trail",
+   "firstSeen": "2026-07-07",
+   "lastUpdated": "2026-07-07",
+   "status": "new"
+  },
+  {
+   "name": "AI transparency statement, published and maintained",
+   "nistFunction": "GOVERN",
+   "iso42001Area": "A.8 Interested-party info",
+   "risk": "Transparency and public-trust risk",
+   "maturity": "Established",
+   "description": "A public statement describing how the organisation uses AI, its safeguards, and contact points — mandatory for Australian government agencies, best practice elsewhere.",
+   "implementation": "Publish per the DTA policy pattern (uses, oversight, accountable official); refresh whenever material uses change; link from the privacy policy.",
+   "owner": "Accountable AI executive",
+   "testingMethod": "Diff the statement against the AI inventory for coverage; check the update log.",
+   "frequency": "Review quarterly; update on material change",
+   "evidenceRequired": "Published statement, update log, inventory reconciliation",
+   "relatedStandards": [
+    "DTA AI transparency statement",
+    "AU VAISS Guardrail 6",
+    "ISO 42001 A.8.5"
+   ],
+   "relatedTools": [],
+   "sources": [
+    "https://www.dta.gov.au/ai-transparency-statement",
+    "https://www.industry.gov.au/publications/voluntary-ai-safety-standard/10-guardrails"
+   ],
+   "soWhat": "Agencies have the obligation; enterprises get the trust dividend — reconciling statement vs inventory is a fast, high-value review.",
+   "id": "ai-transparency-statement-published-and-maintained",
+   "firstSeen": "2026-07-07",
+   "lastUpdated": "2026-07-07",
+   "status": "new"
+  },
+  {
+   "name": "ADM transparency disclosure (APP 1.7-1.9)",
+   "nistFunction": "GOVERN",
+   "iso42001Area": "A.8 Interested-party info",
+   "risk": "Regulatory compliance risk — automated decision-making",
+   "maturity": "Established",
+   "description": "Privacy-policy disclosure of the kinds of personal information used in automated decisions that affect rights or interests, and the kinds of decisions made — commencing 10 December 2026.",
+   "implementation": "Inventory ADM uses; classify which affect rights/interests; draft disclosures against OAIC guidance; update the privacy policy before commencement.",
+   "owner": "Privacy Officer",
+   "testingMethod": "Trace each rights-affecting ADM use to a specific disclosure; legal review sign-off.",
+   "frequency": "Before 2026-12-10, then on ADM change",
+   "evidenceRequired": "ADM inventory, privacy-policy diff, legal sign-off",
+   "relatedStandards": [
+    "OAIC APP 1.7-1.9",
+    "AU Privacy Act reforms",
+    "ISO 42001 A.8.2"
+   ],
+   "relatedTools": [],
+   "sources": [
+    "https://www.oaic.gov.au/privacy/australian-privacy-principles"
+   ],
+   "soWhat": "A dated, enforceable obligation with a fixed commencement — the most concrete AI compliance deliverable in the Australian market right now.",
+   "id": "adm-transparency-disclosure-app-1-7-1-9",
+   "firstSeen": "2026-07-07",
+   "lastUpdated": "2026-07-07",
+   "status": "new"
+  },
+  {
+   "name": "Contestability and human appeal route",
+   "nistFunction": "GOVERN",
+   "iso42001Area": "A.8 Interested-party info",
+   "risk": "Fairness and consumer-harm risk from automated decisions",
+   "maturity": "Established",
+   "description": "A published process for people affected by AI-influenced decisions to challenge the outcome and reach a human with authority to change it.",
+   "implementation": "Add an appeal path to every rights-affecting decision flow; staff it with humans who can overturn; track volumes and overturn rates.",
+   "owner": "Head of Customer / Ombudsman liaison",
+   "testingMethod": "Mystery-shop the appeal route; measure time-to-human and overturn handling.",
+   "frequency": "Continuous; quarterly metrics",
+   "evidenceRequired": "Process doc, appeal metrics, overturn samples",
+   "relatedStandards": [
+    "AU VAISS Guardrail 7",
+    "ISO 42001 A.8.3",
+    "EU AI Act Art. 86 direction"
+   ],
+   "relatedTools": [],
+   "sources": [
+    "https://www.industry.gov.au/publications/voluntary-ai-safety-standard/10-guardrails"
+   ],
+   "soWhat": "Overturn rates are the single best early-warning metric for model harm — and regulators treat a dead-end appeal route as an aggravating factor.",
+   "id": "contestability-and-human-appeal-route",
+   "firstSeen": "2026-07-07",
+   "lastUpdated": "2026-07-07",
+   "status": "new"
+  },
+  {
+   "name": "Supplier AI due-diligence and contract schedule",
+   "nistFunction": "GOVERN",
+   "iso42001Area": "A.10 Third parties",
+   "risk": "Third-party and supply-chain risk",
+   "maturity": "Established",
+   "description": "Standard due-diligence and contract clauses for AI suppliers: security posture, data use, model change notice, eval evidence, incident notification, exit rights.",
+   "implementation": "Build an AI supplier questionnaire and a contract schedule (data-use limits, change notice, audit rights); apply to new deals and top existing suppliers by exposure.",
+   "owner": "Procurement / Vendor Risk",
+   "testingMethod": "Sample recent AI contracts for schedule inclusion; test a supplier change-notification path.",
+   "frequency": "Per procurement; annual top-supplier review",
+   "evidenceRequired": "Questionnaires, executed schedules, review log",
+   "relatedStandards": [
+    "ISO 42001 A.10.3",
+    "CSA AICM: Supply Chain Management",
+    "NIST AI RMF GOVERN 6",
+    "AU VAISS Guardrail 8"
+   ],
+   "relatedTools": [],
+   "sources": [
+    "https://cloudsecurityalliance.org/artifacts/ai-controls-matrix-v1-1",
+    "https://www.industry.gov.au/publications/voluntary-ai-safety-standard/10-guardrails"
+   ],
+   "soWhat": "Most enterprise AI risk is inherited from suppliers — the contract schedule is where inherited risk becomes manageable.",
+   "id": "supplier-ai-due-diligence-and-contract-schedule",
+   "firstSeen": "2026-07-07",
+   "lastUpdated": "2026-07-07",
+   "status": "new"
+  },
+  {
+   "name": "Customer responsibility allocation for AI services",
+   "nistFunction": "GOVERN",
+   "iso42001Area": "A.10 Third parties",
+   "risk": "Third-party accountability-gap risk",
+   "maturity": "Emerging",
+   "description": "Explicit allocation of AI responsibilities between provider and customer (shared-responsibility model): who evaluates, who monitors, who handles incidents.",
+   "implementation": "Adopt a shared-responsibility matrix per AICM's SSRM pattern for each AI service sold or bought; attach to contracts and onboarding.",
+   "owner": "Product / Legal",
+   "testingMethod": "Review the matrix for gaps where neither party owns a duty; test one incident scenario across the boundary.",
+   "frequency": "Per service; annual review",
+   "evidenceRequired": "Responsibility matrix, contract references",
+   "relatedStandards": [
+    "ISO 42001 A.10.2 / A.10.4",
+    "CSA AICM SSRM",
+    "AU VAISS Guardrail 8"
+   ],
+   "relatedTools": [],
+   "sources": [
+    "https://cloudsecurityalliance.org/artifacts/ai-controls-matrix-v1-1"
+   ],
+   "soWhat": "The accountability gap between AI provider and deployer is where incidents fall through — the matrix closes it on paper before it happens in production.",
+   "id": "customer-responsibility-allocation-for-ai-services",
+   "firstSeen": "2026-07-07",
+   "lastUpdated": "2026-07-07",
+   "status": "new"
+  },
+  {
+   "name": "Model and vendor concentration limits with exit plans",
+   "nistFunction": "GOVERN",
+   "iso42001Area": "A.10 Third parties",
+   "risk": "Operational concentration and continuity risk",
+   "maturity": "Emerging",
+   "description": "Defined tolerance for dependence on any single model provider, with tested exit and substitution plans for critical AI services.",
+   "implementation": "Map critical workflows to model dependencies; set concentration triggers; maintain substitution runbooks (alternate model, degraded mode) and test annually.",
+   "owner": "COO / Vendor Risk",
+   "testingMethod": "Tabletop a forced provider exit (pricing, outage, or access suspension) and measure recovery.",
+   "frequency": "Annual test",
+   "evidenceRequired": "Dependency map, exit runbooks, test report",
+   "relatedStandards": [
+    "APRA CPS 230 lens",
+    "CSA AICM: Business Continuity",
+    "ISO 42001 A.10.3"
+   ],
+   "relatedTools": [],
+   "sources": [
+    "https://www.apra.gov.au/news-and-publications/apra-letter-to-industry-artificial-intelligence-ai",
+    "https://cloudsecurityalliance.org/artifacts/ai-controls-matrix-v1-1"
+   ],
+   "soWhat": "Model access can vanish overnight — recent frontier-model suspensions made this a board question; a tested fallback is the answer.",
+   "id": "model-and-vendor-concentration-limits-with-exit-plans",
+   "firstSeen": "2026-07-07",
+   "lastUpdated": "2026-07-07",
+   "status": "new"
+  },
+  {
+   "name": "AI workforce competence and role-based training",
+   "nistFunction": "GOVERN",
+   "iso42001Area": "A.4 Resources",
+   "risk": "Human-capability and misuse risk",
+   "maturity": "Established",
+   "description": "Role-appropriate AI training: builders on secure development, reviewers on failure modes, all staff on acceptable use and disclosure.",
+   "implementation": "Define competence requirements per role; deliver and track training; refresh when tooling or obligations change.",
+   "owner": "HR / L&D with CISO",
+   "testingMethod": "Training completion plus a practical assessment for high-risk roles.",
+   "frequency": "Annual; on role change",
+   "evidenceRequired": "Competence matrix, completion records, assessments",
+   "relatedStandards": [
+    "ISO 42001 A.4.6",
+    "CSA AICM: Human Resources",
+    "NIST AI RMF GOVERN 4"
+   ],
+   "relatedTools": [],
+   "sources": [
+    "https://www.iso.org/standard/42001",
+    "https://cloudsecurityalliance.org/artifacts/ai-controls-matrix-v1-1"
+   ],
+   "soWhat": "Controls fail at the human layer first — competence records are also the first thing 42001 auditors sample.",
+   "id": "ai-workforce-competence-and-role-based-training",
+   "firstSeen": "2026-07-07",
+   "lastUpdated": "2026-07-07",
+   "status": "new"
+  },
+  {
+   "name": "Stakeholder engagement and fairness review",
+   "nistFunction": "GOVERN",
+   "iso42001Area": "A.5 Impact assessment",
+   "risk": "Societal impact and fairness risk",
+   "maturity": "Emerging",
+   "description": "Structured engagement with affected stakeholders — customers, workers, vulnerable groups — feeding diversity, inclusion, and fairness needs into AI decisions.",
+   "implementation": "For high-impact systems, run stakeholder consultation as part of the impact assessment; record needs and design responses; report outcomes to governance.",
+   "owner": "Head of AI Governance / Community liaison",
+   "testingMethod": "Check consultation records exist for high-impact deployments and influenced design decisions.",
+   "frequency": "Per high-impact deployment",
+   "evidenceRequired": "Consultation records, impact assessment annex",
+   "relatedStandards": [
+    "AU VAISS Guardrail 10",
+    "ISO 42001 A.5.4-A.5.5",
+    "NIST AI RMF GOVERN 5"
+   ],
+   "relatedTools": [],
+   "sources": [
+    "https://www.industry.gov.au/publications/voluntary-ai-safety-standard/10-guardrails",
+    "https://www.iso.org/standard/42001"
+   ],
+   "soWhat": "The guardrail organisations skip most — doing it visibly differentiates, and regulators increasingly expect evidence of it for high-risk uses.",
+   "id": "stakeholder-engagement-and-fairness-review",
+   "firstSeen": "2026-07-07",
+   "lastUpdated": "2026-07-07",
+   "status": "new"
+  },
+  {
+   "name": "AI liability, insurance, and disclosure review",
+   "nistFunction": "GOVERN",
+   "iso42001Area": "A.2 AI policies",
+   "risk": "Legal liability and financial exposure risk",
+   "maturity": "Emerging",
+   "description": "Periodic review of AI liability exposure: contract warranties, insurance cover and AI exclusions, and market disclosure obligations.",
+   "implementation": "Annually review policies for AI exclusions; align contract warranties with actual system performance; brief the disclosure committee on material AI risks.",
+   "owner": "General Counsel / CFO",
+   "testingMethod": "Trace a hypothetical AI failure through contracts and policies to find who pays.",
+   "frequency": "Annual",
+   "evidenceRequired": "Coverage review, warranty register, disclosure minutes",
+   "relatedStandards": [
+    "NIST AI RMF GOVERN 1 / 6"
+   ],
+   "relatedTools": [],
+   "sources": [
+    "https://www.nist.gov/itl/ai-risk-management-framework"
+   ],
+   "soWhat": "Insurers are quietly adding AI exclusions — most organisations discover coverage gaps at claim time; the review moves that discovery forward.",
+   "id": "ai-liability-insurance-and-disclosure-review",
+   "firstSeen": "2026-07-07",
+   "lastUpdated": "2026-07-07",
+   "status": "new"
+  },
+  {
+   "name": "AI system inventory with owners and risk tiers",
+   "nistFunction": "MAP",
+   "iso42001Area": "A.4 Resources",
+   "risk": "Ungoverned AI and shadow-adoption risk",
+   "maturity": "Established",
+   "description": "A single live register of all AI systems and use cases — including embedded and supplier AI — each with a named owner, purpose, data touched, and risk tier.",
+   "implementation": "Consolidate procurement, architecture, and survey data into one register; tier by impact (EU AI Act classes or equivalent); make it a gate for deployment and change.",
+   "owner": "Head of AI Governance / EA",
+   "testingMethod": "Reconcile the register against network telemetry, SSO logs, and expense data to find unregistered AI.",
+   "frequency": "Continuous; quarterly attestation",
+   "evidenceRequired": "Register export, reconciliation report, owner attestations",
+   "relatedStandards": [
+    "ISO 42001 A.4.2",
+    "NIST AI RMF MAP 1",
+    "AU VAISS Guardrail 2",
+    "EU AI Act Art. 6 classes"
+   ],
+   "relatedTools": [],
+   "sources": [
+    "https://www.iso.org/standard/42001",
+    "https://www.industry.gov.au/publications/voluntary-ai-safety-standard/10-guardrails"
+   ],
+   "soWhat": "Every engagement starts here: if the inventory is wrong, every downstream control inherits the error.",
+   "id": "ai-system-inventory-with-owners-and-risk-tiers",
+   "firstSeen": "2026-07-07",
+   "lastUpdated": "2026-07-07",
+   "status": "new"
+  },
+  {
+   "name": "Shadow-AI discovery sweep",
+   "nistFunction": "MAP",
+   "iso42001Area": "A.4 Resources",
+   "risk": "Shadow AI and data-leakage risk",
+   "maturity": "Emerging",
+   "description": "Active discovery of unapproved AI use via SSO, CASB/proxy, expense, and browser-extension telemetry, feeding the inventory and acceptable-use enforcement.",
+   "implementation": "Run quarterly discovery across telemetry sources; triage findings into approve/migrate/block; report trend to governance.",
+   "owner": "CISO",
+   "testingMethod": "Seed a known unapproved tool and verify the sweep finds it.",
+   "frequency": "Quarterly",
+   "evidenceRequired": "Sweep report, triage decisions, trend metrics",
+   "relatedStandards": [
+    "CSA AICM: Universal Endpoint Management",
+    "NIST AI RMF MAP 1"
+   ],
+   "relatedTools": [
+    "CASB / SSPM tooling"
+   ],
+   "sources": [
+    "https://cloudsecurityalliance.org/artifacts/ai-controls-matrix-v1-1"
+   ],
+   "soWhat": "Shadow AI is typically 3-10x the approved estate — the sweep converts an unknown into a managed number.",
+   "id": "shadow-ai-discovery-sweep",
+   "firstSeen": "2026-07-07",
+   "lastUpdated": "2026-07-07",
+   "status": "new"
+  },
+  {
+   "name": "AI impact assessment (individuals and society)",
+   "nistFunction": "MAP",
+   "iso42001Area": "A.5 Impact assessment",
+   "risk": "Harm to individuals and societal impact risk",
+   "maturity": "Established",
+   "description": "A gated impact assessment for new or materially changed AI systems covering effects on individuals, groups, and society, with documented outcomes and mitigations.",
+   "implementation": "Adopt an AIA template (DTA/ISO 42005 pattern); trigger on new use cases and material changes; require sign-off before build proceeds; file with the inventory.",
+   "owner": "System owner with Privacy / Ethics review",
+   "testingMethod": "Sample high-tier systems for completed, current AIAs; check mitigations landed in design.",
+   "frequency": "Per system; refresh on material change",
+   "evidenceRequired": "Completed AIAs, sign-offs, mitigation trace",
+   "relatedStandards": [
+    "ISO 42001 A.5.2-A.5.5",
+    "ISO/IEC 42005",
+    "NIST AI RMF MAP 5",
+    "AU VAISS Guardrail 2"
+   ],
+   "relatedTools": [],
+   "sources": [
+    "https://www.iso.org/standard/42001",
+    "https://www.industry.gov.au/publications/voluntary-ai-safety-standard/10-guardrails"
+   ],
+   "soWhat": "The AIA is where 'we considered the risk' becomes provable — and A.5.5's societal lens is the part nobody does, so doing it shows.",
+   "id": "ai-impact-assessment-individuals-and-society",
+   "firstSeen": "2026-07-07",
+   "lastUpdated": "2026-07-07",
+   "status": "new"
+  },
+  {
+   "name": "Data mapping and provenance for AI systems",
+   "nistFunction": "MAP",
+   "iso42001Area": "A.7 Data",
+   "risk": "Data quality, privacy, and provenance risk",
+   "maturity": "Established",
+   "description": "Documented lineage for data used to train, tune, ground, or prompt each AI system: source, licence, consent basis, quality checks, and preparation steps.",
+   "implementation": "For each inventoried system, record data sources and legal basis; apply quality gates on acquisition; keep provenance metadata with datasets.",
+   "owner": "Chief Data Officer",
+   "testingMethod": "Trace three production outputs back to their data sources and licences.",
+   "frequency": "Per system; annual re-verification",
+   "evidenceRequired": "Lineage records, licence register, quality-gate logs",
+   "relatedStandards": [
+    "ISO 42001 A.7.2-A.7.6",
+    "CSA AICM: Data Security and Privacy",
+    "AU VAISS Guardrail 3"
+   ],
+   "relatedTools": [],
+   "sources": [
+    "https://www.iso.org/standard/42001",
+    "https://cloudsecurityalliance.org/artifacts/ai-controls-matrix-v1-1"
+   ],
+   "soWhat": "Copyright and consent claims land here — provenance you can produce in discovery is worth multiples of provenance you reconstruct under subpoena.",
+   "id": "data-mapping-and-provenance-for-ai-systems",
+   "firstSeen": "2026-07-07",
+   "lastUpdated": "2026-07-07",
+   "status": "new"
+  },
+  {
+   "name": "Agentic workflow and tool-access mapping",
+   "nistFunction": "MAP",
+   "iso42001Area": "A.4 Resources",
+   "risk": "Agentic AI security and privilege risk",
+   "maturity": "Emerging",
+   "description": "A map of every agent: what tools it can call, what credentials it holds, what systems it can write to, and which humans supervise it.",
+   "implementation": "Extend the inventory with an agent annex — tools, scopes, credentials, memory stores, inter-agent links; review before any new tool is granted.",
+   "owner": "Platform Engineering / CISO",
+   "testingMethod": "Diff mapped permissions against actual granted scopes in the IAM system.",
+   "frequency": "Continuous; monthly diff",
+   "evidenceRequired": "Agent map, IAM reconciliation, approval records",
+   "relatedStandards": [
+    "OWASP ASI03 Agent Identity & Privilege Abuse",
+    "CSA AICM: IAM",
+    "NIST AI RMF MAP 1"
+   ],
+   "relatedTools": [],
+   "sources": [
+    "https://genai.owasp.org/resource/owasp-top-10-for-agentic-applications-for-2026/",
+    "https://cloudsecurityalliance.org/artifacts/ai-controls-matrix-v1-1"
+   ],
+   "soWhat": "You cannot contain what you haven't mapped — the agent map is the prerequisite for every agentic control below it.",
+   "id": "agentic-workflow-and-tool-access-mapping",
+   "firstSeen": "2026-07-07",
+   "lastUpdated": "2026-07-07",
+   "status": "new"
+  },
+  {
+   "name": "AI supply-chain component register (models, MCP, libraries)",
+   "nistFunction": "MAP",
+   "iso42001Area": "A.10 Third parties",
+   "risk": "AI supply-chain compromise risk",
+   "maturity": "Emerging",
+   "description": "An AI bill of materials: base models, fine-tunes, embeddings, MCP servers, agent frameworks, and libraries per system, with versions and sources.",
+   "implementation": "Generate and store AI-BOMs per system; subscribe components to vulnerability feeds; block unregistered components in CI.",
+   "owner": "Platform Engineering",
+   "testingMethod": "Pick a disclosed vulnerability (e.g. an MCP SDK CVE) and time how fast affected systems are identified.",
+   "frequency": "Continuous via CI; monthly report",
+   "evidenceRequired": "AI-BOMs, feed subscriptions, CI policy",
+   "relatedStandards": [
+    "OWASP ASI04 Supply Chain",
+    "CSA AICM: Supply Chain Management",
+    "NIST SSDF"
+   ],
+   "relatedTools": [
+    "SBOM/AI-BOM tooling"
+   ],
+   "sources": [
+    "https://genai.owasp.org/resource/owasp-top-10-for-agentic-applications-for-2026/",
+    "https://csrc.nist.gov/projects/ssdf"
+   ],
+   "soWhat": "The MCP-era supply chain moves faster than quarterly reviews — the register is what turns a CVE headline into a same-day impact list.",
+   "id": "ai-supply-chain-component-register-models-mcp-libraries",
+   "firstSeen": "2026-07-07",
+   "lastUpdated": "2026-07-07",
+   "status": "new"
+  },
+  {
+   "name": "Use-case intake and risk-tier triage gate",
+   "nistFunction": "MAP",
+   "iso42001Area": "A.6 System life cycle",
+   "risk": "Ungoverned deployment risk",
+   "maturity": "Established",
+   "description": "A single front door for proposed AI uses that assigns risk tier, required controls, and approval path before any build or purchase.",
+   "implementation": "Stand up an intake form wired to the inventory; auto-assign control requirements by tier; route high tiers to the governance committee.",
+   "owner": "Head of AI Governance",
+   "testingMethod": "Attempt to deploy a test use case around the gate and confirm it is caught.",
    "frequency": "Continuous",
-   "maturity": "Advanced",
+   "evidenceRequired": "Intake records, tier decisions, bypass alerts",
    "relatedStandards": [
-    "NIST CSF 2.0 (Identity/Protect)",
-    "Zero Trust Architecture (NIST SP 800-207)"
+    "ISO 42001 A.6.1.2-A.6.1.3",
+    "NIST AI RMF MAP 2-3",
+    "AU VAISS Guardrail 2"
    ],
-   "relatedTools": [
-    "Cloud network security groups",
-    "Istio/Envoy",
-    "Cilium"
+   "relatedTools": [],
+   "sources": [
+    "https://www.iso.org/standard/42001",
+    "https://www.industry.gov.au/publications/voluntary-ai-safety-standard/10-guardrails"
    ],
-   "limitations": "Segmentation is a compensating control — does not fix the underlying vulnerability",
-   "id": "mcp-server-network-segmentation",
-   "nistFunction": "MANAGE",
-   "iso42001Area": "A.6 System life cycle"
+   "soWhat": "One door in means the inventory stays true by construction, not by audit.",
+   "id": "use-case-intake-and-risk-tier-triage-gate",
+   "firstSeen": "2026-07-07",
+   "lastUpdated": "2026-07-07",
+   "status": "new"
   },
   {
-   "name": "AI Impact Assessment (DTA Standard)",
-   "risk": "Uncontrolled AI Deployment Risk",
-   "description": "Standardised AI impact assessment covering fairness, safety, privacy, transparency, security, and human-centred values before AI deployment. Required by Australian DTA policy for government AI use cases.",
-   "implementation": "Use DTA's published AI impact assessment tool template. Complete assessment before deployment, review annually, and update on material change",
-   "owner": "AI Governance Lead / Accountable Owner",
-   "evidenceRequired": "Completed AI impact assessment document; accountable owner sign-off",
-   "testingMethod": "Internal audit review; DTA compliance check",
-   "frequency": "Before deployment; annual review; event-driven updates",
-   "maturity": "Standard (government) / Emerging (private sector)",
-   "relatedStandards": [
-    "DTA AI Policy",
-    "Australia AI Ethics Principles"
-   ],
-   "relatedTools": [
-    "DTA AI Impact Assessment Tool"
-   ],
-   "limitations": "Assessment quality depends on assessor expertise; does not address runtime risks",
-   "id": "ai-impact-assessment-dta-standard",
-   "nistFunction": "MAP",
-   "iso42001Area": "A.5 Impact assessment"
-  },
-  {
-   "name": "Agent tool-call security gateway",
-   "risk": "Agent tool-parameter injection leading to code execution",
-   "description": "Central enforcement layer for all agent tool calls that validates schemas, blocks unsafe parameters, applies policy and records evidence before execution.",
-   "implementation": "Place a policy gateway between the model planner and tools; enforce allowlists, type/range validation, path restrictions, command denial, secrets masking and approval workflows.",
-   "owner": "Security Engineering / Platform Engineering",
-   "evidenceRequired": "Tool inventory, gateway policy config, blocked-call logs, test results for prompt-injection payloads, approval records",
-   "testingMethod": "Red-team direct and indirect prompt injection; unit-test schema validators; replay malicious documents/emails/web content",
-   "frequency": "Continuous logging with quarterly red-team review",
-   "maturity": "Emerging",
-   "relatedStandards": [
-    "NIST AI RMF",
-    "NIST AI RMF Generative AI Profile",
-    "OWASP LLM guidance"
-   ],
-   "relatedTools": [
-    "Semantic Kernel",
-    "AI security gateways",
-    "LLM red-team tools"
-   ],
-   "limitations": "Does not eliminate model deception or business-logic misuse; requires comprehensive tool inventory and continuous update.",
-   "id": "agent-tool-call-security-gateway",
-   "nistFunction": "MANAGE",
-   "iso42001Area": "A.6 System life cycle"
-  },
-  {
-   "name": "AI privacy deployment assessment",
-   "risk": "Commercial AI privacy non-compliance",
-   "description": "Privacy assessment specifically for commercial AI tools before approval and during material changes.",
-   "implementation": "Assess necessity, personal-information flows, vendor retention/training, transparency notices, accuracy/explainability, public chatbot restrictions and human review for adverse decisions.",
-   "owner": "Privacy / Legal / AI Governance",
-   "evidenceRequired": "Completed assessment, vendor terms, data-flow map, user notice, control attestations, residual risk approval",
-   "testingMethod": "Sample prompts and outputs for personal information leakage; review vendor configuration; verify deletion/retention settings",
-   "frequency": "Before deployment and annually or upon material vendor/model change",
-   "maturity": "Maturing",
-   "relatedStandards": [
-    "OAIC AI privacy guidance",
-    "Privacy Act 1988",
-    "Australian Privacy Principles"
-   ],
-   "relatedTools": [
-    "AI inventory",
-    "GRC workflow",
-    "DLP"
-   ],
-   "limitations": "Depends on vendor transparency and may not catch downstream inference or emergent model behaviour.",
-   "id": "ai-privacy-deployment-assessment",
-   "nistFunction": "MAP",
-   "iso42001Area": "A.5 Impact assessment"
-  },
-  {
-   "name": "Agentic AI Human Intervention and Safe Shutdown",
-   "risk": "Agentic AI Control Failure",
-   "description": "Design and test mechanisms that let authorised humans monitor, pause, alter or stop agentic AI activity and recover safely.",
-   "implementation": "For each agentic system, define authorised supervisors, escalation thresholds, real-time monitoring signals, per-tool permissions, memory/data boundaries, stop/pause commands, rollback procedures and incident logging. Test the control before production and after material system changes.",
-   "owner": "Product owner with Security, Risk and Operations",
-   "evidenceRequired": "Architecture diagram, tool-permission matrix, supervisor roster, stop/pause test logs, monitoring dashboard, incident playbook and audit trail.",
-   "testingMethod": "Scenario-based red-team or tabletop: trigger unexpected tool use, memory misuse, goal drift and resource consumption; verify humans can detect, intervene and stop the system.",
-   "frequency": "Before deployment, quarterly for high-risk agents, and after material changes",
-   "maturity": "Emerging but required for high-autonomy deployments",
-   "relatedStandards": [
-    "DTA Agentic AI addendum to the AI technical standard",
-    "NIST AI 800-2"
-   ],
-   "relatedTools": [
-    "AI inventory",
-    "Agent observability",
-    "SIEM/SOAR",
-    "MCP gateway controls"
-   ],
-   "limitations": "Human intervention controls can fail if telemetry is incomplete, authority is unclear, or the agent acts faster than monitoring/approval processes.",
-   "id": "agentic-ai-human-intervention-and-safe-shutdown",
-   "nistFunction": "MANAGE",
-   "iso42001Area": "A.9 Responsible use"
-  },
-  {
-   "name": "ADM Transparency Readiness Review",
-   "risk": "Automated Decision-Making Transparency Non-Compliance",
-   "description": "Pre-commencement review of systems that use personal information in automated or substantially automated decisions that significantly affect rights or interests.",
-   "implementation": "Inventory ADM systems; classify personal information, decision type, significance and automation role; update APP privacy policy disclosures; map redress and complaint pathways; retain legal sign-off.",
-   "owner": "Privacy Officer / Legal / Data Governance",
-   "evidenceRequired": "ADM register, classification rationale, privacy policy draft, stakeholder review, approval record and change log.",
-   "testingMethod": "Sample high-impact decisions and verify disclosures accurately describe personal information and decision kinds.",
-   "frequency": "Initial review by September 2026 guidance; then annually and when systems change",
-   "maturity": "Developing due to new obligation",
-   "relatedStandards": [
-    "OAIC ADM Transparency Obligation Issues Paper",
-    "Australian Privacy Principle 1"
-   ],
-   "relatedTools": [
-    "Data inventory",
-    "AI use-case register",
-    "Privacy impact assessment tooling"
-   ],
-   "limitations": "Final OAIC guidance is expected later in 2026; interpretations may change.",
-   "id": "adm-transparency-readiness-review",
-   "nistFunction": "GOVERN",
-   "iso42001Area": "A.8 Interested-party info"
-  },
-  {
-   "name": "OWASP Agentic Top 10 Compliance Programme",
-   "risk": "AI Agent Supply Chain Exploitation (MCP, Skills Marketplaces)",
-   "description": "Adopt the OWASP Top 10 for Agentic Applications 2026 (December 2025) as a control baseline for AI agent security. Cover the ten risk categories across agent design, deployment, and operations. Track the upcoming OWASP Agentic Skills Top 10 (v1.0 Q3 2026) for skill-content security.",
-   "implementation": "Map existing AI agent deployments to each of the ten OWASP Agentic categories. For each category, identify responsible team, current state, gap, remediation, evidence, and review date. Include in the agent security assessment workflow and procurement checklist.",
-   "owner": "Chief Information Security Officer (CISO) / Head of AI Security",
-   "evidenceRequired": "Completed Agentic Top 10 control assessment per agent deployment, with evidence per control and remediation tracking",
-   "testingMethod": "Annual third-party assessment + continuous internal control testing; red-team exercise covering prompt injection, agent identity, supply chain, and exfiltration paths",
-   "frequency": "Continuous monitoring, annual full assessment",
-   "maturity": "Emerging",
-   "relatedStandards": [
-    "OWASP Top 10 for LLM Applications 2025",
-    "NIST AI RMF 1.0",
-    "NIST AI 800-2 (automated benchmark evaluations)",
-    "MITRE ATLAS"
-   ],
-   "relatedTools": [
-    "OWASP Agentic Security Initiative resources",
-    "MCP server security scanners (e.g., community tools)"
-   ],
-   "limitations": "Agentic Top 10 is new (December 2025) and will evolve. Skills Top 10 is still in proposal. Reference implementations and certified tools are limited.",
-   "id": "owasp-agentic-top-10-compliance-programme",
-   "nistFunction": "GOVERN",
-   "iso42001Area": "A.6 System life cycle"
-  },
-  {
-   "name": "EU AI Act Digital Omnibus Compliance Re-baseline",
-   "risk": "EU AI Act Deferral Misinterpretation Risk",
-   "description": "Re-baseline the EU AI Act compliance programme against the Digital Omnibus on AI provisional deal (7 May 2026) without pausing existing readiness work. Treat deferral as conditional and prepare for adoption before 2 August 2026.",
-   "implementation": "Update internal AI Act compliance timeline: Annex III HRAIS 2 December 2027, Annex I HRAIS 2 August 2028, Article 50(2) transparency 2 December 2026, national sandboxes 2 August 2027. Continue readiness for in-force obligations: prohibited practices, GPAI rules, transparency, fundamental rights impact assessments. Track formal adoption progress (Council, Parliament).",
-   "owner": "Chief Compliance Officer / Head of AI Governance",
-   "evidenceRequired": "Updated AI Act compliance timeline; gap assessment against new dates; monitoring reports on Digital Omnibus adoption progress; legal review of provisional vs enacted status",
-   "testingMethod": "Quarterly compliance progress reviews; legal review of Digital Omnibus adoption status",
-   "frequency": "Quarterly review, immediate update on any legislative change",
-   "maturity": "Established (but moving target)",
-   "relatedStandards": [
-    "EU AI Act Regulation 2024/1689",
-    "EU AI Act Code of Practice for GPAI",
-    "NIST AI RMF 1.0"
-   ],
-   "relatedTools": [
-    "IAPP AI Governance Vendor Report 2026",
-    "EU AI Act compliance platforms"
-   ],
-   "limitations": "Provisional status means deferral could be modified or reversed. Sector-specific product regulations in Annex I may have separate compliance deadlines.",
-   "id": "eu-ai-act-digital-omnibus-compliance-re-baseline",
-   "nistFunction": "GOVERN",
-   "iso42001Area": "A.6 System life cycle"
-  },
-  {
-   "name": "APP 1 ADM Transparency Disclosure (OAIC 10 December 2026)",
-   "risk": "Privacy non-compliance and erosion of public trust in ADM",
-   "description": "Mandatory disclosure in APP entities' privacy policies of the types of personal information used in, and types of decisions made by, computer programs that use personal information to make decisions that could significantly affect an individual's rights or interests. The OAIC's 18 May 2026 Issues Paper seeks feedback on edge cases including generative AI with human oversight, differential pricing, and third-party ADM.",
-   "implementation": "Update privacy policy template; identify in-scope ADM use cases; align disclosures with OAIC Issues Paper edge cases; add new disclosures to privacy policy before 10 December 2026; document decision on third-party ADM and 'arranged for' status.",
-   "owner": "Privacy Officer / DPO / General Counsel",
-   "evidenceRequired": "Updated privacy policy with ADM section, ADM inventory mapping to APP entities, sign-off record, complaints handling log, OAIC Issues Paper feedback log.",
-   "testingMethod": "Mock complaint scenario; OAIC submission walkthrough; sample ADM user notice review; bias and accuracy testing on the disclosed decisions.",
-   "frequency": "Annual review, ad-hoc on use case change",
-   "maturity": "Developing",
-   "relatedStandards": [
-    "OAIC ADM Issues Paper (May 2026)",
-    "Privacy Act 1988 (Cth)",
-    "APP 1",
-    "EU GDPR Articles 13-22",
-    "EU AI Act Article 50"
-   ],
-   "relatedTools": [
-    "OneTrust",
-    "TrustArc",
-    "PrivacyEngine",
-    "Collibra",
-    "custom ADM disclosure generator"
-   ],
-   "limitations": "Privacy policy is one channel; users may not see disclosures; the OAIC's final guidance on generative AI edge cases is pending; cross-jurisdictional ADM disclosures (EU, US) may differ.",
-   "id": "app-1-adm-transparency-disclosure-oaic-10-december-2026",
-   "nistFunction": "GOVERN",
-   "iso42001Area": "A.8 Interested-party info"
-  },
-  {
-   "name": "AI use-case inventory and risk tiering",
-   "risk": "AI governance and supplier risk in regulated entities",
-   "description": "Maintain a living register of AI systems, owners, vendors, data types, and risk tiers.",
-   "implementation": "Tie procurement, change management, and incident reporting into a single register reviewed by risk and board committees.",
-   "owner": "CRO / CIO / CISO",
-   "evidenceRequired": [
-    "Inventory export",
-    "Risk tier rationale",
-    "Board reporting pack"
-   ],
-   "testingMethod": "Sample completeness testing and owner attestation",
-   "frequency": "Quarterly",
-   "maturity": "Developing",
-   "relatedStandards": [
-    "https://www.apra.gov.au/apra-letter-to-industry-on-artificial-intelligence-ai",
-    "https://www.digital.gov.au/policy/ai/agentic-ai-addendum"
-   ],
-   "relatedTools": [
-    "GRC platforms",
-    "AI inventory tools"
-   ],
-   "limitations": "Inventory quality depends on procurement and change discipline.",
-   "id": "ai-use-case-inventory-and-risk-tiering",
-   "nistFunction": "MAP",
-   "iso42001Area": "A.4 Resources"
-  },
-  {
-   "name": "ADM transparency workflow",
-   "risk": "ADM transparency and privacy non-compliance",
-   "description": "Ensure privacy policies and decision explanations capture ADM use that may affect rights or interests.",
-   "implementation": "Add a pre-release privacy review step to every ADM use case and version-controlled disclosure templates.",
-   "owner": "Privacy lead / Legal",
-   "evidenceRequired": [
-    "Updated privacy policy",
-    "ADM decision register",
-    "Legal sign-off"
-   ],
-   "testingMethod": "Spot-check live systems against published disclosures",
-   "frequency": "Per release and annual review",
-   "maturity": "Developing",
-   "relatedStandards": [
-    "https://www.oaic.gov.au/engage-with-us/consultations/consultation-on-guidance-for-transparency-in-automated-decision-making"
-   ],
-   "relatedTools": [
-    "Policy management",
-    "Workflow automation"
-   ],
-   "limitations": "Hard to maintain if product teams bypass governance gates.",
-   "id": "adm-transparency-workflow",
-   "nistFunction": "GOVERN",
-   "iso42001Area": "A.8 Interested-party info"
-  },
-  {
-   "name": "Agentic AI red-teaming and tool-abuse testing",
-   "risk": "Agentic workflow failure and tool abuse",
-   "description": "Test autonomy boundaries, permission scopes, and tool-call behavior before production release.",
-   "implementation": "Run attack scenarios covering prompt injection, data exfiltration, and unsafe action execution.",
-   "owner": "Security engineering / Product security",
-   "evidenceRequired": [
-    "Red-team report",
-    "Remediation log",
-    "Runtime control evidence"
-   ],
-   "testingMethod": "Pre-release red-team and periodic re-test",
-   "frequency": "Every major release",
-   "maturity": "Developing",
-   "relatedStandards": [
-    "https://genai.owasp.org/resource/owasp-top-10-for-agentic-applications-for-2026",
-    "https://genai.owasp.org/resource/owasp-top-10-for-llm-applications-2025"
-   ],
-   "relatedTools": [
-    "OWASP guidance",
-    "Prompt injection testers",
-    "LLM gateways"
-   ],
-   "limitations": "Coverage can miss emergent multi-step failure modes.",
-   "id": "agentic-ai-red-teaming-and-tool-abuse-testing",
+   "name": "Pre-deployment evaluation gate with acceptance criteria",
    "nistFunction": "MEASURE",
-   "iso42001Area": "A.6 System life cycle"
-  },
-  {
-   "name": "Out-of-band verification for high-risk transactions",
-   "risk": "Synthetic media and scam industrialisation",
-   "description": "Require a second channel of verification for money movement, identity changes, and sensitive approvals.",
-   "implementation": "Pair voice/video or message-based requests with independent callbacks or signed approvals.",
-   "owner": "Operations / Fraud / Security",
-   "evidenceRequired": [
-    "Verification logs",
-    "Fraud alerts",
-    "Exception approvals"
-   ],
-   "testingMethod": "Fraud scenario drills and sample audits",
-   "frequency": "Monthly",
-   "maturity": "Mature",
+   "iso42001Area": "A.6 System life cycle",
+   "risk": "Model performance and reliability risk",
+   "maturity": "Established",
+   "description": "No AI system ships without passing documented evaluations — task performance, safety behaviours, robustness — against pre-agreed acceptance criteria.",
+   "implementation": "Define eval suites per use case (accuracy, refusal, injection resistance); wire into CI/CD as a release gate; record results with the system version.",
+   "owner": "Engineering lead / QA",
+   "testingMethod": "Review release records for eval evidence; attempt a release with failing evals and confirm the gate blocks.",
+   "frequency": "Every release",
+   "evidenceRequired": "Eval definitions, gate logs, versioned results",
    "relatedStandards": [
-    "https://incidentdatabase.ai/blog/incident-report-2026-february-march-april",
-    "https://www.esafety.gov.au/industry/codes/faq-access-to-online-porn-and-other-adult-content"
+    "ISO 42001 A.6.2.4",
+    "NIST AI RMF MEASURE 2",
+    "AU VAISS Guardrail 4"
    ],
    "relatedTools": [
-    "Fraud detection",
-    "Provenance tools"
+    "inspect_ai",
+    "promptfoo",
+    "Giskard"
    ],
-   "limitations": "Adds friction and may not stop fast-moving social engineering alone.",
-   "id": "out-of-band-verification-for-high-risk-transactions",
-   "nistFunction": "MANAGE",
-   "iso42001Area": "A.6 System life cycle"
-  },
-  {
-   "name": "Vendor assurance pack for frontier models",
-   "risk": "AI-accelerated cyber threats and misuse of frontier models",
-   "description": "Require vendors to disclose testing, safety controls, incident handling, and security hardening.",
-   "implementation": "Add assurance requirements to procurement and renewals, with contractual audit and notification rights.",
-   "owner": "Procurement / Risk / Security",
-   "evidenceRequired": [
-    "Vendor assurance pack",
-    "SOC 2 or equivalent",
-    "Security testing evidence"
-   ],
-   "testingMethod": "Document review and control testing",
-   "frequency": "At onboarding and annually",
-   "maturity": "Developing",
-   "relatedStandards": [
-    "https://www.asic.gov.au/about-asic/news-centre/find-a-media-release/2026-releases/26-092mr-asic-calls-for-urgent-cyber-uplift-as-ai-accelerates-cyber-threats",
-    "https://www.apra.gov.au/apra-letter-to-industry-on-artificial-intelligence-ai"
-   ],
-   "relatedTools": [
-    "Vendor risk management",
-    "AI governance platforms"
-   ],
-   "limitations": "Vendor disclosures can be incomplete without independent validation.",
-   "id": "vendor-assurance-pack-for-frontier-models",
-   "nistFunction": "GOVERN",
-   "iso42001Area": "A.10 Third parties"
-  },
-  {
-   "name": "Agentic vendor assurance and access governance",
-   "risk": "Partner-Led Enterprise Deployment Risk",
-   "description": "Control the use of frontier-model partners and embedded engineers in regulated workflows by requiring evidence of access controls, logging, escalation paths, and audit rights before production rollout.",
-   "implementation": "Run a formal partner review, map privileged access, separate pilot and production environments, require incident notification clauses, and test rollback and human-override paths before go-live.",
-   "owner": "Procurement, security, and architecture",
-   "evidenceRequired": [
-    "Partner due-diligence pack",
-    "SOC 2 / ISO evidence where available",
-    "Access review logs",
-    "Model and tool-use logging samples",
-    "Red-team and rollback test results"
-   ],
-   "testingMethod": "Contract review, access sampling, tabletop exercises, and scenario-based red-teaming",
-   "frequency": "On onboarding and quarterly thereafter",
-   "maturity": "Emerging",
-   "relatedStandards": [
-    "NIST AI RMF 1.0",
-    "ISO/IEC 42001"
-   ],
-   "relatedTools": [
-    "AI governance platforms",
-    "IAM/PAM",
-    "LLM monitoring",
-    "DLP"
-   ],
-   "limitations": "Vendor telemetry and partner certifications do not prove safe real-world operation.",
-   "id": "agentic-vendor-assurance-and-access-governance",
-   "nistFunction": "GOVERN",
-   "iso42001Area": "A.10 Third parties"
-  },
-  {
-   "name": "AI trust and liability disclosure workflow",
-   "risk": "AI Trust and Liability Pressure",
-   "description": "Create a disclosure and evidence workflow for rights-affecting AI decisions so that legal, privacy, and communications teams can explain what the system does and who is accountable.",
-   "implementation": "Maintain an ADM and AI-use inventory, map each use case to disclosures, assign accountable owners, and rehearse complaint handling and escalation.",
-   "owner": "Legal, privacy, risk, and product",
-   "evidenceRequired": [
-    "ADM register entries",
-    "Disclosure text",
-    "Named accountable owner",
-    "Complaint handling process",
-    "Monitoring metrics"
-   ],
-   "testingMethod": "Policy review, sample disclosure testing, and incident/complaint tabletop exercises",
-   "frequency": "Per release and quarterly review",
-   "maturity": "Developing",
-   "relatedStandards": [
-    "APP 1 / OAIC ADM guidance",
-    "NIST AI RMF 1.0"
-   ],
-   "relatedTools": [
-    "AI inventory tools",
-    "Policy management",
-    "Audit trail platforms"
-   ],
-   "limitations": "Disclosure alone does not reduce model risk or liability exposure.",
-   "id": "ai-trust-and-liability-disclosure-workflow",
-   "nistFunction": "GOVERN",
-   "iso42001Area": "A.8 Interested-party info"
-  },
-  {
-   "name": "AI system inventory and risk tiering",
-   "risk": "Governance and assurance lag",
-   "description": "Maintain a live register of AI use cases, owners, data dependencies, decision impact, and risk tier.",
-   "implementation": "Create one inventory for all AI-assisted and automated decision workflows; require business owner, technical owner, model/vendor, and data classification fields.",
-   "owner": "Risk / governance office",
-   "evidenceRequired": "Current inventory, review history, risk tier rationale, and approvals",
-   "testingMethod": "Quarterly sample check against deployed systems and procurement records",
-   "frequency": "Quarterly",
-   "maturity": "Developing",
-   "relatedStandards": [
+   "sources": [
     "https://www.nist.gov/itl/ai-risk-management-framework",
-    "https://oecd.ai/en/ai-principles"
+    "https://www.industry.gov.au/publications/voluntary-ai-safety-standard/10-guardrails"
    ],
-   "relatedTools": [
-    "https://www.ai.gov.au/",
-    "https://incidentdatabase.ai/rss.xml"
-   ],
-   "limitations": "Can drift out of date unless procurement and engineering are tightly linked.",
-   "id": "ai-system-inventory-and-risk-tiering",
-   "nistFunction": "MAP",
-   "iso42001Area": "A.4 Resources"
+   "soWhat": "'Test before you ship, and keep the receipts' — the single control that converts AI quality from vibes to evidence.",
+   "id": "pre-deployment-evaluation-gate-with-acceptance-criteria",
+   "firstSeen": "2026-07-07",
+   "lastUpdated": "2026-07-07",
+   "status": "new"
   },
   {
-   "name": "AI pre-launch assurance gate",
-   "risk": "Governance and assurance lag",
-   "description": "Require explicit assurance sign-off before any high-impact or externally facing AI feature goes live.",
-   "implementation": "Gate launch on documented testing, fallback/rollback, review of bias and safety issues, and sign-off from legal, security, and business owners.",
-   "owner": "Product / engineering leadership",
-   "evidenceRequired": "Test results, sign-off record, rollback plan, and issue log",
-   "testingMethod": "Release audit and spot-check on sampled launches",
-   "frequency": "Every release",
-   "maturity": "Developing",
-   "relatedStandards": [
-    "https://www.nist.gov/itl/ai-risk-management-framework"
-   ],
-   "relatedTools": [
-    "https://www.ai.gov.au/news-and-insights/blog/ai-adoption-insights-december-2025-february-2026"
-   ],
-   "limitations": "Slows releases if teams do not standardise test packs and approval workflows.",
-   "id": "ai-pre-launch-assurance-gate",
+   "name": "Adversarial red-teaming (LLM and agentic)",
    "nistFunction": "MEASURE",
-   "iso42001Area": "A.6 System life cycle"
-  },
-  {
-   "name": "AI-specific cyber red-team coverage",
-   "risk": "AI-accelerated cyber exploitation",
-   "description": "Test prompt injection, tool misuse, data leakage, and agent privilege escalation before deployment.",
-   "implementation": "Add AI attack scenarios to red-team exercises and require remediation for any path that can alter tools, data, or identity state.",
-   "owner": "Security engineering",
-   "evidenceRequired": "Red-team reports, remediations, and retest evidence",
-   "testingMethod": "Tabletop plus adversarial testing",
-   "frequency": "At launch and after major changes",
-   "maturity": "Developing",
+   "iso42001Area": "A.6 System life cycle",
+   "risk": "AI security and prompt-injection risk",
+   "maturity": "Established",
+   "description": "Periodic adversarial testing against the OWASP LLM and Agentic Top 10: prompt injection, goal hijack, tool misuse, memory poisoning, data exfiltration.",
+   "implementation": "Run structured red-team campaigns per major release and quarterly on critical systems; track findings to closure; rotate scenarios with the threat landscape.",
+   "owner": "Security testing / external specialists",
+   "testingMethod": "Independent re-test of closed findings; coverage check against OWASP categories.",
+   "frequency": "Quarterly for critical systems; every major release",
+   "evidenceRequired": "Campaign reports, finding register, closure evidence",
    "relatedStandards": [
-    "https://www.nist.gov/itl/ai-risk-management-framework"
+    "OWASP LLM Top 10 2025",
+    "OWASP ASI01-ASI10",
+    "MITRE ATLAS",
+    "NIST AI RMF MEASURE 2.7"
    ],
    "relatedTools": [
-    "https://www.asic.gov.au/about-asic/news-centre/find-a-media-release/2026-releases/26-092mr-asic-calls-for-urgent-cyber-uplift-as-ai-accelerates-cyber-threats/"
+    "garak",
+    "PyRIT",
+    "promptfoo"
    ],
-   "limitations": "Needs recurring re-testing as tool access and model behaviour change.",
-   "id": "ai-specific-cyber-red-team-coverage",
+   "sources": [
+    "https://genai.owasp.org/resource/owasp-top-10-for-llm-applications-2025/",
+    "https://genai.owasp.org/resource/owasp-top-10-for-agentic-applications-for-2026/",
+    "https://atlas.mitre.org/mitigations"
+   ],
+   "soWhat": "The eval gate proves it works; red-teaming proves it fails safely — buyers and regulators now ask for both.",
+   "id": "adversarial-red-teaming-llm-and-agentic",
+   "firstSeen": "2026-07-07",
+   "lastUpdated": "2026-07-07",
+   "status": "new"
+  },
+  {
+   "name": "Bias and fairness testing on decision systems",
    "nistFunction": "MEASURE",
-   "iso42001Area": "A.9 Responsible use"
-  },
-  {
-   "name": "ADM transparency and appeal workflow",
-   "risk": "Rights-affecting ADM transparency gap",
-   "description": "Prepare disclosures, human review paths, and appeal processes for automated decisions that affect rights or entitlements.",
-   "implementation": "Inventory ADM use, identify disclosure triggers, draft customer notices, and create escalation/appeal routes before the December 2026 obligation date.",
-   "owner": "Privacy / legal / compliance",
-   "evidenceRequired": "ADM inventory, notice templates, and approval records",
-   "testingMethod": "Pre-implementation review and customer journey walkthrough",
-   "frequency": "Every new use case; annual refresh",
-   "maturity": "Developing",
+   "iso42001Area": "A.5 Impact assessment",
+   "risk": "Fairness, discrimination, and harm risk",
+   "maturity": "Established",
+   "description": "Statistical testing of rights-affecting systems across protected attributes, with thresholds, remediation duties, and re-test cadence.",
+   "implementation": "Select fairness metrics per decision type; test pre-deployment and on data drift; document accepted disparities with justification and sign-off.",
+   "owner": "Data science lead / Ethics review",
+   "testingMethod": "Independent reproduction of fairness results; check remediation actions for breached thresholds.",
+   "frequency": "Pre-deployment; semi-annual re-test",
+   "evidenceRequired": "Test reports, threshold decisions, remediation log",
    "relatedStandards": [
-    "https://www.oaic.gov.au/engage-with-us/consultations/consultation-on-guidance-for-transparency-in-automated-decision-making"
+    "ISO 42001 A.5.4",
+    "NIST AI RMF MEASURE 2.11",
+    "ISO/IEC TR 24027"
    ],
    "relatedTools": [
-    "https://www.dta.gov.au/ai-transparency-statement"
+    "Fairlearn",
+    "Aequitas"
    ],
-   "limitations": "Disclosure is only useful if users can actually understand and contest the decision.",
-   "id": "adm-transparency-and-appeal-workflow",
-   "nistFunction": "GOVERN",
-   "iso42001Area": "A.8 Interested-party info"
-  },
-  {
-   "name": "ADM Disclosure and Contestability Workflow",
-   "risk": "ADM transparency and privacy non-compliance",
-   "description": "Map which decisions are made by computer programs and whether they could significantly affect rights or interests, then disclose the relevant categories in privacy policies.",
-   "implementation": "Create a decision-impact taxonomy, align legal/privacy review, and update policy text and customer notices before the deadline.",
-   "owner": "Privacy counsel / Legal / Product",
-   "evidenceRequired": [
-    "Decision taxonomy",
-    "Policy redlines",
-    "Approval record"
-   ],
-   "testingMethod": "Sample-audit decisions to confirm that disclosures match actual workflows",
-   "frequency": "Quarterly and on material change",
-   "maturity": "Developing",
-   "relatedStandards": [
-    "https://www.oaic.gov.au/engage-with-us/consultations/consultation-on-guidance-for-transparency-in-automated-decision-making"
-   ],
-   "relatedTools": [
-    "policy management",
-    "workflow mapping",
-    "records management"
-   ],
-   "limitations": "Hard to maintain if decision workflows change faster than policy updates.",
-   "id": "adm-disclosure-and-contestability-workflow",
-   "nistFunction": "GOVERN",
-   "iso42001Area": "A.8 Interested-party info"
-  },
-  {
-   "name": "Continuous AI Security Monitoring and Prompt Regression Testing",
-   "risk": "Static Guardrails and Monitoring Drift",
-   "description": "Monitor deployed AI for drift, prompt injection, tool abuse, and anomalous agent actions after release.",
-   "implementation": "Instrument model and tool calls, alert on unusual patterns, log prompts and outputs, and run periodic regression and red-team tests.",
-   "owner": "Security Engineering / AI Platform",
-   "evidenceRequired": "Alerts, logs, red-team reports, and post-incident actions",
-   "testingMethod": "Simulated attacks, canary prompts, production telemetry review",
-   "frequency": "Continuous / monthly red-team",
-   "maturity": "Developing",
-   "relatedStandards": [
-    "NIST AI 800-4",
-    "OWASP GenAI Exploit Round-up",
-    "OWASP Top 10 for LLM Applications"
-   ],
-   "relatedTools": [
-    "observability",
-    "prompt filters",
-    "agent gateways"
-   ],
-   "limitations": "Can miss novel attacks and requires good telemetry.",
-   "id": "continuous-ai-security-monitoring-and-prompt-regression-test",
-   "nistFunction": "MEASURE",
-   "iso42001Area": "A.6 System life cycle"
-  },
-  {
-   "name": "Synthetic-Media Provenance and Impersonation Response",
-   "risk": "Synthetic-media Fraud and Impersonation",
-   "description": "A fraud-and-integrity control that combines provenance checks, platform escalation, and rapid customer communication when deepfake content appears.",
-   "implementation": "Track impersonation attempts, verify source provenance, pre-authorise takedown contacts, and maintain public-warning templates for brand or public-figure abuse.",
-   "owner": "Fraud / Communications / Trust & Safety",
-   "evidenceRequired": "Takedown logs, provenance checks, incident timelines, stakeholder notifications, legal escalation records",
-   "testingMethod": "Deepfake incident tabletop; takedown drill; social monitoring replay; brand-impersonation scenario test",
-   "frequency": "Monthly and after any incident",
-   "maturity": "Developing",
-   "relatedStandards": [
-    "C2PA / content provenance practices",
-    "NIST AI RMF"
-   ],
-   "relatedTools": [
-    "Synthetic-media detectors",
-    "SOC monitoring",
-    "brand protection platforms",
-    "case-management tools"
-   ],
-   "limitations": "Detection can lag generation; provenance depends on ecosystem adoption and may not be available for every asset.",
-   "id": "synthetic-media-provenance-and-impersonation-response",
-   "nistFunction": "MANAGE",
-   "iso42001Area": "A.6 System life cycle"
-  },
-  {
-   "name": "Sandboxed agent containment with egress control",
-   "risk": "Agent Containment and Blast-Radius Risk",
-   "description": "Constrain agent actions inside ephemeral containers, sandboxes, or local VMs and restrict external network reach so one failure cannot cascade across the enterprise.",
-   "implementation": "Use isolated runtimes per task, pre-approved tool allow-lists, explicit outbound network policies, and audit logging for every privileged action.",
-   "owner": "Security engineering / platform engineering",
-   "evidenceRequired": "Architecture diagram, sandbox policy, outbound firewall policy, and test logs showing blocked abuse attempts.",
-   "testingMethod": "Red-team tool-use abuse, permission-failure drills, and recovery testing after forced termination.",
-   "frequency": "Each release plus quarterly control review",
-   "maturity": "Emerging",
-   "relatedStandards": [
-    "https://attack.mitre.org/"
-   ],
-   "relatedTools": [
-    "Anthropic containment patterns",
-    "Kubernetes sandboxing",
-    "policy engines"
-   ],
-   "limitations": "Containment reduces blast radius but does not eliminate model error or insider misuse.",
-   "id": "sandboxed-agent-containment-with-egress-control",
-   "nistFunction": "MANAGE",
-   "iso42001Area": "A.6 System life cycle"
-  },
-  {
-   "name": "Continuous-monitor-and-update AI security program",
-   "risk": "AI-Enabled Cyberattack Scaling",
-   "description": "Treat AI security as an operating programme rather than a one-time review, with recurring prompt testing, adversary emulation, and patching of guardrails.",
-   "implementation": "Maintain a standing queue of regression prompts, monitor for new bypasses, and feed findings into release gates and incident response.",
-   "owner": "Security operations / AI security lead",
-   "evidenceRequired": "Test logs, regression backlog, patch records, and incident tickets showing update cycles.",
-   "testingMethod": "Monthly adversary emulation and continuous prompt regression.",
-   "frequency": "Continuous with monthly formal review",
-   "maturity": "Developing",
-   "relatedStandards": [
-    "https://www.nist.gov/"
-   ],
-   "relatedTools": [
-    "prompt regression suites",
-    "red-teaming platforms",
-    "SIEM/SOAR integrations"
-   ],
-   "limitations": "Requires steady resourcing and does not fully solve novel attack techniques.",
-   "id": "continuous-monitor-and-update-ai-security-program",
-   "nistFunction": "MEASURE",
-   "iso42001Area": "A.6 System life cycle"
-  },
-  {
-   "name": "Board-level AI inventory and accountability map",
-   "risk": "Governance Implementation Lag in Regulated Australian Entities",
-   "description": "Create a board-approved inventory of AI use cases, owners, decision rights, data dependencies, and risk tiers so governance can be tested against prudential expectations.",
-   "implementation": "Integrate AI inventory into enterprise GRC, assign accountable owners, and tie high-risk uses to committee review and documented sign-off.",
-   "owner": "Risk / compliance / company secretary",
-   "evidenceRequired": "Current inventory, risk-tiering model, committee minutes, and sign-off evidence for high-risk use cases.",
-   "testingMethod": "Quarterly inventory reconciliation and sample testing of approvals and overrides.",
-   "frequency": "Quarterly",
-   "maturity": "Developing",
-   "relatedStandards": [
-    "https://www.apra.gov.au/",
-    "https://www.asic.gov.au/"
-   ],
-   "relatedTools": [
-    "GRC platform",
-    "AI inventory tool",
-    "workflow approvals"
-   ],
-   "limitations": "Inventory quality depends on business self-reporting and procurement coverage.",
-   "id": "board-level-ai-inventory-and-accountability-map",
-   "nistFunction": "MAP",
-   "iso42001Area": "A.3 Internal organization"
-  },
-  {
-   "name": "SBOM and dependency integrity verification",
-   "risk": "Software Supply-Chain Integrity Gaps in AI Stacks",
-   "description": "Track dependencies and verify component integrity so AI applications and supporting services can be recovered and audited after a supply-chain issue.",
-   "implementation": "Ingest SBOMs at build time, scan transitive dependencies, and gate release on high-severity findings or unverified components.",
-   "owner": "Platform engineering / AppSec",
-   "evidenceRequired": "SBOMs, dependency scan reports, exception approvals, and release gates.",
-   "testingMethod": "Build-pipeline checks and periodic dependency drift review.",
-   "frequency": "Every build and monthly review",
-   "maturity": "Maturing",
-   "relatedStandards": [
-    "https://cyclonedx.org/"
-   ],
-   "relatedTools": [
-    "OWASP Dependency-Track",
-    "CycloneDX SBOM",
-    "SCA tools"
-   ],
-   "limitations": "Only as strong as the completeness and freshness of the SBOM inputs.",
-   "id": "sbom-and-dependency-integrity-verification",
-   "nistFunction": "MANAGE",
-   "iso42001Area": "A.6 System life cycle"
-  },
-  {
-   "name": "Live AI inventory and use-case register",
-   "risk": "AI governance and assurance lag",
-   "description": "Maintain a continuously updated inventory of AI systems, owners, data sources, decision impact, and approval status.",
-   "implementation": "Tie the register to procurement, architecture, and change-management workflows so new use cases cannot go live without ownership and risk classification.",
-   "owner": "Risk / Governance",
-   "evidenceRequired": "Current register, named owners, approval records, and review cadence",
-   "testingMethod": "Sample audit of new AI deployments against the register",
-   "frequency": "Monthly",
-   "maturity": "Maturing",
-   "relatedStandards": [
+   "sources": [
     "https://www.nist.gov/itl/ai-risk-management-framework",
-    "https://www.dta.gov.au/ai-transparency-statement"
+    "https://www.iso.org/standard/42001"
    ],
-   "relatedTools": [
-    "AI inventory tools",
-    "GRC platforms",
-    "Procurement workflow systems"
-   ],
-   "limitations": "Only works if business units disclose shadow AI and updates are enforced",
-   "id": "live-ai-inventory-and-use-case-register",
-   "nistFunction": "MAP",
-   "iso42001Area": "A.4 Resources"
+   "soWhat": "Discrimination claims are the most litigated AI harm — documented testing with thresholds is both the defence and the early warning.",
+   "id": "bias-and-fairness-testing-on-decision-systems",
+   "firstSeen": "2026-07-07",
+   "lastUpdated": "2026-07-07",
+   "status": "new"
   },
   {
-   "name": "Board AI literacy and challenge pack",
-   "risk": "AI governance and assurance lag",
-   "description": "Provide boards with a concise pack covering use cases, owners, risk appetite, controls, incidents, and vendor concentration.",
-   "implementation": "Use a standing board agenda item and require management to report on changes in AI risk posture and unresolved gaps.",
-   "owner": "Company Secretariat / CRO",
-   "evidenceRequired": "Board papers, challenge notes, follow-up actions, and decision logs",
-   "testingMethod": "Quarterly board-effectiveness review",
-   "frequency": "Quarterly",
-   "maturity": "Maturing",
+   "name": "Production monitoring: drift, quality, and anomaly detection",
+   "nistFunction": "MEASURE",
+   "iso42001Area": "A.6 System life cycle",
+   "risk": "Operational degradation and drift risk",
+   "maturity": "Established",
+   "description": "Continuous monitoring of deployed AI for input drift, output quality, cost, latency, and behavioural anomalies, with alert thresholds and escalation.",
+   "implementation": "Instrument systems with quality metrics and drift detectors; set alert thresholds tied to the risk tier; route alerts to a staffed queue.",
+   "owner": "SRE / ML Ops",
+   "testingMethod": "Inject synthetic drift and verify detection-to-escalation within SLA.",
+   "frequency": "Continuous",
+   "evidenceRequired": "Dashboards, alert history, escalation records",
    "relatedStandards": [
+    "ISO 42001 A.6.2.6",
+    "NIST AI RMF MEASURE 2.4 / MANAGE 4",
+    "AU VAISS Guardrail 4"
+   ],
+   "relatedTools": [],
+   "sources": [
+    "https://www.iso.org/standard/42001",
+    "https://www.industry.gov.au/publications/voluntary-ai-safety-standard/10-guardrails"
+   ],
+   "soWhat": "Models rot silently — drift monitoring is the smoke detector, and 'the system once deployed' half of Guardrail 4 that most orgs skip.",
+   "id": "production-monitoring-drift-quality-and-anomaly-detection",
+   "firstSeen": "2026-07-07",
+   "lastUpdated": "2026-07-07",
+   "status": "new"
+  },
+  {
+   "name": "Agent action logging and behavioural baselining",
+   "nistFunction": "MEASURE",
+   "iso42001Area": "A.6 System life cycle",
+   "risk": "Agentic security and audit-trail risk",
+   "maturity": "Emerging",
+   "description": "Tamper-evident logs of every agent action — prompts, tool calls, credentials used, outputs — with baseline models flagging behavioural deviation.",
+   "implementation": "Log all agent tool calls with identity and rationale; retain per evidence rules; baseline normal behaviour and alert on deviation (new tools, odd hours, bulk access).",
+   "owner": "CISO / Platform",
+   "testingMethod": "Reconstruct a full agent session cold from logs; test anomaly alerts with a scripted deviation.",
+   "frequency": "Continuous",
+   "evidenceRequired": "Log samples, retention config, anomaly alerts",
+   "relatedStandards": [
+    "ISO 42001 A.6.2.8",
+    "OWASP ASI mitigations (observability)",
+    "CSA AICM: Logging and Monitoring"
+   ],
+   "relatedTools": [],
+   "sources": [
+    "https://genai.owasp.org/resource/owasp-top-10-for-agentic-applications-for-2026/",
+    "https://cloudsecurityalliance.org/artifacts/ai-controls-matrix-v1-1"
+   ],
+   "soWhat": "When an agent does something wrong, the first question is 'what exactly did it do?' — this control is the difference between an answer and a shrug.",
+   "id": "agent-action-logging-and-behavioural-baselining",
+   "firstSeen": "2026-07-07",
+   "lastUpdated": "2026-07-07",
+   "status": "new"
+  },
+  {
+   "name": "Independent AI assurance review",
+   "nistFunction": "MEASURE",
+   "iso42001Area": "A.6 System life cycle",
+   "risk": "Assurance and audit-credibility risk",
+   "maturity": "Emerging",
+   "description": "Periodic independent review (internal audit or external) of high-tier AI systems against the control library, with findings tracked to closure.",
+   "implementation": "Commission reviews on a risk-based cycle; scope against ISO 42001 and this library; publish summary results to the board.",
+   "owner": "Internal Audit / external assurer",
+   "testingMethod": "The review is the test; meta-check finding closure rates and repeat findings.",
+   "frequency": "Annual for high-tier systems",
+   "evidenceRequired": "Review reports, finding register, board summary",
+   "relatedStandards": [
+    "ISO 42001 Clause 9 / A.6",
+    "CSA AICM: Audit and Assurance",
+    "AU VAISS Guardrail 9"
+   ],
+   "relatedTools": [],
+   "sources": [
+    "https://cloudsecurityalliance.org/artifacts/ai-controls-matrix-v1-1",
+    "https://www.industry.gov.au/publications/voluntary-ai-safety-standard/10-guardrails"
+   ],
+   "soWhat": "42001 certification demand is arriving — organisations that have run independent reviews walk into certification; the rest walk into findings.",
+   "id": "independent-ai-assurance-review",
+   "firstSeen": "2026-07-07",
+   "lastUpdated": "2026-07-07",
+   "status": "new"
+  },
+  {
+   "name": "Model change regression and capability testing",
+   "nistFunction": "MEASURE",
+   "iso42001Area": "A.6 System life cycle",
+   "risk": "Model-update regression risk",
+   "maturity": "Emerging",
+   "description": "Regression testing when a model, prompt, or provider version changes — including silent upstream model updates — before the change reaches production.",
+   "implementation": "Pin model versions where possible; maintain regression suites replaying golden tasks and safety probes; subscribe to provider change notices and re-test on change.",
+   "owner": "ML Ops",
+   "testingMethod": "Simulate a provider model swap in staging and verify the regression suite catches behaviour change.",
+   "frequency": "Every change; weekly canary replay",
+   "evidenceRequired": "Version pins, regression results, change-notice log",
+   "relatedStandards": [
+    "ISO 42001 A.6.2.4-A.6.2.5",
+    "CSA AICM: Change Control",
+    "NIST AI RMF MEASURE 2"
+   ],
+   "relatedTools": [
+    "promptfoo",
+    "inspect_ai"
+   ],
+   "sources": [
+    "https://cloudsecurityalliance.org/artifacts/ai-controls-matrix-v1-1",
     "https://www.nist.gov/itl/ai-risk-management-framework"
    ],
-   "relatedTools": [
-    "Board packs",
-    "AI dashboards",
-    "Risk registers"
-   ],
-   "limitations": "Can degrade into a reporting exercise unless directors ask hard questions",
-   "id": "board-ai-literacy-and-challenge-pack",
-   "nistFunction": "GOVERN",
-   "iso42001Area": "A.3 Internal organization"
+   "soWhat": "Providers update models under your feet — the regression suite is how you find out before your customers do.",
+   "id": "model-change-regression-and-capability-testing",
+   "firstSeen": "2026-07-07",
+   "lastUpdated": "2026-07-07",
+   "status": "new"
   },
   {
-   "name": "Agent containment and least privilege",
-   "risk": "Agentic AI compromise and data leakage",
-   "description": "Constrain agents with sandboxing, explicit tool permissions, egress controls, and secrets isolation.",
-   "implementation": "Separate agent execution from core systems, log every tool call, and restrict what the agent can read, write, and exfiltrate.",
-   "owner": "Security / Platform Engineering",
-   "evidenceRequired": "Architecture diagrams, access-control lists, sandbox logs, and egress policy evidence",
-   "testingMethod": "Red-team prompt injection and privilege escalation drills",
-   "frequency": "Per release and after major model/tool changes",
-   "maturity": "Developing",
-   "relatedStandards": [
-    "https://genai.owasp.org/resource/owasp-top-10-for-agentic-applications-for-2026",
-    "https://genai.owasp.org/resource/owasp-top-10-for-llm-applications-2025"
-   ],
-   "relatedTools": [
-    "Sandboxing",
-    "Secrets managers",
-    "Agent runtimes",
-    "Egress firewalls"
-   ],
-   "limitations": "Hard to implement across heterogeneous tool stacks without architecture changes",
-   "id": "agent-containment-and-least-privilege",
-   "nistFunction": "MANAGE",
-   "iso42001Area": "A.6 System life cycle"
-  },
-  {
-   "name": "Prompt-injection and supply-chain red teaming",
-   "risk": "Agentic AI compromise and data leakage",
-   "description": "Continuously test prompts, retrieval paths, plugins, and third-party integrations for injection and dependency abuse.",
-   "implementation": "Add adversarial test cases to CI/CD and maintain a regression suite for known exploit patterns.",
-   "owner": "Security Testing / AppSec",
-   "evidenceRequired": "Red-team reports, test coverage, fix tracking, and regression results",
-   "testingMethod": "Controlled exploit simulations and recurring adversarial testing",
-   "frequency": "Every release cycle",
-   "maturity": "Developing",
-   "relatedStandards": [
-    "https://genai.owasp.org/2026/04/14/owasp-genai-exploit-round-up-report-q1-2026",
-    "https://www.nist.gov/publications/summary-analysis-responses-request-information-regarding-security-considerations-ai"
-   ],
-   "relatedTools": [
-    "Prompt-injection scanners",
-    "LLM app security testing",
-    "Dependency scanning"
-   ],
-   "limitations": "Coverage will always lag novel attacker techniques unless maintained continuously",
-   "id": "prompt-injection-and-supply-chain-red-teaming",
+   "name": "AI incident metrics and near-miss tracking",
    "nistFunction": "MEASURE",
-   "iso42001Area": "A.6 System life cycle"
-  },
-  {
-   "name": "Transparency, human review, and contestability controls",
-   "risk": "Transparency and contestability gap in AI decisioning",
-   "description": "Require notice when AI is used, disclosure when personal information is shared with third-party AI providers, human review, bias testing, and a path to challenge AI-mediated decisions.",
-   "implementation": "Add to product flows, privacy notices, complaints handling, and case management systems; tie each use case to an accountable official or executive sponsor.",
-   "owner": "Privacy / Legal / Product",
-   "evidenceRequired": "Published notice text, workflow screenshots, test cases, and audit logs.",
-   "testingMethod": "Scenario testing with sample decisions and appeal handling",
-   "frequency": "At launch and quarterly",
-   "maturity": "Developing",
+   "iso42001Area": "A.8 Interested-party info",
+   "risk": "Governance risk: incident learning and disclosure",
+   "maturity": "Emerging",
+   "description": "Systematic capture of AI incidents and near-misses with severity taxonomy, trend metrics, and feeds into risk scoring and the public incident record where required.",
+   "implementation": "Extend incident taxonomy for AI failure modes; log near-misses from monitoring and staff reports; review trends quarterly and adjust controls.",
+   "owner": "Risk / Incident Management",
+   "testingMethod": "Sample incidents for taxonomy quality; check near-miss volume (zero means it isn't working).",
+   "frequency": "Continuous; quarterly trend review",
+   "evidenceRequired": "Incident register, trend report, control adjustments",
    "relatedStandards": [
-    "Australian Government AI transparency statement",
-    "OAIC ACAPS 2026",
-    "NIST AI RMF"
-   ],
-   "relatedTools": [
-    "AI governance platforms",
-    "Case management",
-    "Workflow orchestration"
-   ],
-   "limitations": "Human review can be superficial unless reviewers have authority and evidence.",
-   "id": "transparency-human-review-and-contestability-controls",
-   "nistFunction": "GOVERN",
-   "iso42001Area": "A.8 Interested-party info"
-  },
-  {
-   "name": "Agent containment baseline",
-   "risk": "Agentic AI Containment Gap",
-   "description": "Constrain what an AI agent can do with tools, data, and credentials, and require a tested shutdown path.",
-   "implementation": "Use least-privilege tool scopes, sandbox execution, network egress filtering, explicit approval gates for destructive actions, and kill-switch drills.",
-   "owner": "Security / Platform Engineering",
-   "evidenceRequired": "Tool-permission inventory, red-team results, shutdown test logs, incident playbook",
-   "testingMethod": "Adversarial prompt-injection tests, privilege-escalation tests, rollback drills",
-   "frequency": "Before launch and quarterly",
-   "maturity": "emerging",
-   "relatedStandards": [
-    "https://owasp.org/www-project-top-10-for-large-language-model-applications/"
+    "ISO 42001 A.8.4",
+    "NIST AI RMF MEASURE 3",
+    "AIID pattern"
    ],
    "relatedTools": [],
-   "limitations": "Will not eliminate all misuse; requires continuous tuning as agent capability changes.",
-   "id": "agent-containment-baseline",
+   "sources": [
+    "https://www.nist.gov/itl/ai-risk-management-framework"
+   ],
+   "soWhat": "Near-misses are free lessons — the register turns them into control improvements before they become AIID entries.",
+   "id": "ai-incident-metrics-and-near-miss-tracking",
+   "firstSeen": "2026-07-07",
+   "lastUpdated": "2026-07-07",
+   "status": "new"
+  },
+  {
+   "name": "Least-privilege, short-lived agent identities",
    "nistFunction": "MANAGE",
-   "iso42001Area": "A.6 System life cycle"
-  },
-  {
-   "name": "High-impact AI review gate",
-   "risk": "Chatbot Harm and Escalation Failure",
-   "description": "Require human review or explicit escalation paths where AI advice or decisions can materially affect a person’s safety, rights, or finances.",
-   "implementation": "Add severity thresholds, mandatory human handoff, complaint routes, and reviewable decision logs for high-impact workflows.",
-   "owner": "Product / Risk / Legal",
-   "evidenceRequired": "Decision logs, human-review metrics, complaint handling evidence, safety incident reports",
-   "testingMethod": "Scenario testing with vulnerable-user prompts and escalation drills",
-   "frequency": "Per release and monthly monitoring",
-   "maturity": "developing",
-   "relatedStandards": [],
-   "relatedTools": [],
-   "limitations": "Human review can be slow; design must avoid creating a false promise of perfect safety.",
-   "id": "high-impact-ai-review-gate",
-   "nistFunction": "MEASURE",
-   "iso42001Area": "A.9 Responsible use"
-  },
-  {
-   "name": "Provenance and disclosure controls",
-   "risk": "Synthetic Media and AI Slop Proliferation",
-   "description": "Mark synthetic content, preserve provenance metadata where possible, and clearly disclose AI assistance in publishing workflows.",
-   "implementation": "Use content labels, watermarking where supported, editorial review, and publication rules for AI-assisted output.",
-   "owner": "Comms / Publishing / Platform Trust & Safety",
-   "evidenceRequired": "Label coverage, provenance logs, editorial QA samples",
-   "testingMethod": "Random audits of published content and takedown/refusal rates",
-   "frequency": "Continuous and monthly audit",
-   "maturity": "developing",
-   "relatedStandards": [],
-   "relatedTools": [],
-   "limitations": "Provenance can be stripped or lost across platforms; requires ecosystem support.",
-   "id": "provenance-and-disclosure-controls",
-   "nistFunction": "GOVERN",
-   "iso42001Area": "A.8 Interested-party info"
-  },
-  {
-   "name": "AI incident logging and rollback",
-   "risk": "Governance and assurance lag",
-   "description": "Ensure every material AI workflow can be traced, paused, and rolled back quickly after an incident or policy breach.",
-   "implementation": "Log prompts, tool calls, model versions, policy decisions, and operator overrides in a searchable system of record.",
-   "owner": "Risk / Engineering / Audit",
-   "evidenceRequired": "Complete logs, access records, rollback test results, incident postmortems",
-   "testingMethod": "Tabletop exercises and sample incident replays",
-   "frequency": "Quarterly",
-   "maturity": "developing",
-   "relatedStandards": [],
-   "relatedTools": [],
-   "limitations": "Logging alone is not containment; must be paired with response authority and controls.",
-   "id": "ai-incident-logging-and-rollback",
-   "nistFunction": "MANAGE",
-   "iso42001Area": "A.6 System life cycle"
-  },
-  {
-   "name": "Age-assurance and account-gating workflow",
-   "risk": "Age-assurance and Social Media Minimum Age compliance failure",
-   "description": "Create a classification and enforcement workflow for in-scope social services, with documented reasonable steps, age checks, appeals, and monitoring.",
-   "implementation": "Map products against the eSafety definition, design age checks, log decisions, and rehearse exception handling before enforcement deadlines.",
-   "owner": "Trust & Safety / Compliance / Product",
-   "evidenceRequired": "Classification decisions, policy approvals, test cases, logs, appeals data, and incident records.",
-   "testingMethod": "Tabletop exercises, end-to-end user journey tests, and periodic audit of enforcement logs.",
-   "frequency": "Before launch and quarterly thereafter",
-   "maturity": "Developing",
+   "iso42001Area": "A.6 System life cycle",
+   "risk": "Agentic AI security risk: identity and privilege abuse",
+   "maturity": "Emerging",
+   "description": "Every agent runs under its own scoped, short-lived identity — never a shared service account or a human's credentials — with permissions matched to task.",
+   "implementation": "Issue per-agent identities via the IAM platform; scope tokens to task and TTL; prohibit credential pass-through; review scopes monthly against the agent map.",
+   "owner": "IAM / Platform Engineering",
+   "testingMethod": "Attempt privilege escalation and lateral tool use from a test agent; audit token TTLs and scopes.",
+   "frequency": "Continuous; monthly scope review",
+   "evidenceRequired": "IAM config, scope audit, escalation-test report",
    "relatedStandards": [
-    "eSafety Social Media Minimum Age requirements",
-    "privacy-by-design",
-    "platform risk governance"
+    "OWASP ASI03",
+    "CSA AICM: IAM",
+    "NIST AI RMF MANAGE 1"
    ],
-   "relatedTools": [
-    "Age-assurance services",
-    "identity verification",
-    "case-management tooling"
+   "relatedTools": [],
+   "sources": [
+    "https://genai.owasp.org/resource/owasp-top-10-for-agentic-applications-for-2026/",
+    "https://cloudsecurityalliance.org/artifacts/ai-controls-matrix-v1-1"
    ],
-   "limitations": "Age checks can create friction, false positives, and privacy trade-offs; effectiveness depends on the platform’s product design and user base.",
-   "id": "age-assurance-and-account-gating-workflow",
+   "soWhat": "The number-one agentic mitigation across every 2026 framework — scoped identity is to agents what least privilege was to users.",
+   "id": "least-privilege-short-lived-agent-identities",
+   "firstSeen": "2026-07-07",
+   "lastUpdated": "2026-07-07",
+   "status": "new"
+  },
+  {
+   "name": "Agent sandboxing with egress control",
    "nistFunction": "MANAGE",
-   "iso42001Area": "A.9 Responsible use"
+   "iso42001Area": "A.6 System life cycle",
+   "risk": "Agentic AI security risk: unexpected code execution and exfiltration",
+   "maturity": "Emerging",
+   "description": "Agents that execute code or browse run inside sandboxes with default-deny network egress, resource limits, and no route to production secrets.",
+   "implementation": "Containerise agent execution; allow-list egress destinations; separate secrets brokers; kill long-running or resource-anomalous sessions automatically.",
+   "owner": "Platform Engineering",
+   "testingMethod": "Red-team the sandbox: attempt exfiltration, secret access, and egress to unlisted hosts.",
+   "frequency": "Continuous; quarterly sandbox test",
+   "evidenceRequired": "Sandbox config, egress rules, escape-test report",
+   "relatedStandards": [
+    "OWASP ASI05 Unexpected Code Execution",
+    "CSA AICM: Infrastructure Security",
+    "MITRE ATLAS mitigations"
+   ],
+   "relatedTools": [],
+   "sources": [
+    "https://genai.owasp.org/resource/owasp-top-10-for-agentic-applications-for-2026/",
+    "https://atlas.mitre.org/mitigations"
+   ],
+   "soWhat": "The Cursor-deletes-the-database class of incident is a sandboxing failure — containment converts catastrophic into annoying.",
+   "id": "agent-sandboxing-with-egress-control",
+   "firstSeen": "2026-07-07",
+   "lastUpdated": "2026-07-07",
+   "status": "new"
   },
   {
-   "name": "Synthetic-image abuse intake and takedown workflow",
-   "risk": "Synthetic image abuse and intimate-image extortion",
-   "description": "Set up a dedicated channel to receive, triage, preserve evidence, and remove intimate-image abuse or synthetic-media harassment rapidly.",
-   "implementation": "Create intake forms, escalation playbooks, legal review steps, and liaison paths to platforms, search engines, and victim-support services.",
-   "owner": "Trust & Safety / Legal / Security Operations",
-   "evidenceRequired": "Case logs, takedown SLAs, evidence-preservation steps, and victim-support referrals.",
-   "testingMethod": "Red-team abuse scenarios, moderation drills, and sample-case audits.",
-   "frequency": "Monthly review and after every major incident",
-   "maturity": "Developing",
-   "relatedStandards": [
-    "content-safety policy",
-    "incident response",
-    "eSafety image-based abuse guidance"
-   ],
-   "relatedTools": [
-    "Moderation tooling",
-    "hash-matching",
-    "case management",
-    "retention controls"
-   ],
-   "limitations": "Removal can be slow across mirrored copies; synthetic content detection is imperfect and must be paired with response workflows.",
-   "id": "synthetic-image-abuse-intake-and-takedown-workflow",
+   "name": "Human approval gates for high-impact actions",
    "nistFunction": "MANAGE",
-   "iso42001Area": "A.8 Interested-party info"
-  },
-  {
-   "name": "AI transparency statement and accountable-official workflow",
-   "risk": "Public-sector AI transparency drift",
-   "description": "Keep an agency-wide register of AI use cases, assign accountable officials, and refresh transparency statements on a fixed cadence.",
-   "implementation": "Assign an accountable owner, catalogue use cases, link each to an executive sponsor, and publish transparent summaries of AI use and controls.",
-   "owner": "Chief Operating Officer / AI Branch / Policy",
-   "evidenceRequired": "Register extracts, transparency statements, board reporting, and review records.",
-   "testingMethod": "Quarterly control review and internal audit sampling.",
-   "frequency": "Quarterly",
-   "maturity": "Developing",
-   "relatedStandards": [
-    "Australian Government policy for the responsible use of AI in government",
-    "public-sector transparency",
-    "AI inventory management"
-   ],
-   "relatedTools": [
-    "AI registers",
-    "document management",
-    "GRC tooling"
-   ],
-   "limitations": "A transparency statement is only effective if it is current, complete, and tied to real operational ownership.",
-   "id": "ai-transparency-statement-and-accountable-official-workflow",
-   "nistFunction": "GOVERN",
-   "iso42001Area": "A.8 Interested-party info"
-  },
-  {
-   "name": "Named accountable owner and AI transparency statement",
-   "risk": "AI transparency drift",
-   "description": "Assign a named owner for AI oversight and publish a short statement describing AI use, purpose, and accountability.",
-   "implementation": "Maintain a live AI inventory, define approval thresholds, and review the statement at board/risk cadence.",
-   "owner": "CIO / CRO / governance lead",
-   "evidenceRequired": "Owner name, inventory entries, approval records, and current transparency statement.",
-   "testingMethod": "Internal audit and sampling of a few live AI use cases.",
-   "frequency": "Quarterly",
+   "iso42001Area": "A.9 Responsible use",
+   "risk": "Safety risk from autonomous high-impact actions",
    "maturity": "Established",
+   "description": "Defined action classes (payments, deletions, external comms, production changes) that agents cannot execute without informed human approval, with friction proportional to impact.",
+   "implementation": "Classify actions by reversibility and impact; require out-of-band approval for the top class; log approvals with the approver's identity; audit for rubber-stamping.",
+   "owner": "System owner / Operations",
+   "testingMethod": "Attempt each gated action class without approval; measure approval quality (time-to-review, rejection rate).",
+   "frequency": "Continuous; monthly rubber-stamp audit",
+   "evidenceRequired": "Action classification, approval logs, audit report",
    "relatedStandards": [
-    "NIST AI RMF 1.0",
-    "ISO/IEC 42001"
+    "AU VAISS Guardrail 5",
+    "ISO 42001 A.9.2",
+    "OWASP ASI09 mitigation",
+    "NIST AI RMF MANAGE 2"
    ],
-   "relatedTools": [
-    "AI inventory tools",
-    "GRC platforms",
-    "policy management tools"
+   "relatedTools": [],
+   "sources": [
+    "https://www.industry.gov.au/publications/voluntary-ai-safety-standard/10-guardrails",
+    "https://genai.owasp.org/resource/owasp-top-10-for-agentic-applications-for-2026/"
    ],
-   "limitations": "Disclosure can be accurate yet still miss shadow AI or downstream misuse.",
-   "id": "named-accountable-owner-and-ai-transparency-statement",
-   "nistFunction": "GOVERN",
-   "iso42001Area": "A.8 Interested-party info"
+   "soWhat": "Meaningful human oversight is the guardrail regulators quote most — approval logs are what make 'meaningful' provable, and rubber-stamp audits keep it honest.",
+   "id": "human-approval-gates-for-high-impact-actions",
+   "firstSeen": "2026-07-07",
+   "lastUpdated": "2026-07-07",
+   "status": "new"
   },
   {
-   "name": "Prompt-injection-resistant agent design",
-   "risk": "Agentic prompt injection and tool abuse",
-   "description": "Design agent workflows so untrusted input cannot directly drive destructive or sensitive actions.",
-   "implementation": "Use tool allowlists, separate read/write credentials, content sanitisation, and approval gates for high-impact actions.",
-   "owner": "Security engineering",
-   "evidenceRequired": "Red-team results, signed-off threat model, and logs showing gated sensitive actions.",
-   "testingMethod": "Scenario-based red-teaming with adversarial prompts and poisoned retrieval content.",
-   "frequency": "Per release and after major prompt/tool changes",
+   "name": "Kill switch and graceful degradation",
+   "nistFunction": "MANAGE",
+   "iso42001Area": "A.9 Responsible use",
+   "risk": "Operational risk from runaway or cascading agent failures",
+   "maturity": "Established",
+   "description": "A tested ability to pause or stop any AI system quickly — including mid-task agents — with a defined degraded mode so the business keeps running.",
+   "implementation": "Implement per-system stop controls (feature flags, queue drains, credential revocation); document degraded-mode runbooks; test the full stop path, not just the flag.",
+   "owner": "Operations / SRE",
+   "testingMethod": "Quarterly kill-switch drill on a production-like environment, measuring time-to-stop and degraded-mode function.",
+   "frequency": "Quarterly drill",
+   "evidenceRequired": "Stop procedures, drill reports, degraded-mode runbooks",
+   "relatedStandards": [
+    "ISO 42001 A.9.2",
+    "OWASP ASI08 Cascading Failures",
+    "AU VAISS Guardrail 5"
+   ],
+   "relatedTools": [],
+   "sources": [
+    "https://genai.owasp.org/resource/owasp-top-10-for-agentic-applications-for-2026/",
+    "https://www.industry.gov.au/publications/voluntary-ai-safety-standard/10-guardrails"
+   ],
+   "soWhat": "Everyone claims they can turn it off; the drill report proves it — and it's the first question after any agentic incident.",
+   "id": "kill-switch-and-graceful-degradation",
+   "firstSeen": "2026-07-07",
+   "lastUpdated": "2026-07-07",
+   "status": "new"
+  },
+  {
+   "name": "Prompt-injection defence in depth",
+   "nistFunction": "MANAGE",
+   "iso42001Area": "A.6 System life cycle",
+   "risk": "Security risk: prompt injection and goal hijack",
    "maturity": "Emerging",
+   "description": "Layered defences against direct and indirect injection: input isolation, content labelling, output validation, tool-call constraints, and injection-aware monitoring.",
+   "implementation": "Segregate untrusted content from instructions; validate tool calls against task intent; strip/label external content; monitor for injection signatures; assume breach and contain blast radius via least privilege.",
+   "owner": "Engineering / Security",
+   "testingMethod": "Red-team with current injection corpora (direct, indirect, multimodal); measure block and detection rates.",
+   "frequency": "Continuous; re-test quarterly",
+   "evidenceRequired": "Architecture doc, injection test results, monitoring rules",
    "relatedStandards": [
-    "OWASP Top 10 for Large Language Model Applications",
-    "NIST AI RMF 1.0"
-   ],
-   "relatedTools": [
-    "LLM app security scanners",
-    "DLP",
-    "PAM/IAM",
-    "Red-team platforms"
-   ],
-   "limitations": "No control fully prevents model error or user misuse; least privilege remains essential.",
-   "id": "prompt-injection-resistant-agent-design",
-   "nistFunction": "MANAGE",
-   "iso42001Area": "A.6 System life cycle"
-  },
-  {
-   "name": "AI-abuse telemetry and MITRE mapping",
-   "risk": "AI-enabled cyber abuse scaling",
-   "description": "Track observed AI misuse patterns and map them to adversary tactics so defenders can prioritise controls.",
-   "implementation": "Log abuse cases, classify by tactic, and feed results into SOC detection and policy tuning.",
-   "owner": "SOC / threat intel",
-   "evidenceRequired": "Abuse taxonomy, detections, incident records, and periodic threat reports.",
-   "testingMethod": "Tabletop exercises and detection-engine drills tied to current threat patterns.",
-   "frequency": "Monthly",
-   "maturity": "Emerging",
-   "relatedStandards": [
-    "MITRE ATT&CK",
-    "NIST AI RMF 1.0"
-   ],
-   "relatedTools": [
-    "SIEM/SOAR",
-    "Threat-intel platforms",
-    "Model monitoring"
-   ],
-   "limitations": "Detection is retrospective and will miss novel abuse until patterns are learned.",
-   "id": "ai-abuse-telemetry-and-mitre-mapping",
-   "nistFunction": "MEASURE",
-   "iso42001Area": "A.6 System life cycle"
-  },
-  {
-   "name": "Scoped channel and tool access for collaborative agents",
-   "risk": "Agentic collaboration and tool access",
-   "description": "Limit each agent to selected channels, data sources, and tools, and keep read-only access separate from destructive actions.",
-   "implementation": "Use allow-lists, IAM roles, and workspace/channel scoping; log all tool calls and surfaced context.",
-   "owner": "Security engineering / product engineering",
-   "evidenceRequired": "Access matrix, permission review, audit log samples, and red-team test results.",
-   "testingMethod": "Prompt-injection and privilege-escalation tests across real workflows.",
-   "frequency": "Every release and after material permission changes",
-   "maturity": "Developing",
-   "relatedStandards": [
-    "NIST AI RMF",
-    "ISO 42001"
-   ],
-   "relatedTools": [
-    "Slack admin controls",
-    "IAM",
-    "agent gateways"
-   ],
-   "limitations": "Still depends on humans avoiding over-broad channel and tool grants.",
-   "id": "scoped-channel-and-tool-access-for-collaborative-agents",
-   "nistFunction": "MANAGE",
-   "iso42001Area": "A.6 System life cycle"
-  },
-  {
-   "name": "Human approval gate for destructive actions",
-   "risk": "Agentic collaboration and tool access",
-   "description": "Require explicit human approval before an agent can delete, spend, publish, or otherwise take high-impact actions.",
-   "implementation": "Separate read and write paths; require approvals for write/delete/spend workflows; block autonomous escalation by default.",
-   "owner": "Product engineering / operations",
-   "evidenceRequired": "Approval logs, blocked-action records, and change tickets.",
-   "testingMethod": "Adversarial task simulation and rollback drills.",
-   "frequency": "Per deployment and quarterly exercises",
-   "maturity": "Mature",
-   "relatedStandards": [
-    "NIST AI RMF",
-    "ISO 27001"
-   ],
-   "relatedTools": [
-    "workflow approvals",
-    "change-management systems"
-   ],
-   "limitations": "Can slow legitimate work if not carefully tuned.",
-   "id": "human-approval-gate-for-destructive-actions",
-   "nistFunction": "MANAGE",
-   "iso42001Area": "A.9 Responsible use"
-  },
-  {
-   "name": "AI inventory and transparency statement control",
-   "risk": "Privacy and trust gap in data-driven AI use",
-   "description": "Maintain a live inventory of AI use cases and a disclosure template that names accountable owners, purpose, oversight, and escalation paths.",
-   "implementation": "Refresh the register quarterly; publish or internalise a transparency statement; align ownership with board reporting.",
-   "owner": "Governance / compliance",
-   "evidenceRequired": "Register entries, named owners, disclosure record, and board reporting pack.",
-   "testingMethod": "Disclosure spot checks and audit sampling.",
-   "frequency": "Quarterly",
-   "maturity": "Developing",
-   "relatedStandards": [
-    "OECD AI Principles",
-    "ISO 42001"
-   ],
-   "relatedTools": [
-    "GRC platform",
-    "policy management",
-    "AI inventory tooling"
-   ],
-   "limitations": "Disclosure alone does not guarantee technical safety or privacy compliance.",
-   "id": "ai-inventory-and-transparency-statement-control",
-   "nistFunction": "MAP",
-   "iso42001Area": "A.8 Interested-party info"
-  },
-  {
-   "name": "Privacy minimisation and deletion workflow",
-   "risk": "Privacy and trust gap in data-driven AI use",
-   "description": "Reduce personal data exposure by default, restrict retention, and ensure deletion requests can be executed and evidenced.",
-   "implementation": "Apply data-classification rules to prompts, retrieval stores, logs, and training corpora; enforce retention windows.",
-   "owner": "Privacy office / data governance",
-   "evidenceRequired": "Retention settings, deletion logs, DPIAs, and exception approvals.",
-   "testingMethod": "Sampling of deletion requests and retention-policy audits.",
-   "frequency": "Monthly",
-   "maturity": "Mature",
-   "relatedStandards": [
-    "Privacy Act",
-    "ISO 27701"
-   ],
-   "relatedTools": [
-    "DLP",
-    "retention controls",
-    "data catalogues"
-   ],
-   "limitations": "Hard to guarantee across downstream vendors and cached artifacts.",
-   "id": "privacy-minimisation-and-deletion-workflow",
-   "nistFunction": "MANAGE",
-   "iso42001Area": "A.7 Data"
-  },
-  {
-   "name": "Cyber-abuse telemetry and response playbook",
-   "risk": "AI-enabled cyber abuse at scale",
-   "description": "Monitor for malicious use patterns, map abuse to technique taxonomies, and define escalation paths for abuse, fraud, and account compromise.",
-   "implementation": "Track suspicious tool use, model prompts, and account behaviour; integrate with SOC triage and abuse review.",
-   "owner": "Security operations / trust & safety",
-   "evidenceRequired": "Abuse dashboards, incident tickets, blocked-account reports, and remediation records.",
-   "testingMethod": "Purple-team exercises and simulated abuse cases.",
-   "frequency": "Continuous monitoring with quarterly drills",
-   "maturity": "Developing",
-   "relatedStandards": [
-    "MITRE ATT&CK",
-    "NIST CSF"
-   ],
-   "relatedTools": [
-    "SIEM",
-    "abuse monitoring",
-    "rate limiting"
-   ],
-   "limitations": "Detection coverage may lag adversarial adaptation.",
-   "id": "cyber-abuse-telemetry-and-response-playbook",
-   "nistFunction": "MANAGE",
-   "iso42001Area": "A.6 System life cycle"
-  },
-  {
-   "name": "AI chatbot safety gate",
-   "risk": "AI companion and chatbot harm",
-   "description": "Require age-appropriate controls, crisis routing, and clear disclosures for any chatbot or companion feature that can influence vulnerable users.",
-   "implementation": "Insert safety prompts, block harmful content classes, route self-harm or abuse signals to humans, and log risky interactions for review.",
-   "owner": "Product safety / Trust and safety",
-   "evidenceRequired": [
-    "Policy text",
-    "Escalation logs",
-    "Evaluation results"
-   ],
-   "testingMethod": "Scenario tests with vulnerable-user prompts and crisis-intent cases",
-   "frequency": "Per release and quarterly",
-   "maturity": "Developing",
-   "relatedStandards": [
-    "NIST AI RMF",
-    "OECD AI Principles"
-   ],
-   "relatedTools": [],
-   "limitations": "Cannot eliminate harm if the product is designed for open-ended companionship.",
-   "id": "ai-chatbot-safety-gate",
-   "nistFunction": "MANAGE",
-   "iso42001Area": "A.6 System life cycle"
-  },
-  {
-   "name": "Agent tool-use containment",
-   "risk": "Agentic AI tool-use abuse",
-   "description": "Constrain tool-using assistants to approved actions, scoped permissions, and human approval for high-impact operations.",
-   "implementation": "Use allowlists, sandboxed execution, secret isolation, and step-up approval for external side effects.",
-   "owner": "Security engineering",
-   "evidenceRequired": [
-    "Permission matrix",
-    "Red-team results",
-    "Audit trail"
-   ],
-   "testingMethod": "Prompt-injection and abuse-path testing",
-   "frequency": "Every release",
-   "maturity": "Developing",
-   "relatedStandards": [
-    "NIST AI RMF"
-   ],
-   "relatedTools": [],
-   "limitations": "Hard to prove complete safety when tools can reach live systems.",
-   "id": "agent-tool-use-containment",
-   "nistFunction": "MANAGE",
-   "iso42001Area": "A.9 Responsible use"
-  },
-  {
-   "name": "Provenance and human-verification workflow",
-   "risk": "Synthetic content, AI slop, and misinformation",
-   "description": "Require provenance checks and human review before publishing or acting on AI-generated text, images, audio, or video.",
-   "implementation": "Attach source metadata, verify high-impact claims, and block or label suspect synthetic media.",
-   "owner": "Editorial / Communications / Product",
-   "evidenceRequired": [
-    "Published provenance tags",
-    "Review logs",
-    "Exception register"
-   ],
-   "testingMethod": "Spot checks and claim verification exercises",
-   "frequency": "Ongoing",
-   "maturity": "Developing",
-   "relatedStandards": [
-    "OECD AI Principles"
-   ],
-   "relatedTools": [],
-   "limitations": "Provenance systems are only useful if upstream content carries usable signals.",
-   "id": "provenance-and-human-verification-workflow",
-   "nistFunction": "MANAGE",
-   "iso42001Area": "A.9 Responsible use"
-  },
-  {
-   "name": "AI obligations map and change watch",
-   "risk": "Regulatory fragmentation and compliance lag",
-   "description": "Maintain a living map of AI-related obligations across Australia, the EU, and sectoral regulators.",
-   "implementation": "Link each AI use case to controls, evidence, owners, and review dates; update on every material policy change.",
-   "owner": "Risk and compliance",
-   "evidenceRequired": [
-    "Obligations register",
-    "Control mapping",
-    "Review schedule"
-   ],
-   "testingMethod": "Internal audit and spot-checks against current guidance",
-   "frequency": "Monthly and on change",
-   "maturity": "Developing",
-   "relatedStandards": [
-    "NIST AI RMF",
-    "OECD AI Principles"
-   ],
-   "relatedTools": [],
-   "limitations": "Requires continual monitoring; stale mappings become misleading quickly.",
-   "id": "ai-obligations-map-and-change-watch",
-   "nistFunction": "MAP",
-   "iso42001Area": "A.6 System life cycle"
-  },
-  {
-   "name": "Vendor due-diligence evidence pack",
-   "risk": "Vendor concentration and safety posture drift",
-   "description": "Ask vendors for evidence of safety testing, transparency, logging, incident response, and change-notification practices.",
-   "implementation": "Collect product docs, evaluation results, security attestations, and contractual commitments before purchase.",
-   "owner": "Procurement / Third-party risk",
-   "evidenceRequired": [
-    "Vendor questionnaire",
-    "Security review",
-    "Contract clauses"
-   ],
-   "testingMethod": "Procurement review and quarterly vendor reassessment",
-   "frequency": "Per onboarding and annually",
-   "maturity": "Developing",
-   "relatedStandards": [
-    "NIST AI RMF"
-   ],
-   "relatedTools": [],
-   "limitations": "Vendor documentation can lag product reality; independent testing is still needed.",
-   "id": "vendor-due-diligence-evidence-pack",
-   "nistFunction": "GOVERN",
-   "iso42001Area": "A.10 Third parties"
-  },
-  {
-   "name": "AI review gate",
-   "risk": "Compliance lag across fast-moving AI guidance",
-   "description": "Require structured review and sign-off before any new AI use case is approved or scaled.",
-   "implementation": "Create a checklist for purpose, data, model, human oversight, logs, and risk acceptance.",
-   "owner": "Risk / governance",
-   "evidenceRequired": [
-    "Approval memo",
-    "Risk rating",
-    "Owner assignment"
-   ],
-   "testingMethod": "Sample approvals and verify evidence completeness",
-   "frequency": "Per use case",
-   "maturity": "Developing",
-   "relatedStandards": [
-    "NIST AI RMF",
-    "OECD AI Principles"
-   ],
-   "relatedTools": [],
-   "limitations": "Only works if teams actually route AI projects through it.",
-   "id": "ai-review-gate",
-   "nistFunction": "MEASURE",
-   "iso42001Area": "A.6 System life cycle"
-  },
-  {
-   "name": "Agent containment and approvals",
-   "risk": "Agentic AI misuse and unsafe automation",
-   "description": "Keep autonomous systems inside clear permission bounds and require human approval for material actions.",
-   "implementation": "Use allowlists, sandboxing, scoped credentials, and step-up approvals for external side effects.",
-   "owner": "Security engineering",
-   "evidenceRequired": [
-    "Permission matrix",
-    "Logs",
-    "Red-team results"
-   ],
-   "testingMethod": "Prompt-injection and abuse-path testing",
-   "frequency": "Every release",
-   "maturity": "Developing",
-   "relatedStandards": [
-    "NIST AI RMF"
-   ],
-   "relatedTools": [],
-   "limitations": "Hard to guarantee safety if tools can act on live systems.",
-   "id": "agent-containment-and-approvals",
-   "nistFunction": "MANAGE",
-   "iso42001Area": "A.9 Responsible use"
-  },
-  {
-   "name": "Transparency-statement maintenance",
-   "risk": "Transparency and accountability drift",
-   "description": "Tie each public AI statement to a current system inventory, owner, and review date.",
-   "implementation": "Update the statement on each major model, policy, or workflow change and keep a changelog.",
-   "owner": "Governance / communications",
-   "evidenceRequired": [
-    "Current statement",
-    "Change log",
-    "Inventory link"
-   ],
-   "testingMethod": "Quarterly review against actual AI deployments",
-   "frequency": "Quarterly and on change",
-   "maturity": "Developing",
-   "relatedStandards": [
-    "OECD AI Principles"
-   ],
-   "relatedTools": [],
-   "limitations": "Statements can lag if change management is weak.",
-   "id": "transparency-statement-maintenance",
-   "nistFunction": "GOVERN",
-   "iso42001Area": "A.8 Interested-party info"
-  },
-  {
-   "name": "Chatbot safety gate",
-   "risk": "Consumer chatbot and companion harm",
-   "description": "Add age-appropriate controls, crisis routing, and harm-minimisation checks to any consumer-facing chatbot or companion feature.",
-   "implementation": "Implement policy-based blocks, escalation paths, and warning/disclosure copy before launch.",
-   "owner": "Trust & safety / product",
-   "evidenceRequired": [
-    "Safety test results",
-    "Escalation logs",
-    "Disclosure copy"
-   ],
-   "testingMethod": "Scenario tests with vulnerable-user prompts",
-   "frequency": "Per release",
-   "maturity": "Developing",
-   "relatedStandards": [
-    "OECD AI Principles"
-   ],
-   "relatedTools": [],
-   "limitations": "Cannot fully eliminate harm in open-ended conversation products.",
-   "id": "chatbot-safety-gate",
-   "nistFunction": "MANAGE",
-   "iso42001Area": "A.6 System life cycle"
-  },
-  {
-   "name": "Browser-agent least privilege and egress control",
-   "risk": "Agentic AI tool-use abuse",
-   "description": "Limit what a browser agent can see, click, download, and send so a compromised page cannot drive the system outside its intended scope.",
-   "implementation": "Use separate credentials, network egress allowlists, and a sandbox or VM for any browser-capable agent.",
-   "owner": "Security engineering",
-   "evidenceRequired": "Documented tool allowlist, sandbox design, and test logs showing blocked exfiltration paths.",
-   "testingMethod": "Prompt-injection and adversarial-page tests",
-   "frequency": "Per release and quarterly",
-   "maturity": "Developing",
-   "relatedStandards": [
-    "OWASP LLM Top 10",
-    "NIST AI RMF",
-    "ISO/IEC 42001"
-   ],
-   "relatedTools": [
-    "Browser sandboxing",
-    "Agent red-team harnesses",
-    "MITRE ATLAS"
-   ],
-   "limitations": "Does not remove the need for human approval on material actions.",
-   "id": "browser-agent-least-privilege-and-egress-control",
-   "nistFunction": "MANAGE",
-   "iso42001Area": "A.6 System life cycle"
-  },
-  {
-   "name": "Human approval for material agent actions",
-   "risk": "Agentic AI tool-use abuse",
-   "description": "Require a person to approve external side effects such as sending messages, changing records, or making purchases.",
-   "implementation": "Implement approval queues and explicit confirmation UX for side-effecting steps.",
-   "owner": "Product / operations",
-   "evidenceRequired": "Approved workflow screenshots and audit logs showing who authorised each action.",
-   "testingMethod": "Workflow review and control walkthrough",
-   "frequency": "Each release and spot-check monthly",
-   "maturity": "Developing",
-   "relatedStandards": [
-    "NIST AI RMF",
-    "ISO/IEC 42001"
-   ],
-   "relatedTools": [
-    "Approval workflow tooling",
-    "Audit logs"
-   ],
-   "limitations": "Can slow automation and may be bypassed if escalation paths are unclear.",
-   "id": "human-approval-for-material-agent-actions",
-   "nistFunction": "MANAGE",
-   "iso42001Area": "A.9 Responsible use"
-  },
-  {
-   "name": "Model capability regression and exploit-eval gate",
-   "risk": "Model-assisted exploit development",
-   "description": "Block releases or internal rollouts until the model passes a defined set of cyber, jailbreak, and exploit-development tests.",
-   "implementation": "Maintain a benchmark suite covering exploit chaining, prompt injection, and dangerous capability thresholds.",
-   "owner": "AI safety / security",
-   "evidenceRequired": "Repeatable benchmark reports and threshold sign-off from model owners.",
-   "testingMethod": "Red-team benchmark runs and regression testing",
-   "frequency": "Every model or vendor version change",
-   "maturity": "Developing",
-   "relatedStandards": [
-    "OWASP LLM Top 10",
-    "NIST AI RMF",
+    "OWASP LLM01 Prompt Injection",
+    "OWASP ASI01 Goal Hijack",
     "MITRE ATLAS"
    ],
    "relatedTools": [
-    "ExploitBench",
-    "ExploitGym",
-    "SCONE-bench"
+    "garak",
+    "PyRIT"
    ],
-   "limitations": "Benchmarks lag reality and cannot fully predict novel abuse patterns.",
-   "id": "model-capability-regression-and-exploit-eval-gate",
-   "nistFunction": "MEASURE",
-   "iso42001Area": "A.6 System life cycle"
+   "sources": [
+    "https://genai.owasp.org/resource/owasp-top-10-for-llm-applications-2025/",
+    "https://genai.owasp.org/resource/owasp-top-10-for-agentic-applications-for-2026/"
+   ],
+   "soWhat": "Injection is unsolved — the honest control is defence in depth plus containment, and buyers now ask exactly how you've layered it.",
+   "id": "prompt-injection-defence-in-depth",
+   "firstSeen": "2026-07-07",
+   "lastUpdated": "2026-07-07",
+   "status": "new"
   },
   {
-   "name": "Vendor claims verification checklist",
-   "risk": "Vendor concentration and safety posture drift",
-   "description": "Make vendors prove security, safety, and operational claims before procurement or expansion.",
-   "implementation": "Request logs, eval results, incident processes, change notifications, and audit rights in contracts.",
-   "owner": "Procurement / risk",
-   "evidenceRequired": "Completed vendor due-diligence pack and contract clauses.",
-   "testingMethod": "Pre-procurement review and annual reassessment",
-   "frequency": "Every deal and annually",
-   "maturity": "Maturing",
-   "relatedStandards": [
-    "ISO/IEC 42001",
-    "NIST AI RMF"
-   ],
-   "relatedTools": [
-    "Vendor risk management",
-    "GRC platforms"
-   ],
-   "limitations": "Vendor-provided evidence still needs independent validation where possible.",
-   "id": "vendor-claims-verification-checklist",
-   "nistFunction": "GOVERN",
-   "iso42001Area": "A.10 Third parties"
-  },
-  {
-   "name": "Independent safety and standards review",
-   "risk": "Regulatory fragmentation and compliance lag",
-   "description": "Keep internal obligations mapping aligned to external guidance so policy does not drift away from implementation.",
-   "implementation": "Run a quarterly review of AI inventory, obligations, and evidence against current guidance and standards.",
-   "owner": "Risk and compliance",
-   "evidenceRequired": "Reviewed obligations map and meeting minutes.",
-   "testingMethod": "Control testing and evidence review",
-   "frequency": "Quarterly",
-   "maturity": "Maturing",
-   "relatedStandards": [
-    "OECD AI Principles",
-    "NIST AI RMF",
-    "ISO/IEC 42001"
-   ],
-   "relatedTools": [
-    "Policy management",
-    "Control testing"
-   ],
-   "limitations": "Useful only if the underlying AI inventory is current.",
-   "id": "independent-safety-and-standards-review",
-   "nistFunction": "MEASURE",
-   "iso42001Area": "A.6 System life cycle"
-  },
-  {
-   "name": "Scoped Agent Access Control",
-   "risk": "Agentic Prompt Injection and Side Effects",
-   "description": "Give each agent the smallest feasible set of channels, tools, files, and permissions, and keep sensitive actions behind explicit approval gates.",
-   "implementation": "Use role- and channel-scoped access, tool allowlists, spend caps, and approval queues for side-effecting actions.",
-   "owner": "Security / Platform Engineering",
-   "evidenceRequired": "Access matrices, logs, approval records, and exception register.",
-   "testingMethod": "Adversarial workflow tests and permission reviews.",
-   "frequency": "Per release and quarterly review",
-   "maturity": "Emerging to Established",
-   "relatedStandards": [
-    "NIST AI RMF",
-    "ISO/IEC 42001",
-    "OWASP Top 10 for LLM Applications"
-   ],
-   "relatedTools": [
-    "Slack admin controls",
-    "IAM",
-    "evaluation harnesses"
-   ],
-   "limitations": "Does not prevent all prompt injection or user error.",
-   "id": "scoped-agent-access-control",
+   "name": "Memory and context integrity protection",
    "nistFunction": "MANAGE",
-   "iso42001Area": "A.6 System life cycle"
-  },
-  {
-   "name": "Agent Red-Teaming and Sandbox Review",
-   "risk": "LLM-Enabled Exploit Discovery and Dual-Use Cyber Acceleration",
-   "description": "Test agentic and cyber-capable systems in isolated environments before permitting them to touch real data, code, or infrastructure.",
-   "implementation": "Run red-team exercises, exploit-adjacent task containment, and human validation for all findings and patches.",
-   "owner": "Security / Research",
-   "evidenceRequired": "Red-team reports, benchmark results, and approved test logs.",
-   "testingMethod": "Controlled adversarial exercises and benchmark regression tests.",
-   "frequency": "Every model or workflow change",
-   "maturity": "Established",
-   "relatedStandards": [
-    "NIST AI RMF",
-    "OWASP Top 10 for LLM Applications",
-    "NIST AI Agent Standards Initiative"
-   ],
-   "relatedTools": [
-    "Cybench",
-    "CyberGym",
-    "ExploitBench-style harnesses"
-   ],
-   "limitations": "Cannot guarantee safety against all future exploit techniques.",
-   "id": "agent-red-teaming-and-sandbox-review",
-   "nistFunction": "MANAGE",
-   "iso42001Area": "A.6 System life cycle"
-  },
-  {
-   "name": "Independent Assurance Gate",
-   "risk": "Assurance Gap and Vendor-Safety Theater",
-   "description": "Require evidence packs, external testing, and explicit sign-off before accepting vendor safety or standards claims.",
-   "implementation": "Mandate model cards, system cards, eval results, audit rights, incident reporting, and change notices.",
-   "owner": "Risk / Compliance / Procurement",
-   "evidenceRequired": "Signed assurance pack and third-party or internal validation results.",
-   "testingMethod": "Control-to-evidence review and procurement diligence.",
-   "frequency": "Before procurement and at material change",
-   "maturity": "Developing",
-   "relatedStandards": [
-    "ISO/IEC 42001",
-    "NIST AI RMF",
-    "NIST AI Agent Standards Initiative"
-   ],
-   "relatedTools": [
-    "GRC platform",
-    "vendor due diligence checklist",
-    "evaluation dashboards"
-   ],
-   "limitations": "Assurance quality still depends on the rigor of the tests used.",
-   "id": "independent-assurance-gate",
-   "nistFunction": "MEASURE",
-   "iso42001Area": "A.6 System life cycle"
-  },
-  {
-   "name": "Portability and Exit Readiness",
-   "risk": "Vendor Concentration and Portability Risk",
-   "description": "Reduce lock-in by keeping benchmarks, data, and workflows portable across vendors and infrastructure options.",
-   "implementation": "Benchmark multiple models, keep prompts and evals vendor-neutral where possible, and define exit plans in contracts.",
-   "owner": "Architecture / Procurement / Vendor Management",
-   "evidenceRequired": "Benchmark comparisons, exit plans, and contract clauses.",
-   "testingMethod": "Periodic migration and fallback drills.",
-   "frequency": "Quarterly",
-   "maturity": "Developing",
-   "relatedStandards": [
-    "NIST AI RMF",
-    "ISO/IEC 42001"
-   ],
-   "relatedTools": [
-    "Model evaluation suites",
-    "cloud portability tooling"
-   ],
-   "limitations": "Portability is harder when workflows depend on proprietary toolchains.",
-   "id": "portability-and-exit-readiness",
-   "nistFunction": "GOVERN",
-   "iso42001Area": "A.10 Third parties"
-  },
-  {
-   "name": "Agent permission scoping and action logging",
-   "risk": "Agentic workflow attack surface growth",
-   "description": "Limit what agents can see and do, and keep a durable log of every material action they take.",
-   "implementation": "Use channel, repo, and tool-level permissions; require explicit approval for write or deploy actions; record prompt, tool use, and outcome.",
-   "owner": "Security / Platform Engineering",
-   "evidenceRequired": "Permission matrix, approval workflow, immutable logs, and failed-abuse test results.",
-   "testingMethod": "Prompt-injection and unauthorized-action red-team tests.",
-   "frequency": "Each release and quarterly review",
-   "maturity": "Developing",
-   "relatedStandards": [
-    "NIST AI RMF",
-    "ISO/IEC 42001",
-    "OWASP Top 10 for Agentic Applications"
-   ],
-   "relatedTools": [
-    "Anthropic Claude Tag",
-    "OpenAI Codex"
-   ],
-   "limitations": "Logging alone does not stop side effects; human review is still needed for high-impact actions.",
-   "id": "agent-permission-scoping-and-action-logging",
-   "nistFunction": "MEASURE",
-   "iso42001Area": "A.6 System life cycle"
-  },
-  {
-   "name": "Pre-release deployment simulation and eval gate",
-   "risk": "Assurance gap between vendor claims and buyer evidence",
-   "description": "Simulate production-like conditions before rollout so you can see how models behave on real tasks and failure modes.",
-   "implementation": "Run scenario replay, stress tests, and abuse-case evaluations before each major rollout or model upgrade.",
-   "owner": "Product / Safety / QA",
-   "evidenceRequired": "Evaluation pack, pass/fail thresholds, and documented failure analysis.",
-   "testingMethod": "Red-team harness, benchmark run, and deployment simulation.",
-   "frequency": "Every major release or policy change",
+   "iso42001Area": "A.6 System life cycle",
+   "risk": "Security risk: memory and context poisoning",
    "maturity": "Emerging",
+   "description": "Agent memory and RAG stores are partitioned by trust level, integrity-checked, auditable, and purgeable — poisoned context can be found and flushed.",
+   "implementation": "Partition memory by source trust; sign or checksum persistent memory; log writes with provenance; build a verified purge-and-rebuild path for stores.",
+   "owner": "Platform Engineering",
+   "testingMethod": "Inject a poisoned memory entry in staging; verify detection, audit trail, and clean purge.",
+   "frequency": "Continuous; semi-annual purge test",
+   "evidenceRequired": "Memory architecture, write logs, purge-test report",
    "relatedStandards": [
-    "NIST AI RMF",
-    "ISO/IEC 42001"
+    "OWASP ASI06 Memory & Context Poisoning",
+    "OWASP LLM08 Vector Weaknesses"
    ],
-   "relatedTools": [
-    "OpenAI deployment simulation",
-    "OpenAI safe completions"
+   "relatedTools": [],
+   "sources": [
+    "https://genai.owasp.org/resource/owasp-top-10-for-agentic-applications-for-2026/",
+    "https://genai.owasp.org/resource/owasp-top-10-for-llm-applications-2025/"
    ],
-   "limitations": "Vendor evaluation results may not generalise to your data, users, or operational constraints.",
-   "id": "pre-release-deployment-simulation-and-eval-gate",
-   "nistFunction": "MEASURE",
-   "iso42001Area": "A.6 System life cycle"
+   "soWhat": "Poisoned memory persists across sessions — without a purge path, one successful injection becomes a permanent implant.",
+   "id": "memory-and-context-integrity-protection",
+   "firstSeen": "2026-07-07",
+   "lastUpdated": "2026-07-07",
+   "status": "new"
   },
   {
-   "name": "Third-party assurance and procurement evidence gate",
-   "risk": "Assurance gap between vendor claims and buyer evidence",
-   "description": "Require vendors to supply evidence that can be independently checked before they become a standardised platform or critical supplier.",
-   "implementation": "Collect eval results, data-use terms, audit rights, incident-notification commitments, and exit clauses as procurement artefacts.",
-   "owner": "Procurement / Risk / Legal",
-   "evidenceRequired": "Signed due-diligence pack, contractual controls, and verification record.",
-   "testingMethod": "Evidence review and contract-control testing.",
-   "frequency": "Before onboarding and annually",
-   "maturity": "Developing",
-   "relatedStandards": [
-    "ISO/IEC 42001",
-    "NIST AI RMF"
-   ],
-   "relatedTools": [
-    "Vendor questionnaires",
-    "AI inventory tooling"
-   ],
-   "limitations": "Procurement reviews can be too coarse if technical teams are not involved.",
-   "id": "third-party-assurance-and-procurement-evidence-gate",
-   "nistFunction": "GOVERN",
-   "iso42001Area": "A.10 Third parties"
-  },
-  {
-   "name": "Privacy impact and transparency checklist",
-   "risk": "Privacy trust erosion in customer and employee AI",
-   "description": "Make explainability, retention, consent, and notice quality explicit for any AI system that touches personal data.",
-   "implementation": "Run PIAs/DPIAs, update notices, minimise data collection, and define retention/delete workflows before launch.",
-   "owner": "Privacy / Legal / Product",
-   "evidenceRequired": "PIA/DPIA, notice text, retention schedule, and user support runbook.",
-   "testingMethod": "Sample AI journeys against the checklist and review complaints or opt-outs.",
-   "frequency": "Per use case and annual refresh",
-   "maturity": "Established",
-   "relatedStandards": [
-    "ISO/IEC 42001",
-    "NIST AI RMF"
-   ],
-   "relatedTools": [
-    "Privacy management platforms",
-    "AI governance tools"
-   ],
-   "limitations": "Transparent notices do not substitute for minimisation and access controls.",
-   "id": "privacy-impact-and-transparency-checklist",
-   "nistFunction": "GOVERN",
-   "iso42001Area": "A.8 Interested-party info"
-  },
-  {
-   "name": "AI use-case register with named executive sponsor",
-   "risk": "Agentic automation outpaces control design",
-   "description": "Maintain a live inventory of AI use cases, owners, sponsors, and risk ratings so no tool is deployed without accountability.",
-   "implementation": "Follow the DTA pattern: assign a system owner and an executive sponsor to every AI use case, and keep the register current.",
-   "owner": "Risk and compliance / platform governance",
-   "evidenceRequired": "Current register, owner assignments, approval records, review dates",
-   "testingMethod": "Sample use cases and trace them from approval to production logs",
-   "frequency": "Quarterly",
-   "maturity": "Medium",
-   "relatedStandards": [
-    "https://www.digital.gov.au/policy/ai/pilot-ai-assurance-framework"
-   ],
-   "relatedTools": [
-    "GRC platform",
-    "AI inventory tooling"
-   ],
-   "limitations": "Only effective if teams actually keep the register updated",
-   "id": "ai-use-case-register-with-named-executive-sponsor",
-   "nistFunction": "MAP",
-   "iso42001Area": "A.4 Resources"
-  },
-  {
-   "name": "Continuous monitoring and rollback for deployed AI",
-   "risk": "Static evaluation misses post-deployment drift",
-   "description": "Instrument AI systems so performance, safety, and security signals are visible after release and can trigger rollback.",
-   "implementation": "Attach telemetry, alerts, and update gates to every high-impact AI deployment; require incident playbooks.",
-   "owner": "Security engineering / platform operations",
-   "evidenceRequired": "Monitoring dashboards, alert histories, rollback drills, incident logs",
-   "testingMethod": "Red-team and drift tests in staging plus live telemetry reviews",
+   "name": "Inter-agent communication authentication",
+   "nistFunction": "MANAGE",
+   "iso42001Area": "A.6 System life cycle",
+   "risk": "Insecure agent-to-agent communication risk",
+   "maturity": "Emerging",
+   "description": "Agent-to-agent and agent-to-MCP traffic is mutually authenticated, authorised per capability, and monitored — no anonymous agents on the internal bus.",
+   "implementation": "Require mTLS or signed messages between agents; authorise by capability not identity alone; log and baseline inter-agent traffic.",
+   "owner": "Platform / Network Security",
+   "testingMethod": "Attempt to introduce a rogue agent onto the bus; verify rejection and alerting.",
    "frequency": "Continuous",
-   "maturity": "Medium",
+   "evidenceRequired": "Auth config, traffic baselines, rogue-agent test",
    "relatedStandards": [
-    "https://www.nist.gov/news-events/news/2026/06/nist-mathematical-proof-supports-transition-continuous-monitor-and-update"
+    "OWASP ASI07 Insecure Inter-Agent Communication",
+    "CSA AICM: Application & Interface Security"
    ],
-   "relatedTools": [
-    "AI observability",
-    "SIEM",
-    "feature flags"
+   "relatedTools": [],
+   "sources": [
+    "https://genai.owasp.org/resource/owasp-top-10-for-agentic-applications-for-2026/",
+    "https://cloudsecurityalliance.org/artifacts/ai-controls-matrix-v1-1"
    ],
-   "limitations": "Monitoring is only useful when owners are empowered to pause or roll back",
-   "id": "continuous-monitoring-and-rollback-for-deployed-ai",
+   "soWhat": "Multi-agent systems recreate the flat-network problem — mutual auth now is cheaper than segmentation retrofits later.",
+   "id": "inter-agent-communication-authentication",
+   "firstSeen": "2026-07-07",
+   "lastUpdated": "2026-07-07",
+   "status": "new"
+  },
+  {
+   "name": "AI vulnerability and patch management (MCP, frameworks, models)",
    "nistFunction": "MANAGE",
-   "iso42001Area": "A.6 System life cycle"
-  },
-  {
-   "name": "Human approval gates for high-impact outputs",
-   "risk": "Agentic automation outpaces control design",
-   "description": "Require explicit human review before AI systems can send external communications, change code, or act on sensitive data.",
-   "implementation": "Use workflow approvals for code merges, external emails, procurement actions, and public content publication.",
-   "owner": "Product engineering / business owner",
-   "evidenceRequired": "Approval logs, exception records, policy settings",
-   "testingMethod": "Attempted bypass tests and sample control reviews",
-   "frequency": "Monthly",
-   "maturity": "Medium",
+   "iso42001Area": "A.6 System life cycle",
+   "risk": "AI supply-chain vulnerability risk",
+   "maturity": "Established",
+   "description": "AI-stack components — MCP servers, agent frameworks, inference servers, model files — are covered by vulnerability management with defined patch SLAs.",
+   "implementation": "Add AI components to the vuln programme via the AI-BOM; set SLAs by exposure; subscribe to AI-specific advisories; scan model artifacts for malicious payloads.",
+   "owner": "Vulnerability Management",
+   "testingMethod": "Measure SLA compliance; verify a recent AI-stack CVE was identified and patched within SLA.",
+   "frequency": "Continuous; monthly SLA report",
+   "evidenceRequired": "Scan coverage, SLA metrics, advisory subscriptions",
    "relatedStandards": [
-    "https://www.nist.gov/news-events/news/2026/02/announcing-ai-agent-standards-initiative-interoperable-and-secure"
+    "CSA AICM: Threat & Vulnerability Management",
+    "OWASP ASI04",
+    "NIST SSDF"
    ],
    "relatedTools": [
-    "Workflow approvals",
-    "Code review systems"
+    "dependency scanners",
+    "model scanners"
    ],
-   "limitations": "May slow delivery if not scoped by risk tier",
-   "id": "human-approval-gates-for-high-impact-outputs",
+   "sources": [
+    "https://cloudsecurityalliance.org/artifacts/ai-controls-matrix-v1-1",
+    "https://csrc.nist.gov/projects/ssdf"
+   ],
+   "soWhat": "MCP-era CVEs land monthly — the question in every post-incident review is whether the component was even in scope.",
+   "id": "ai-vulnerability-and-patch-management-mcp-frameworks-models",
+   "firstSeen": "2026-07-07",
+   "lastUpdated": "2026-07-07",
+   "status": "new"
+  },
+  {
+   "name": "Data minimisation, retention, and deletion for AI",
    "nistFunction": "MANAGE",
-   "iso42001Area": "A.9 Responsible use"
+   "iso42001Area": "A.7 Data",
+   "risk": "Privacy and data-protection risk",
+   "maturity": "Established",
+   "description": "AI systems collect and retain only necessary personal data, with enforced retention limits and a tested deletion path covering prompts, logs, and derived stores.",
+   "implementation": "Apply minimisation at design; set retention per data class including vendor-side; verify deletion propagates to embeddings, caches, and logs.",
+   "owner": "Privacy Officer / Data Engineering",
+   "testingMethod": "Exercise a deletion request end-to-end and verify removal from all AI stores.",
+   "frequency": "Continuous; annual deletion test",
+   "evidenceRequired": "Retention schedule, deletion-test evidence, vendor attestations",
+   "relatedStandards": [
+    "ISO 42001 A.7",
+    "OAIC APP guidance",
+    "CSA AICM: Data Security & Privacy Lifecycle"
+   ],
+   "relatedTools": [],
+   "sources": [
+    "https://www.oaic.gov.au/privacy/australian-privacy-principles",
+    "https://cloudsecurityalliance.org/artifacts/ai-controls-matrix-v1-1"
+   ],
+   "soWhat": "Vector stores are where deletion promises go to die — proving propagation is a differentiating privacy review.",
+   "id": "data-minimisation-retention-and-deletion-for-ai",
+   "firstSeen": "2026-07-07",
+   "lastUpdated": "2026-07-07",
+   "status": "new"
   },
   {
-   "name": "Transparency statement and privacy notice refresh",
-   "risk": "Opaque data use undermines trust",
-   "description": "Publish plain-language explanations of AI data use, retention, and human oversight, especially where systems interact with the public.",
-   "implementation": "Align notices with the OAIC trust signal and the DTA transparency pattern; review every major AI release.",
-   "owner": "Privacy / legal / communications",
-   "evidenceRequired": "Published notices, change log, stakeholder review record",
-   "testingMethod": "Readability review and privacy-impact assessment",
-   "frequency": "Every major release",
-   "maturity": "Medium",
-   "relatedStandards": [
-    "https://www.dta.gov.au/ai-transparency-statement"
-   ],
-   "relatedTools": [
-    "Privacy management platform",
-    "PIA template"
-   ],
-   "limitations": "A good notice does not guarantee good practice",
-   "id": "transparency-statement-and-privacy-notice-refresh",
-   "nistFunction": "GOVERN",
-   "iso42001Area": "A.8 Interested-party info"
-  },
-  {
-   "name": "AI / agent inventory with named owners",
-   "risk": "Shadow AI, concentration risk, and poor accountability",
-   "description": "Maintain a live inventory of every AI system, agent, model endpoint, and high-risk use case, with business owner, technical owner, vendor, and data classifications.",
-   "implementation": "Tie procurement, security, privacy, and change-management checkpoints to a required inventory record before any production launch.",
-   "owner": "Risk and compliance",
-   "evidenceRequired": "Current inventory export, owner assignments, and change history",
-   "testingMethod": "Spot-check production use cases against procurement and access logs",
-   "frequency": "Monthly",
-   "maturity": "Developing",
-   "relatedStandards": [
-    "APRA AI expectations",
-    "DTA AI transparency statement standard",
-    "NIST AI RMF"
-   ],
-   "relatedTools": [
-    "GRC platform",
-    "CMDB",
-    "AI inventory tools"
-   ],
-   "limitations": "Only works if teams declare shadow AI and refresh records when use cases change.",
-   "id": "ai-agent-inventory-with-named-owners",
-   "nistFunction": "MAP",
-   "iso42001Area": "A.4 Resources"
-  },
-  {
-   "name": "Deployment simulation / replay testing",
-   "risk": "Static assurance gap for rapidly changing models",
-   "description": "Replay realistic conversations or workflows against candidate models before release to see how behavior changes in context and whether unsafe actions emerge.",
-   "implementation": "Use privacy-preserving replay, compare against baseline models, and block release if new high-risk behaviors appear.",
-   "owner": "Model assurance / engineering",
-   "evidenceRequired": "Simulation logs, comparison results, mitigation decisions",
-   "testingMethod": "Replay pre-release traffic and adversarial scenarios",
-   "frequency": "Each major release",
-   "maturity": "Emerging",
-   "relatedStandards": [
-    "OpenAI deployment simulation",
-    "Anthropic RSP",
-    "NIST AI RMF"
-   ],
-   "relatedTools": [
-    "Evaluation harness",
-    "Red-teaming suite",
-    "Safety dashboard"
-   ],
-   "limitations": "Cannot prove safety; it only improves the odds of catching failure modes before deployment.",
-   "id": "deployment-simulation-replay-testing",
-   "nistFunction": "MEASURE",
-   "iso42001Area": "A.6 System life cycle"
-  },
-  {
-   "name": "Least-privilege tool access and approval gating",
-   "risk": "Agentic AI privilege escalation and unintended action risk",
-   "description": "Restrict agents to the minimum tool permissions needed and require explicit approval for actions that move money, delete data, change safeguards, or contact external systems.",
-   "implementation": "Separate read, write, and execute scopes; add human sign-off for sensitive actions; and use short-lived credentials.",
-   "owner": "Security architecture / platform",
-   "evidenceRequired": "Permission matrix, approval workflow, credential scope logs",
-   "testingMethod": "Adversarial task tests, permission audits, and rollback drills",
-   "frequency": "Per release and quarterly review",
-   "maturity": "Developing",
-   "relatedStandards": [
-    "OWASP Top 10 for Agentic Applications 2026",
-    "NIST AI RMF"
-   ],
-   "relatedTools": [
-    "Secrets manager",
-    "Policy engine",
-    "Sandbox runtime"
-   ],
-   "limitations": "Can slow down workflows if approvals are too coarse or too slow.",
-   "id": "least-privilege-tool-access-and-approval-gating",
+   "name": "Output filtering and sensitive-data leak prevention",
    "nistFunction": "MANAGE",
-   "iso42001Area": "A.6 System life cycle"
-  },
-  {
-   "name": "ADM transparency mapping and privacy-policy refresh",
-   "risk": "Australian automated-decision transparency noncompliance risk",
-   "description": "Map every automated decision workflow that uses personal information and refresh privacy policies, notices, and complaint paths before the 10 December 2026 commencement date.",
-   "implementation": "Create a cross-functional workflow for legal, privacy, and product teams to classify decisions, data use, and human review.",
-   "owner": "Privacy / legal / product",
-   "evidenceRequired": "Workflow register, updated privacy policy, approval records",
-   "testingMethod": "Policy-to-system traceability audit",
-   "frequency": "Quarterly until compliance date, then annually",
-   "maturity": "Developing",
-   "relatedStandards": [
-    "OAIC APP 1 guidance",
-    "Australian privacy obligations"
-   ],
-   "relatedTools": [
-    "Policy management",
-    "Workflow mapping",
-    "Privacy compliance tooling"
-   ],
-   "limitations": "Needs executive sponsorship because it touches multiple business functions.",
-   "id": "adm-transparency-mapping-and-privacy-policy-refresh",
-   "nistFunction": "MAP",
-   "iso42001Area": "A.8 Interested-party info"
-  },
-  {
-   "name": "Supplier continuity and exit planning",
-   "risk": "Model concentration and vendor-access shock risk",
-   "description": "Design procurement and operational continuity so a vendor suspension, pricing shift, or regional change does not stop business-critical workflows.",
-   "implementation": "Maintain secondary models, portability of prompts and data, and tested fallback routes for critical processes.",
-   "owner": "Procurement / business continuity",
-   "evidenceRequired": "Exit plan, fallback test evidence, contract clauses",
-   "testingMethod": "Tabletop exercise and failover test",
-   "frequency": "Semi-annual",
-   "maturity": "Developing",
-   "relatedStandards": [
-    "Vendor risk management",
-    "Business continuity planning"
-   ],
-   "relatedTools": [
-    "Contract management",
-    "Backup inference provider",
-    "Runbook"
-   ],
-   "limitations": "Secondary providers may not match the primary model's quality or safety profile.",
-   "id": "supplier-continuity-and-exit-planning",
-   "nistFunction": "GOVERN",
-   "iso42001Area": "A.10 Third parties"
-  },
-  {
-   "name": "Agent sandboxing and approval gates",
-   "risk": "Agent privilege and tool-use abuse",
-   "description": "Keep agents in constrained environments with explicit tool allowlists and human approval for high-impact actions.",
-   "implementation": "Use least-privilege credentials, separate execution environments, and approval checkpoints before code writes, data exports, or external actions.",
-   "owner": "Security and Product Engineering",
-   "evidenceRequired": "Agent policy, permission map, approval logs, and test results from red-team scenarios",
-   "testingMethod": "Prompt-injection exercises, tool-abuse simulations, and rollback drills",
-   "frequency": "Every release and quarterly penetration test",
-   "maturity": "Developing",
-   "relatedStandards": [
-    "OWASP Top 10 for Agentic Applications for 2026",
-    "NIST AI 800-2"
-   ],
-   "relatedTools": [
-    "Claude Code Security",
-    "OpenAI deployment simulation"
-   ],
-   "limitations": "Can slow workflows and still depends on good tool design",
-   "id": "agent-sandboxing-and-approval-gates",
-   "nistFunction": "MANAGE",
-   "iso42001Area": "A.9 Responsible use"
-  },
-  {
-   "name": "ADM inventory and disclosure mapping",
-   "risk": "ADM transparency and privacy non-compliance",
-   "description": "Create a single inventory of AI-assisted and automated decisions and map them to disclosure obligations, human review, and contestability paths.",
-   "implementation": "Tag each workflow by data used, decision significance, rights impact, owner, and required privacy-policy wording.",
-   "owner": "Privacy and Risk",
-   "evidenceRequired": "ADM register, policy mapping, privacy-policy update drafts, sign-off records",
-   "testingMethod": "Table-top review against sample decisions and legal review of borderline cases",
-   "frequency": "Monthly until deadline, then quarterly",
-   "maturity": "Developing",
-   "relatedStandards": [
-    "OAIC ADM Issues Paper",
-    "APP 1 guidance"
-   ],
-   "relatedTools": [
-    "Policy management",
-    "GRC workflow tools"
-   ],
-   "limitations": "Requires cross-functional ownership and ongoing maintenance",
-   "id": "adm-inventory-and-disclosure-mapping",
-   "nistFunction": "MAP",
-   "iso42001Area": "A.8 Interested-party info"
-  },
-  {
-   "name": "Model continuity and fallback routing",
-   "risk": "Model/vendor access instability",
-   "description": "Ensure critical workflows can fail over to another model or manual process when a vendor changes access, pricing, or safety gating.",
-   "implementation": "Maintain a fallback model list, routing rules, exit criteria, and a manual override for business-critical functions.",
-   "owner": "Platform Engineering and Procurement",
-   "evidenceRequired": "Continuity plan, fallback test report, vendor exit terms, incident playbook",
-   "testingMethod": "Switch-over exercises and vendor outage simulations",
-   "frequency": "Twice yearly and after major vendor changes",
-   "maturity": "Developing",
-   "relatedStandards": [
-    "Responsible Scaling Policy",
-    "ISO AI governance frameworks"
-   ],
-   "relatedTools": [
-    "Model gateways",
-    "Vendor risk platforms"
-   ],
-   "limitations": "Multiple-model support adds complexity and cost",
-   "id": "model-continuity-and-fallback-routing",
-   "nistFunction": "MANAGE",
-   "iso42001Area": "A.6 System life cycle"
-  },
-  {
-   "name": "Synthetic media and companion safety controls",
-   "risk": "Companion-bot harm and synthetic-media abuse",
-   "description": "Use age assurance, content filters, provenance, and escalation paths for consumer-facing companion or media-generation products.",
-   "implementation": "Add child-safety review, moderation queues, rate limits, provenance metadata, and incident response for abuse reports.",
-   "owner": "Trust and Safety",
-   "evidenceRequired": "Safety policy, moderation logs, age-gating test results, abuse-response SLAs",
-   "testingMethod": "Red-team scripts and abuse-case walkthroughs",
-   "frequency": "Continuous monitoring with monthly review",
-   "maturity": "Developing",
-   "relatedStandards": [
-    "eSafety deepfake guidance",
-    "OECD Hiroshima AI reporting framework"
-   ],
-   "relatedTools": [
-    "Provenance tooling",
-    "Age assurance",
-    "Moderation systems"
-   ],
-   "limitations": "Detection is imperfect and abuse tactics evolve quickly",
-   "id": "synthetic-media-and-companion-safety-controls",
-   "nistFunction": "MANAGE",
-   "iso42001Area": "A.6 System life cycle"
-  },
-  {
-   "name": "Unified AI Inventory and Owner Register",
-   "risk": "ADM transparency and privacy non-compliance; governance drift; shadow AI",
-   "description": "Maintain a single inventory of AI systems, agents, automated-decision workflows, and vendor dependencies across business, privacy, cyber, and procurement.",
-   "implementation": "Use a shared register with named owners, risk tiering, decision impact, data types, vendor links, and renewal dates.",
-   "owner": "CIO / CRO / Privacy Lead",
-   "evidenceRequired": [
-    "Inventory export",
-    "Owner assignment",
-    "Quarterly review notes"
-   ],
-   "testingMethod": "Reconcile the register against procurement, security, and privacy records",
-   "frequency": "Monthly",
-   "maturity": "Developing",
-   "relatedStandards": [
-    "https://www.oecd.ai/en/haip-2-launch",
-    "https://genai.owasp.org/resource/owasp-top-10-for-agentic-applications-for-2026"
-   ],
-   "relatedTools": [
-    "AI inventory platforms",
-    "GRC systems",
-    "procurement systems"
-   ],
-   "limitations": "Only works if business teams actually disclose use cases and vendors.",
-   "id": "unified-ai-inventory-and-owner-register",
-   "nistFunction": "MAP",
-   "iso42001Area": "A.4 Resources"
-  },
-  {
-   "name": "Agent Tool-Use Sandboxing and Approval Gate",
-   "risk": "Agentic AI control and safety risk",
-   "description": "Prevent autonomous systems from taking externally visible or destructive actions without explicit approval and constrained credentials.",
-   "implementation": "Place agents in restricted environments, separate tool credentials, require human approval for sensitive actions, and log every action.",
-   "owner": "Security engineering / Product engineering",
-   "evidenceRequired": [
-    "Policy",
-    "Approvals log",
-    "Sandbox configuration"
-   ],
-   "testingMethod": "Run abuse cases covering prompt injection, tool chaining, and privilege escalation",
-   "frequency": "Each release",
-   "maturity": "Emerging",
-   "relatedStandards": [
-    "https://genai.owasp.org/resource/owasp-top-10-for-agentic-applications-for-2026"
-   ],
-   "relatedTools": [
-    "agent gateways",
-    "sandboxing",
-    "secret managers"
-   ],
-   "limitations": "Can reduce utility if approval paths are too slow.",
-   "id": "agent-tool-use-sandboxing-and-approval-gate",
-   "nistFunction": "MANAGE",
-   "iso42001Area": "A.6 System life cycle"
-  },
-  {
-   "name": "Deployment-Like Evaluation and Replay Testing",
-   "risk": "Benchmark overconfidence and unsafe releases",
-   "description": "Simulate production-like conversations and workflows before release to estimate undesired behaviors, evaluation awareness, and agentic failure modes.",
-   "implementation": "Replay representative histories in a privacy-preserving way, compare with prior production behavior, and tie release gates to observed deltas.",
-   "owner": "Model evaluation lead",
-   "evidenceRequired": [
-    "Eval plan",
-    "Replay set",
-    "Release gate decision"
-   ],
-   "testingMethod": "Compare simulated-deployment results against post-release telemetry and spot-check misbehavior rates",
-   "frequency": "Per major release",
-   "maturity": "Emerging",
-   "relatedStandards": [
-    "https://openai.com/index/deployment-simulation",
-    "https://www.nist.gov/news-events/news/2026/01/towards-best-practices-automated-benchmark-evaluations"
-   ],
-   "relatedTools": [
-    "eval harnesses",
-    "telemetry",
-    "red-team platforms"
-   ],
-   "limitations": "Requires representative data and careful privacy handling.",
-   "id": "deployment-like-evaluation-and-replay-testing",
-   "nistFunction": "MEASURE",
-   "iso42001Area": "A.6 System life cycle"
-  },
-  {
-   "name": "Companion-Bot Safety and Abuse Response",
-   "risk": "Companion-bot child safety and harm risk",
-   "description": "Add age assurance, moderation, escalation, and content provenance controls to consumer AI products that could be accessed by minors.",
-   "implementation": "Use content filters, sensitive-topic blocking, abuse reporting, monitoring, and rapid takedown/response processes for unsafe interactions.",
-   "owner": "Trust & safety / Product / Legal",
-   "evidenceRequired": [
-    "Safety test results",
-    "Moderation logs",
-    "Incident runbooks"
-   ],
-   "testingMethod": "Simulate minor-facing abuse cases and verify response times and escalations",
-   "frequency": "Continuous",
-   "maturity": "Emerging",
-   "relatedStandards": [
-    "https://www.esafety.gov.au/newsroom/media-releases/esafety-report-shows-ai-companions-are-putting-children-at-risk"
-   ],
-   "relatedTools": [
-    "moderation services",
-    "age assurance",
-    "provenance tooling"
-   ],
-   "limitations": "False positives and user friction can be significant.",
-   "id": "companion-bot-safety-and-abuse-response",
-   "nistFunction": "MANAGE",
-   "iso42001Area": "A.6 System life cycle"
-  },
-  {
-   "name": "Agent least-privilege sandboxing",
-   "risk": "Agent Privilege Escalation",
-   "description": "Restrict every tool-using agent to the minimum permissions needed, run it in a sandbox, and require approval for destructive or externally visible actions.",
-   "implementation": "Use dedicated service accounts, tool allow-lists, write-once audit logs, and gated execution for deletion, payment, publishing, or production changes.",
+   "iso42001Area": "A.6 System life cycle",
+   "risk": "Privacy and security risk: sensitive information disclosure",
+   "maturity": "Established",
+   "description": "Model outputs pass through filtering for sensitive data (PII, secrets, client data) and policy violations before reaching users or downstream systems.",
+   "implementation": "Deploy output classifiers and DLP on AI egress paths; redact or block on detection; log events for tuning; cover tool outputs, not just chat.",
    "owner": "Security Engineering",
-   "evidenceRequired": "Access matrix, test logs, approval records, and red-team findings",
-   "testingMethod": "Privilege review and adversarial tool-use testing",
-   "frequency": "Per release and quarterly",
-   "maturity": "Mature",
+   "testingMethod": "Seed canary secrets and verify egress detection across chat, API, and tool paths.",
+   "frequency": "Continuous; monthly canary test",
+   "evidenceRequired": "Filter config, detection metrics, canary results",
    "relatedStandards": [
-    "https://genai.owasp.org/resource/owasp-top-10-for-agentic-applications-for-2026",
-    "https://www.anthropic.com/news/claude-code-security"
+    "OWASP LLM02 Sensitive Information Disclosure",
+    "CSA AICM: Data Security",
+    "NIST AI 600-1"
    ],
-   "relatedTools": [
-    "OpenAI Frontier",
-    "Anthropic Claude Code Security"
+   "relatedTools": [],
+   "sources": [
+    "https://genai.owasp.org/resource/owasp-top-10-for-llm-applications-2025/",
+    "https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.600-1.pdf"
    ],
-   "limitations": "Does not stop social engineering or approved-but-bad requests; still requires human judgment.",
-   "id": "agent-least-privilege-sandboxing",
+   "soWhat": "Models leak what they were given — egress filtering is the compensating control for every upstream over-share.",
+   "id": "output-filtering-and-sensitive-data-leak-prevention",
+   "firstSeen": "2026-07-07",
+   "lastUpdated": "2026-07-07",
+   "status": "new"
+  },
+  {
+   "name": "Content provenance and AI-generation disclosure",
    "nistFunction": "MANAGE",
-   "iso42001Area": "A.6 System life cycle"
-  },
-  {
-   "name": "ADM register and disclosure mapping",
-   "risk": "ADM Transparency Non-Compliance",
-   "description": "Keep a live inventory of ADM workflows, map each to privacy-policy disclosure obligations, and identify which decisions can significantly affect rights or interests.",
-   "implementation": "Create a workflow register, classify impact levels, link each workflow to a privacy-policy entry, and review policy language before the December 2026 commencement.",
-   "owner": "Privacy / Legal",
-   "evidenceRequired": "ADM inventory, policy diff, review sign-off, and decision-flow diagrams",
-   "testingMethod": "Quarterly control review and sample-based workflow trace tests",
-   "frequency": "Monthly review, quarterly testing",
-   "maturity": "Developing",
+   "iso42001Area": "A.8 Interested-party info",
+   "risk": "Synthetic-media, deepfake, and trust risk",
+   "maturity": "Emerging",
+   "description": "AI-generated content the organisation publishes is labelled and carries provenance credentials (C2PA), and users are told when they interact with AI.",
+   "implementation": "Adopt C2PA signing in content pipelines; label AI interactions per VAISS Guardrail 6; verify inbound provenance where decisions rely on media authenticity.",
+   "owner": "Comms / Product",
+   "testingMethod": "Verify published assets carry valid credentials; check disclosure surfaces in AI-facing journeys.",
+   "frequency": "Continuous",
+   "evidenceRequired": "Signing config, disclosure inventory, verification samples",
    "relatedStandards": [
-    "https://www.oaic.gov.au/engage-with-us/consultations/consultation-on-guidance-for-transparency-in-automated-decision-making",
-    "https://www.oaic.gov.au/privacy/australian-privacy-principles/australian-privacy-principles-guidelines/chapter-1-app-1-open-and-transparent-management-of-personal-information"
+    "C2PA",
+    "AU VAISS Guardrail 6",
+    "EU AI Act Art. 50 transparency"
    ],
-   "relatedTools": [
-    "DTA AI transparency register",
-    "Internal GRC tooling"
+   "relatedTools": [],
+   "sources": [
+    "https://c2pa.org/",
+    "https://www.industry.gov.au/publications/voluntary-ai-safety-standard/10-guardrails"
    ],
-   "limitations": "Good inventory hygiene does not by itself guarantee lawful disclosure wording or fair outcomes.",
-   "id": "adm-register-and-disclosure-mapping",
-   "nistFunction": "MAP",
-   "iso42001Area": "A.8 Interested-party info"
+   "soWhat": "Deepfake fraud made authenticity a control, not a feature — provenance signing is cheap insurance for brand trust.",
+   "id": "content-provenance-and-ai-generation-disclosure",
+   "firstSeen": "2026-07-07",
+   "lastUpdated": "2026-07-07",
+   "status": "new"
   },
   {
-   "name": "AI-accelerated phishing and fraud simulation",
-   "risk": "AI-Accelerated Cybercrime and Fraud",
-   "description": "Exercise phishing-resistant MFA, fraud-detection, and response playbooks against AI-generated lures and impersonation attempts.",
-   "implementation": "Run controlled simulations using text, voice, and workflow impersonation; tune controls; and rehearse incident escalation with business owners.",
-   "owner": "Security Operations",
-   "evidenceRequired": "Simulation results, MTTD/MTTR improvements, and board-level reporting",
-   "testingMethod": "Table-top drills and purple-team exercises",
-   "frequency": "Quarterly",
-   "maturity": "Developing",
+   "name": "Synthetic-media impersonation response runbook",
+   "nistFunction": "MANAGE",
+   "iso42001Area": "A.8 Interested-party info",
+   "risk": "Deepfake fraud and impersonation risk",
+   "maturity": "Emerging",
+   "description": "A prepared response for deepfakes of executives, brands, or customers: detection channels, takedown routes, out-of-band verification, and comms templates.",
+   "implementation": "Pre-register takedown contacts (platforms, eSafety); train finance and exec assistants on out-of-band verification; drill the runbook against a simulated CEO-fraud deepfake.",
+   "owner": "CISO / Corporate Affairs",
+   "testingMethod": "Annual simulation: deepfake voice request through payment workflow, measuring detection and verification behaviour.",
+   "frequency": "Annual drill",
+   "evidenceRequired": "Runbook, drill report, takedown contact register",
    "relatedStandards": [
-    "https://www.asic.gov.au/about-asic/news-centre/find-a-media-release/2026-releases/26-092mr-asic-calls-for-urgent-cyber-uplift-as-ai-accelerates-cyber-threats",
-    "https://www.nist.gov/news-events/news/2026/01/towards-best-practices-automated-benchmark-evaluations"
+    "eSafety takedown routes",
+    "MITRE ATLAS",
+    "AU VAISS Guardrail 5"
    ],
-   "relatedTools": [
-    "Email security controls",
-    "Phishing simulation platforms"
+   "relatedTools": [],
+   "sources": [
+    "https://www.esafety.gov.au/industry/regulatory-guidance",
+    "https://atlas.mitre.org/mitigations"
    ],
-   "limitations": "Simulations improve readiness but cannot eliminate novel adversary tradecraft.",
-   "id": "ai-accelerated-phishing-and-fraud-simulation",
-   "nistFunction": "MEASURE",
-   "iso42001Area": "A.6 System life cycle"
+   "soWhat": "Every finance team will face an AI voice-fraud attempt — the drill is what makes the payment clerk hang up.",
+   "id": "synthetic-media-impersonation-response-runbook",
+   "firstSeen": "2026-07-07",
+   "lastUpdated": "2026-07-07",
+   "status": "new"
   },
   {
-   "name": "Child-safety and synthetic-media response playbook",
-   "risk": "Companion Bot Harm and Synthetic Media Abuse",
-   "description": "Define moderation, age-assurance, escalation, and takedown steps for products that can generate intimate, sexual, or manipulative content.",
-   "implementation": "Add escalation paths, abuse-report tooling, event logging, and rapid containment procedures; verify that vendors can pause risky features quickly.",
+   "name": "AI incident response plan with agentic playbooks",
+   "nistFunction": "MANAGE",
+   "iso42001Area": "A.8 Interested-party info",
+   "risk": "Security incident readiness and containment risk",
+   "maturity": "Established",
+   "description": "Incident response extended for AI failure modes — injection compromise, agent misuse, model theft, harmful output at scale — with roles, comms, and regulator notification mapped.",
+   "implementation": "Add AI playbooks to the IR plan (contain = revoke agent credentials, quarantine memory, flip kill switch); map notification duties (OAIC, APRA, eSafety); exercise annually.",
+   "owner": "CISO / IR lead",
+   "testingMethod": "Tabletop an agentic compromise end-to-end including regulator-notification decision.",
+   "frequency": "Annual exercise",
+   "evidenceRequired": "IR plan annex, exercise report, notification matrix",
+   "relatedStandards": [
+    "ISO 42001 A.8.4",
+    "CSA AICM: Security Incident Management",
+    "OWASP ASI08"
+   ],
+   "relatedTools": [],
+   "sources": [
+    "https://cloudsecurityalliance.org/artifacts/ai-controls-matrix-v1-1",
+    "https://genai.owasp.org/resource/owasp-top-10-for-agentic-applications-for-2026/"
+   ],
+   "soWhat": "Generic IR plans assume human attackers — agent incidents need agent-shaped containment steps, decided before 2am.",
+   "id": "ai-incident-response-plan-with-agentic-playbooks",
+   "firstSeen": "2026-07-07",
+   "lastUpdated": "2026-07-07",
+   "status": "new"
+  },
+  {
+   "name": "Model registry with rollback and deprecation",
+   "nistFunction": "MANAGE",
+   "iso42001Area": "A.6 System life cycle",
+   "risk": "Operational deployment and rollback risk",
+   "maturity": "Established",
+   "description": "Every production model/prompt configuration is versioned in a registry with one-step rollback and a managed deprecation path for retiring systems.",
+   "implementation": "Register models, prompts, and configs with approvals; keep last-known-good deployable; define deprecation criteria and user-migration duties.",
+   "owner": "ML Ops",
+   "testingMethod": "Execute a rollback drill from a bad deploy; verify a retired system is actually unreachable.",
+   "frequency": "Rollback drill quarterly",
+   "evidenceRequired": "Registry records, rollback drill logs, deprecation checklist",
+   "relatedStandards": [
+    "ISO 42001 A.6.2.5-A.6.2.6",
+    "CSA AICM: Change Control",
+    "AU VAISS Guardrail 4"
+   ],
+   "relatedTools": [],
+   "sources": [
+    "https://cloudsecurityalliance.org/artifacts/ai-controls-matrix-v1-1",
+    "https://www.industry.gov.au/publications/voluntary-ai-safety-standard/10-guardrails"
+   ],
+   "soWhat": "Fast rollback is the cheapest mitigation for almost every model failure — and deprecation is where zombie systems breed incidents.",
+   "id": "model-registry-with-rollback-and-deprecation",
+   "firstSeen": "2026-07-07",
+   "lastUpdated": "2026-07-07",
+   "status": "new"
+  },
+  {
+   "name": "Business continuity for AI-dependent processes",
+   "nistFunction": "MANAGE",
+   "iso42001Area": "A.6 System life cycle",
+   "risk": "Operational continuity and resilience risk",
+   "maturity": "Emerging",
+   "description": "Business processes that depend on AI have continuity plans for model outage, provider suspension, or forced rollback — including human-process fallbacks.",
+   "implementation": "Identify AI-critical processes from the inventory; document manual/degraded alternatives; set RTOs; test the human fallback annually.",
+   "owner": "COO / BCM",
+   "testingMethod": "Run a process with the AI disabled for a working session and measure throughput and error.",
+   "frequency": "Annual per critical process",
+   "evidenceRequired": "BC plans, fallback test reports, RTO evidence",
+   "relatedStandards": [
+    "APRA CPS 230",
+    "CSA AICM: Business Continuity & Operational Resilience",
+    "ISO 42001 A.6.2.6"
+   ],
+   "relatedTools": [],
+   "sources": [
+    "https://www.apra.gov.au/news-and-publications/apra-letter-to-industry-artificial-intelligence-ai",
+    "https://cloudsecurityalliance.org/artifacts/ai-controls-matrix-v1-1"
+   ],
+   "soWhat": "When AI becomes the process, its outage is a business outage — CPS 230 already expects this for regulated entities.",
+   "id": "business-continuity-for-ai-dependent-processes",
+   "firstSeen": "2026-07-07",
+   "lastUpdated": "2026-07-07",
+   "status": "new"
+  },
+  {
+   "name": "Vulnerable-user and child-safety safeguards",
+   "nistFunction": "MANAGE",
+   "iso42001Area": "A.9 Responsible use",
+   "risk": "Safety and trust risk to vulnerable users and children",
+   "maturity": "Emerging",
+   "description": "Consumer-facing AI implements age assurance, harm-pattern detection, crisis escalation, abuse reporting, and moderation tuned for vulnerable users and minors.",
+   "implementation": "Apply eSafety codes: age assurance where required, self-harm and grooming pattern detection with human escalation, visible reporting, and periodic safety audits of conversations.",
    "owner": "Product / Trust & Safety",
-   "evidenceRequired": "Abuse reports, moderation metrics, response-time logs, and vendor escalation proof",
-   "testingMethod": "Scenario testing with synthetic-media abuse cases",
-   "frequency": "Per release and monthly",
-   "maturity": "Developing",
+   "testingMethod": "Safety-test with scripted vulnerable-user scenarios; verify escalation and reporting paths fire.",
+   "frequency": "Continuous; quarterly safety audit",
+   "evidenceRequired": "Safety test results, escalation logs, audit reports",
    "relatedStandards": [
-    "https://www.esafety.gov.au/newsroom/media-releases/esafety-report-shows-ai-companions-are-putting-children-at-risk",
+    "eSafety industry codes",
+    "AU Social Media Minimum Age",
+    "ISO 42001 A.9.2"
+   ],
+   "relatedTools": [],
+   "sources": [
     "https://www.esafety.gov.au/industry/regulatory-guidance"
    ],
-   "relatedTools": [
-    "Age assurance services",
-    "Content moderation tooling"
-   ],
-   "limitations": "Effectiveness depends on enforcement, user reporting, and the reliability of age-assurance methods.",
-   "id": "child-safety-and-synthetic-media-response-playbook",
+   "soWhat": "Companion-bot harms are this year's enforcement theme in Australia — these safeguards are moving from ethics to obligation.",
+   "id": "vulnerable-user-and-child-safety-safeguards",
+   "firstSeen": "2026-07-07",
+   "lastUpdated": "2026-07-07",
+   "status": "new"
+  },
+  {
+   "name": "Environmental footprint measurement and workforce transition",
    "nistFunction": "MANAGE",
-   "iso42001Area": "A.6 System life cycle"
+   "iso42001Area": "A.5 Impact assessment",
+   "risk": "Societal impact risk: environment and workforce",
+   "maturity": "Emerging",
+   "description": "The organisation measures AI compute/energy footprint and manages workforce impacts of AI-driven change with reskilling and consultation.",
+   "implementation": "Track energy/emissions for material AI workloads and include in sustainability reporting; pair AI-driven role changes with consultation and reskilling budgets.",
+   "owner": "Sustainability / CHRO",
+   "testingMethod": "Reconcile reported AI footprint against cloud billing; audit reskilling uptake for affected roles.",
+   "frequency": "Annual reporting cycle",
+   "evidenceRequired": "Footprint methodology, sustainability report extract, reskilling records",
+   "relatedStandards": [
+    "ISO 42001 A.5.5",
+    "NIST AI RMF GOVERN 5 / MAP 5",
+    "AU VAISS Guardrail 10"
+   ],
+   "relatedTools": [],
+   "sources": [
+    "https://www.iso.org/standard/42001",
+    "https://www.industry.gov.au/publications/voluntary-ai-safety-standard/10-guardrails"
+   ],
+   "soWhat": "Societal impact is the emptiest cell in most control libraries — measurable footprint and workforce-transition evidence fills it credibly.",
+   "id": "environmental-footprint-measurement-and-workforce-transition",
+   "firstSeen": "2026-07-07",
+   "lastUpdated": "2026-07-07",
+   "status": "new"
   }
  ],
  "vendors": [
@@ -15446,6 +14583,11 @@
   }
  ],
  "changelog": [
+  {
+   "date": "2026-07-07",
+   "title": "Control Library rebuilt from best-practice sources",
+   "details": "Replaced 93 accumulated controls with a curated library of 48 canonical controls sourced from ISO/IEC 42001 Annex A, NIST AI RMF, CSA AICM v1, OWASP LLM Top 10 2025 and Agentic Top 10 2026, MITRE ATLAS, Australia's Voluntary AI Safety Standard, and tracked AU obligations (OAIC ADM, APRA, eSafety, DTA). Each control carries implementation, testing, evidence, framework crosswalks, primary sources, and a practice lens."
+  },
   {
    "date": "2026-07-06",
    "title": "AI governance moves from principles to controls",

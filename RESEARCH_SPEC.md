@@ -137,6 +137,13 @@ CSA AI Controls Matrix (AICM); OWASP LLM Top 10 + Agentic Top 10 mitigations;
 MITRE ATLAS mitigations; NIST SP 800-53 AI overlays as they land. Prefer
 adapting a recognized control to inventing one.
 
+**Baseline (2026-07-07):** the library is a curated 48-control canon built by
+`build_control_library.py` from those sources — every control carries
+implementation/testing/evidence guidance, crosswalk refs, primary sources, and
+`soWhat`. Extend it by *deepening* (new controls at the same quality bar, e.g.
+where the coverage panel shows "thin"), never by re-accumulating one-off,
+incident-shaped controls. New controls must match this field completeness.
+
 ## 7. The practice lens (`soWhat`)
 
 Every brief item, regulation, and risk carries `soWhat`: **one sentence, public-safe**, phrased as what a competent organisation should do — an evidence artifact to
