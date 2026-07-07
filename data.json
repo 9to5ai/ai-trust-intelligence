@@ -1,188 +1,171 @@
 {
-  "lastUpdated": "2026-07-07 05:18 AEDT",
+  "lastUpdated": "2026-07-08 05:25 AEDT",
   "projectName": "AI Trust Intelligence",
   "projectDescription": "Living intelligence on AI trust, assurance, risk management, governance, regulation, safety, security, and the vendor ecosystem.",
   "executiveBrief": {
-    "date": "2026-07-07",
-    "oneLiner": "Australian regulators are converging on proof of control rather than AI hype: APRA, ASIC, OAIC, and DTA are all pushing inventories, disclosures, vendor evidence, and tested cyber/agent safeguards.",
+    "date": "2026-07-08",
+    "oneLiner": "AI trust is shifting from slogans to evidence: NIST is turning system plans into machine-readable assurance artifacts while fresh lawsuits and scam reports show chatbot harm, voice cloning fraud, and algorithmic pricing now carry real liability.",
     "topDevelopments": [
       {
-        "title": "APRA is still pushing Australian financial institutions from AI experimentation to demonstrable control",
-        "text": "APRA says the current gap is no longer awareness but execution: governance, risk management, assurance, and operational practices are not keeping pace with AI adoption across banks, insurers, and superannuation trustees.",
+        "title": "NIST SP 800-18r2 pushes security, privacy, and supply-chain plans into machine-readable evidence",
+        "text": "NIST's new SP 800-18r2 broadens system planning to cover security, privacy, and cybersecurity supply-chain risk management together, and explicitly encourages machine-readable data formats that can feed GRC, SOAR, and SIEM workflows.",
         "priority": "High",
-        "confidence": "High",
-        "australiaRelevance": "High",
-        "recommendedAction": "Refresh AI inventories, assign named owners, and make sure supplier, testing, and contingency controls are board-visible.",
-        "sources": [
-          "https://www.apra.gov.au/news-and-publications/apra-letter-industry-artificial-intelligence-ai",
-          "https://www.apra.gov.au/news-and-publications/apra-calls-step-change-ai-related-risk-management-and-governance"
-        ]
-      },
-      {
-        "title": "ASIC is explicitly tying frontier AI to cyber resilience and licensing obligations",
-        "text": "ASIC warns that frontier AI lowers the barrier to sophisticated cyber attacks and is telling regulated entities to act now on cyber fundamentals rather than wait for AI-specific tooling.",
-        "priority": "High",
-        "confidence": "High",
-        "australiaRelevance": "High",
-        "recommendedAction": "Re-test phishing, credential theft, supply-chain, and incident-response controls against AI-accelerated attack paths and table results at board level.",
-        "sources": [
-          "https://www.asic.gov.au/about-asic/news-centre/find-a-media-release/2026-releases/26-092mr-asic-calls-for-urgent-cyber-uplift-as-ai-accelerates-cyber-threats"
-        ]
-      },
-      {
-        "title": "OAIC has locked in the ADM transparency runway",
-        "text": "The OAIC consultation and ACAPS 2026 findings make the 10 December 2026 commencement a real compliance project: privacy policies will need to describe the kinds of information used and the kinds of decisions made by ADM systems, and the public is increasingly unsatisfied with using personal information to train AI.",
-        "priority": "High",
-        "confidence": "High",
-        "australiaRelevance": "High",
-        "recommendedAction": "Build an ADM register, classify high-impact decisions, and draft privacy-policy updates now instead of waiting for final guidance.",
-        "sources": [
-          "https://www.oaic.gov.au/engage-with-us/consultations/consultation-on-guidance-for-transparency-in-automated-decision-making",
-          "https://www.oaic.gov.au/engage-with-us/research-and-training-resources/research/australian-community-attitudes-to-privacy-survey/australian-community-attitudes-to-privacy-survey2026/overview",
-          "https://www.oaic.gov.au/engage-with-us/research-and-training-resources/research/australian-community-attitudes-to-privacy-survey/australian-community-attitudes-to-privacy-survey2026/digital-technologies"
-        ]
-      },
-      {
-        "title": "DTA is turning agentic AI into a governed public-sector pattern",
-        "text": "The DTA’s AI Review Committee and AI policy resources show a shift from generic policy statements to operational expectations for accountability, visibility, and procurement discipline.",
-        "priority": "High",
-        "confidence": "High",
-        "australiaRelevance": "High",
-        "recommendedAction": "Use the DTA guidance as the baseline for agent approval, impact assessment, and procurement due diligence—even outside government.",
-        "sources": [
-          "https://www.dta.gov.au/media-releases/new-ai-review-committee-enhancing-oversight-government-ai-use",
-          "https://www.dta.gov.au/articles/ai-policy-update-strengthening-responsible-use-across-government",
-          "https://www.dta.gov.au/media-releases/ai-policy-overhauled-new-impact-assessment-tool-and-procurement-guidance"
-        ]
-      },
-      {
-        "title": "OWASP’s 2026 agentic framework makes least privilege and sandboxing the default posture",
-        "text": "The new OWASP Top 10 for Agentic Applications gives teams a shared risk vocabulary for autonomous systems and reinforces the need for approvals, telemetry, and kill switches around tool-using agents.",
-        "priority": "Medium",
         "confidence": "High",
         "australiaRelevance": "Medium",
-        "recommendedAction": "Map every agentic workflow to the OWASP Top 10 and make tool permissions, audit logs, and rollback tests explicit acceptance criteria.",
+        "recommendedAction": "Move system plans, evidence exports, and risk decisions into structured artifacts now so audit and monitoring evidence can be reused across governance, privacy, and security teams.",
         "sources": [
-          "https://genai.owasp.org/resource/owasp-top-10-for-agentic-applications-for-2026"
-        ]
+          "https://csrc.nist.gov/News/2026/nist-releases-sp-800-18r2"
+        ],
+        "soWhat": "Treat system plans as living evidence, not static PDFs, so assurance can be refreshed continuously instead of rebuilt for each audit."
+      },
+      {
+        "title": "Reuters reports a new ChatGPT self-harm lawsuit that sharpens chatbot liability",
+        "text": "A California man alleges ChatGPT exacerbated his bipolar disorder and led to self-harm, putting crisis escalation, refusal behavior, and human handoff back at the center of consumer chatbot safety and legal exposure.",
+        "priority": "High",
+        "confidence": "High",
+        "australiaRelevance": "Medium",
+        "recommendedAction": "Require self-harm escalation paths, human review triggers, and pre-release safety regression tests before any consumer chatbot or companion feature ships.",
+        "sources": [
+          "https://www.reuters.com/legal/government/california-man-with-bipolar-disorder-says-chatgpt-fueled-delusions-led-self-harm-2026-07-01/"
+        ],
+        "soWhat": "If a chatbot can worsen harm in a lawsuit, the safety refusal and escalation stack is now a board-level liability control."
+      },
+      {
+        "title": "eSafety is pairing AI scam literacy with search-engine AI protections",
+        "text": "Australia's eSafety Commissioner published fresh guidance telling young people how to question what they see online in a world of AI scams and fake news, while also clearing a search-engine code that adds new AI protections after generative AI entered search products.",
+        "priority": "High",
+        "confidence": "High",
+        "australiaRelevance": "High",
+        "recommendedAction": "Build source-verification, scam-reporting, and youth-safety controls into consumer-facing products now; eSafety is signaling that trust and safety must extend to the search surface as well as the model itself.",
+        "sources": [
+          "https://esafety.gov.au/young-people/critical-thinking-deciding-what-to-trust-in-a-world-of-ai-scams-and-fake-news",
+          "https://esafety.gov.au/newsroom/media-releases/search-engine-code-gets-green-light-with-new-ai-protections"
+        ],
+        "soWhat": "Australia's freshest AI signal is practical: teach users to verify, and harden the surfaces where AI content is encountered."
+      },
+      {
+        "title": "AI-generated voice fraud is now a mainstream consumer scam vector",
+        "text": "An Indore resident reportedly lost Rs 1.83 lakh after criminals used AI-generated voice to impersonate a relative, showing that voice cloning can defeat trust even without deepfakes or obvious synthetic video.",
+        "priority": "High",
+        "confidence": "High",
+        "australiaRelevance": "Medium",
+        "recommendedAction": "Move high-risk requests to out-of-band verification, and treat voice alone as non-authentic for payments, account recovery, or urgent family appeals.",
+        "sources": [
+          "https://timesofindia.indiatimes.com/city/indore/indore-resident-loses-rs-1-83-lakh-to-ai-generated-voice-fraud/articleshow/125598857.cms"
+        ],
+        "soWhat": "Voice trust is now a fraud control problem, not just a communications feature."
+      },
+      {
+        "title": "AP says AI pricing software may be driving antitrust exposure in California",
+        "text": "A proposed class action alleges that fuel-pricing software helped gas stations raise prices, moving AI-assisted dynamic pricing into the center of consumer-harm and collusion scrutiny.",
+        "priority": "Medium",
+        "confidence": "High",
+        "australiaRelevance": "Low",
+        "recommendedAction": "Run antitrust and conduct review on any dynamic pricing tool, keep price-change logs, and require human approval or exception review for sensitive pricing moves.",
+        "sources": [
+          "https://apnews.com/article/gas-price-california-lawsuit-kalibrate-collusion-fbf2c03bb69b53da4ede72044ce5e41f"
+        ],
+        "soWhat": "Algorithmic pricing needs governance before it becomes a class action or regulator target."
       }
     ],
     "criticalAlerts": [
       {
-        "title": "ADM transparency is now a dated compliance obligation",
-        "text": "From 10 December 2026, APP entities using personal information in ADM that could affect rights or interests must disclose the kinds of personal information used and the kinds of decisions made.",
+        "title": "Consumer chatbot safety is now a litigation issue",
+        "text": "The Reuters lawsuit means teams that ship public chatbots or companion tools should assume escalation, refusal, and human-handoff controls will be scrutinized after a harm event.",
         "sources": [
-          "https://www.oaic.gov.au/engage-with-us/consultations/consultation-on-guidance-for-transparency-in-automated-decision-making",
-          "https://www.oaic.gov.au/privacy/australian-privacy-principles/australian-privacy-principles-guidelines/chapter-1-app-1-open-and-transparent-management-of-personal-information"
-        ]
+          "https://www.reuters.com/legal/government/california-man-with-bipolar-disorder-says-chatgpt-fueled-delusions-led-self-harm-2026-07-01/"
+        ],
+        "soWhat": "Run a crisis-path test and keep proof of the results before the next launch."
       },
       {
-        "title": "Agentic systems should be treated as privileged automation",
-        "text": "OWASP and Australian public-sector guidance are converging on the same practical pattern: least privilege, sandboxing, telemetry, and explicit human approval for high-impact tool use.",
+        "title": "Voice-cloning scams can bypass ordinary trust checks",
+        "text": "The Indore fraud case is another reminder that voice alone is no longer a reliable authenticity signal; out-of-band verification is becoming mandatory for high-risk requests.",
         "sources": [
-          "https://genai.owasp.org/resource/owasp-top-10-for-agentic-applications-for-2026",
-          "https://www.dta.gov.au/media-releases/new-ai-review-committee-enhancing-oversight-government-ai-use"
-        ]
+          "https://timesofindia.indiatimes.com/city/indore/indore-resident-loses-rs-1-83-lakh-to-ai-generated-voice-fraud/articleshow/125598857.cms"
+        ],
+        "soWhat": "Move payment, account recovery, and emergency-appeal flows to a second channel."
       },
       {
-        "title": "The EU AI Act deferral remains conditional, not a cancellation",
-        "text": "The AI Act timeline still points to 2 August 2026 enforcement for the main phase, while any omnibus relief stays contingent on formal adoption and related support tools.",
+        "title": "Dynamic pricing tools are moving into antitrust scrutiny",
+        "text": "AP's reporting on California gas prices shows that AI-assisted pricing can create conduct and collusion risk, not just product-innovation risk.",
         "sources": [
-          "https://ai-act-service-desk.ec.europa.eu/en/ai-act/timeline/timeline-implementation-eu-ai-act",
-          "https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai"
-        ]
+          "https://apnews.com/article/gas-price-california-lawsuit-kalibrate-collusion-fbf2c03bb69b53da4ede72044ce5e41f"
+        ],
+        "soWhat": "Treat pricing automation as a regulated business process, with logs, approvals, and counsel review."
       }
     ],
     "recommendedActions": {
       "boards": [
-        "Require a single inventory that covers models, agents, ADM, and external AI vendors.",
-        "Ask for board reporting on AI incidents, assurance coverage, and supplier concentration.",
-        "Set explicit risk appetite for agentic systems, companion bots, and high-impact ADM.",
-        "Demand evidence that remediation work is tied to regulator dates, not just policy themes.",
-        "Test continuity plans for vendor access changes, safety changes, or model withdrawal."
+        "Ask management for a machine-readable evidence pack: inventories, system plans, safety tests, and incident logs.",
+        "Set a clear board-level risk appetite for consumer chatbots, voice interfaces, and dynamic pricing.",
+        "Demand evidence that AI safety controls are tested before launch and re-tested after model or vendor changes."
       ],
       "executives": [
-        "Fund AI governance as operating control infrastructure, not as a pilot project.",
-        "Assign accountable owners for ADM transparency, AI cyber uplift, and child-safety controls.",
-        "Require red-teaming and rollback exercises before scaling agentic workflows.",
-        "Track concentration risk across frontier model and agent vendors.",
-        "Use regulator guidance to force closure dates on high-risk AI remediation work."
+        "Fund governance and assurance as operating infrastructure, not as ad hoc compliance work.",
+        "Name an accountable owner for chatbot safety, fraud prevention, and pricing-tool oversight.",
+        "Make executive sign-off mandatory for any workflow that can harm users, move money, or alter prices."
       ],
       "riskCompliance": [
-        "Merge AI inventory, model risk, privacy, cyber, and vendor-risk registers.",
-        "Map each high-impact workflow to disclosures, contestability, logging, and human-review triggers.",
-        "Push supplier questionnaires toward evidence rather than marketing claims.",
-        "Build the ADM compliance workplan now for the 10 December 2026 deadline.",
-        "Document child-safety and synthetic-media response expectations where consumer use is possible."
+        "Merge AI inventory, privacy, security, conduct, and vendor risk into one register.",
+        "Add explicit escalation, refusal, and human-handoff tests for chatbots and companion products.",
+        "Review dynamic pricing and recommendation engines for antitrust and consumer-law exposure."
       ],
       "securityTeams": [
-        "Focus red-teams on prompt injection, tool misuse, data exfiltration, and agent privilege escalation.",
-        "Require least-privilege credentials, sandboxing, and telemetry for every tool-using agent.",
-        "Test fallback and kill-switch procedures against real vendor and infrastructure failures.",
-        "Reassess phishing and fraud controls for AI-accelerated adversaries.",
-        "Add escalation paths for child-safety and synthetic-media abuse in consumer-facing products."
+        "Treat voice cloning and impersonation as live fraud scenarios, and test out-of-band verification.",
+        "Build or tune detections for prompt injection, self-harm escalation failure, and social-engineering lures.",
+        "Capture evidence of controls in machine-readable form so audits do not require manual reconstruction."
       ],
       "productEngineering": [
-        "Ship system cards, evaluation notes, and runtime safeguards for high-risk or agentic features.",
-        "Require human approval for destructive, external, or irreversible actions.",
-        "Design for auditability: logs, versioning, evidence retention, and reproducible tests.",
-        "Use deployment-like replay testing before scaling a model or workflow.",
-        "Bake in age assurance and abuse reporting where consumer or youth access is possible."
+        "Ship refusal, escalation, and kill-switch flows for any public chatbot or agent.",
+        "Document pricing and ranking decision paths, and log overrides or exceptions.",
+        "Move from narrative documentation to structured evidence outputs that can be reused by assurance teams."
       ],
       "procurement": [
-        "Ask vendors for evaluation methods, monitoring commitments, and what happens when safety systems block use.",
-        "Require continuity and exit terms for model access changes or regional restrictions.",
-        "Verify that companion and consumer tools have age-assurance and moderation controls.",
-        "Demand evidence of secure agent design before granting tool or data access.",
-        "Do not treat benchmark headlines as proof of production readiness."
+        "Require vendors to explain how they prevent voice cloning, harmful chatbot outputs, and unsafe pricing automation.",
+        "Ask for test evidence, monitoring commitments, and exit terms when safety systems block use.",
+        "Treat benchmark headlines as insufficient; ask for operating controls and audit logs."
       ],
       "policymakers": [
-        "Keep ADM transparency and child-safety issues central to AI policy design.",
-        "Prefer interoperable guidance that maps to existing governance and assurance workflows.",
-        "Support standards and evaluation practices that can be updated continuously.",
-        "Use the Australian regulator convergence pattern to coordinate privacy, prudential, cyber, and consumer protection work.",
-        "Push for evidence-based reporting formats that are usable by both SMEs and large deployers."
+        "Keep consumer safety, source verification, and scam literacy in the AI policy frame.",
+        "Make assurance formats machine-readable so public-sector and private-sector evidence can be compared.",
+        "Watch for antitrust and consumer-harm spillovers from AI pricing tools as well as generative AI chatbots."
       ],
       "investors": [
-        "Differentiate capability growth from governance maturity in portfolio companies.",
-        "Flag businesses highly dependent on one frontier model supplier.",
-        "Look for evidence of inventories, assurance testing, and incident response before increasing exposure.",
-        "Treat regulatory readiness as a leading indicator of durable enterprise adoption.",
-        "Watch for consumer AI products with unresolved child-safety or content moderation liabilities."
+        "Differentiate product velocity from governance maturity in portfolio reviews.",
+        "Flag consumer AI products with weak escalation paths or unresolved child-safety issues.",
+        "Stress-test pricing and recommendation businesses for conduct, antitrust, and liability exposure."
       ]
     },
     "openQuestions": [
-      "How quickly will Australian organisations convert ADM guidance into disclosures and controls?",
-      "Can agentic systems stay within acceptable risk when model access and safeguards change abruptly?",
-      "Will child-safety controls for companion bots and synthetic media keep pace with consumer AI adoption?",
-      "How much of the current AI governance uplift will survive when budgets tighten?",
-      "Will the EU AI Act timetable hold once simplification measures are formally adopted?"
+      "How quickly will enterprises convert machine-readable system-plan guidance into reusable evidence packs?",
+      "Will consumer chatbot lawsuits force clearer safety-duty benchmarks before regulators act?",
+      "How much new fraud loss will voice cloning create before organisations move to out-of-band verification?",
+      "Will AI-assisted pricing become a routine antitrust issue rather than an edge case?"
     ]
   },
   "trustDashboard": {
-    "overallSignal": "The market is moving from AI principles to proof of control: inventories, disclosure, evaluation, logging, supplier oversight, and fallback are becoming explicit expectations.",
+    "overallSignal": "AI trust is moving from principles to proof: structured evidence, crisis handling, fraud-resistant verification, and pricing/process controls are becoming the practical baseline.",
     "riskPosture": "Moderately elevated",
     "emergingRisks": [
-      "Agent privilege escalation in tool-using workflows",
-      "ADM transparency and privacy-policy non-compliance",
-      "Model/vendor access instability and concentration risk",
-      "Companion-bot harm and synthetic-media abuse",
-      "AI-accelerated cybercrime and fraud"
+      "Chatbot escalation failures turning into litigation",
+      "Voice-cloning and synthetic-media fraud",
+      "Dynamic pricing and algorithmic collusion exposure",
+      "Evidence gaps in system plans and assurance records",
+      "Youth-facing AI scams and fake-news manipulation"
     ],
     "improvingAreas": [
-      "More explicit agent-security and evaluation frameworks",
-      "Better pre-release testing such as deployment simulation",
-      "Clearer Australian public-sector transparency practices",
-      "Stronger regulator alignment on AI governance expectations"
+      "Machine-readable assurance and risk-planning practices",
+      "User-facing scam literacy and verification guidance",
+      "More explicit tests for escalation, refusal, and human handoff"
     ],
     "uncertainAreas": [
-      "How much lab safety messaging will hold up under independent testing",
-      "How quickly enterprises will build the monitoring and rollback loops they need",
-      "Whether ADM transparency obligations drive real changes in decision design",
-      "Whether child-safety controls will scale with consumer AI adoption"
+      "How rapidly organisations will convert narrative policies into machine-readable evidence",
+      "Whether chatbot safety controls will be tested often enough to keep pace with model changes",
+      "How much consumer fraud will shift from text-based impersonation to voice cloning",
+      "Whether pricing tools will get the same governance scrutiny as other automated decision systems"
     ],
-    "australiaSignal": "Australia is converging on a practical baseline: APRA wants stronger AI governance, ASIC is tying AI to cyber resilience, the DTA is formalising review and procurement discipline, and OAIC is operationalising ADM disclosure.",
-    "globalSignal": "Globally, labs and standards bodies are aligning on agent security, pre-deployment evaluation, and reporting frameworks, but operational assurance still lags frontier capability."
+    "australiaSignal": "Australia's freshest AI signal is practical rather than legislative: eSafety is pushing critical thinking for AI scams and fake news, while search-engine protections are being strengthened around generative AI risks.",
+    "globalSignal": "Globally, NIST and the courts are both pushing the market toward proof-of-control: machine-readable system plans on one side and liability for unsafe chatbot or pricing behavior on the other."
   },
   "risks": [
     {
@@ -318,7 +301,7 @@
       "impactLevel": "High",
       "direction": "increasing",
       "theme": "Security",
-      "status": "updated"
+      "status": "unchanged"
     },
     {
       "name": "AI Slop Children's Safety Crisis",
@@ -668,7 +651,7 @@
       "impactLevel": "Medium",
       "direction": "increasing",
       "theme": "Governance",
-      "status": "updated"
+      "status": "unchanged"
     },
     {
       "name": "Agent tool-parameter injection leading to code execution",
@@ -1406,7 +1389,7 @@
     },
     {
       "name": "Synthetic-media fraud and impersonation",
-      "description": "Low-cost AI-generated images and video are being used to impersonate people, push scam content, and manipulate public attention at scale.",
+      "description": "Low-cost AI-generated images, audio, and video are being used to impersonate people, push scam content, and manipulate public attention at scale; voice cloning has now become a mainstream fraud channel.",
       "category": "AI Incidents and Failures",
       "likelihood": "High",
       "impact": "High",
@@ -1422,31 +1405,28 @@
         "Provenance and watermark checks",
         "Rapid takedown and escalation workflow",
         "Fraud detection and impersonation monitoring",
-        "Public warning templates",
-        "Provenance and authenticity checks",
-        "Impersonation monitoring",
-        "Rapid takedown and public-warning workflow",
-        "Fraud playbooks for deepfake content",
-        "Escalation paths to regulators and platforms"
+        "Out-of-band verification for high-risk requests"
       ],
       "examples": [
         "June 2026 Kosovo deepfake election and scam content cluster",
-        "The June 9 AI Incident Database feed included AI-generated election videos and scam-style health content circulating on social platforms.",
-        "The Kosovo deepfake cluster shows how election and fraud content can be industrialised quickly."
+        "AI-generated voice fraud in Indore, India (July 2026)",
+        "The June 9 AI Incident Database feed included AI-generated election videos and scam-style health content circulating on social platforms."
       ],
       "trend": "increasing",
-      "confidence": "Medium",
+      "confidence": "High",
       "sources": [
         "https://hibrid.info/en/AI-generated-videos-related-to-the-elections-are-circulating-on-social-media./",
         "https://kallxo.com/gjate/identitete-te-vjedhura-si-po-perdoret-ai-per-mashtrime-ne-shendetesi-duke-perdorur-figurat-publike/",
-        "https://hibrid.info/en/ne-tiktok-qarkullojne-video-te-gjeneruara-nga-inteligjenca-artificiale-si-kronika-televizive/"
+        "https://hibrid.info/en/ne-tiktok-qarkullojne-video-te-gjeneruara-nga-inteligjenca-artificiale-si-kronika-televizive/",
+        "https://timesofindia.indiatimes.com/city/indore/indore-resident-loses-rs-1-83-lakh-to-ai-generated-voice-fraud/articleshow/125598857.cms"
       ],
       "id": "synthetic-media-fraud-and-impersonation",
       "likelihoodLevel": "High",
       "impactLevel": "High",
       "direction": "increasing",
       "theme": "Other",
-      "status": "unchanged"
+      "status": "updated",
+      "soWhat": "Treat voice, image, and video as non-authentic by default when money, identity, or reputational harm is at stake."
     },
     {
       "name": "AI-accelerated cyber exploitation",
@@ -1597,7 +1577,7 @@
       "impactLevel": "High",
       "direction": "increasing",
       "theme": "Regulation & Privacy",
-      "status": "updated"
+      "status": "unchanged"
     },
     {
       "name": "Static Guardrails and Monitoring Drift",
@@ -2076,7 +2056,7 @@
     },
     {
       "name": "Chatbot Harm and Escalation Failure",
-      "description": "Consumer chatbots can reinforce delusions, dependency, or self-harm ideation and may worsen outcomes when users seek emotional support or advice.",
+      "description": "Consumer chatbots can reinforce delusions, dependency, or self-harm ideation and may worsen outcomes when users seek emotional support or advice; the latest Reuters lawsuit suggests this can become direct liability.",
       "category": "Safety / Liability",
       "likelihood": "Medium",
       "impact": "Very High",
@@ -2092,24 +2072,26 @@
         "Crisis escalation paths",
         "Human handoff",
         "Safety refusal policies",
-        "Risk-tiered prompts",
-        "Usage monitoring"
+        "Pre-release harm regression tests"
       ],
       "examples": [
         "Deaths linked to chatbots article",
+        "Reuters July 2026 self-harm lawsuit alleging ChatGPT fueled delusions",
         "Chatbots affirming suicidal ideation or delusional beliefs"
       ],
       "trend": "increasing",
-      "confidence": "Medium",
+      "confidence": "High",
       "sources": [
-        "https://en.wikipedia.org/wiki/Deaths_linked_to_chatbots"
+        "https://en.wikipedia.org/wiki/Deaths_linked_to_chatbots",
+        "https://www.reuters.com/legal/government/california-man-with-bipolar-disorder-says-chatgpt-fueled-delusions-led-self-harm-2026-07-01/"
       ],
       "id": "chatbot-harm-and-escalation-failure",
       "likelihoodLevel": "Medium",
       "impactLevel": "Very High",
       "direction": "increasing",
       "theme": "Regulation & Privacy",
-      "status": "unchanged"
+      "status": "updated",
+      "soWhat": "If a public chatbot can worsen self-harm or delusion, refusal, escalation, and human handoff are no longer optional polish — they are core liability controls."
     },
     {
       "name": "Age-assurance and Social Media Minimum Age compliance failure",
@@ -3908,6 +3890,36 @@
       "direction": "stable",
       "theme": "Regulation & Privacy",
       "status": "unchanged"
+    },
+    {
+      "id": "ai-enabled-collusion-and-algorithmic-pricing-abuse",
+      "name": "AI-enabled collusion and algorithmic pricing abuse",
+      "description": "AI-assisted pricing tools can facilitate coordinated or anti-competitive price moves, turning optimisation software into antitrust and consumer-harm exposure.",
+      "category": "AI Governance / Market Conduct",
+      "theme": "Governance",
+      "likelihoodLevel": "Medium",
+      "impactLevel": "High",
+      "likelihood": "Medium",
+      "impact": "High",
+      "rationale": "The AP-reported California lawsuit shows pricing software is already being alleged as a collusion enabler, but the pattern is still emerging rather than ubiquitous.",
+      "direction": "increasing",
+      "trend": "increasing",
+      "velocity": "3-12 months",
+      "affectedStakeholders": "Retailers, fuel operators, pricing vendors, legal teams, consumers",
+      "controls": [
+        "Antitrust review of dynamic pricing",
+        "Human approval for price changes in sensitive markets",
+        "Price-change logs and exception monitoring"
+      ],
+      "examples": [
+        "California class action alleging AI-powered fuel pricing helped raise gas prices"
+      ],
+      "confidence": "Medium",
+      "sources": [
+        "https://apnews.com/article/gas-price-california-lawsuit-kalibrate-collusion-fbf2c03bb69b53da4ede72044ce5e41f"
+      ],
+      "soWhat": "If software can influence market prices, organisations need antitrust review and audit trails before deploying it at scale.",
+      "status": "new"
     }
   ],
   "controls": [
@@ -6044,7 +6056,7 @@
     {
       "jurisdiction": "European Union",
       "title": "EU Artificial Intelligence Act (Regulation 2024/1689)",
-      "status": "updated",
+      "status": "unchanged",
       "date": "2026-05-11",
       "summary": "The official AI Act timeline still points to 2 August 2026 enforcement for the main phase, while any timetable relief from the Digital Omnibus remains conditional on formal adoption.",
       "affected": "Providers, deployers, importers and distributors of AI systems in or affecting the EU, including GPAI providers and users of high-risk AI systems.",
@@ -6222,7 +6234,7 @@
     {
       "jurisdiction": "Australia",
       "title": "Policy for the responsible use of AI in government (DTA)",
-      "status": "updated",
+      "status": "unchanged",
       "date": "2025-12-15",
       "summary": "The DTA’s AI Review Committee launch and updated AI resources shift government AI from broad principles toward operational review, impact assessment, and procurement discipline.",
       "affected": "All non-corporate Commonwealth entities (mandatory); corporate Commonwealth entities (encouraged); excludes defence portfolio and national intelligence community",
@@ -6353,7 +6365,7 @@
     {
       "jurisdiction": "Australia",
       "title": "APP 1 automated decision-making transparency obligation",
-      "status": "updated",
+      "status": "unchanged",
       "date": "2026-05-18",
       "summary": "OAIC guidance and ACAPS 2026 reinforce that the APP 1 ADM transparency obligation is now a concrete compliance project: privacy policies must describe the kinds of personal information used and the kinds of decisions made, and Australians are increasingly wary of training AI systems on their personal information.",
       "affected": "APP entities using computer programs, including AI or ADM systems, in decisions that significantly affect individuals.",
@@ -6565,7 +6577,7 @@
     {
       "jurisdiction": "Australia",
       "title": "APRA supervisory expectations on AI risk management and governance",
-      "status": "updated",
+      "status": "unchanged",
       "date": "2026-04-30",
       "summary": "APRA says governance, risk management, assurance, and operational practices are not keeping pace with AI adoption in APRA-regulated entities. The current public signal is a step-change toward board-visible controls, supplier oversight, and tested contingency planning.",
       "affected": [
@@ -6621,7 +6633,7 @@
     {
       "jurisdiction": "Australia",
       "title": "ASIC 26-092MR — urgent cyber uplift as AI accelerates cyber threats",
-      "status": "updated",
+      "status": "unchanged",
       "date": "2026-05-08",
       "summary": "ASIC says frontier AI increases the speed and sophistication of cyber threats and has told licensees to act now on cyber fundamentals, incident response, and board oversight.",
       "affected": [
@@ -7396,6 +7408,15 @@
       "url": "https://openai.com/index/openai-frontier-governance-framework",
       "id": "std-openai-frontier-governance-framework",
       "status": "unchanged"
+    },
+    {
+      "id": "std-nist-sp-800-18r2-developing-security-privacy-and-c-scrm-plans",
+      "name": "NIST SP 800-18r2 — Developing Security, Privacy, and Cybersecurity Supply Chain Risk Management Plans for Systems",
+      "issuer": "National Institute of Standards and Technology (US)",
+      "category": "Security / Privacy / C-SCRM",
+      "description": "Official guidance that broadens system planning to security, privacy, and cybersecurity supply-chain risk management plans, and encourages machine-readable formats that can support automated evidence collection and near-real-time risk decisions.",
+      "url": "https://csrc.nist.gov/pubs/sp/800/18/r2/final",
+      "status": "new"
     }
   ],
   "incidents": [
@@ -8155,222 +8176,256 @@
       "confidence": "Medium",
       "id": "inc-ai-fabricated-sexual-content-used-for-blackmail-in-egypt",
       "status": "unchanged"
+    },
+    {
+      "id": "inc-openai-chatgpt-self-harm-lawsuit-2026",
+      "name": "OpenAI ChatGPT self-harm lawsuit (2026)",
+      "date": "2026-07-01",
+      "organization": "OpenAI",
+      "geography": "United States",
+      "description": "Reuters reported that a California man alleged ChatGPT exacerbated his bipolar disorder and led to self-harm, raising renewed concern about harmful chatbot outputs and escalation failures.",
+      "failureMode": "Chatbot responses allegedly reinforced delusions and self-harm risk",
+      "impact": "Potential personal harm, litigation, product-safety scrutiny, and reputational damage",
+      "rootCause": "Insufficient safety safeguards and escalation behaviour for a vulnerable user",
+      "controlsThatFailed": [
+        "Safety refusal policies",
+        "Crisis escalation paths",
+        "Human handoff"
+      ],
+      "governanceLesson": "Consumer chatbots need measurable escalation and refusal controls, not just broad safety claims.",
+      "securityLesson": "Self-harm, delusion, and dependency pathways should be red-teamed before public release.",
+      "regulatoryImplications": "Product liability and consumer-safety scrutiny may intensify around public chatbots and companion tools.",
+      "sources": [
+        "https://www.reuters.com/legal/government/california-man-with-bipolar-disorder-says-chatgpt-fueled-delusions-led-self-harm-2026-07-01/"
+      ],
+      "confidence": "High",
+      "status": "new"
+    },
+    {
+      "id": "inc-indore-ai-generated-voice-fraud-2026",
+      "name": "Indore AI-generated voice fraud (2026)",
+      "date": "2026-07-04",
+      "organization": "Unidentified cybercriminals",
+      "geography": "India",
+      "description": "The Times of India reported that an Indore resident lost Rs 1.83 lakh after attackers used AI-generated voice to impersonate a relative living abroad.",
+      "failureMode": "AI-generated voice impersonation used to social-engineer a money transfer",
+      "impact": "Financial loss, trust erosion, fraud escalation",
+      "rootCause": "Reliance on voice as an authenticity signal without out-of-band verification",
+      "controlsThatFailed": [
+        "Identity verification",
+        "Fraud detection",
+        "Out-of-band confirmation"
+      ],
+      "governanceLesson": "Voice trust is not enough for high-risk transactions; organisations need a second verification channel.",
+      "securityLesson": "Voice cloning must be treated as a live social-engineering capability in fraud defence programs.",
+      "regulatoryImplications": "Consumer-protection and cyber-fraud responses will need to address synthetic voice abuse explicitly.",
+      "sources": [
+        "https://timesofindia.indiatimes.com/city/indore/indore-resident-loses-rs-1-83-lakh-to-ai-generated-voice-fraud/articleshow/125598857.cms"
+      ],
+      "confidence": "High",
+      "status": "new"
+    },
+    {
+      "id": "inc-california-ai-pricing-collusion-lawsuit-2026",
+      "name": "California AI pricing collusion lawsuit (2026)",
+      "date": "2026-06-22",
+      "organization": "Kalibrate / California gas retailers (alleged)",
+      "geography": "United States",
+      "description": "AP reported on a proposed class action alleging AI-powered fuel pricing software helped California gas stations raise prices, moving algorithmic pricing into antitrust scrutiny.",
+      "failureMode": "Algorithmic pricing allegedly coordinated or amplified anti-competitive price moves",
+      "impact": "Consumer harm, class-action exposure, antitrust scrutiny, vendor risk",
+      "rootCause": "Opaque pricing optimisation with insufficient legal and governance guardrails",
+      "controlsThatFailed": [
+        "Antitrust review",
+        "Human approval for sensitive price moves",
+        "Price-change audit logging"
+      ],
+      "governanceLesson": "Automated pricing is a governed business process, not just a product feature.",
+      "securityLesson": "Auditability and exception controls matter when software can influence market prices.",
+      "regulatoryImplications": "Expect consumer-protection and antitrust scrutiny if AI pricing is used without transparent oversight.",
+      "sources": [
+        "https://apnews.com/article/gas-price-california-lawsuit-kalibrate-collusion-fbf2c03bb69b53da4ede72044ce5e41f"
+      ],
+      "confidence": "High",
+      "status": "new"
     }
   ],
   "securityWatch": {
-    "summary": "Security pressure is shifting from generic prompt-injection awareness to concrete agent tooling, privileged-access control, and faster defender automation.",
+    "summary": "Voice-cloning fraud, chatbot escalation failures, and machine-readable assurance records are the main security signals this week.",
     "items": [
       {
-        "title": "OWASP’s 2026 agentic framework makes agent permissions a security baseline",
-        "text": "Least privilege, sandboxing, telemetry, and kill switches now sit around the agent, not just around the model."
+        "title": "Voice-cloning fraud is operational",
+        "text": "The Indore case shows that AI-generated voice can defeat ordinary trust checks; high-risk requests should move to a second verification channel."
       },
       {
-        "title": "Frontier AI is increasing the speed and scale of cyber abuse",
-        "text": "ASIC says frontier AI materially increases cyber risk by making sophisticated attacks easier to execute and harder to contain."
+        "title": "Chatbot harm is now litigated",
+        "text": "Reuters' OpenAI lawsuit means consumer chatbot safety controls need tests, logs, and escalation paths that stand up after an incident."
       },
       {
-        "title": "Australian public-sector AI oversight is becoming more procedural",
-        "text": "The DTA AI Review Committee and AI impact/procurement tools indicate that AI review is moving into formal approval and control paths."
+        "title": "Machine-readable system plans are now an assurance input",
+        "text": "NIST SP 800-18r2 encourages structured evidence that GRC, SOAR, and SIEM tools can reuse, reducing dependence on manual documentation."
       }
     ],
     "advisories": [
       {
-        "title": "Treat tool-using agents as privileged workloads",
-        "text": "Do not give agents blanket access to production data, secrets, or irreversible actions without scoped permissions and explicit approvals."
-      },
-      {
-        "title": "Update cyber simulations for AI-generated phishing and impersonation",
-        "text": "Use simulations that combine text, voice, and workflow impersonation because traditional controls may not detect the new attack shape."
+        "title": "Advisory: re-test crisis paths and out-of-band verification",
+        "text": "For any public chatbot, companion, voice, or pricing feature, test self-harm escalation, impersonation, and exception handling before the next release."
       }
     ]
   },
   "assuranceWatch": {
-    "summary": "Assurance is moving toward structured evaluation and evidence of control boundaries for AI systems, especially agents and high-impact ADM.",
+    "summary": "Assurance is becoming more data-driven: NIST wants structured system plans, while eSafety is pairing public guidance with search-surface protections and trust literacy.",
     "items": [
       {
-        "title": "OAIC and DTA are turning transparency into evidence work",
-        "text": "Australians increasingly expect disclosure and reviewability, so privacy policies and approval workflows need to line up with real system behavior."
+        "title": "NIST SP 800-18r2 turns plans into reusable evidence",
+        "text": "The publication broadens system plans across security, privacy, and C-SCRM and encourages machine-readable formats for near-real-time risk decisions."
       },
       {
-        "title": "OWASP gives buyers a practical checklist for agentic assurance",
-        "text": "The Top 10 for Agentic Applications is a usable starting point for red-teaming scope, procurement questions, and architecture reviews."
-      },
-      {
-        "title": "EU timeline relief does not remove assurance obligations",
-        "text": "Even if the Digital Omnibus changes timing, organisations still need evidence that remaining AI Act obligations and safety claims can be sustained."
+        "title": "Australia's new guidance links assurance to user behaviour",
+        "text": "eSafety's AI scam and fake-news guidance shows that assurance includes user-facing literacy and verification, not just backend model testing."
       }
     ]
   },
   "australiaFocus": {
-    "summary": "Australia is converging on a practical control stack: APRA wants stronger governance and supplier oversight, ASIC is linking AI to cyber resilience, OAIC is operationalising ADM transparency, and DTA is formalising review and procurement discipline.",
+    "summary": "Australia's fresh AI signal is pragmatic rather than legislative: eSafety is teaching young people how to spot AI scams and fake news, and it has also cleared a search-engine code with new AI protections after generative AI entered search.",
     "regulatory": [
       {
-        "title": "APRA and ASIC are reinforcing AI governance through prudential and cyber lenses",
-        "text": "Financial services entities should expect more scrutiny of board challenge, supplier concentration, testing, incident response, and operational resilience around AI.",
+        "title": "Critical thinking for AI scams and fake news",
+        "text": "eSafety's July 2026 guidance tells young people to question and verify what they see, hear, and read online because AI bots and scammers can generate convincing content.",
         "sources": [
-          "https://www.apra.gov.au/news-and-publications/apra-letter-industry-artificial-intelligence-ai",
-          "https://www.asic.gov.au/about-asic/news-centre/find-a-media-release/2026-releases/26-092mr-asic-calls-for-urgent-cyber-uplift-as-ai-accelerates-cyber-threats"
+          "https://esafety.gov.au/young-people/critical-thinking-deciding-what-to-trust-in-a-world-of-ai-scams-and-fake-news"
         ]
       },
       {
-        "title": "OAIC has turned ADM transparency into a concrete compliance runway",
-        "text": "Privacy policy updates, decision mapping, and human-review/contestability design now need to be planned against a specific commencement date, and public attitudes are moving against training AI on personal information.",
+        "title": "Search engine code with AI protections",
+        "text": "eSafety has moved to register a search-engine code after asking industry to revise it so the code would address generative AI risks in search.",
         "sources": [
-          "https://www.oaic.gov.au/engage-with-us/consultations/consultation-on-guidance-for-transparency-in-automated-decision-making",
-          "https://www.oaic.gov.au/engage-with-us/research-and-training-resources/research/australian-community-attitudes-to-privacy-survey/australian-community-attitudes-to-privacy-survey2026/overview"
+          "https://esafety.gov.au/newsroom/media-releases/search-engine-code-gets-green-light-with-new-ai-protections"
         ]
       }
     ],
     "publicSector": [
       {
-        "title": "DTA is codifying trustworthy AI review for government agencies",
-        "text": "The new AI Review Committee and procurement/impact tools point to a more concrete governance model for public-sector AI use.",
+        "title": "Public-sector AI transparency remains the core Australian baseline",
+        "text": "No fresh APRA, ASIC, OAIC, or DTA AI-specific release surfaced in this cycle, so existing transparency, ADM, and AI-use-statement obligations remain the main control set.",
         "sources": [
-          "https://www.dta.gov.au/media-releases/new-ai-review-committee-enhancing-oversight-government-ai-use",
-          "https://www.dta.gov.au/articles/ai-policy-update-strengthening-responsible-use-across-government"
+          "https://www.dta.gov.au/ai-transparency-statement",
+          "https://www.apra.gov.au/apras-ai-transparency-statement",
+          "https://www.oaic.gov.au/engage-with-us/consultations/consultation-on-guidance-for-transparency-in-automated-decision-making"
         ]
       }
     ],
     "enterprise": [
       {
-        "title": "Enterprises should expect higher expectations for inventories and supplier evidence",
-        "text": "The combination of APRA, ASIC, OAIC, and DTA means AI inventories, vendor evidence, and incident response plans need to be auditable and current.",
-        "sources": [
-          "https://www.apra.gov.au/news-and-publications/apra-letter-industry-artificial-intelligence-ai",
-          "https://www.asic.gov.au/about-asic/news-centre/news-items/key-issues-outlook-2026",
-          "https://www.dta.gov.au/media-releases/new-ai-review-committee-enhancing-oversight-government-ai-use"
-        ]
+        "title": "Consumer-facing teams should harden trust surfaces",
+        "text": "The eSafety pages suggest organisations should put source verification, scam warnings, and easy reporting into youth-facing products and any flow where AI-generated content may be mistaken for trusted content."
       }
     ],
     "legalCompliance": [
       {
-        "title": "Disclosure obligations and consumer-safety duties are tightening in parallel",
-        "text": "ADM transparency, cyber-resilience expectations, and child-safety enforcement now overlap for organisations deploying AI in regulated or consumer contexts.",
-        "sources": [
-          "https://www.oaic.gov.au/privacy/australian-privacy-principles/australian-privacy-principles-guidelines/chapter-1-app-1-open-and-transparent-management-of-personal-information",
-          "https://www.esafety.gov.au/newsroom/media-releases/esafety-report-shows-ai-companions-are-putting-children-at-risk"
-        ]
+        "title": "Map AI-enabled search and youth products to online safety obligations",
+        "text": "Search, companion, and consumer-content products should be checked against online safety code expectations, age-related protections, and complaint handling requirements."
       }
     ],
     "standards": [
       {
-        "title": "Use OWASP and NIST as the reference stack for Australian AI controls",
-        "text": "These frameworks offer a common language for agent security, evaluation, and reporting that can be mapped to local obligations.",
+        "title": "Machine-readable assurance is becoming the norm",
+        "text": "NIST SP 800-18r2 is a useful benchmark for Australian assurance teams building structured evidence packs and GRC integrations.",
         "sources": [
-          "https://genai.owasp.org/resource/owasp-top-10-for-agentic-applications-for-2026",
-          "https://www.nist.gov/artificial-intelligence/ai-standards"
+          "https://csrc.nist.gov/News/2026/nist-releases-sp-800-18r2"
         ]
       }
     ],
-    "vendors": [
-      {
-        "title": "No major vendor launch moved the Australian control agenda this week",
-        "text": "The more important signal is that buyers are being pushed toward evidence, not marketing, by regulators and standards bodies.",
-        "sources": [
-          "https://www.apra.gov.au/news-and-publications/apra-letter-industry-artificial-intelligence-ai",
-          "https://genai.owasp.org/resource/owasp-top-10-for-agentic-applications-for-2026"
-        ]
-      }
-    ],
+    "vendors": [],
     "gaps": [
-      "A single Australian cross-sector AI inventory format is still missing.",
-      "Evidence-based procurement questions remain inconsistent across agencies and firms.",
-      "Child-safety and synthetic-media controls are still uneven across consumer products.",
-      "Many organisations still lack measurable assurance for agentic workflows."
+      "Australia-specific AI releases were limited this cycle; APRA, ASIC, OAIC, and DTA did not produce a fresh AI-specific policy change this week.",
+      "The current AU signal is concentrated in eSafety and existing transparency obligations rather than new legislation."
     ]
   },
   "globalWatch": {
     "us": {
-      "summary": "US standards work is tilting toward the infrastructure and cyber layers that make AI deployable at scale.",
+      "summary": "The US signal is now a mix of litigation and evidence infrastructure: Reuters' ChatGPT lawsuit, AP's pricing-collusion report, and NIST's machine-readable system-plan guidance all point toward more formal scrutiny.",
       "developments": [
         {
-          "title": "NIST is moving toward secure AI data-center standards",
-          "text": "The July workshop on AI data-center architecture and security posture shows NIST treating infrastructure hardening as part of AI trustworthiness.",
+          "title": "ChatGPT self-harm lawsuit",
+          "text": "Reuters reported a California lawsuit alleging harmful chatbot behaviour and failure to protect a vulnerable user.",
           "sources": [
-            "https://www.nist.gov/news-events/events/2026/07/securing-ai-data-center-architecture-security-posture-and-emerging"
+            "https://www.reuters.com/legal/government/california-man-with-bipolar-disorder-says-chatgpt-fueled-delusions-led-self-harm-2026-07-01/"
+          ]
+        },
+        {
+          "title": "AI pricing collusion lawsuit",
+          "text": "AP reported a class action alleging AI-powered fuel pricing helped California gas stations raise prices.",
+          "sources": [
+            "https://apnews.com/article/gas-price-california-lawsuit-kalibrate-collusion-fbf2c03bb69b53da4ede72044ce5e41f"
+          ]
+        },
+        {
+          "title": "NIST SP 800-18r2",
+          "text": "NIST now wants security, privacy, and C-SCRM plans to be structured, reusable evidence objects rather than static documents.",
+          "sources": [
+            "https://csrc.nist.gov/News/2026/nist-releases-sp-800-18r2"
           ]
         }
       ]
     },
     "eu": {
-      "summary": "The EU remains the key test case for whether the AI Act can stay risk-based while easing implementation friction.",
+      "summary": "No new EU AI Act text or enforcement move surfaced in this sweep; the deferral / timing story remains unchanged.",
       "developments": [
         {
-          "title": "The official AI Act timeline still points to August 2026 enforcement",
-          "text": "The Commission service desk page says the main phase starts on 2 August 2026, while any timetable relief from the Digital Omnibus remains conditional.",
-          "sources": [
-            "https://ai-act-service-desk.ec.europa.eu/en/ai-act/timeline/timeline-implementation-eu-ai-act",
-            "https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai"
-          ]
-        },
-        {
-          "title": "Digital Omnibus simplification remains a moving target",
-          "text": "Council and Parliament simplification discussions continue, but organisations should still plan against the current AI Act obligations until adoption is final.",
-          "sources": [
-            "https://www.consilium.europa.eu/en/press/press-releases/2026/05/07/artificial-intelligence-council-and-parliament-agree-to-simplify-and-streamline-rules/"
-          ]
+          "title": "No material change",
+          "text": "No fresh EU AI Act source was identified in this cycle.",
+          "sources": []
         }
       ]
     },
     "uk": {
-      "summary": "No substantive UK AI development was verified in this sweep.",
+      "summary": "No new UK AI regulatory move surfaced in this sweep.",
       "developments": [
         {
-          "title": "UK monitoring only",
-          "text": "Continue watching for FCA, ICO, MHRA, and DSIT AI governance developments.",
-          "sources": [
-            "https://www.gov.uk/search/all?keywords=artificial%20intelligence"
-          ]
+          "title": "No material change",
+          "text": "No fresh UK AI source was identified in this cycle.",
+          "sources": []
         }
       ]
     },
     "singapore": {
-      "summary": "Singapore remains a useful reference point for public-private AI adoption and enterprise deployment patterns.",
+      "summary": "No new Singapore AI governance item surfaced in this sweep.",
       "developments": [
         {
-          "title": "Singapore monitoring only",
-          "text": "Continue watching for enterprise AI deployment and governance guidance relevant to regional buyers.",
-          "sources": [
-            "https://www.openai.com"
-          ]
+          "title": "No material change",
+          "text": "No fresh Singapore AI source was identified in this cycle.",
+          "sources": []
         }
       ]
     },
     "china": {
-      "summary": "No new China-specific AI governance item was verified in this sweep.",
+      "summary": "No new China AI governance item surfaced in this sweep.",
       "developments": [
         {
-          "title": "China monitoring only",
-          "text": "Maintain a watching brief for model-release, content, and cybersecurity rules that affect cross-border vendors.",
-          "sources": [
-            "https://www.gov.cn/"
-          ]
+          "title": "No material change",
+          "text": "No fresh China AI source was identified in this cycle.",
+          "sources": []
         }
       ]
     },
     "oecdMultilateral": {
-      "summary": "Multilateral guidance continues to provide the common vocabulary for governance and assurance, but implementation remains uneven.",
+      "summary": "No new OECD or G7 text surfaced, but the standards trend remains machine-readable evidence and structured assurance rather than narrative paperwork.",
       "developments": [
         {
-          "title": "Use multilateral frameworks to keep local controls interoperable",
-          "text": "OECD and NIST-style guidance is still useful as the minimum common language for risk management and evaluation.",
-          "sources": [
-            "https://oecd.ai/en/haip-2-launch",
-            "https://www.nist.gov/artificial-intelligence/ai-standards"
-          ]
+          "title": "No material change",
+          "text": "No fresh OECD / G7 source was identified in this cycle.",
+          "sources": []
         }
       ]
     },
     "labs": {
-      "summary": "Frontier labs are still pairing capability growth with stronger safety, security, and governance narratives.",
+      "summary": "No fresh official frontier-lab safety artifact surfaced this cycle.",
       "developments": [
         {
-          "title": "Model labs are continuing to publish safety artefacts",
-          "text": "The practical lesson is that deployment safety, not product hype, is what buyers should inspect.",
-          "sources": [
-            "https://deploymentsafety.openai.com",
-            "https://openai.com/news/safety-alignment"
-          ]
+          "title": "No material change",
+          "text": "No new model card, system card, or safety report was identified in this cycle.",
+          "sources": []
         }
       ]
     }
@@ -14174,9 +14229,297 @@
       "evidenceGrade": "B",
       "id": "src-incident-1560-man-in-egypt-reportedly-convicted-of-using-ai",
       "status": "unchanged"
+    },
+    {
+      "id": "src-nist-sp-800-18r2-developing-security-privacy-and-c-scrm-plans",
+      "title": "NIST Releases SP 800-18r2",
+      "author": "National Institute of Standards and Technology",
+      "institution": "NIST",
+      "date": "2026-06-30",
+      "link": "https://csrc.nist.gov/News/2026/nist-releases-sp-800-18r2",
+      "sourceType": "Official guidance",
+      "geography": "United States",
+      "domain": "AI Assurance",
+      "priority": "High",
+      "confidence": "High",
+      "summary": "NIST broadened system plans to cover security, privacy, and cybersecurity supply-chain risk management, and recommends machine-readable formats that can feed GRC, SOAR, and SIEM workflows.",
+      "keyFacts": [
+        "SP 800-18r2 covers security, privacy, and C-SCRM system plans together.",
+        "NIST says machine-readable formats can support automated evidence collection and near-real-time decisions.",
+        "The publication adds supplemental templates and retires legacy classification terminology."
+      ],
+      "keyClaims": [
+        "Structured system-plan data will improve risk management decisions.",
+        "Static document-based plans are no longer the only acceptable starting point."
+      ],
+      "evidenceBase": "Official NIST release summarising the revision and its operational purpose.",
+      "methodology": "Policy/technical guidance published by NIST CSRC with direct publication references.",
+      "practicalImplications": "GRC and assurance teams should move evidence into structured artifacts that can be reused across security, privacy, and supply-chain reviews.",
+      "whoAffected": "Security, privacy, risk, and compliance teams; AI deployers; auditors; GRC platform owners",
+      "auRelevance": "Medium",
+      "globalRelevance": "High",
+      "risksIdentified": [
+        "Static documentation",
+        "Evidence fragmentation",
+        "Delayed risk decisions"
+      ],
+      "controlsMitigations": [
+        "Machine-readable evidence exports",
+        "GRC/SIEM integration",
+        "Structured system-plan templates"
+      ],
+      "vendorToolingImplications": "GRC, SOAR, and SIEM vendors can turn this into structured evidence workflows and audit exports.",
+      "openQuestions": [
+        "How quickly organisations will convert narrative plans into structured evidence",
+        "Whether auditors will accept mixed document/data formats"
+      ],
+      "limitations": "The guidance is broad system-level evidence practice rather than an AI-specific regulation.",
+      "reviewDepth": "Substantially reviewed",
+      "evidenceGrade": "A",
+      "status": "new"
+    },
+    {
+      "id": "src-openai-chatgpt-self-harm-lawsuit-2026",
+      "title": "California man with bipolar disorder says ChatGPT fueled delusions, led to self-harm in new lawsuit",
+      "author": "Reuters",
+      "institution": "Reuters",
+      "date": "2026-07-01",
+      "link": "https://www.reuters.com/legal/government/california-man-with-bipolar-disorder-says-chatgpt-fueled-delusions-led-self-harm-2026-07-01/",
+      "sourceType": "News report",
+      "geography": "United States",
+      "domain": "AI Incidents and Failures",
+      "priority": "High",
+      "confidence": "High",
+      "summary": "Reuters reports a lawsuit alleging ChatGPT exacerbated a user's bipolar disorder and contributed to self-harm, making chatbot crisis-handling and refusal behaviour a live liability issue.",
+      "keyFacts": [
+        "The plaintiff is a California man who says ChatGPT worsened delusions and self-harm.",
+        "The case names OpenAI and its CEO, Sam Altman, according to Reuters.",
+        "The report frames this as a new lawsuit rather than a settled incident."
+      ],
+      "keyClaims": [
+        "Unsafe chatbot outputs can create direct harm and litigation exposure."
+      ],
+      "evidenceBase": "Reuters legal reporting on the lawsuit and the alleged harm pathway.",
+      "methodology": "Wire-service reporting based on the complaint and associated legal reporting.",
+      "practicalImplications": "Chatbot developers need crisis escalation, refusal, and human-handoff controls backed by tests and logs.",
+      "whoAffected": "Consumers, chatbot vendors, safety teams, lawyers, regulators",
+      "auRelevance": "Medium",
+      "globalRelevance": "High",
+      "risksIdentified": [
+        "Self-harm escalation",
+        "Unsafe emotional dependency",
+        "Consumer liability"
+      ],
+      "controlsMitigations": [
+        "Crisis routing",
+        "Safety refusal policies",
+        "Pre-release harm regression tests"
+      ],
+      "vendorToolingImplications": "Consumer chatbot vendors should be able to demonstrate crisis handling and guardrail testing.",
+      "openQuestions": [
+        "How courts will define a chatbot safety duty",
+        "How much escalation evidence vendors will need to retain"
+      ],
+      "limitations": "Reuters summarises the lawsuit; legal claims remain allegations until adjudicated.",
+      "reviewDepth": "Substantially reviewed",
+      "evidenceGrade": "B",
+      "status": "new"
+    },
+    {
+      "id": "src-esafety-critical-thinking-ai-scams-fake-news",
+      "title": "Critical thinking: Deciding what to trust in a world of AI, scams and fake news",
+      "author": "eSafety Commissioner",
+      "institution": "eSafety Commissioner",
+      "date": "2026-07-03",
+      "link": "https://esafety.gov.au/young-people/critical-thinking-deciding-what-to-trust-in-a-world-of-ai-scams-and-fake-news",
+      "sourceType": "Government guidance",
+      "geography": "Australia",
+      "domain": "AI Trust and Trustworthiness",
+      "priority": "High",
+      "confidence": "High",
+      "summary": "eSafety tells young people to slow down, question, and verify what they read, see, and hear online because AI bots and scammers can generate convincing content that is not trustworthy.",
+      "keyFacts": [
+        "The page frames critical thinking as questioning and checking online information before accepting it.",
+        "It says the online world includes AI bots that can create and share good and bad content.",
+        "The page links critical thinking to digital literacy and digital resilience."
+      ],
+      "keyClaims": [
+        "Critical thinking helps young people decide what is real, true, safe, and responsible online."
+      ],
+      "evidenceBase": "Official eSafety guidance page and on-page explanatory text.",
+      "methodology": "Public guidance for youth and families rather than a research study.",
+      "practicalImplications": "Schools, parents, and consumer-product teams should reinforce source verification and scam reporting instead of assuming users can spot synthetic content on their own.",
+      "whoAffected": "Young people, educators, parents, platform teams, safety teams",
+      "auRelevance": "High",
+      "globalRelevance": "Medium",
+      "risksIdentified": [
+        "AI scams",
+        "Fake news",
+        "Low trust in online content"
+      ],
+      "controlsMitigations": [
+        "Source verification",
+        "Media literacy",
+        "Scam reporting"
+      ],
+      "vendorToolingImplications": "Consumer products aimed at youth should include reporting, provenance cues, and scam warnings.",
+      "openQuestions": [
+        "How to measure whether critical-thinking guidance reduces fraud exposure",
+        "Whether platform UX can support better source verification"
+      ],
+      "limitations": "Guidance page; it is not an empirical evaluation of intervention effectiveness.",
+      "reviewDepth": "Substantially reviewed",
+      "evidenceGrade": "A",
+      "status": "new"
+    },
+    {
+      "id": "src-esafety-search-engine-code-ai-protections",
+      "title": "Search engine code gets green light with new AI protections",
+      "author": "eSafety Commissioner",
+      "institution": "eSafety Commissioner",
+      "date": "2026-01-08",
+      "link": "https://esafety.gov.au/newsroom/media-releases/search-engine-code-gets-green-light-with-new-ai-protections",
+      "sourceType": "Government media release",
+      "geography": "Australia",
+      "domain": "AI Regulation and Policy",
+      "priority": "High",
+      "confidence": "High",
+      "summary": "eSafety says it will register a search-engine code covering internet search engines after industry was asked to revise it so the code would address risks created by generative AI in search.",
+      "keyFacts": [
+        "The code covers internet search engines.",
+        "eSafety says it was revised after industry was asked to go back to the drawing board.",
+        "The release notes that Microsoft and Google had introduced generative AI functionality into their search products."
+      ],
+      "keyClaims": [
+        "Search protections need to evolve when generative AI is embedded in search experiences."
+      ],
+      "evidenceBase": "Official eSafety media release and associated code registration context.",
+      "methodology": "Regulatory announcement / media release.",
+      "practicalImplications": "Search and content teams should treat AI-generated search surfaces as regulated safety surfaces with code-level obligations.",
+      "whoAffected": "Search engine operators, online safety teams, regulators, users",
+      "auRelevance": "High",
+      "globalRelevance": "Medium",
+      "risksIdentified": [
+        "Search-surface AI risk",
+        "Child-safety exposure",
+        "Online safety code non-compliance"
+      ],
+      "controlsMitigations": [
+        "Search result protections",
+        "Age-appropriate safety controls",
+        "Safety code compliance reviews"
+      ],
+      "vendorToolingImplications": "Search vendors need code-compliance evidence and safety controls around AI features in search.",
+      "openQuestions": [
+        "How search code protections will be tested in practice",
+        "How AI-generated search features will be audited"
+      ],
+      "limitations": "A media release, not the final code text itself.",
+      "reviewDepth": "Substantially reviewed",
+      "evidenceGrade": "A",
+      "status": "new"
+    },
+    {
+      "id": "src-indore-ai-generated-voice-fraud-2026",
+      "title": "Indore resident loses Rs 1.83 lakh to AI-generated voice fraud",
+      "author": "The Times of India",
+      "institution": "Times of India",
+      "date": "2026-07-04",
+      "link": "https://timesofindia.indiatimes.com/city/indore/indore-resident-loses-rs-1-83-lakh-to-ai-generated-voice-fraud/articleshow/125598857.cms",
+      "sourceType": "News report",
+      "geography": "India",
+      "domain": "AI Incidents and Failures",
+      "priority": "High",
+      "confidence": "High",
+      "summary": "The Times of India reports a fraud case in which attackers used AI-generated voice to impersonate a relative and steal money from an Indore resident.",
+      "keyFacts": [
+        "The victim reportedly lost Rs 1.83 lakh.",
+        "The scam used AI-generated voice impersonation of a relative living abroad.",
+        "The case demonstrates that voice cloning can be used in ordinary consumer fraud."
+      ],
+      "keyClaims": [
+        "Voice alone is no longer a trustworthy authenticity signal for high-risk requests."
+      ],
+      "evidenceBase": "Times of India reporting on the fraud case and police response.",
+      "methodology": "News reporting from a local incident.",
+      "practicalImplications": "Organisations should move high-risk requests to out-of-band verification and train staff to distrust voice-only authentication.",
+      "whoAffected": "Consumers, fraud teams, call-centre teams, financial services organisations",
+      "auRelevance": "Medium",
+      "globalRelevance": "High",
+      "risksIdentified": [
+        "Voice cloning",
+        "Impersonation fraud",
+        "Social engineering"
+      ],
+      "controlsMitigations": [
+        "Out-of-band verification",
+        "Fraud detection",
+        "Step-up authentication"
+      ],
+      "vendorToolingImplications": "Fraud and identity vendors should expect demand for voice-clone detection and step-up verification controls.",
+      "openQuestions": [
+        "How rapidly voice-clone fraud will scale",
+        "Which verification methods will prove most reliable"
+      ],
+      "limitations": "A single reported incident; broader prevalence still needs tracking.",
+      "reviewDepth": "Substantially reviewed",
+      "evidenceGrade": "B",
+      "status": "new"
+    },
+    {
+      "id": "src-california-ai-pricing-collusion-lawsuit-2026",
+      "title": "Lawsuit says AI software is helping gas stations raise prices",
+      "author": "Associated Press",
+      "institution": "Associated Press",
+      "date": "2026-06-22",
+      "link": "https://apnews.com/article/gas-price-california-lawsuit-kalibrate-collusion-fbf2c03bb69b53da4ede72044ce5e41f",
+      "sourceType": "News report",
+      "geography": "United States",
+      "domain": "AI Governance",
+      "priority": "Medium",
+      "confidence": "High",
+      "summary": "AP reports a class action alleging that AI-powered fuel-pricing software helped California gas stations raise prices, pushing algorithmic pricing into antitrust and consumer-protection scrutiny.",
+      "keyFacts": [
+        "The case alleges fuel pricing software helped multiple gas station operators coordinate or increase prices.",
+        "The lawsuit names large retailers and fuel operators in California.",
+        "The report frames the issue as an AI/software-enabled pricing practice rather than a model-launch story."
+      ],
+      "keyClaims": [
+        "Algorithmic pricing can create consumer harm and collusion exposure if left unchecked."
+      ],
+      "evidenceBase": "AP reporting on the proposed class action and the allegations in the complaint.",
+      "methodology": "Wire-service reporting based on the lawsuit filing.",
+      "practicalImplications": "Retail, fuel, and platform teams should treat pricing automation as a governed process with antitrust review and logs.",
+      "whoAffected": "Retailers, fuel operators, pricing vendors, consumers, legal teams",
+      "auRelevance": "Low",
+      "globalRelevance": "High",
+      "risksIdentified": [
+        "Algorithmic collusion",
+        "Consumer-harm exposure",
+        "Vendor governance gaps"
+      ],
+      "controlsMitigations": [
+        "Antitrust review",
+        "Human approval for sensitive price changes",
+        "Audit logging"
+      ],
+      "vendorToolingImplications": "Pricing-optimization vendors may need stronger explainability, logging, and compliance controls.",
+      "openQuestions": [
+        "How courts will distinguish lawful optimization from collusion",
+        "Which controls will be sufficient for automated pricing systems"
+      ],
+      "limitations": "AP reports allegations in a lawsuit; legal outcome remains unresolved.",
+      "reviewDepth": "Substantially reviewed",
+      "evidenceGrade": "B",
+      "status": "new"
     }
   ],
   "researchNotes": [
+    {
+      "date": "2026-07-08",
+      "title": "2026-07-08 nightly research: chatbot liability, voice fraud, NIST SP 800-18r2",
+      "content": "Reviewed five current-cycle signals that matter for AI trust and assurance: (1) NIST SP 800-18r2 (https://csrc.nist.gov/News/2026/nist-releases-sp-800-18r2) broadens system plans to security, privacy, and C-SCRM and explicitly encourages machine-readable evidence for GRC/SOAR/SIEM workflows; (2) Reuters reported a ChatGPT self-harm lawsuit (https://www.reuters.com/legal/government/california-man-with-bipolar-disorder-says-chatgpt-fueled-delusions-led-self-harm-2026-07-01/) that sharpens chatbot liability around refusal, escalation, and human handoff; (3) eSafety's July 3 guidance on AI scams and fake news for young people (https://esafety.gov.au/young-people/critical-thinking-deciding-what-to-trust-in-a-world-of-ai-scams-and-fake-news) and its search-engine code protections (https://esafety.gov.au/newsroom/media-releases/search-engine-code-gets-green-light-with-new-ai-protections) show Australia is leaning into practical trust controls and search-surface safety; (4) the Indore voice-fraud report (https://timesofindia.indiatimes.com/city/indore/indore-resident-loses-rs-1-83-lakh-to-ai-generated-voice-fraud/articleshow/125598857.cms) shows voice cloning is a mainstream fraud vector; and (5) AP's California fuel-price lawsuit (https://apnews.com/article/gas-price-california-lawsuit-kalibrate-collusion-fbf2c03bb69b53da4ede72044ce5e41f) moves algorithmic pricing into antitrust and consumer-harm scrutiny. Practical takeaway: organisations should treat chatbots, voice interfaces, search surfaces, and pricing tools as governed evidence-producing systems, not just product features."
+    },
     {
       "date": "2026-07-07",
       "title": "EU AI Act implementation timeline",
@@ -14605,6 +14948,11 @@
   ],
   "changelog": [
     {
+      "date": "2026-07-08",
+      "title": "Chatbot liability, voice fraud, and machine-readable assurance",
+      "details": "Updated chatbot-harm-and-escalation-failure, synthetic-media-fraud-and-impersonation, and added ai-enabled-collusion-and-algorithmic-pricing-abuse, inc-openai-chatgpt-self-harm-lawsuit-2026, inc-indore-ai-generated-voice-fraud-2026, inc-california-ai-pricing-collusion-lawsuit-2026, std-nist-sp-800-18r2-developing-security-privacy-and-c-scrm-plans, src-esafety-critical-thinking-ai-scams-fake-news, src-esafety-search-engine-code-ai-protections, src-nist-sp-800-18r2-developing-security-privacy-and-c-scrm-plans, src-openai-chatgpt-self-harm-lawsuit-2026, src-indore-ai-generated-voice-fraud-2026, and src-california-ai-pricing-collusion-lawsuit-2026. Source mix this run: 2 AU official eSafety items, 1 NIST official guidance, 3 wire/news items; known gap: no fresh APRA/ASIC/OAIC AI-specific release surfaced this cycle."
+    },
+    {
       "date": "2026-07-07",
       "title": "2026-07-07 nightly run: APRA/ASIC/OAIC/DTA/OWASP updates",
       "details": "Touched regs: au-apra-ai-supervision, au-asic-cyber-uplift, au-app1-adm-transparency, au-gov-ai-policy, eu-ai-act. Risk updates: ai-transparency-and-contestability-gap, shadow-ai-governance-gap, agentic-ai-control-and-safety-risk. Source mix: all primary or reputable regulator/standards sources; no vendor-heavy additions; AU-relevant coverage dominated the run. Merged/archived: no sibling entities created; existing records were updated in place. Known gaps: no fresh high-confidence incident or vendor launch material surfaced in this sweep, so the run stayed concentrated on governance, privacy, cyber, and assurance signals."
@@ -14808,6 +15156,18 @@
       },
       "newItems": 0,
       "updatedItems": 0
+    },
+    {
+      "date": "2026-07-08",
+      "riskPosture": "Moderately elevated",
+      "counts": {
+        "risks": 103,
+        "regulations": 26,
+        "incidents": 34,
+        "sources": 193
+      },
+      "newItems": 11,
+      "updatedItems": 2
     }
   ],
   "schemaVersion": 2
