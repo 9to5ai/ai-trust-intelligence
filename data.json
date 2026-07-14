@@ -1,151 +1,174 @@
 {
-  "lastUpdated": "2026-07-14 05:16 AEDT",
+  "lastUpdated": "2026-07-15 05:21 AEDT",
   "projectName": "AI Trust Intelligence",
   "projectDescription": "Living intelligence on AI trust, assurance, risk management, governance, regulation, safety, security, and the vendor ecosystem.",
   "executiveBrief": {
-    "date": "2026-07-14",
-    "oneLiner": "Prompt injection and AI assurance are moving into the control plane: defenders are shipping detection, attackers are hiding prompts in multimodal inputs, and EU/AU governance is tightening around evidence.",
+    "date": "2026-07-15",
+    "oneLiner": "Australia is tightening AI oversight around public-sector coordination and platform safety, while prompt-injection remains the most operational security problem.",
     "topDevelopments": [
       {
-        "title": "GitHub CodeQL now flags AI prompt injection in the developer toolchain",
-        "text": "GitHub's CodeQL 2.26.0 release adds AI prompt injection detection, which pushes the problem from a niche red-team issue into mainstream CI and appsec workflows.",
+        "title": "eSafety says major platforms still have blind spots on sexual extortion",
+        "text": "eSafety's 13 July transparency report says major platforms are still missing or underperforming on child sexual exploitation and abuse, especially sexual extortion. That matters because safety reporting, escalation evidence, and takedown latency are now measurable governance controls, not just PR claims.",
+        "priority": "High",
+        "confidence": "High",
+        "australiaRelevance": "High",
+        "recommendedAction": "Trust-and-safety, legal, and public policy teams should keep a dated evidence trail for detection, escalation, and response metrics before the next regulator or buyer asks for it.",
+        "sources": [
+          "https://esafety.gov.au/newsroom/media-releases/esafety-report-reveals-big-tech-blind-spots-in-protecting-children-and-young-adults-from-sexual-extortion"
+        ],
+        "soWhat": "If your product touches minors or user-generated media, response-time and moderation evidence need to be board-visible controls.",
+        "relatedIds": [
+          "synthetic-image-abuse-and-intimate-image-extortion"
+        ]
+      },
+      {
+        "title": "Reuters reports Australia plans a government AI office to coordinate regulation",
+        "text": "Reuters reported on 14 July that Australia is preparing a government AI office to coordinate regulation. Even before any formal design lands, that points to a more centralised oversight model and a higher burden on agencies and vendors to keep inventories, owners, and evidence ready.",
+        "priority": "High",
+        "confidence": "Medium-High",
+        "australiaRelevance": "High",
+        "recommendedAction": "Treat the report as an early warning: tighten AI inventories, update accountability maps, and assume future reporting will be more centralised rather than fragmented.",
+        "sources": [
+          "https://news.google.com/rss/articles/CBMisAFBVV95cUxOZmk2ZUVGNUhZNFA5VDhlLTB4cmVIZ093NHVXd21aYURnaUIzZ0ZxbzVSNXhMYWE1UGN0NW03OVZSUXlna05OOGhCV0VXa0tQODg5Z0dMbUllWl9iM0hCOXhMLWtuczZVVHRycTBFbnhaQXl3aDAybTFYckYtazVSUEN6Njl0ZmtNa19VWElPNy04MkxkMFFiNm16SUFXNnFuV2VVV0dadlMxQ0lrdUZINQ?oc=5"
+        ],
+        "soWhat": "A central AI office would likely mean more standardised oversight, so keep the evidence pack ready now.",
+        "relatedIds": [
+          "au-gov-ai-policy"
+        ]
+      },
+      {
+        "title": "DTA's AI governance stack remains the operational baseline",
+        "text": "The DTA's AI Review Committee, trustworthy AI agents guidance, and central transparency register continue to define the practical control baseline for Commonwealth agencies. The signal is not a new law but a more testable governance model with named owners, inventories, and review gates.",
+        "priority": "High",
+        "confidence": "High",
+        "australiaRelevance": "High",
+        "recommendedAction": "Public-sector teams should keep their AI register, impact assessment, and accountable-owner records current because the DTA model is now the reference point for scrutiny.",
+        "sources": [
+          "https://www.dta.gov.au/media-releases/new-ai-review-committee-enhancing-oversight-government-ai-use",
+          "https://www.dta.gov.au/articles/trustworthy-ai-agents-new-technical-guidance",
+          "https://www.dta.gov.au/articles/new-central-register-ai-transparency-statements-commonwealth-entities"
+        ],
+        "soWhat": "For Commonwealth AI, the evidence artefact is the register and approval trail, not a slide deck.",
+        "relatedIds": [
+          "src-dta-ai-review-committee",
+          "src-new-central-register-of-ai-transparency-statements-for-commo"
+        ]
+      },
+      {
+        "title": "Prompt injection remains a live attack path for AI-assisted code review",
+        "text": "GitHub's CodeQL prompt-injection detection and the Ghostcommit multimodal attack report both point to the same issue: AI-assisted developer tools need isolation, human review, and strict side-effect controls.",
         "priority": "High",
         "confidence": "High",
         "australiaRelevance": "Medium",
-        "recommendedAction": "Security and platform teams should add prompt-injection checks to CI and treat AI-assisted code review outputs as untrusted until reviewed.",
+        "recommendedAction": "Security teams should keep AI review tools on a short leash: block auto-merge, isolate image inputs, and add prompt-injection cases to CI.",
         "sources": [
-          "https://github.blog/changelog/2026-07-10-codeql-2-26-0-adds-kotlin-2-4-0-support-and-ai-prompt-injection-detection"
+          "https://github.blog/changelog/2026-07-10-codeql-2-26-0-adds-kotlin-2-4-0-support-and-ai-prompt-injection-detection",
+          "https://news.google.com/rss/articles/CBMixAFBVV95cUxPd05JLUhMTGlaZUFWdEJkTVZmZldRN1MzV1hheWhIc1dxRVBtUzBBQ2k3Mk1LZnFsTEIyLTJGamRHZ2I2NmFKYThZdllBZUdQNFIyeml3VGMwaG81MW1rd2dfV0ZJcjB1SVdPUVB6Ujd1TFJsQUJ2SGUyMXotbW44WURpV3lCSmxaM0sxTnlfRENiY2NXaTZjNEJORk5PaDN0cFNDQU9EOEdJWnk4WWw2b0FOMHRQYl9IdzZqVHpYUmhLTlBz?oc=5"
         ],
-        "soWhat": "If your pipeline touches AI-generated code or prompts, prompt injection now needs a first-class test gate."
+        "soWhat": "If your development workflow uses AI, treat prompt injection as a supply-chain control problem, not a niche bug class.",
+        "relatedIds": [
+          "agentic-prompt-injection-and-tool-abuse"
+        ]
       },
       {
-        "title": "Ghostcommit shows images can smuggle prompts into AI code review tools",
-        "text": "A new multimodal attack report says hidden instructions in images can steer AI code review tools and expose developer secrets, which widens prompt injection into the supply chain.",
-        "priority": "High",
+        "title": "EU implementation remains about evidence, not headline novelty",
+        "text": "The current global pattern is still implementation and enforcement: EU AI Act guidance, cyber/AI convergence, and assurance artefacts are getting more operational while the legal text itself changes slowly.",
+        "priority": "Medium",
         "confidence": "Medium",
         "australiaRelevance": "Medium",
-        "recommendedAction": "Teams should isolate image inputs, require human approval for any write action, and add multimodal prompt-injection cases to regression testing.",
+        "recommendedAction": "Compliance teams should map one evidence pack across AI, cyber, and procurement reviews instead of building separate templates for each regime.",
         "sources": [
-          "https://news.google.com/rss/articles/CBMixAFBVV95cUxPd05JLUhMTGlaZUFWdEJkTVZmZldRN1MzV1hheWhIc1dxRVBtUzBBQ2k3Mk1LZnFsTEIyLTJGamRHZ2I3NmFKYThZdllBZUdQNFIyeml3VGMwaG81MW1rd2dfV0ZJcjB1SVdPUVB6Ujd1TFJsQUJ2SGUyMXotbW44WURpV3lCSmxaM0sxTnlfRENiY2NXaTZjNEJORk5PaDN0cFNDQU9EOEdJWnk4WWw2b0FOMHRQYl9IdzZqVHpYUmhLTlBz?oc=5"
+          "https://news.google.com/rss/articles/CBMizAFBVV95cUxQN1RWWkhQOEtfcVpqcWtkZXBfTFFMN0xaZno1cmdyRGU3ODVuZ3YycHJGWmxReFd1RnFnZmpDZ3FxZTFUejRhQkN0N1c5UW9fNGVfWWJUOFFDZlhLMFpwUXdFN3d6TlpyWUlRT3pMOTBuOFJqa2ppbU5oUFNVQ1FQUi1LRTBla2lfVjlXczNfVFdZQzVWaF9ublFlZ0pPRlV4RXM0WU9WSGQyN3Y2azF2UXV5ZFMydW5CQVNuTE5KdmxKd2VXdy03ODgxYnM?oc=5"
         ],
-        "soWhat": "Images are now a potential prompt-delivery channel, so code review tools need the same hardening as other agent inputs."
-      },
-      {
-        "title": "EU policy is coupling AI oversight with cybersecurity",
-        "text": "A new EU Commission action-plan headline points to more explicit AI/cyber convergence, reinforcing that governance and cyber controls need one shared evidence stack.",
-        "priority": "High",
-        "confidence": "Medium",
-        "australiaRelevance": "High",
-        "recommendedAction": "EU-facing organisations should map AI obligations, cybersecurity controls, and evidence artefacts together rather than running separate programmes.",
-        "sources": [
-          "https://news.google.com/rss/articles/CBMi4AFBVV95cUxQU3BSbnhoVFJUSU15REs4NFg2QkNYUUUtY1dsaDYwM21mNGpMQjBTdGxhejBsekpnZHdyWFZLeUZ4OWJnNVBsa2RwajVFbEFKQ2JJbXJpeTdPRDY0d0tUTTdrbUUtT2xDamRHaVRtVDNhNnRoRU1rR2dlT2NMTFp6SWVlVF9OUU1naVlDYWl0Q3ZyeTJseVVwaF9rYmo0elg2WlVURkVkZEEtV09QUlpRZk52ZXpfb0p6WmxCUGxzckJoOHpNU3NQbXlLTS1za01EcERHTE0yYnFMZHRKUVNPSg?oc=5"
-        ],
-        "soWhat": "Cyber and AI compliance are converging, so organisations need one evidence pack instead of two disconnected ones."
-      },
-      {
-        "title": "OpenAI says Australian Payments Plus is moving faster with ChatGPT and Codex",
-        "text": "OpenAI is using an Australian payments operator as a case study for faster delivery with ChatGPT and Codex, which is a useful adoption signal for regulated-sector buyers.",
-        "priority": "High",
-        "confidence": "Medium",
-        "australiaRelevance": "High",
-        "recommendedAction": "Australian regulated buyers should require logging, permission scoping, and data-handling terms before expanding copilots into production workflows.",
-        "sources": [
-          "https://openai.com/index/australian-payments-plus"
-        ],
-        "soWhat": "AI copilots are already in regulated Australian workflows, so governance must move as fast as adoption."
-      },
-      {
-        "title": "UK AISI shows frontier AI can find cloud misconfigurations",
-        "text": "The UK AI Security Institute's case study remains a concrete example of frontier models being used in a scoped defensive workflow to surface real cloud weaknesses.",
-        "priority": "High",
-        "confidence": "High",
-        "australiaRelevance": "Medium",
-        "recommendedAction": "Use frontier AI for bounded detection tasks only, with scoped access, human triage, and explicit success metrics.",
-        "sources": [
-          "https://www.aisi.gov.uk/blog/finding-cloud-misconfigurations-with-frontier-ai-a-case-study"
-        ],
-        "soWhat": "Frontier AI can help defenders, but only inside a tightly controlled assurance workflow."
+        "soWhat": "Use one evidence trail for AI, cyber, and procurement rather than three separate ones.",
+        "relatedIds": []
       }
     ],
     "criticalAlerts": [
       {
-        "title": "AI code review tools are becoming a supply-chain target",
-        "text": "CodeQL now detects prompt injection and Ghostcommit shows hidden image content can steer AI review tools, so any AI-assisted code path needs stronger isolation and review discipline.",
+        "title": "Platform safety evidence is now a control, not a slogan",
+        "text": "eSafety's sexual-extortion report means trust-and-safety teams should expect to prove moderation performance, escalation speed, and victim-handling discipline.",
         "sources": [
-          "https://github.blog/changelog/2026-07-10-codeql-2-26-0-adds-kotlin-2-4-0-support-and-ai-prompt-injection-detection",
-          "https://news.google.com/rss/articles/CBMixAFBVV95cUxPd05JLUhMTGlaZUFWdEJkTVZmZldRN1MzV1hheWhIc1dxRVBtUzBBQ2k3Mk1LZnFsTEIyLTJGamRHZ2I3NmFKYThZdllBZUdQNFIyeml3VGMwaG81MW1rd2dfV0ZJcjB1SVdPUVB6Ujd1TFJsQUJ2SGUyMXotbW44WURpV3lCSmxaM0sxTnlfRENiY2NXaTZjNEJORk5PaDN0cFNDQU9EOEdJWnk4WWw2b0FOMHRQYl9IdzZqVHpYUmhLTlBz?oc=5"
+          "https://esafety.gov.au/newsroom/media-releases/esafety-report-reveals-big-tech-blind-spots-in-protecting-children-and-young-adults-from-sexual-extortion"
         ],
-        "soWhat": "Treat AI-assisted review as a privileged control plane, not a convenience feature."
+        "soWhat": "If you run a consumer product, your moderation and escalation metrics need to stand up in a regulator meeting.",
+        "relatedIds": [
+          "synthetic-image-abuse-and-intimate-image-extortion"
+        ]
       },
       {
-        "title": "EU AI and cyber policy are converging faster than most compliance teams expect",
-        "text": "The latest EU action-plan headline reinforces that AI governance, cybersecurity, and evidence collection are increasingly one programme, not three.",
+        "title": "AI-assisted developer tools remain targetable through prompt injection",
+        "text": "The combination of CodeQL prompt-injection detection and Ghostcommit-style multimodal payloads shows the AI coding stack is still attackable through ordinary developer workflows.",
         "sources": [
-          "https://news.google.com/rss/articles/CBMi4AFBVV95cUxQU3BSbnhoVFJUSU15REs4NFg2QkNYUUUtY1dsaDYwM21mNGpMQjBTdGxhejBsekpnZHdyWFZLeUZ4OWJnNVBsa2RwajVFbEFKQ2JJbXJpeTdPRDY0d0tUTTdrbUUtT2xDamRHaVRtVDNhNnRoRU1rR2dlT2NMTFp6SWVlVF9OUU1naVlDYWl0Q3ZyeTJseVVwaF9rYmo0elg2WlVURkVkZEEtV09QUlpRZk52ZXpfb0p6WmxCUGxzckJoOHpNU3NQbXlLTS1za01EcERHTE0yYnFMZHRKUVNPSg?oc=5"
+          "https://github.blog/changelog/2026-07-10-codeql-2-26-0-adds-kotlin-2-4-0-support-and-ai-prompt-injection-detection",
+          "https://news.google.com/rss/articles/CBMixAFBVV95cUxPd05JLUhMTGlaZUFWdEJkTVZmZldRN1MzV1hheWhIc1dxRVBtUzBBQ2k3Mk1LZnFsTEIyLTJGamRHZ2I2NmFKYThZdllBZUdQNFIyeml3VGMwaG81MW1rd2dfV0ZJcjB1SVdPUVB6Ujd1TFJsQUJ2SGUyMXotbW44WURpV3lCSmxaM0sxTnlfRENiY2NXaTZjNEJORk5PaDN0cFNDQU9EOEdJWnk4WWw2b0FOMHRQYl9IdzZqVHpYUmhLTlBz?oc=5"
         ],
-        "soWhat": "Map cyber and AI evidence once, then reuse it across compliance, procurement, and assurance reviews."
+        "soWhat": "Keep AI-assisted review behind human approval and sandbox every non-text input.",
+        "relatedIds": [
+          "agentic-prompt-injection-and-tool-abuse"
+        ]
       }
     ],
     "recommendedActions": {
       "boards": [
-        "Ask whether AI-assisted code review, image inputs, and agent tools have the same approval discipline as other privileged systems.",
-        "Require a joint AI/cyber evidence pack for any AI deployment that can change code, content, or external actions."
+        "Ask for the AI inventory, the owner map, and the evidence trail for moderation, transparency, and incident response this week.",
+        "Require management to show how the Australian AI office rumor and eSafety findings would change reporting or control expectations."
       ],
       "executives": [
-        "Assign one owner for AI governance, security, and privacy evidence across regulated workflows.",
-        "Fund prompt-injection testing and human-approval controls before expanding copilots or agents."
+        "Assign one accountable executive for AI governance and one for trust-and-safety evidence.",
+        "Treat public-sector transparency and child-safety reporting as operational obligations, not communications tasks."
       ],
       "riskCompliance": [
-        "Update the AI register with prompt-injection, multimodal supply-chain, and AI/cyber convergence evidence.",
-        "Map EU-facing obligations and AU privacy/oversight expectations into one control library and one deadline view."
+        "Refresh AI risk registers with sexual-extortion, transparency, and central-coordination scenarios.",
+        "Map one evidence pack across AI, privacy, and cyber reviews so the same artefacts can be reused."
       ],
       "securityTeams": [
-        "Add prompt-injection cases to CI, code review, and agent red-team suites.",
-        "Treat image uploads, repo access, and tool calls as untrusted inputs until isolated and logged."
+        "Keep prompt-injection tests in CI for any AI-assisted developer tool or agent.",
+        "Block auto-execution and isolate image or document inputs before they can reach tools or code review agents."
       ],
       "productEngineering": [
-        "Make human approval mandatory for irreversible or privileged actions taken by AI tools.",
-        "Scope AI access tightly and log every tool call, especially for code review and repo-writing workflows."
+        "Log moderation, escalation, and human-review steps for any safety-sensitive workflow.",
+        "Document exactly which inputs can trigger side effects in agentic workflows."
       ],
       "procurement": [
-        "Ask vendors for evidence of prompt-injection coverage, sandboxing, and rollback paths.",
-        "Contract for audit logs, data-handling clarity, and exit rights before rolling out copilots in regulated teams."
+        "Ask vendors for proof of moderation, logging, and prompt-injection controls before renewal.",
+        "Require explicit disclosure of where human review is mandatory and where automation can act alone."
       ],
       "policymakers": [
-        "Keep AI/cyber guidance operational: notices, logging, human review, and machine-readable evidence.",
-        "Avoid separate AI and cyber tracks when the real risks now cross both domains."
+        "Clarify the remit of any Australian AI office early and align it with DTA, OAIC, and eSafety roles.",
+        "Push for measurable transparency and response metrics rather than generic responsible-AI statements."
       ],
       "investors": [
-        "Check portfolio companies for AI governance maturity in code, content, and agent workflows.",
-        "Watch for upside in security tooling that can prove AI prompt-injection detection and containment."
+        "Review portfolio exposure to platform safety failures and AI governance centralisation in Australia.",
+        "Prefer companies that can evidence control design, logging, and review discipline."
       ]
     },
     "openQuestions": [
-      "Will prompt-injection detection in mainstream CI tools prove useful at scale?",
-      "How quickly will EU AI/cyber policy turn into concrete compliance obligations and procurement tests?",
-      "Will regulated Australian buyers insist on the same logging and permission controls that enterprise case studies imply?"
+      "What exact powers and mandate would the proposed Australian AI office have?",
+      "How quickly can major platforms close the sexual-extortion blind spots eSafety identified?",
+      "Can AI code-review and agent tooling keep pace with multimodal prompt injection attacks?"
     ]
   },
   "trustDashboard": {
     "overallSignal": "Elevated and becoming more operationalised",
-    "riskPosture": "Prompt injection, code-review tooling, and AI/cyber convergence are tightening evidence expectations while regulated-sector adoption keeps broadening.",
+    "riskPosture": "Australia is moving from policy statements to coordinated oversight, while platform safety gaps and prompt-injection risks remain active.",
     "emergingRisks": [
-      "Prompt injection is moving into code-review and multimodal supply-chain tools",
-      "AI and cyber policy are converging in the EU and UK",
-      "Regulated-sector copilots are entering production in Australia"
+      "A central Australian AI office would likely increase evidence and reporting expectations",
+      "Trust-and-safety gaps in sexual-extortion response remain visible",
+      "Multimodal prompt injection still threatens AI-assisted developer workflows"
     ],
     "improvingAreas": [
-      "Mainstream tooling is beginning to flag prompt injection",
-      "Frontier assurance programs are becoming more explicit and testable",
-      "Scoped defensive use cases are showing that frontier models can help evaluators"
+      "Government AI governance is more explicit through review committees and registers",
+      "Mainstream developer tools are starting to flag prompt injection",
+      "Transparency statements and accountable-owner models are becoming normalised"
     ],
     "uncertainAreas": [
-      "Independent coverage data for prompt-injection detection in CI tools",
-      "How quickly EU policy headlines become binding obligations",
-      "How consistently Australian regulated buyers will enforce logging and permissions"
+      "The final mandate, staffing, and powers of any Australian AI office",
+      "How much eSafety's findings translate into measurable platform remediation",
+      "Whether multimodal attack detection will keep up with agent adoption"
     ],
     "australiaSignal": "High and tightening",
-    "globalSignal": "High, with more operational evidence but also more supply-chain exposure"
+    "globalSignal": "High, with implementation and enforcement outrunning policy novelty"
   },
   "risks": [
     {
@@ -2175,20 +2198,32 @@
       ],
       "examples": [
         "eSafety image-based abuse portal",
-        "eSafety explainer on the perils of image-based abuse"
+        "eSafety explainer on the perils of image-based abuse",
+        "eSafety sexual-extortion transparency report"
       ],
       "trend": "increasing",
       "confidence": "High",
       "sources": [
         "https://esafety.gov.au/newsroom/media-releases/online-portal-helps-australians-impacted-by-image-based-abuse",
-        "https://esafety.gov.au/newsroom/blogs/the-perils-of-image-based-abuse"
+        "https://esafety.gov.au/newsroom/blogs/the-perils-of-image-based-abuse",
+        "https://esafety.gov.au/newsroom/media-releases/esafety-report-reveals-big-tech-blind-spots-in-protecting-children-and-young-adults-from-sexual-extortion"
       ],
       "id": "synthetic-image-abuse-and-intimate-image-extortion",
       "likelihoodLevel": "High",
       "impactLevel": "High",
       "direction": "increasing",
       "theme": "Safety & Trust",
-      "status": "unchanged"
+      "status": "updated",
+      "lastUpdated": "2026-07-15",
+      "events": [
+        {
+          "date": "2026-07-13",
+          "what": "eSafety transparency report said major platforms still have blind spots in sexual extortion detection and response",
+          "sourceUrl": "https://esafety.gov.au/newsroom/media-releases/esafety-report-reveals-big-tech-blind-spots-in-protecting-children-and-young-adults-from-sexual-extortion"
+        }
+      ],
+      "soWhat": "Trust-and-safety teams should keep dated moderation, escalation, and victim-support evidence ready for regulator or buyer review.",
+      "reviewBy": "2026-08-14"
     },
     {
       "name": "Public-sector AI transparency drift",
@@ -6293,9 +6328,9 @@
     {
       "jurisdiction": "Australia",
       "title": "Policy for the responsible use of AI in government (DTA)",
-      "status": "unchanged",
+      "status": "updated",
       "date": "2025-12-15",
-      "summary": "The DTA’s AI Review Committee launch and updated AI resources shift government AI from broad principles toward operational review, impact assessment, and procurement discipline.",
+      "summary": "Australia's AI governance baseline remains the DTA policy/register architecture, while Reuters reported that government is preparing an AI office to coordinate regulation.",
       "affected": "All non-corporate Commonwealth entities (mandatory); corporate Commonwealth entities (encouraged); excludes defence portfolio and national intelligence community",
       "obligations": [
         "Foundational AI training for all APS staff",
@@ -6313,10 +6348,16 @@
         "https://www.digital.gov.au/ai/ai-in-government-policy",
         "https://www.dta.gov.au/ai-transparency-statement",
         "https://www.dta.gov.au/articles/ai-policy-update-strengthening-responsible-use-across-government",
-        "https://www.dta.gov.au/articles/new-central-register-ai-transparency-statements-commonwealth-entities"
+        "https://www.dta.gov.au/articles/new-central-register-ai-transparency-statements-commonwealth-entities",
+        "https://news.google.com/rss/articles/CBMisAFBVV95cUxOZmk2ZUVGNUhZNFA5VDhlLTB4cmVIZ093NHVXd21aYURnaUIzZ0ZxbzVSNXhMYWE1UGN0NW03OVZSUXlna05OOGhCV0VXa0tQODg5Z0dMbUllWl9iM0hCOXhMLWtuczZVVHRycTBFbnhaQXl3aDAybTFYckYtazVSUEN6Njl0ZmtNa19VWElPNy04MkxkMFFiNm16SUFXNnFuV2VVV0dadlMxQ0lrdUZINQ?oc=5"
       ],
       "id": "au-gov-ai-policy",
       "events": [
+        {
+          "date": "2026-07-14",
+          "what": "Reuters reported Australia is preparing a government AI office to coordinate regulation",
+          "sourceUrl": "https://news.google.com/rss/articles/CBMisAFBVV95cUxOZmk2ZUVGNUhZNFA5VDhlLTB4cmVIZ093NHVXd21aYURnaUIzZ0ZxbzVSNXhMYWE1UGN0NW03OVZSUXlna05OOGhCV0VXa0tQODg5Z0dMbUllWl9iM0hCOXhMLWtuczZVVHRycTBFbnhaQXl3aDAybTFYckYtazVSUEN6Njl0ZmtNa19VWElPNy04MkxkMFFiNm16SUFXNnFuV2VVV0dadlMxQ0lrdUZINQ?oc=5"
+        },
         {
           "date": "2026-06-26",
           "what": "APRA AI transparency statement",
@@ -6348,9 +6389,10 @@
           "jurisdiction": "Australia"
         }
       ],
-      "soWhat": "Agencies should treat the DTA review process as the baseline for AI approvals, impact assessment, and procurement evidence.",
-      "lastUpdated": "2026-07-07",
-      "statusFlag": "unchanged"
+      "soWhat": "Agencies should treat a more centralised AI coordination function as likely and keep inventories, owners, and approval trails current.",
+      "lastUpdated": "2026-07-15",
+      "statusFlag": "unchanged",
+      "reviewBy": "2026-08-14"
     },
     {
       "jurisdiction": "US (Colorado)",
@@ -8373,195 +8415,103 @@
     }
   ],
   "securityWatch": {
-    "summary": "Prompt injection is now being met by defender tooling and by more sophisticated attack paths: multimodal images, code-review supply chains, and agent-tooling remain the hottest control gaps.",
+    "summary": "Prompt injection and multimodal payloads remain the live security issue for AI-assisted workflows. No new major official AI-security advisory landed in this cycle, but the evidence still points to isolation, least privilege, and human approval for any side effect.",
     "items": [
       {
-        "title": "CodeQL now includes AI prompt-injection detection",
-        "text": "GitHub's release makes prompt injection a control to monitor in CI, not just a red-team concept."
+        "title": "Prompt injection remains the main AI-app security failure mode",
+        "text": "CodeQL-style detection and recent attack writeups keep showing that tool-using systems need input isolation, least privilege, and human approval for write actions."
       },
       {
-        "title": "Ghostcommit extends prompt injection into image-based supply-chain attacks",
-        "text": "Hidden instructions in images can now steer AI code review tools, so image inputs need the same scepticism as text prompts."
+        "title": "Image-delivered instructions extend the attack surface",
+        "text": "Ghostcommit-style payloads can steer AI code review tools via images, so multimodal inputs need the same filtering and sandboxing as text."
       }
     ],
     "advisories": [
       {
-        "title": "Harden AI-assisted review pipelines",
-        "text": "Restrict repository scope, require human approval for write actions, and keep image and document inputs isolated from control-plane steps."
-      },
-      {
-        "title": "Add prompt-injection regressions to your test suite",
-        "text": "Treat prompt injection like a recurring appsec control, with coverage tracked alongside secrets scanning and dependency checks."
+        "title": "Do not let AI-assisted review auto-merge or auto-execute",
+        "text": "Require explicit human review and deterministic checks before any AI-generated change can move past the tool boundary."
       }
     ]
   },
   "assuranceWatch": {
-    "summary": "Assurance is getting more concrete: frontier-model evaluators are showing controlled defensive value, and vendors are adding more structured red-teaming signals.",
+    "summary": "No new standards publication landed this cycle, but the Australian public-sector control model keeps getting more testable and auditable.",
     "items": [
       {
-        "title": "UK AISI frontier-AI cloud misconfiguration case study",
-        "text": "A scoped frontier-model workflow can surface real cloud defects, but only when the task is tightly bounded and reviewed by humans."
-      },
-      {
-        "title": "OpenAI GPT-5.5 bio bug bounty",
-        "text": "A frontier-safety bug bounty is a useful sign that some vendors are making red-teaming and disclosure more explicit, even if independent validation is still needed."
+        "title": "Australian AI governance is moving toward evidence-based assurance",
+        "text": "The DTA review committee, transparency register, and trustworthy-agent guidance point to named owners, inventories, and review gates as the expected proof of control."
       }
     ]
   },
   "australiaFocus": {
-    "summary": "Australia's signal remains evidence-first: APRA/OAIC/DTA expectations are still the baseline, and the new Australian Payments Plus case study shows regulated-sector copilots are already moving into production.",
+    "summary": "Australia remains the main change point this cycle: eSafety exposed platform blind spots in sexual-extortion response, Reuters reported a planned government AI office, and the DTA governance stack continues to set the operating baseline.",
     "regulatory": [
-      {
-        "title": "APRA governance and access-control discipline still sets the local bar",
-        "text": "Governance, MFA, and privileged-access review remain the practical baseline for any AI system that can touch operational systems or sensitive data.",
-        "sources": [
-          "https://www.apra.gov.au/consultations/proposed-changes-governance",
-          "https://www.apra.gov.au/news-and-publications/apra-clarifies-expectations-use-multi-factor-authentication"
-        ]
-      },
-      {
-        "title": "OAIC transparency expectations remain the privacy benchmark",
-        "text": "If AI affects decisions or shares data with vendors, transparency, reviewability, and bias testing remain the expected controls.",
-        "sources": [
-          "https://www.oaic.gov.au/engage-with-us/research-and-training-resources/research/australian-community-attitudes-to-privacy-survey/australian-community-attitudes-to-privacy-survey2026/digital-technologies"
-        ]
-      }
+      "Watch the mandate and powers of any new Australian AI office.",
+      "Assume more centralised reporting and evidence requests even before formal law changes land."
     ],
     "publicSector": [
-      {
-        "title": "DTA-style transparency and oversight remain the model",
-        "text": "Even without a fresh DTA release this cycle, the public-sector direction is still toward review gates, accountability, and loggable evidence."
-      }
+      "Keep AI inventories, accountable owners, and review committee pathways current.",
+      "Maintain transparency statements and approval trails for Commonwealth AI use."
     ],
     "enterprise": [
-      {
-        "title": "Australian Payments Plus is a useful adoption signal",
-        "text": "OpenAI is using an Australian payments operator as a case study for faster delivery with ChatGPT and Codex, which suggests regulated-sector copilots are now moving into production.",
-        "sources": [
-          "https://openai.com/index/australian-payments-plus"
-        ]
-      },
-      {
-        "title": "Enterprises should mirror the Australian evidence stack",
-        "text": "Inventory, accountability, human review, and access-control evidence are the practical baseline for AI deployments in regulated sectors."
-      }
+      "Platform and consumer-product teams should be ready to evidence moderation, escalation, and victim-support processes.",
+      "Procurement teams should ask vendors for proof of logging, review, and side-effect controls."
     ],
     "legalCompliance": [
-      {
-        "title": "Treat AI transparency and privacy review as one compliance track",
-        "text": "Decision transparency, data handling, and privileged access should be assessed together, not as separate workstreams."
-      }
+      "Map ADM, privacy, child-safety, and transparency duties to one evidence pack.",
+      "Treat Reuters-reported coordination changes as a watch item until they are formally confirmed."
     ],
     "standards": [
-      {
-        "title": "Reusable evidence remains the right direction",
-        "text": "NIST-style machine-readable assurance is still the best model for Australia's longer-term AI evidence stack.",
-        "sources": [
-          "https://csrc.nist.gov/News/2026/nist-releases-sp-800-18r2"
-        ]
-      }
+      "Continue using the DTA technical standard and existing NIST/ISO crosswalks; no new Australian standard landed this cycle."
     ],
     "vendors": [
-      {
-        "title": "OpenAI in Australian payments and coding workflows",
-        "text": "The Australian Payments Plus case study is a credible sign that AI copilots are penetrating regulated Australian workflows, but the governance controls still need to be explicit.",
-        "sources": [
-          "https://openai.com/index/australian-payments-plus"
-        ]
-      }
+      "Ask vendors to show logs, tests, and escalation metrics rather than relying on trust-and-safety claims."
     ],
     "gaps": [
-      "No fresh APRA, ASIC, OAIC, or DTA AI release surfaced in this cycle.",
-      "Independent, local proof of prompt-injection detection coverage in enterprise CI is still thin."
+      "No official Australian page yet confirms the proposed AI office's remit or timeline.",
+      "Platform-level sexual-extortion remediation metrics remain opaque."
     ]
   },
   "globalWatch": {
     "us": {
-      "summary": "The US signal this cycle is tooling: GitHub is baking AI prompt-injection detection into CodeQL while frontier labs continue to expand safety programmes.",
+      "summary": "No fresh binding US federal AI rule was verified this cycle; operational focus remains on model-risk evidence and security tooling.",
       "developments": [
-        {
-          "title": "GitHub adds AI prompt-injection detection to CodeQL",
-          "text": "The release shifts prompt injection from a specialist assessment topic into a mainstream developer-security workflow.",
-          "sources": [
-            "https://github.blog/changelog/2026-07-10-codeql-2-26-0-adds-kotlin-2-4-0-support-and-ai-prompt-injection-detection"
-          ]
-        }
+        "No new primary US AI rule or enforcement item was verified in this scan."
       ]
     },
     "eu": {
-      "summary": "EU policy is still coupling AI oversight with cybersecurity, so firms need one shared evidence stack for both.",
+      "summary": "EU implementation and cyber/AI convergence remain the main story; no new binding AI Act text was verified in this run.",
       "developments": [
-        {
-          "title": "EU Commission action plan reinforces AI/cyber convergence",
-          "text": "The latest headline points to more explicit AI and cybersecurity coordination from Brussels.",
-          "sources": [
-            "https://news.google.com/rss/articles/CBMi4AFBVV95cUxQU3BSbnhoVFJUSU15REs4NFg2QkNYUUUtY1dsaDYwM21mNGpMQjBTdGxhejBsekpnZHdyWFZLeUZ4OWJnNVBsa2RwajVFbEFKQ2JJbXJpeTdPRDY0d0tUTTdrbUUtT2xDamRHaVRtVDNhNnRoRU1rR2dlT2NMTFp6SWVlVF9OUU1naVlDYWl0Q3ZyeTJseVVwaF9rYmo0elg2WlVURkVkZEEtV09QUlpRZk52ZXpfb0p6WmxCUGxzckJoOHpNU3NQbXlLTS1za01EcERHTE0yYnFMZHRKUVNPSg?oc=5"
-          ]
-        }
+        "Implementation guidance and enforcement posture matter more than headline novelty right now."
       ]
     },
     "uk": {
-      "summary": "The UK remains the clearest proof point that frontier models can surface real security defects when used in defended environments.",
+      "summary": "No fresh UK primary update was verified in this run.",
       "developments": [
-        {
-          "title": "UK AISI cloud-misconfiguration case study remains the strongest frontier-security evidence",
-          "text": "The case study still shows frontier models can find real cloud weaknesses when the workflow is properly scoped and reviewed.",
-          "sources": [
-            "https://www.aisi.gov.uk/blog/finding-cloud-misconfigurations-with-frontier-ai-a-case-study"
-          ]
-        }
+        "Continue watching DSIT/AISI and ICO for evaluation and ADM/privacy guidance."
       ]
     },
     "singapore": {
-      "summary": "No fresh Singapore AI governance item surfaced in this cycle.",
+      "summary": "No fresh Singapore AI governance update was verified in this run.",
       "developments": [
-        {
-          "title": "No material change",
-          "text": "No fresh Singapore AI source was identified in this cycle.",
-          "sources": []
-        }
+        "No new verified development surfaced in this cycle."
       ]
     },
     "china": {
-      "summary": "China's latest signal is security-oriented: coding agents and vendor tools keep drawing strategic scrutiny.",
+      "summary": "No fresh China primary update was verified in this run.",
       "developments": [
-        {
-          "title": "No fresh China item surfaced in this cycle",
-          "text": "The cycle did not surface a new China-specific AI governance or enforcement item.",
-          "sources": []
-        }
+        "Watch model-access and data-governance controls, but no new primary item was verified here."
       ]
     },
     "oecdMultilateral": {
-      "summary": "The multilateral direction is still evidence-first: reusable proofs, transparency notices, and human review are converging as the common language.",
+      "summary": "Multilateral AI governance remains steady; no new OECD/G7 primary text was verified this cycle.",
       "developments": [
-        {
-          "title": "Evidence-first assurance remains the common direction",
-          "text": "NIST-style machine-readable evidence and the EU's transparency approach continue to converge on the same operational need: reusable proof.",
-          "sources": [
-            "https://csrc.nist.gov/News/2026/nist-releases-sp-800-18r2",
-            "https://news.google.com/rss/articles/CBMi4AFBVV95cUxQU3BSbnhoVFJUSU15REs4NFg2QkNYUUUtY1dsaDYwM21mNGpMQjBTdGxhejBsekpnZHdyWFZLeUZ4OWJnNVBsa2RwajVFbEFKQ2JJbXJpeTdPRDY0d0tUTTdrbUUtT2xDamRHaVRtVDNhNnRoRU1rR2dlT2NMTFp6SWVlVF9OUU1naVlDYWl0Q3ZyeTJseVVwaF9rYmo0elg2WlVURkVkZEEtV09QUlpRZk52ZXpfb0p6WmxCUGxzckJoOHpNU3NQbXlLTS1za01EcERHTE0yYnFMZHRKUVNPSg?oc=5"
-          ]
-        }
+        "The current emphasis is still on implementation rather than new summit declarations."
       ]
     },
     "labs": {
-      "summary": "Frontier labs are shipping both capability and control layers; the current evidence points most strongly to tool containment, safety programmes, and regulated-sector adoption.",
+      "summary": "Lab releases continue to stress capability plus safety, while security writeups keep the focus on prompt injection and tool-use abuse.",
       "developments": [
-        {
-          "title": "OpenAI's bio bug bounty signals more structured frontier red-teaming",
-          "text": "A vendor-run bug bounty is not independent assurance, but it does make safety testing and disclosure more explicit.",
-          "sources": [
-            "https://openai.com/index/bio-bug-bounty"
-          ]
-        },
-        {
-          "title": "OpenAI's Australian Payments Plus case study shows regulated-sector copilots in production",
-          "text": "The enterprise case study suggests regulated Australian buyers are already moving from experimentation to production workflows.",
-          "sources": [
-            "https://openai.com/index/australian-payments-plus"
-          ]
-        }
+        "No new frontier-lab safety artifact was verified in this scan."
       ]
     }
   },
@@ -15291,6 +15241,91 @@
       "limitations": "Aggregator headline only in this cycle.",
       "id": "src-ghostcommit-multimodal-prompt-injection-attack",
       "status": "new"
+    },
+    {
+      "id": "src-esafety-sexual-extortion-report",
+      "title": "eSafety report reveals Big Tech blind spots in protecting children and young adults from sexual extortion",
+      "author": "eSafety Commissioner",
+      "date": "2026-07-13",
+      "link": "https://esafety.gov.au/newsroom/media-releases/esafety-report-reveals-big-tech-blind-spots-in-protecting-children-and-young-adults-from-sexual-extortion",
+      "sourceType": "Government transparency report",
+      "geography": "Australia",
+      "domain": "AI Incidents and Failures",
+      "priority": "High",
+      "confidence": "High",
+      "evidenceGrade": "A",
+      "reviewDepth": "Substantially reviewed",
+      "summary": "eSafety says major platforms still have significant blind spots in tackling child sexual exploitation and abuse, especially sexual extortion.",
+      "keyFacts": [
+        "NewsArticle JSON-LD on the page gives a 2026-07-13 publication date.",
+        "The report is framed as a transparency report on platform performance and safety controls."
+      ],
+      "keyClaims": [
+        "Major platforms are still missing or underperforming on sexual-extortion mitigation.",
+        "Transparency reporting can expose safety gaps that product teams must close."
+      ],
+      "evidenceBase": "Official eSafety NewsArticle metadata and report page.",
+      "methodology": "Reviewed the official page and extracted the JSON-LD metadata plus headline/description.",
+      "practicalImplications": "Platforms should keep dated evidence for moderation, escalation, and victim support because safety performance is becoming auditable.",
+      "whoAffected": "Online platforms, trust-and-safety teams, parents, schools, and regulators.",
+      "auRelevance": "High",
+      "globalRelevance": "Medium",
+      "risksIdentified": [
+        "Platform blind spots",
+        "Sexual extortion",
+        "Insufficient response evidence"
+      ],
+      "controlsMitigations": [
+        "Moderation metrics",
+        "Escalation logs",
+        "Victim support paths"
+      ],
+      "vendorToolingImplications": "Moderation and safety tooling will need measurable response-time and coverage evidence.",
+      "openQuestions": [
+        "Which platforms can prove improvement on the specific blind spots eSafety identified?"
+      ],
+      "limitations": "The report is a transparency artifact, not a full independent audit of every platform claim."
+    },
+    {
+      "id": "src-reuters-australia-ai-office",
+      "title": "Australia to establish government AI office to coordinate regulation",
+      "author": "Reuters",
+      "date": "2026-07-14",
+      "link": "https://news.google.com/rss/articles/CBMisAFBVV95cUxOZmk2ZUVGNUhZNFA5VDhlLTB4cmVIZ093NHVXd21aYURnaUIzZ0ZxbzVSNXhMYWE1UGN0NW03OVZSUXlna05OOGhCV0VXa0tQODg5Z0dMbUllWl9iM0hCOXhMLWtuczZVVHRycTBFbnhaQXl3aDAybTFYckYtazVSUEN6Njl0ZmtNa19VWElPNy04MkxkMFFiNm16SUFXNnFuV2VVV0dadlMxQ0lrdUZINQ?oc=5",
+      "sourceType": "News article",
+      "geography": "Australia",
+      "domain": "AI Governance",
+      "priority": "High",
+      "confidence": "Medium-High",
+      "evidenceGrade": "B",
+      "reviewDepth": "Skimmed via Google News RSS",
+      "summary": "Reuters reported that Australia is preparing a government AI office to coordinate regulation, signalling more centralised oversight.",
+      "keyFacts": [
+        "Google News RSS surfaced the Reuters headline on 2026-07-14."
+      ],
+      "keyClaims": [
+        "Australia may centralise AI coordination under a dedicated office."
+      ],
+      "evidenceBase": "Google News RSS wrapper for the Reuters headline; canonical Reuters article was not fetched directly in this run.",
+      "methodology": "Headline-level skim only.",
+      "practicalImplications": "Agencies and vendors should expect more centralised reporting and coordination if the office is confirmed.",
+      "whoAffected": "Australian Government agencies, regulated vendors, and procurement teams.",
+      "auRelevance": "High",
+      "globalRelevance": "Medium",
+      "risksIdentified": [
+        "Centralised oversight uncertainty",
+        "Reporting burden creep"
+      ],
+      "controlsMitigations": [
+        "Inventory hygiene",
+        "Owner mapping",
+        "Evidence packs"
+      ],
+      "vendorToolingImplications": "Governance platforms may need to support more standardised Australian reporting.",
+      "openQuestions": [
+        "What mandate and powers would the office have, and how would it interact with DTA, OAIC, and eSafety?"
+      ],
+      "limitations": "Wrapper link only; the canonical Reuters article was not directly downloaded in this cycle."
     }
   ],
   "researchNotes": [
@@ -15757,6 +15792,11 @@
   ],
   "changelog": [
     {
+      "date": "2026-07-15",
+      "title": "Nightly Research Run 2026-07-15",
+      "details": "Touched sources src-esafety-sexual-extortion-report and src-reuters-australia-ai-office; updated synthetic-image-abuse-and-intimate-image-extortion and au-gov-ai-policy; source mix: A/B evidence with Australia-relevant primary coverage; merged entities: 2 new sources, 2 updated corpus records; gaps: Reuters office report remains headline-level and the proposed Australian AI office is not yet formally confirmed."
+    },
+    {
       "date": "2026-07-14",
       "title": "Nightly Research Run 2026-07-14",
       "details": "Touched risks agent-tool-parameter-injection-leading-to-code-execution and agentic-ai-compromise-and-data-leakage; added sources src-codeql-2260-ai-prompt-injection-detection, src-australian-payments-plus-moves-faster-with-chatgpt-and-codex, src-gpt-55-bio-bug-bounty, src-eu-commission-cybersecurity-and-ai-action-plan, src-ghostcommit-multimodal-prompt-injection-attack; added incident inc-ghostcommit-multimodal-prompt-injection-ai-code-review-tools."
@@ -16027,6 +16067,18 @@
         "sources": 208
       },
       "newItems": 6,
+      "updatedItems": 2
+    },
+    {
+      "date": "2026-07-15",
+      "riskPosture": "Elevated and becoming more operationalised",
+      "counts": {
+        "risks": 103,
+        "regulations": 26,
+        "incidents": 36,
+        "sources": 210
+      },
+      "newItems": 2,
       "updatedItems": 2
     }
   ],
