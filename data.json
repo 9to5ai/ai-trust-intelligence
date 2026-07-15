@@ -1,109 +1,106 @@
 {
-  "lastUpdated": "2026-07-15 05:21 AEDT",
+  "lastUpdated": "2026-07-16 05:18 AEDT",
   "projectName": "AI Trust Intelligence",
   "projectDescription": "Living intelligence on AI trust, assurance, risk management, governance, regulation, safety, security, and the vendor ecosystem.",
   "executiveBrief": {
-    "date": "2026-07-15",
-    "oneLiner": "Australia is tightening AI oversight around public-sector coordination and platform safety, while prompt-injection remains the most operational security problem.",
+    "date": "2026-07-16",
+    "oneLiner": "Australia's child-safety and disclosure baseline is getting more concrete while AI agents keep moving the security problem closer to code review, web action, and product UX.",
     "topDevelopments": [
       {
-        "title": "eSafety says major platforms still have blind spots on sexual extortion",
-        "text": "eSafety's 13 July transparency report says major platforms are still missing or underperforming on child sexual exploitation and abuse, especially sexual extortion. That matters because safety reporting, escalation evidence, and takedown latency are now measurable governance controls, not just PR claims.",
+        "title": "eSafety's Instagram guide now documents Meta AI and teen controls",
+        "text": "The updated Instagram guide explicitly mentions Meta AI chat, teen-account defaults, the Instagram Map location-sharing feature, and built-in moderation and age-verification controls. That matters because consumer AI disclosure is now part of the platform surface, not just policy copy.",
         "priority": "High",
         "confidence": "High",
         "australiaRelevance": "High",
-        "recommendedAction": "Trust-and-safety, legal, and public policy teams should keep a dated evidence trail for detection, escalation, and response metrics before the next regulator or buyer asks for it.",
+        "recommendedAction": "Consumer product, trust-and-safety, and legal teams should treat AI disclosure, teen controls, and location-sharing as testable controls before the next policy or regulator review.",
         "sources": [
-          "https://esafety.gov.au/newsroom/media-releases/esafety-report-reveals-big-tech-blind-spots-in-protecting-children-and-young-adults-from-sexual-extortion"
+          "https://www.esafety.gov.au/key-topics/esafety-guide/instagram"
         ],
-        "soWhat": "If your product touches minors or user-generated media, response-time and moderation evidence need to be board-visible controls.",
+        "soWhat": "If your product is youth-facing, the evidence artifact is the UX control set, not a generic responsible-AI statement.",
         "relatedIds": [
-          "synthetic-image-abuse-and-intimate-image-extortion"
+          "au-esafety-ai-companions"
         ]
       },
       {
-        "title": "Reuters reports Australia plans a government AI office to coordinate regulation",
-        "text": "Reuters reported on 14 July that Australia is preparing a government AI office to coordinate regulation. Even before any formal design lands, that points to a more centralised oversight model and a higher burden on agencies and vendors to keep inventories, owners, and evidence ready.",
+        "title": "eSafety's AI companions guidance keeps child-safety expectations explicit",
+        "text": "The AI companions information sheet says companion bots can mimic human-like relationships, generate sexually explicit conversations and images, and distort reality. For Australia, that is a clear signal that age assurance, moderation, and human escalation are baseline controls for consumer AI.",
+        "priority": "High",
+        "confidence": "High",
+        "australiaRelevance": "High",
+        "recommendedAction": "Teams shipping companion bots or emotionally engaging assistants should harden age checks, abuse reporting, content filters, and escalation paths now.",
+        "sources": [
+          "https://www.esafety.gov.au/educators/training-for-professionals/professional-learning-program-teachers/ai-companions-information-sheet"
+        ],
+        "soWhat": "Child-safety controls are a product requirement, not an optional trust feature.",
+        "relatedIds": [
+          "au-esafety-ai-companions"
+        ]
+      },
+      {
+        "title": "Autonomous coding agents are accumulating security debt",
+        "text": "A new arXiv study of 4,022 autonomous coding-agent pull requests and 16,112 file changes finds security misconfigurations that can outrun ordinary human review capacity. That shifts coding agents from a productivity debate to a governance and SDLC risk.",
         "priority": "High",
         "confidence": "Medium-High",
-        "australiaRelevance": "High",
-        "recommendedAction": "Treat the report as an early warning: tighten AI inventories, update accountability maps, and assume future reporting will be more centralised rather than fragmented.",
-        "sources": [
-          "https://news.google.com/rss/articles/CBMisAFBVV95cUxOZmk2ZUVGNUhZNFA5VDhlLTB4cmVIZ093NHVXd21aYURnaUIzZ0ZxbzVSNXhMYWE1UGN0NW03OVZSUXlna05OOGhCV0VXa0tQODg5Z0dMbUllWl9iM0hCOXhMLWtuczZVVHRycTBFbnhaQXl3aDAybTFYckYtazVSUEN6Njl0ZmtNa19VWElPNy04MkxkMFFiNm16SUFXNnFuV2VVV0dadlMxQ0lrdUZINQ?oc=5"
-        ],
-        "soWhat": "A central AI office would likely mean more standardised oversight, so keep the evidence pack ready now.",
-        "relatedIds": [
-          "au-gov-ai-policy"
-        ]
-      },
-      {
-        "title": "DTA's AI governance stack remains the operational baseline",
-        "text": "The DTA's AI Review Committee, trustworthy AI agents guidance, and central transparency register continue to define the practical control baseline for Commonwealth agencies. The signal is not a new law but a more testable governance model with named owners, inventories, and review gates.",
-        "priority": "High",
-        "confidence": "High",
-        "australiaRelevance": "High",
-        "recommendedAction": "Public-sector teams should keep their AI register, impact assessment, and accountable-owner records current because the DTA model is now the reference point for scrutiny.",
-        "sources": [
-          "https://www.dta.gov.au/media-releases/new-ai-review-committee-enhancing-oversight-government-ai-use",
-          "https://www.dta.gov.au/articles/trustworthy-ai-agents-new-technical-guidance",
-          "https://www.dta.gov.au/articles/new-central-register-ai-transparency-statements-commonwealth-entities"
-        ],
-        "soWhat": "For Commonwealth AI, the evidence artefact is the register and approval trail, not a slide deck.",
-        "relatedIds": [
-          "src-dta-ai-review-committee",
-          "src-new-central-register-of-ai-transparency-statements-for-commo"
-        ]
-      },
-      {
-        "title": "Prompt injection remains a live attack path for AI-assisted code review",
-        "text": "GitHub's CodeQL prompt-injection detection and the Ghostcommit multimodal attack report both point to the same issue: AI-assisted developer tools need isolation, human review, and strict side-effect controls.",
-        "priority": "High",
-        "confidence": "High",
         "australiaRelevance": "Medium",
-        "recommendedAction": "Security teams should keep AI review tools on a short leash: block auto-merge, isolate image inputs, and add prompt-injection cases to CI.",
+        "recommendedAction": "Security and engineering teams should add agent-specific review gates, high-risk path approvals, and post-merge monitoring for code generated by agents.",
         "sources": [
-          "https://github.blog/changelog/2026-07-10-codeql-2-26-0-adds-kotlin-2-4-0-support-and-ai-prompt-injection-detection",
-          "https://news.google.com/rss/articles/CBMixAFBVV95cUxPd05JLUhMTGlaZUFWdEJkTVZmZldRN1MzV1hheWhIc1dxRVBtUzBBQ2k3Mk1LZnFsTEIyLTJGamRHZ2I2NmFKYThZdllBZUdQNFIyeml3VGMwaG81MW1rd2dfV0ZJcjB1SVdPUVB6Ujd1TFJsQUJ2SGUyMXotbW44WURpV3lCSmxaM0sxTnlfRENiY2NXaTZjNEJORk5PaDN0cFNDQU9EOEdJWnk4WWw2b0FOMHRQYl9IdzZqVHpYUmhLTlBz?oc=5"
+          "https://arxiv.org/abs/2607.12428"
         ],
-        "soWhat": "If your development workflow uses AI, treat prompt injection as a supply-chain control problem, not a niche bug class.",
+        "soWhat": "If agents can write code, they also need agent-specific security controls and evidence.",
         "relatedIds": [
           "agentic-prompt-injection-and-tool-abuse"
         ]
       },
       {
-        "title": "EU implementation remains about evidence, not headline novelty",
-        "text": "The current global pattern is still implementation and enforcement: EU AI Act guidance, cyber/AI convergence, and assurance artefacts are getting more operational while the legal text itself changes slowly.",
+        "title": "LLM-generated code needs cross-cutting security tests",
+        "text": "A second arXiv paper combines metamorphic relations and association-rule mining to reveal clustered vulnerabilities in LLM-generated code across multiple CWE classes. The assurance message is that prompt-level testing and cross-cutting failure analysis matter as much as pass/fail code quality metrics.",
+        "priority": "Medium-High",
+        "confidence": "Medium-High",
+        "australiaRelevance": "Medium",
+        "recommendedAction": "AppSec and QA teams should add metamorphic or relationship-based tests to their evaluation stack for code-generation systems.",
+        "sources": [
+          "https://arxiv.org/abs/2607.12089"
+        ],
+        "soWhat": "Code-eval programmes should look for vulnerability clusters, not just isolated defects.",
+        "relatedIds": [
+          "agentic-prompt-injection-and-tool-abuse"
+        ]
+      },
+      {
+        "title": "AI web agents are starting to shape website design assumptions",
+        "text": "A third arXiv paper argues websites now need machine readability, actionability, and decision reliability for AI web agents. That is a signal that structured data, safe action paths, and agent-facing controls are becoming part of web assurance.",
         "priority": "Medium",
         "confidence": "Medium",
         "australiaRelevance": "Medium",
-        "recommendedAction": "Compliance teams should map one evidence pack across AI, cyber, and procurement reviews instead of building separate templates for each regime.",
+        "recommendedAction": "Product, web, and commerce teams should make important actions machine-readable and auditable before agents start transacting on behalf of users.",
         "sources": [
-          "https://news.google.com/rss/articles/CBMizAFBVV95cUxQN1RWWkhQOEtfcVpqcWtkZXBfTFFMN0xaZno1cmdyRGU3ODVuZ3YycHJGWmxReFd1RnFnZmpDZ3FxZTFUejRhQkN0N1c5UW9fNGVfWWJUOFFDZlhLMFpwUXdFN3d6TlpyWUlRT3pMOTBuOFJqa2ppbU5oUFNVQ1FQUi1LRTBla2lfVjlXczNfVFdZQzVWaF9ublFlZ0pPRlV4RXM0WU9WSGQyN3Y2azF2UXV5ZFMydW5CQVNuTE5KdmxKd2VXdy03ODgxYnM?oc=5"
+          "https://arxiv.org/abs/2607.12056"
         ],
-        "soWhat": "Use one evidence trail for AI, cyber, and procurement rather than three separate ones.",
+        "soWhat": "If agents can browse your site, your site needs agent-readable controls.",
         "relatedIds": []
       }
     ],
     "criticalAlerts": [
       {
-        "title": "Platform safety evidence is now a control, not a slogan",
-        "text": "eSafety's sexual-extortion report means trust-and-safety teams should expect to prove moderation performance, escalation speed, and victim-handling discipline.",
+        "title": "Youth-facing AI products need stronger disclosure and age controls",
+        "text": "eSafety now treats AI companions and consumer social surfaces as places where explicit-content exposure, emotional manipulation, and privacy leakage can occur. That means disclosure, age assurance, and human escalation are not optional.",
         "sources": [
-          "https://esafety.gov.au/newsroom/media-releases/esafety-report-reveals-big-tech-blind-spots-in-protecting-children-and-young-adults-from-sexual-extortion"
+          "https://www.esafety.gov.au/educators/training-for-professionals/professional-learning-program-teachers/ai-companions-information-sheet",
+          "https://www.esafety.gov.au/key-topics/esafety-guide/instagram"
         ],
-        "soWhat": "If you run a consumer product, your moderation and escalation metrics need to stand up in a regulator meeting.",
+        "soWhat": "If children can reach the feature, the age gate, safety settings, and reporting path must be obvious and tested.",
         "relatedIds": [
-          "synthetic-image-abuse-and-intimate-image-extortion"
+          "au-esafety-ai-companions"
         ]
       },
       {
-        "title": "AI-assisted developer tools remain targetable through prompt injection",
-        "text": "The combination of CodeQL prompt-injection detection and Ghostcommit-style multimodal payloads shows the AI coding stack is still attackable through ordinary developer workflows.",
+        "title": "Agentic coding workflows can hide security debt in plain sight",
+        "text": "The autonomous coding-agent study and the LLM code-security analysis both show that agent-generated code can embed security defects that standard review processes are likely to miss.",
         "sources": [
-          "https://github.blog/changelog/2026-07-10-codeql-2-26-0-adds-kotlin-2-4-0-support-and-ai-prompt-injection-detection",
-          "https://news.google.com/rss/articles/CBMixAFBVV95cUxPd05JLUhMTGlaZUFWdEJkTVZmZldRN1MzV1hheWhIc1dxRVBtUzBBQ2k3Mk1LZnFsTEIyLTJGamRHZ2I2NmFKYThZdllBZUdQNFIyeml3VGMwaG81MW1rd2dfV0ZJcjB1SVdPUVB6Ujd1TFJsQUJ2SGUyMXotbW44WURpV3lCSmxaM0sxTnlfRENiY2NXaTZjNEJORk5PaDN0cFNDQU9EOEdJWnk4WWw2b0FOMHRQYl9IdzZqVHpYUmhLTlBz?oc=5"
+          "https://arxiv.org/abs/2607.12428",
+          "https://arxiv.org/abs/2607.12089"
         ],
-        "soWhat": "Keep AI-assisted review behind human approval and sandbox every non-text input.",
+        "soWhat": "If your team uses coding agents, add agent-specific security checks before merge and after release.",
         "relatedIds": [
           "agentic-prompt-injection-and-tool-abuse"
         ]
@@ -111,64 +108,64 @@
     ],
     "recommendedActions": {
       "boards": [
-        "Ask for the AI inventory, the owner map, and the evidence trail for moderation, transparency, and incident response this week.",
-        "Require management to show how the Australian AI office rumor and eSafety findings would change reporting or control expectations."
+        "Ask management for the evidence pack on youth-facing AI disclosure, age assurance, and human escalation.",
+        "Require a board-level view of agentic-code security controls and residual risk before wider rollout."
       ],
       "executives": [
-        "Assign one accountable executive for AI governance and one for trust-and-safety evidence.",
-        "Treat public-sector transparency and child-safety reporting as operational obligations, not communications tasks."
+        "Assign clear ownership for consumer AI safety controls and for agentic SDLC security.",
+        "Treat disclosure and age-gating as product requirements, not legal afterthoughts."
       ],
       "riskCompliance": [
-        "Refresh AI risk registers with sexual-extortion, transparency, and central-coordination scenarios.",
-        "Map one evidence pack across AI, privacy, and cyber reviews so the same artefacts can be reused."
+        "Refresh AI risk registers with AI-companion, teen-safety, and autonomous-coding-agent scenarios.",
+        "Map one control pack across AI, privacy, online safety, and code-security reviews."
       ],
       "securityTeams": [
-        "Keep prompt-injection tests in CI for any AI-assisted developer tool or agent.",
-        "Block auto-execution and isolate image or document inputs before they can reach tools or code review agents."
+        "Add prompt-injection and agent-generated-code tests to CI and pre-merge review.",
+        "Log high-risk agent actions and keep rollback paths ready."
       ],
       "productEngineering": [
-        "Log moderation, escalation, and human-review steps for any safety-sensitive workflow.",
-        "Document exactly which inputs can trigger side effects in agentic workflows."
+        "Make AI features, teen controls, and location-sharing states obvious in the UI.",
+        "Expose machine-readable actions and safe defaults for any web-facing agent workflow."
       ],
       "procurement": [
-        "Ask vendors for proof of moderation, logging, and prompt-injection controls before renewal.",
-        "Require explicit disclosure of where human review is mandatory and where automation can act alone."
+        "Ask vendors how they prove age controls, content moderation, and escalation work in practice.",
+        "Require evidence of agent-security testing and audit logging before buying coding-agent tools."
       ],
       "policymakers": [
-        "Clarify the remit of any Australian AI office early and align it with DTA, OAIC, and eSafety roles.",
-        "Push for measurable transparency and response metrics rather than generic responsible-AI statements."
+        "Keep child-safety and disclosure rules focused on measurable controls, not slogans.",
+        "Align AI disclosure, privacy, and online-safety expectations so organisations can use one evidence pack."
       ],
       "investors": [
-        "Review portfolio exposure to platform safety failures and AI governance centralisation in Australia.",
-        "Prefer companies that can evidence control design, logging, and review discipline."
+        "Look for portfolio companies that can evidence consumer-AI safety controls and agentic-code security.",
+        "Prefer vendors that publish concrete testing and logging practices, not just safety narratives."
       ]
     },
     "openQuestions": [
-      "What exact powers and mandate would the proposed Australian AI office have?",
-      "How quickly can major platforms close the sexual-extortion blind spots eSafety identified?",
-      "Can AI code-review and agent tooling keep pace with multimodal prompt injection attacks?"
+      "How will platforms prove that age controls and AI disclosures work for actual teenage users?",
+      "Which agent-generated code defects are most likely to escape ordinary review?",
+      "Will web teams standardise machine-readable agent controls quickly enough for AI web agents?"
     ]
   },
   "trustDashboard": {
-    "overallSignal": "Elevated and becoming more operationalised",
-    "riskPosture": "Australia is moving from policy statements to coordinated oversight, while platform safety gaps and prompt-injection risks remain active.",
+    "overallSignal": "Elevated and more operationalised",
+    "riskPosture": "Australia's strongest signal is now child-safety and disclosure hardening for consumer AI, while AI agents keep creating new security assurance demands in code and web workflows.",
     "emergingRisks": [
-      "A central Australian AI office would likely increase evidence and reporting expectations",
-      "Trust-and-safety gaps in sexual-extortion response remain visible",
-      "Multimodal prompt injection still threatens AI-assisted developer workflows"
+      "Youth-facing AI products need explicit controls and disclosures",
+      "Autonomous coding agents are creating security debt faster than review can absorb",
+      "AI web agents will force more machine-readable control surfaces"
     ],
     "improvingAreas": [
-      "Government AI governance is more explicit through review committees and registers",
-      "Mainstream developer tools are starting to flag prompt injection",
-      "Transparency statements and accountable-owner models are becoming normalised"
+      "eSafety is spelling out concrete child-safety expectations for AI companions",
+      "Public-facing platform guidance is now more specific about embedded AI features",
+      "Research methods are starting to address cross-cutting code-risk patterns"
     ],
     "uncertainAreas": [
-      "The final mandate, staffing, and powers of any Australian AI office",
-      "How much eSafety's findings translate into measurable platform remediation",
-      "Whether multimodal attack detection will keep up with agent adoption"
+      "How consistently consumer platforms will surface AI disclosures and age controls",
+      "How much agent-specific code security can be automated without excess false positives",
+      "Whether machine-readable web controls will standardise quickly enough for AI agents"
     ],
     "australiaSignal": "High and tightening",
-    "globalSignal": "High, with implementation and enforcement outrunning policy novelty"
+    "globalSignal": "High, with implementation and assurance outrunning policy novelty"
   },
   "risks": [
     {
@@ -703,7 +700,7 @@
       "impactLevel": "High",
       "direction": "increasing",
       "theme": "Security",
-      "status": "updated",
+      "status": "unchanged",
       "rationale": "Prompt injection is moving into mainstream code tooling, and CodeQL is now explicitly shipping detection for the class.",
       "events": [
         {
@@ -1568,7 +1565,7 @@
     },
     {
       "name": "AI Transparency and Contestability Gap",
-      "description": "OAIC survey evidence and the DTA transparency statement show public expectations and policy practice are converging on notice, human review, bias testing, third-party disclosure, and accountable officials. ACAPS 2026 also shows public resistance to using personal information to train AI models, which raises the cost of weak disclosure.",
+      "description": "Public expectations around AI disclosure now extend into consumer social apps and companion bots: users need to know when they are interacting with AI, what data is shared, and where age-gating or human review applies.",
       "category": "AI Governance / Privacy / Conduct",
       "likelihood": "High",
       "impact": "High",
@@ -1585,12 +1582,15 @@
         "Human review path",
         "Bias testing",
         "Third-party data-sharing disclosure",
-        "AI register"
+        "AI register",
+        "AI feature disclosure",
+        "Age assurance and parental controls",
+        "Human escalation for high-risk content"
       ],
       "examples": [
-        "OAIC ACAPS 2026 digital technologies",
-        "OAIC ACAPS 2026 overview",
-        "DTA transparency statement"
+        "DTA transparency statement",
+        "eSafety AI companions information sheet",
+        "Instagram guide with Meta AI and teen controls"
       ],
       "trend": "increasing",
       "confidence": "High",
@@ -1598,14 +1598,18 @@
         "https://www.oaic.gov.au/engage-with-us/research-and-training-resources/research/australian-community-attitudes-to-privacy-survey/australian-community-attitudes-to-privacy-survey2026/digital-technologies",
         "https://www.oaic.gov.au/engage-with-us/research-and-training-resources/research/australian-community-attitudes-to-privacy-survey/australian-community-attitudes-to-privacy-survey2026/overview",
         "https://www.dta.gov.au/ai-transparency-statement",
-        "https://www.oaic.gov.au/engage-with-us/consultations/consultation-on-guidance-for-transparency-in-automated-decision-making"
+        "https://www.oaic.gov.au/engage-with-us/consultations/consultation-on-guidance-for-transparency-in-automated-decision-making",
+        "https://www.esafety.gov.au/educators/training-for-professionals/professional-learning-program-teachers/ai-companions-information-sheet",
+        "https://www.esafety.gov.au/key-topics/esafety-guide/instagram"
       ],
       "id": "ai-transparency-and-contestability-gap",
       "likelihoodLevel": "High",
       "impactLevel": "High",
       "direction": "increasing",
       "theme": "Regulation & Privacy",
-      "status": "unchanged"
+      "status": "updated",
+      "lastUpdated": "2026-07-16",
+      "rationale": "Likelihood is high because consumer AI features are being embedded into youth-facing and trust-sensitive products; impact is high because weak disclosure or age controls can affect children, privacy, and contestability across large user bases."
     },
     {
       "name": "Static Guardrails and Monitoring Drift",
@@ -1871,7 +1875,7 @@
       "impactLevel": "High",
       "direction": "increasing",
       "theme": "Security",
-      "status": "updated",
+      "status": "unchanged",
       "rationale": "Attackers are now hiding prompt injections in images and other non-text inputs, which widens the attack surface for tool-using agents.",
       "events": [
         {
@@ -2213,7 +2217,7 @@
       "impactLevel": "High",
       "direction": "increasing",
       "theme": "Safety & Trust",
-      "status": "updated",
+      "status": "unchanged",
       "lastUpdated": "2026-07-15",
       "events": [
         {
@@ -2298,7 +2302,7 @@
     },
     {
       "name": "Agentic prompt injection and tool abuse",
-      "description": "AI systems that can browse, execute, or call tools can be steered by malicious prompts or poisoned context into unsafe actions or data exposure. Reuters’ reporting on AI agents taking action without permission and OpenAI’s prompt-injection work keep this a live risk.",
+      "description": "AI systems that can browse, execute, or call tools can be steered by malicious prompts or poisoned context into unsafe actions or data exposure. The latest evidence now includes autonomous coding agents that accumulate security debt in pull requests and code-generation tests that reveal cross-cutting vulnerability clusters.",
       "category": "Security",
       "likelihood": "High",
       "impact": "High",
@@ -2313,33 +2317,38 @@
         "Scoped credentials",
         "Allowlists for tools and data",
         "Prompt-injection test suite",
-        "Human approval for destructive actions"
+        "Human approval for destructive actions",
+        "Agent-specific security regression tests",
+        "High-risk path approvals"
       ],
       "examples": [
         "OpenAI prompt-injection defence release",
-        "Reuters reporting on AI agents and permissionless action-taking"
+        "AIDev study of autonomous coding-agent pull requests",
+        "Metamorphic testing of LLM-generated code vulnerabilities"
       ],
       "trend": "increasing",
       "confidence": "High",
       "sources": [
         "https://openai.com/index/designing-agents-to-resist-prompt-injection/",
-        "https://news.google.com/rss/articles/CBMi1AFBVV95cUxPOEc3Ul94a1JmZWdWV01ONWlMS0c4MUJvdWJjSUhYVWhjZVBTM2htVFZfcS1oczZGS1RIMnJLYXNWM2NWYU1fMlVDMDM2aHVJQXdNWG5RZ2tTSkNxYU1LNXpwZk9qeUNYdTlOc2MxUFBDN2F6cThIUFNJRmNPRmVzQ21FQUFnZGVXYVQ3OHRId19zWFdEYnJXUTJIeHpEU0Fac0VzZjlBenVMTjJxOHlJLVVHSnlTcHpLdlk2X1dFOGFWTUxvN3lJc1prdEN3ZHRIVjNYNg?oc=5"
+        "https://news.google.com/rss/articles/CBMi1AFBVV95cUxPOEc3Ul94a1JmZWdWV01ONWlMS0c4MUJvdWJjSUhYVWhjZVBTM2htVFZfcS1oczZGS1RIMnJLYXNWM2NWYU1fMlVDMDM2aHVJQXdNWG5RZ2tTSkNxYU1LNXpwZk9qeUNYdTlOc2MxUFBDN2F6cThIUFNJRmNPRmVzQ21FQUFnZGVXYVQ3OHRId19zWFdEYnJXUTJIeHpEU0Fac0VzZjlBenVMTjJxOHlJLVVHSnlTcHpLdlk2X1dFOGFWTUxvN3lJc1prdEN3ZHRIVjNYNg?oc=5",
+        "https://arxiv.org/abs/2607.12428",
+        "https://arxiv.org/abs/2607.12089"
       ],
       "id": "agentic-prompt-injection-and-tool-abuse",
       "likelihoodLevel": "High",
       "impactLevel": "High",
       "direction": "increasing",
       "theme": "Security",
-      "status": "unchanged",
-      "rationale": "Likelihood remains high because agentic systems are expanding into email, code, and workflow tools; impact remains high because a single bad action can expose data or trigger real-world changes.",
+      "status": "updated",
+      "rationale": "Likelihood stays high because agentic systems are moving into code review, web interaction, and workflow automation. Impact stays high because a single unsafe action can expose data, change systems, or ship insecure code at scale.",
       "relatedControlIds": [
         "prompt-injection-defence-in-depth",
         "adversarial-red-teaming-llm-and-agentic"
       ],
       "relatedIncidentIds": [],
-      "statusFlag": "unchanged",
+      "statusFlag": "updated",
       "firstSeen": "2026-07-13",
-      "lastUpdated": "2026-07-13"
+      "lastUpdated": "2026-07-16"
     },
     {
       "name": "AI-enabled cyber abuse scaling",
@@ -6328,7 +6337,7 @@
     {
       "jurisdiction": "Australia",
       "title": "Policy for the responsible use of AI in government (DTA)",
-      "status": "updated",
+      "status": "unchanged",
       "date": "2025-12-15",
       "summary": "Australia's AI governance baseline remains the DTA policy/register architecture, while Reuters reported that government is preparing an AI office to coordinate regulation.",
       "affected": "All non-corporate Commonwealth entities (mandatory); corporate Commonwealth entities (encouraged); excludes defence portfolio and national intelligence community",
@@ -7071,9 +7080,9 @@
     {
       "jurisdiction": "Australia",
       "title": "eSafety expectations for AI companions (transparency & child safety)",
-      "status": "unchanged",
+      "status": "updated",
       "date": "2026-06-26",
-      "summary": "eSafety is actively publishing and updating guidance, transparency statements, and companion-chatbot scrutiny materials for AI services that can affect children and vulnerable users.",
+      "summary": "eSafety's AI-companion guidance now sits alongside the updated Instagram guide, which explicitly surfaces Meta AI chat, teen-account controls, and location-sharing settings for Australian users.",
       "affected": "AI companion/chatbot providers, consumer apps, youth-safety teams, legal/compliance, and online safety teams.",
       "obligations": [
         "Respond to transparency and information requests",
@@ -7089,10 +7098,17 @@
         "https://esafety.gov.au/newsroom/media-releases/esafety-requires-providers-of-ai-companion-chatbots-to-explain-how-they-are-keeping-aussie-kids-safe",
         "https://www.esafety.gov.au/industry/regulatory-guidance",
         "https://www.esafety.gov.au/newsroom/media-releases/esafety-report-shows-ai-companions-are-putting-children-at-risk",
-        "https://www.esafety.gov.au/newsroom/media-releases/esafety-requires-providers-of-ai-companion-chatbots-to-explain-how-they-are-keeping-aussie-kids-safe"
+        "https://www.esafety.gov.au/newsroom/media-releases/esafety-requires-providers-of-ai-companion-chatbots-to-explain-how-they-are-keeping-aussie-kids-safe",
+        "https://www.esafety.gov.au/key-topics/esafety-guide/instagram",
+        "https://www.esafety.gov.au/educators/training-for-professionals/professional-learning-program-teachers/ai-companions-information-sheet"
       ],
       "id": "au-esafety-ai-companions",
       "events": [
+        {
+          "date": "2026-07-16",
+          "what": "eSafety updated its Instagram guide to surface Meta AI chat, teen-account controls, and location-sharing settings",
+          "sourceUrl": "https://www.esafety.gov.au/key-topics/esafety-guide/instagram"
+        },
         {
           "date": "2026-07",
           "what": "eSafety AI companion transparency notices and child-safety expectations",
@@ -7111,9 +7127,9 @@
       ],
       "firstSeen": "2026-06",
       "stage": "in-force",
-      "soWhat": "Consumer AI products need age assurance, abuse reporting, moderation, and incident handling as core controls, not roadmap items.",
-      "lastUpdated": "2026-07",
-      "statusFlag": "unchanged"
+      "soWhat": "Consumer AI products need age assurance, abuse reporting, and human escalation as core controls, not roadmap items.",
+      "lastUpdated": "2026-07-16",
+      "statusFlag": "updated"
     },
     {
       "jurisdiction": "Australia",
@@ -8411,111 +8427,368 @@
       ],
       "confidence": "Medium",
       "id": "inc-ghostcommit-multimodal-prompt-injection-ai-code-review-tools",
-      "status": "new"
+      "status": "unchanged"
     }
   ],
   "securityWatch": {
-    "summary": "Prompt injection and multimodal payloads remain the live security issue for AI-assisted workflows. No new major official AI-security advisory landed in this cycle, but the evidence still points to isolation, least privilege, and human approval for any side effect.",
+    "summary": "Security teams should treat coding agents and web agents as distinct trust boundaries: both can be steered into unsafe actions or insecure code unless they have explicit guardrails.",
     "items": [
       {
-        "title": "Prompt injection remains the main AI-app security failure mode",
-        "text": "CodeQL-style detection and recent attack writeups keep showing that tool-using systems need input isolation, least privilege, and human approval for write actions."
+        "title": "Autonomous coding agents are producing security debt",
+        "text": "The AIDev study suggests review teams need security-specific gates for agent-generated pull requests, especially on high-impact paths."
       },
       {
-        "title": "Image-delivered instructions extend the attack surface",
-        "text": "Ghostcommit-style payloads can steer AI code review tools via images, so multimodal inputs need the same filtering and sandboxing as text."
+        "title": "Agentic workflows still need prompt-injection and rollback controls",
+        "text": "The risk is not just bad text; it is bad side effects, unsafe tool calls, and insecure changes reaching production."
       }
     ],
     "advisories": [
       {
-        "title": "Do not let AI-assisted review auto-merge or auto-execute",
-        "text": "Require explicit human review and deterministic checks before any AI-generated change can move past the tool boundary."
+        "title": "Keep agent-generated code behind extra review",
+        "text": "Add agent-specific checks before merge and post-merge monitoring after release."
       }
     ]
   },
   "assuranceWatch": {
-    "summary": "No new standards publication landed this cycle, but the Australian public-sector control model keeps getting more testable and auditable.",
+    "summary": "Assurance work is moving toward relationship-based testing and agent-readable control surfaces rather than single-point pass/fail metrics.",
     "items": [
       {
-        "title": "Australian AI governance is moving toward evidence-based assurance",
-        "text": "The DTA review committee, transparency register, and trustworthy-agent guidance point to named owners, inventories, and review gates as the expected proof of control."
+        "title": "Metamorphic testing finds cross-cutting LLM code defects",
+        "text": "The LLM code-analysis paper shows why security assurance should look for co-violations and correlated failure modes, not just isolated bugs."
+      },
+      {
+        "title": "Web assurance will need machine-readable agent paths",
+        "text": "The agent-ready websites paper argues that reliability, actionability, and structured data are becoming part of assurance for public-facing sites."
       }
     ]
   },
   "australiaFocus": {
-    "summary": "Australia remains the main change point this cycle: eSafety exposed platform blind spots in sexual-extortion response, Reuters reported a planned government AI office, and the DTA governance stack continues to set the operating baseline.",
+    "summary": "Australia's current AI signal is practical rather than rhetorical: eSafety is sharpening child-safety expectations around companion bots and consumer social platforms, while the DTA/AU public-sector model still prizes named owners, transparency statements, and review gates.",
     "regulatory": [
-      "Watch the mandate and powers of any new Australian AI office.",
-      "Assume more centralised reporting and evidence requests even before formal law changes land."
+      "eSafety's AI companions and Instagram guidance now give concrete child-safety and disclosure expectations for consumer AI features.",
+      "The DTA transparency-register model remains the public-sector benchmark for accountable AI use.",
+      "No fresh APRA or ASIC AI-specific release surfaced in this run, but operational resilience expectations remain relevant for AI deployments."
     ],
     "publicSector": [
-      "Keep AI inventories, accountable owners, and review committee pathways current.",
-      "Maintain transparency statements and approval trails for Commonwealth AI use."
+      "Keep AI inventories and transparency statements current.",
+      "Maintain accountable owners for agentic or high-risk AI use cases.",
+      "Do not rely on generic policy statements when a product or service has child-safety implications."
     ],
     "enterprise": [
-      "Platform and consumer-product teams should be ready to evidence moderation, escalation, and victim-support processes.",
-      "Procurement teams should ask vendors for proof of logging, review, and side-effect controls."
+      "Consumer AI and social features should expose AI chat, moderation, and privacy controls clearly.",
+      "Coding-agent deployments should add security gates for generated code and tool actions.",
+      "Web and commerce teams should prepare for AI web agents by adding structured actions and safe defaults."
     ],
     "legalCompliance": [
-      "Map ADM, privacy, child-safety, and transparency duties to one evidence pack.",
-      "Treat Reuters-reported coordination changes as a watch item until they are formally confirmed."
+      "Map AI-companion and teen-safety controls to online-safety, privacy, and consumer-protection obligations.",
+      "Keep a dated evidence trail for disclosure, moderation, escalation, and age gating.",
+      "Treat AI agent side effects as governance and security obligations, not mere UX issues."
     ],
     "standards": [
-      "Continue using the DTA technical standard and existing NIST/ISO crosswalks; no new Australian standard landed this cycle."
+      "eSafety transparency and child-safety guidance",
+      "DTA agentic AI technical guidance",
+      "NIST-style continuous monitoring for adaptive systems"
     ],
     "vendors": [
-      "Ask vendors to show logs, tests, and escalation metrics rather than relying on trust-and-safety claims."
+      "Meta/Instagram is the clearest current case study for embedded AI chat plus teen controls.",
+      "AI companion vendors should expect child-safety and age-assurance scrutiny.",
+      "Coding-agent vendors should expect questions about security telemetry and review hooks."
     ],
     "gaps": [
-      "No official Australian page yet confirms the proposed AI office's remit or timeline.",
-      "Platform-level sexual-extortion remediation metrics remain opaque."
+      "No fresh Australian prudential or markets AI release surfaced in this run.",
+      "Evidence on how well age controls work in practice is still thin.",
+      "Most agentic-code security evidence is still preprint or vendor-led."
     ]
   },
   "globalWatch": {
     "us": {
-      "summary": "No fresh binding US federal AI rule was verified this cycle; operational focus remains on model-risk evidence and security tooling.",
+      "summary": "No fresh US policy text surfaced in this run; the strongest US-relevant signal came from academic security work on agents and code generation.",
       "developments": [
-        "No new primary US AI rule or enforcement item was verified in this scan."
+        "Autonomous coding agents are generating measurable security debt in pull requests.",
+        "LLM-generated code needs cross-cutting security tests, not just correctness checks."
       ]
     },
     "eu": {
-      "summary": "EU implementation and cyber/AI convergence remain the main story; no new binding AI Act text was verified in this run.",
+      "summary": "No fresh EU AI law or guidance was reviewed in this run; implementation pressure remains the dominant story.",
       "developments": [
-        "Implementation guidance and enforcement posture matter more than headline novelty right now."
+        "No new EU AI Act text was reviewed in this cycle.",
+        "Assurance artefacts continue to matter more than headline legal novelty."
       ]
     },
     "uk": {
-      "summary": "No fresh UK primary update was verified in this run.",
+      "summary": "No new UK AI regulatory text was reviewed in this run.",
       "developments": [
-        "Continue watching DSIT/AISI and ICO for evaluation and ADM/privacy guidance."
+        "No fresh ICO or DSIT item surfaced in the current cycle.",
+        "Consumer AI transparency and online-safety controls remain the practical benchmark."
       ]
     },
     "singapore": {
-      "summary": "No fresh Singapore AI governance update was verified in this run.",
+      "summary": "No fresh Singapore AI release was reviewed in this run.",
       "developments": [
-        "No new verified development surfaced in this cycle."
+        "No new model-governance update surfaced during the current sweep."
       ]
     },
     "china": {
-      "summary": "No fresh China primary update was verified in this run.",
+      "summary": "No fresh China AI policy item was reviewed in this run.",
       "developments": [
-        "Watch model-access and data-governance controls, but no new primary item was verified here."
+        "No new consumer-AI or governance text was pulled into this cycle."
       ]
     },
     "oecdMultilateral": {
-      "summary": "Multilateral AI governance remains steady; no new OECD/G7 primary text was verified this cycle.",
+      "summary": "No new OECD/G7/G20 item was reviewed in this run.",
       "developments": [
-        "The current emphasis is still on implementation rather than new summit declarations."
+        "The practical focus remains on implementation and measurable controls rather than new principles."
       ]
     },
     "labs": {
-      "summary": "Lab releases continue to stress capability plus safety, while security writeups keep the focus on prompt injection and tool-use abuse.",
+      "summary": "No fresh major-lab safety artefact was reviewed in this run; the external research signal is still that agents and code-generation workflows need stronger security evaluation.",
       "developments": [
-        "No new frontier-lab safety artifact was verified in this scan."
+        "The coding-agent security-debt study is the clearest current warning for agentic product teams.",
+        "The agent-ready websites paper suggests product teams will need machine-readable control surfaces for web agents."
       ]
     }
   },
   "sources": [
+    {
+      "id": "src-esafety-instagram-guide-meta-ai-teen-controls",
+      "title": "Instagram | eSafety Guide",
+      "author": "eSafety Commissioner",
+      "date": "2026-07-15",
+      "link": "https://www.esafety.gov.au/key-topics/esafety-guide/instagram",
+      "sourceType": "Official guidance page",
+      "geography": "Australia",
+      "domain": "AI Governance",
+      "priority": "High",
+      "confidence": "High",
+      "evidenceGrade": "A",
+      "reviewDepth": "Substantially reviewed",
+      "summary": "eSafety's Instagram guide now explicitly surfaces Meta AI chat, Instagram teen-account controls, the Instagram Map location-sharing feature, and built-in moderation and age-verification controls.",
+      "keyFacts": [
+        "The page notes that Instagram can connect users to Meta AI chat.",
+        "Teen accounts are private by default and have built-in contact and content limits.",
+        "Instagram Map is described as a location-sharing feature that is not yet available in Australia.",
+        "The page points users to age verification, reporting, blocking, and parental controls."
+      ],
+      "keyClaims": [
+        "Consumer social platforms are now embedding AI chat into youth-facing products.",
+        "Disclosure, age controls, and moderation controls are part of the product surface, not just policy."
+      ],
+      "evidenceBase": "Direct HTML review of the canonical eSafety page after the 2026-07-15 update.",
+      "methodology": "Fetched the live page and extracted visible text locally; no third-party summarisation.",
+      "practicalImplications": "Teams shipping consumer AI or youth-facing social features should make AI chat, location sharing, moderation, and age gating obvious and testable.",
+      "whoAffected": "Consumer platform teams, trust-and-safety, legal/compliance, parents and carers, and youth-safety teams.",
+      "auRelevance": "High",
+      "globalRelevance": "Medium",
+      "risksIdentified": [
+        "Undisclosed AI chat surfaces in youth products",
+        "Location-sharing and contact-control confusion",
+        "Weak parental visibility into teen-account settings"
+      ],
+      "controlsMitigations": [
+        "Prominent disclosure of AI features",
+        "Age-gated defaults and parental controls",
+        "Clear reporting, blocking, and moderation flows"
+      ],
+      "vendorToolingImplications": "Consumer AI vendors need product UX that makes chat, privacy, and safety controls legible to non-experts.",
+      "openQuestions": [
+        "How quickly will platforms standardise disclosure of embedded AI chat features?",
+        "Will age-restriction controls meaningfully reduce exposure in practice?"
+      ],
+      "limitations": "Official guidance page rather than binding law; product details can change quickly.",
+      "firstSeen": "2026-07-16",
+      "status": "new"
+    },
+    {
+      "id": "src-esafety-ai-companions-information-sheet",
+      "title": "AI companions: information sheet",
+      "author": "eSafety Commissioner",
+      "date": "2025-12-12",
+      "link": "https://www.esafety.gov.au/educators/training-for-professionals/professional-learning-program-teachers/ai-companions-information-sheet",
+      "sourceType": "Official information sheet",
+      "geography": "Australia",
+      "domain": "AI Trust and Trustworthiness",
+      "priority": "High",
+      "confidence": "High",
+      "evidenceGrade": "A",
+      "reviewDepth": "Substantially reviewed",
+      "summary": "eSafety says AI companions mimic human-like conversation, can produce sexually explicit conversations and image generation, and are not designed with children and young people in mind.",
+      "keyFacts": [
+        "AI companions are described as chatbots that mimic human-like conversation and emotional response.",
+        "eSafety warns they can engage in sexually explicit conversations and image generation.",
+        "The sheet says they can distort reality and encourage emotional dependency.",
+        "The page frames age assurance, moderation, and human support as essential safeguards."
+      ],
+      "keyClaims": [
+        "AI companions are a child-safety and trust issue, not just a novelty product category.",
+        "Explicit-content exposure and emotional manipulation are core risks for younger users."
+      ],
+      "evidenceBase": "Direct HTML review of eSafety's information sheet.",
+      "methodology": "Fetched the live page and extracted visible text locally.",
+      "practicalImplications": "Any consumer companion-bot deployment should treat age assurance, abuse reporting, and escalation to humans as baseline controls.",
+      "whoAffected": "Consumer AI vendors, education teams, parents and carers, trust-and-safety teams, and legal/compliance.",
+      "auRelevance": "High",
+      "globalRelevance": "High",
+      "risksIdentified": [
+        "Sexually explicit content exposure",
+        "Emotional dependency and manipulation",
+        "Child exposure through weak age checks"
+      ],
+      "controlsMitigations": [
+        "Age assurance and access controls",
+        "Content moderation and reporting",
+        "Human escalation and support pathways"
+      ],
+      "vendorToolingImplications": "Companion-bot vendors should expect scrutiny on age gating, content filters, logging, and incident handling.",
+      "openQuestions": [
+        "How will vendors demonstrate that their safeguards actually work for children?",
+        "Which controls reduce explicit-content and dependency risks in live use?"
+      ],
+      "limitations": "Guidance is partly forward-looking and does not itself define binding obligations.",
+      "firstSeen": "2026-07-16",
+      "status": "new"
+    },
+    {
+      "id": "src-arxiv-trust-but-verify-autonomous-coding-agents",
+      "title": "Trust but Verify? Uncovering the Security Debt of Autonomous Coding Agents",
+      "author": "A H M Nazmus Sakib, Dipayan Banik, Murtuza Jadliwala",
+      "date": "2026-07-15",
+      "link": "https://arxiv.org/abs/2607.12428",
+      "sourceType": "ArXiv preprint",
+      "geography": "Global",
+      "domain": "AI Security",
+      "priority": "High",
+      "confidence": "Medium-High",
+      "evidenceGrade": "B",
+      "reviewDepth": "Skimmed",
+      "summary": "A large empirical study of 4,022 autonomous coding-agent pull requests and 16,112 file changes finds security misconfigurations that can outrun ordinary human review capacity.",
+      "keyFacts": [
+        "The study uses the AIDev dataset to analyse agent-generated pull requests.",
+        "It reports 16,112 file changes across 4,022 PRs.",
+        "The authors combine an LLM-as-judge pipeline with manual qualitative analysis.",
+        "The paper focuses on security code smells in agent-generated code."
+      ],
+      "keyClaims": [
+        "Autonomous coding agents create measurable security debt in high-impact file paths.",
+        "Functional correctness and productivity metrics are insufficient assurance signals."
+      ],
+      "evidenceBase": "arXiv abstract and metadata only; no full-paper review in this run.",
+      "methodology": "Direct HTML extraction of the arXiv abstract page.",
+      "practicalImplications": "AppSec and SDLC teams need agent-specific review gates, not just generic code review.",
+      "whoAffected": "Security teams, software engineers, platform owners, and enterprise buyers of coding agents.",
+      "auRelevance": "Medium",
+      "globalRelevance": "High",
+      "risksIdentified": [
+        "Security misconfigurations in agent-generated pull requests",
+        "Human review capacity lagging behind agent throughput"
+      ],
+      "controlsMitigations": [
+        "Agent-specific security checks",
+        "High-risk path approvals",
+        "Post-merge monitoring and rollback capability"
+      ],
+      "vendorToolingImplications": "Coding-agent vendors will need stronger security telemetry, policy controls, and audit support.",
+      "openQuestions": [
+        "Which agent-generated defect classes are hardest to catch in review?",
+        "How much security debt is acceptable before agent usage must be constrained?"
+      ],
+      "limitations": "Preprint, not yet peer reviewed.",
+      "firstSeen": "2026-07-16",
+      "status": "new"
+    },
+    {
+      "id": "src-arxiv-cross-cutting-security-analysis-llm-generated-code",
+      "title": "Cross-Cutting Security Analysis of LLM-Generated Code via Metamorphic Testing and Association Rule Mining",
+      "author": "Zedong Peng, Chenggang Wang, Shangyue Zhu",
+      "date": "2026-07-15",
+      "link": "https://arxiv.org/abs/2607.12089",
+      "sourceType": "ArXiv preprint",
+      "geography": "Global",
+      "domain": "AI Assurance",
+      "priority": "High",
+      "confidence": "Medium-High",
+      "evidenceGrade": "B",
+      "reviewDepth": "Skimmed",
+      "summary": "The paper combines security-oriented metamorphic relations with association-rule mining to detect and cluster cross-cutting vulnerabilities in LLM-generated code.",
+      "keyFacts": [
+        "The framework covers nine metamorphic relations across major CWE classes.",
+        "It surfaces co-violation structure, not just isolated defects.",
+        "The approach traces vulnerability patterns back to prompt-level risk factors."
+      ],
+      "keyClaims": [
+        "LLM code vulnerabilities often span multiple security concern areas at once.",
+        "Assurance needs to look for correlated failure modes rather than single bugs only."
+      ],
+      "evidenceBase": "arXiv abstract and metadata only; no full-paper review in this run.",
+      "methodology": "Direct HTML extraction of the arXiv abstract page.",
+      "practicalImplications": "Assurance teams can use metamorphic and relationship-based tests to expose cross-cutting code risks.",
+      "whoAffected": "AppSec, QA, software engineering, and governance teams deploying code-generation models.",
+      "auRelevance": "Medium",
+      "globalRelevance": "High",
+      "risksIdentified": [
+        "Multi-CWE vulnerability clusters",
+        "Prompt-level risk factors influencing code defects"
+      ],
+      "controlsMitigations": [
+        "Metamorphic security testing",
+        "Association-rule analysis of failure patterns",
+        "Prompt regression tests"
+      ],
+      "vendorToolingImplications": "Code-eval vendors should add cross-cutting vulnerability discovery, not just single-metric pass rates.",
+      "openQuestions": [
+        "How well does the method generalise to larger codebases and different languages?",
+        "Can it be operationalised in CI without excessive false positives?"
+      ],
+      "limitations": "Preprint, not yet peer reviewed.",
+      "firstSeen": "2026-07-16",
+      "status": "new"
+    },
+    {
+      "id": "src-arxiv-agent-ready-websites-ai-web-agents",
+      "title": "Designing Agent-Ready Websites for AI Web Agents: A Framework for Machine Readability, Actionability, and Decision Reliability",
+      "author": "Said Elnaffar, Farzad Rashidi",
+      "date": "2026-07-15",
+      "link": "https://arxiv.org/abs/2607.12056",
+      "sourceType": "ArXiv preprint",
+      "geography": "Global",
+      "domain": "Enterprise Adoption and Controls",
+      "priority": "Medium",
+      "confidence": "Medium",
+      "evidenceGrade": "B",
+      "reviewDepth": "Skimmed",
+      "summary": "The paper argues that websites exposed to AI web agents need machine readability, actionability, and decision reliability, not just human-friendly UX and SEO.",
+      "keyFacts": [
+        "The framework is designed for agent-mediated interaction in e-commerce and service flows.",
+        "It proposes three dimensions: machine readability, actionability, and decision reliability.",
+        "It explicitly says existing SEO/GEO metrics are insufficient for agent-mediated interaction."
+      ],
+      "keyClaims": [
+        "AI web agents change the design assumptions for public-facing websites.",
+        "Web teams will need structured data and explicit action surfaces for safe agent use."
+      ],
+      "evidenceBase": "arXiv abstract and metadata only; no full-paper review in this run.",
+      "methodology": "Direct HTML extraction of the arXiv abstract page.",
+      "practicalImplications": "Product and commerce teams should think about structured actions, guardrails, and machine-readable policies for web agents.",
+      "whoAffected": "Web product teams, e-commerce operators, procurement, and AI platform owners.",
+      "auRelevance": "Medium",
+      "globalRelevance": "High",
+      "risksIdentified": [
+        "Agent-mediated purchase or service errors",
+        "Mismatched assumptions between human UX and machine interaction"
+      ],
+      "controlsMitigations": [
+        "Structured data and action schemas",
+        "Decision logging and rollback paths",
+        "Agent-safe control surfaces"
+      ],
+      "vendorToolingImplications": "CMS, e-commerce, and AI orchestration vendors may need new agent-readiness features.",
+      "openQuestions": [
+        "Which standards will define machine-readable actionability?",
+        "How will sites prove decision reliability to both humans and agents?"
+      ],
+      "limitations": "Preprint, not yet peer reviewed.",
+      "firstSeen": "2026-07-16",
+      "status": "new"
+    },
     {
       "title": "Regulation of artificial intelligence",
       "author": "Wikipedia",
@@ -15072,7 +15345,7 @@
       ],
       "limitations": "Vendor release note; independent effectiveness data was not available in this cycle.",
       "id": "src-codeql-2260-ai-prompt-injection-detection",
-      "status": "new"
+      "status": "unchanged"
     },
     {
       "title": "Australian Payments Plus moves faster with ChatGPT and Codex",
@@ -15114,7 +15387,7 @@
       ],
       "limitations": "Vendor-authored case study; independent validation would strengthen the claim.",
       "id": "src-australian-payments-plus-moves-faster-with-chatgpt-and-codex",
-      "status": "new"
+      "status": "unchanged"
     },
     {
       "title": "GPT-5.5 Bio Bug Bounty",
@@ -15156,7 +15429,7 @@
       ],
       "limitations": "Vendor-run programme is not independent assurance.",
       "id": "src-gpt-55-bio-bug-bounty",
-      "status": "new"
+      "status": "unchanged"
     },
     {
       "title": "EU Commission publishes Action Plan on Cybersecurity and Artificial Intelligence",
@@ -15198,7 +15471,7 @@
       ],
       "limitations": "Aggregator headline only in this cycle.",
       "id": "src-eu-commission-cybersecurity-and-ai-action-plan",
-      "status": "new"
+      "status": "unchanged"
     },
     {
       "title": "Ghostcommit: Multimodal Prompt Injection Attack Exposes AI Code Review Tools to Supply Chain Risks",
@@ -15240,7 +15513,7 @@
       ],
       "limitations": "Aggregator headline only in this cycle.",
       "id": "src-ghostcommit-multimodal-prompt-injection-attack",
-      "status": "new"
+      "status": "unchanged"
     },
     {
       "id": "src-esafety-sexual-extortion-report",
@@ -15329,6 +15602,26 @@
     }
   ],
   "researchNotes": [
+    {
+      "date": "2026-07-16",
+      "title": "Designing Agent-Ready Websites for AI Web Agents",
+      "content": "Key takeaways:\n- Websites need machine readability, actionability, and decision reliability for AI web agents.\n- Existing SEO/GEO metrics are not enough.\n- Product and commerce teams should think about structured actions and safe defaults for agent use."
+    },
+    {
+      "date": "2026-07-16",
+      "title": "Cross-Cutting Security Analysis of LLM-Generated Code",
+      "content": "Key takeaways:\n- The paper combines metamorphic testing with association-rule mining.\n- Vulnerabilities cluster across multiple CWE classes rather than appearing in isolation.\n- Assurance teams should look for correlated failure modes and prompt-level risk factors."
+    },
+    {
+      "date": "2026-07-16",
+      "title": "Trust but Verify? Uncovering the Security Debt of Autonomous Coding Agents",
+      "content": "Key takeaways:\n- 4,022 agent-generated PRs and 16,112 file changes were analysed.\n- Security misconfigurations can accumulate in high-impact paths faster than ordinary review can absorb.\n- Add agent-specific security gates and post-merge monitoring."
+    },
+    {
+      "date": "2026-07-16",
+      "title": "eSafety Instagram guide and AI companions guidance",
+      "content": "Key takeaways:\n- Instagram's eSafety guide now explicitly mentions Meta AI chat, teen accounts, location-sharing, and moderation controls.\n- eSafety's AI companions sheet says companion bots can mimic relationships and generate sexually explicit conversations/images.\n- Treat youth-facing AI disclosure and age assurance as product controls, not policy footnotes."
+    },
     {
       "date": "2026-07-14",
       "title": "2026-07-14 nightly — prompt injection and assurance",
@@ -15792,6 +16085,11 @@
   ],
   "changelog": [
     {
+      "date": "2026-07-16",
+      "title": "ai-transparency-and-contestability-gap au-esafety-ai-companions agentic-prompt-injection-and-tool-abuse",
+      "details": "Reset entity statuses to unchanged, then marked ai-transparency-and-contestability-gap, au-esafety-ai-companions, and agentic-prompt-injection-and-tool-abuse as updated; added new sources src-esafety-instagram-guide-meta-ai-teen-controls, src-esafety-ai-companions-information-sheet, src-arxiv-trust-but-verify-autonomous-coding-agents, src-arxiv-cross-cutting-security-analysis-llm-generated-code, and src-arxiv-agent-ready-websites-ai-web-agents. Source mix this run: 2 grade-A official pages and 3 grade-B arXiv preprints; vendor share 0%; AU share 40%+. Merged/archived: no canonical-entity merges or archives this run. Gaps: no fresh APRA/ASIC AI-specific release and no new AI incident database entry were confirmed in the outage window."
+    },
+    {
       "date": "2026-07-15",
       "title": "Nightly Research Run 2026-07-15",
       "details": "Touched sources src-esafety-sexual-extortion-report and src-reuters-australia-ai-office; updated synthetic-image-abuse-and-intimate-image-extortion and au-gov-ai-policy; source mix: A/B evidence with Australia-relevant primary coverage; merged entities: 2 new sources, 2 updated corpus records; gaps: Reuters office report remains headline-level and the proposed Australian AI office is not yet formally confirmed."
@@ -16080,6 +16378,18 @@
       },
       "newItems": 2,
       "updatedItems": 2
+    },
+    {
+      "date": "2026-07-16",
+      "riskPosture": "Moderately elevated",
+      "counts": {
+        "risks": 103,
+        "regulations": 26,
+        "incidents": 36,
+        "sources": 215
+      },
+      "newItems": 5,
+      "updatedItems": 3
     }
   ],
   "schemaVersion": 2
