@@ -1,173 +1,180 @@
 {
-  "lastUpdated": "2026-07-18 05:19 AEDT",
+  "lastUpdated": "2026-07-19 05:12 AEDT",
   "projectName": "AI Trust Intelligence",
   "projectDescription": "Living intelligence on AI trust, assurance, risk management, governance, regulation, safety, security, and the vendor ecosystem.",
   "executiveBrief": {
-    "date": "2026-07-18",
-    "oneLiner": "Frontier AI oversight is moving from principles to audits and continuous monitoring while agent security tooling gets more operational.",
+    "date": "2026-07-19",
+    "oneLiner": "Australia's AI conversation is shifting toward practical controls while US frontier audits, EU conditional relief, and agent-security automation keep tightening the operating baseline.",
     "topDevelopments": [
       {
-        "title": "Illinois signed a frontier AI safety law that pushes audits into statute",
-        "text": "Illinois Governor Pritzker signed a frontier AI safety law that, according to secondary coverage, requires audits of frontier models and pushes the compliance window into January 2028. That turns frontier-model assurance into an evidence and governance problem, not just a policy discussion.",
+        "title": "Australia is changing course on AI, but the real questions are operational",
+        "text": "SBS and other July coverage suggest the Australian debate is moving from abstract principles to implementation details: disclosure, privacy, review gates, and who owns the evidence.",
+        "priority": "High",
+        "confidence": "Medium",
+        "australiaRelevance": "High",
+        "recommendedAction": "Treat the current policy shift as a signal to harden AI inventories, disclosure drafts, and escalation paths now rather than waiting for a formal new law.",
+        "sources": [
+          "https://news.google.com/rss/articles/CBMilgFBVV95cUxOSng4bzc3RjFaVHdYYjFnQUtObDRFYUxXNWlvdkFVc2Z4S01BRjQ0Mkc1U0k2YkJETHltSHdpcGFETkVoZnNyS0hGT0QwczhaLURfbjIxWjUyby1CYVItZlJWaDdCaTFLMmJjNlRTcGVaRGFyaWR3MmV1TkV3c3dyRXJ2cEQzR3dIWldnTlhyR0FTUlZvaEE?oc=5",
+          "https://news.google.com/rss/articles/CBMi1wFBVV95cUxNS2hJdGUwblRBT3V3Vml0eGlpcWFUajRUbDlRTFlhUXc2dFlKTkMtZjhHQ1dyYnRHR1ZMSkl5QWN3QThManBram1WOHk1LURMZ01mZnpvYmdxbm4zQ21tbUYwSzRXR1RBMDhBeHY3YlhqOHRqREI3MGpwWkxUSGdVRDh1SEhSMUlhWm9BWmhMbzE2X01CWUhURUJaMXA5YmF5N1BxZ2U0LTd6T3NETjZ2MHhWWlhXdTl0OGlfWGhyOWM1ZUFIZEtNWjNtVUw1YjdYdnZONmVnTQ?oc=5"
+        ],
+        "soWhat": "Boards should ask which AI controls are already evidence-ready before the policy direction hardens into rules.",
+        "relatedIds": [
+          "src-australia-ai-course-change-sbs",
+          "src-iapp-asia-pacific-coordinated-oversight-australia"
+        ]
+      },
+      {
+        "title": "OpenAI GPT-Red is automating prompt-injection testing",
+        "text": "The Hacker News coverage says OpenAI is productising prompt-injection testing with GPT-Red, which is a sign that red-team automation is becoming part of the release process rather than an occasional exercise.",
         "priority": "High",
         "confidence": "Medium",
         "australiaRelevance": "Medium",
-        "recommendedAction": "Frontier-model teams and procurement leads should map Illinois exposure, collect audit-ready evidence, and make reporting owners explicit before U.S. expansion.",
+        "recommendedAction": "Security teams should add prompt-injection regression tests, tool-use boundaries, and rollback paths to any agent rollout.",
+        "sources": [
+          "https://news.google.com/rss/articles/CBMie0FVX3lxTFBwQlQ5a1lBYTNpaVdnZ1R3QWpuQWpkd1Y1SmRDc283aklKajB3R2ttQUdyMFBKRVp3bUt6T1gyWC0tTkJONjM0ZThVQW5DNHFnRkFiTnpxQzI4VFZ0TmZNY19KcnRNeTVPMlMzQm02SHAxWmJNcW1mQlpzVQ?oc=5"
+        ],
+        "soWhat": "If an agent can act, it also needs continuous abuse testing and a safe stop button.",
+        "relatedIds": [
+          "src-openai-gpt-red-prompt-injection-testing",
+          "agentic-prompt-injection-and-tool-abuse"
+        ]
+      },
+      {
+        "title": "Check Point says AI has crossed from assistant to operator",
+        "text": "Check Point's 2026 security report argues that offensive AI workflows are now more autonomous, so the threat model is moving from chat misuse to operator-like attack chains that can become exploits quickly.",
+        "priority": "High",
+        "confidence": "Medium",
+        "australiaRelevance": "Medium",
+        "recommendedAction": "Red-team and blue-team leads should assume AI-enabled attack chaining is accelerating and make telemetry, approvals, and containment mandatory.",
+        "sources": [
+          "https://news.google.com/rss/articles/CBMibkFVX3lxTE1XaTFQMzdkSHdhTlRHTkg4X1JtMkpYYThVM0VDU2tyQTBLRFI3M1o0amZhZnYtZlJjTG51OWRXTjd2MExsb0VOcTlwZFNUai1MWFNJa3h5UExqVmtYNFpRTUZfM3FlMkNVa2xDTGhn?oc=5"
+        ],
+        "soWhat": "Treat AI-assisted attack chains as an operations problem, not just a malware problem.",
+        "relatedIds": [
+          "src-check-point-ai-security-report-2026",
+          "ai-enabled-cyber-abuse-scaling"
+        ]
+      },
+      {
+        "title": "OAIC/Qantas coverage shows privacy outcomes still hinge on evidence",
+        "text": "Mi-3 and Lawyerly coverage of the OAIC Qantas inquiry point to a practical lesson: privacy breach outcomes still turn on the facts in the incident file and how the evidence is documented.",
+        "priority": "Medium",
+        "confidence": "Medium",
+        "australiaRelevance": "High",
+        "recommendedAction": "Keep incident timelines, decision logs, and remediation evidence audit-ready because regulator outcomes depend on what you can prove.",
+        "sources": [
+          "https://news.google.com/rss/articles/CBMikAFBVV95cUxPRzdRbWd2Q213M2JtZm9RV3pDSlJKbndBVVdmaUdxTlMtenZ3QTlpVGdkTnY4dkdsbVlfeThCYnZrdkRNTW1DY0duSXFKMm1kU2VsNDlaUnpNVVc1WVRQbGhlODB6ZlNyblExQ1dFU28xZkV1Y2R6ZWlTS3RrNTVwWl9ReVFDTnZfeHU1czFoRE8?oc=5"
+        ],
+        "soWhat": "Privacy and AI teams need the same discipline: if it is not documented, it will be hard to defend.",
+        "relatedIds": [
+          "src-qantas-oaic-breach-mi3",
+          "reg-oaic-digital-technologies-findings-from-acaps-2026"
+        ]
+      },
+      {
+        "title": "Illinois frontier AI audits are now statutory",
+        "text": "StateScoop and law-firm coverage say Illinois has moved frontier-model audits into statute, which pushes assurance work toward evidence packs, auditability, and compliance ownership.",
+        "priority": "High",
+        "confidence": "Medium",
+        "australiaRelevance": "Medium",
+        "recommendedAction": "Frontier-model teams should map Illinois exposure and build audit evidence now rather than after product launch.",
         "sources": [
           "https://news.google.com/rss/articles/CBMieEFVX3lxTE1PTUI5WEpENWNRV1c0NHpiMWdjQ3JfdTRqU1ZqRGRvSnZTZ25QYTl2OG5DdTBsc0wwZklMN3BlSjBPRTFaVDh6cVB5Z1pMOUpqWWlTU0FKTjk2MmpvemplS0hXYjViTC1HRFFkT1JTZi1tRS0yZ25qRQ?oc=5",
           "https://news.google.com/rss/articles/CBMiwwFBVV95cUxNaGx5dG5kQ2ZoZkhBZHlRRHBhVGM2X2xGRDhRWFE2VU1yVXhyWTlhT1FWUmZYeEhaQmxLZjFFOEJxQzFLZmU5SDRGZlMtR2FsQmZ5ajVGZzBsSnZiTmR5dmJNMUlyUjdWSGlrQVJpazdKM2JuX0JzOVE3RlI4bDZZRENTbVpNTTNKaWZQVnhta3h3V2Judld1WHlGVzUyYTBzMW5uaVR6Z2E0eXN5QmxfNUN5YjNMdEtYV1NDc0xOX3F3dWs?oc=5"
         ],
-        "soWhat": "If your frontier model can reach Illinois customers or customers of Illinois-based buyers, prepare an audit pack now rather than after release.",
+        "soWhat": "Any frontier model with Illinois reach should already have an audit binder and named owner.",
         "relatedIds": [
           "us-il-frontier-ai-safety-measures-act"
-        ]
-      },
-      {
-        "title": "NIST says static guardrails are not enough for AI security",
-        "text": "NIST published a mathematical proof arguing that no finite set of guardrails is universally robust against adversarial prompts, reinforcing a continuous-monitor-and-update security model for AI systems.",
-        "priority": "High",
-        "confidence": "High",
-        "australiaRelevance": "High",
-        "recommendedAction": "Security teams should instrument AI deployments with telemetry, continuous evaluation, and rollback paths instead of relying on one-time red-teams.",
-        "sources": [
-          "https://www.nist.gov/news-events/news/2026/06/nist-mathematical-proof-supports-transition-continuous-monitor-and-update"
-        ],
-        "soWhat": "Treat post-deploy monitoring as part of the control, not an afterthought.",
-        "relatedIds": [
-          "src-nist-mathematical-proof-supports-transition-to-a-continuous"
-        ]
-      },
-      {
-        "title": "Prompt-injection testing is becoming automated while AI attack chains mature",
-        "text": "OpenAI's GPT-Red is being used to automate prompt-injection testing, while Check Point's 2026 security report says AI has crossed from assistant to operator and new vulnerabilities can be turned into exploits within hours.",
-        "priority": "High",
-        "confidence": "Medium",
-        "australiaRelevance": "Medium",
-        "recommendedAction": "Add automated prompt-injection tests, tool-use restrictions, and high-risk action approvals for agents and copilots.",
-        "sources": [
-          "https://news.google.com/rss/articles/CBMie0FVX3lxTFBwQlQ5a1lBYTNpaVdnZ1R3QWpuQWpkd1Y1SmRDc283aklKajB3R2ttQUdyMFBKRVp3bUt6T1gyWC0tTkJONjM0ZThVQW5DNHFnRkFiTnpxQzI4VFZ0TmZNY19KcnRNeTVPMlMzQm02SHAxWmJNcW1mQlpzVQ?oc=5",
-          "https://news.google.com/rss/articles/CBMibkFVX3lxTE1XaTFQMzdkSHdhTlRHTkg4X1JtMkpYYThVM0VDU2tyQTBLRFI3M1o0amZhZnYtZlJjTG51OWRXTjd2MExsb0VOcTlwZFNUai1MWFNJa3h5UExqVmtYNFpRTUZfM3FlMkNVa2xDTGhn?oc=5"
-        ],
-        "soWhat": "The threat is shifting from demo jailbreaks to automated attack chains and faster exploit generation.",
-        "relatedIds": []
-      },
-      {
-        "title": "EU AI Act simplification is still conditional despite July momentum",
-        "text": "July coverage of the Digital Omnibus says the EU is still moving on AI Act simplification and new AI Office powers, but the practical takeaway remains conditional relief until adoption is formally complete.",
-        "priority": "High",
-        "confidence": "Medium",
-        "australiaRelevance": "High",
-        "recommendedAction": "Keep the original AI Act compliance plan live and only re-baseline once the formal process is clear.",
-        "sources": [
-          "https://news.google.com/rss/articles/CBMifEFVX3lxTE52aDQ3S0s4UHVnV2xjX1JnRnhQSkxsTV9MSGc0OXRYcjBrZTB3c2dScmx0ZUtCaTJyYml2RVpmREtUZnlVcE1PMEN4aDBfNDFlV3l1elJ5Z2FjQUowZEU2THItOFdvdklYb3lfVFJyMWR3Qnk2eXFTcmF6bks?oc=5",
-          "https://news.google.com/rss/articles/CBMizAFBVV95cUxQZ2w0RXp3cDVRWnk4NS1sYktrbHkyME80TmZEejEzZ2pMbzZXNzFwNnUyTVFIdUo3QmlkTm00S1VoYjJfSk1mYnV5NDdPRE9GcmRuQUxQTmhxblZuYkxBaHVEZlRyczE0RXJJRGtZdFlXSUhSUVZTMnNEWDBHOUpfUzRqd0l0VE9wU3lSVndvNEFRS1NWY1JwdF9QallselFOVmZubk40OTdhZmk4VUpqYmRuQXAzY1BVOThVYXpDWXE2dTM5WVA1bW5vazA?oc=5"
-        ],
-        "soWhat": "Treat timeline relief as provisional until adoption is unambiguous.",
-        "relatedIds": [
-          "eu-digital-omnibus-ai"
-        ]
-      },
-      {
-        "title": "AI governance vendors are shifting toward executable controls and live risk evidence",
-        "text": "LatticeFlow's platform pitch combines live system visibility, scalable evaluations, adversarial testing, and risk evidence for agentic AI, illustrating the market move from checklists to control execution.",
-        "priority": "Medium",
-        "confidence": "Medium",
-        "australiaRelevance": "Medium",
-        "recommendedAction": "Buyers should compare governance platforms on technical evidence, eval depth, and integration with production workflows rather than marketing claims.",
-        "sources": [
-          "https://news.google.com/rss/articles/CBMi1AFBVV95cUxPMVBZeGpIdUExWUlwZkZCQTV5T0xyRE82YjFYdkR4R3pDLXBFaUlLS0M0LWJ3QmtKLTBZNDlzY25DWjA3bkhkb21EZTFTSlNVNW5HOXdLWFJ5WkJYczV5WWJmX1lxbGJNRklMc2hmelBiS3pyYUwxbnRXeU5LYWdweWdrcXJuekc5UkFRR2hmUzBzWkJSSnZzT1ZhN2tmN1g1SXFwZFoxcnllUVlQSW5FN1hYeE5UMjlDUGh1TEJsejFjQXFPenVOX1phSnpkbjgtdkp6Xw?oc=5",
-          "https://latticeflow.ai"
-        ],
-        "soWhat": "Procurement should ask for evidence packs, not just dashboards.",
-        "relatedIds": [
-          "v-latticeflow-ai"
         ]
       }
     ],
     "criticalAlerts": [
       {
-        "title": "Do not treat EU relief as final",
-        "text": "The Digital Omnibus remains a moving target; if teams pause AI Act readiness on the assumption that deferral is done, they risk missing obligations that continue in force.",
+        "title": "Do not treat EU AI Act relief as finished",
+        "text": "July coverage still treats the Digital Omnibus as conditional. Organisations should keep AI Act readiness live until formal adoption is complete and the remaining obligations are clearly re-baselined.",
         "sources": [
           "https://news.google.com/rss/articles/CBMifEFVX3lxTE52aDQ3S0s4UHVnV2xjX1JnRnhQSkxsTV9MSGc0OXRYcjBrZTB3c2dScmx0ZUtCaTJyYml2RVpmREtUZnlVcE1PMEN4aDBfNDFlV3l1elJ5Z2FjQUowZEU2THItOFdvdklYb3lfVFJyMWR3Qnk2eXFTcmF6bks?oc=5",
           "https://news.google.com/rss/articles/CBMizAFBVV95cUxQZ2w0RXp3cDVRWnk4NS1sYktrbHkyME80TmZEejEzZ2pMbzZXNzFwNnUyTVFIdUo3QmlkTm00S1VoYjJfSk1mYnV5NDdPRE9GcmRuQUxQTmhxblZuYkxBaHVEZlRyczE0RXJJRGtZdFlXSUhSUVZTMnNEWDBHOUpfUzRqd0l0VE9wU3lSVndvNEFRS1NWY1JwdF9QallselFOVmZubk40OTdhZmk4VUpqYmRuQXAzY1BVOThVYXpDWXE2dTM5WVA1bW5vazA?oc=5"
         ],
-        "soWhat": "Keep AI Act controls live until the formal process closes.",
+        "soWhat": "Do not pause AI Act controls on the assumption that the deferral is already final.",
         "relatedIds": [
           "eu-digital-omnibus-ai"
         ]
       },
       {
-        "title": "Prompt-injection testing and autonomous attack tooling are accelerating",
-        "text": "GPT-Red automates prompt-injection testing while Check Point says AI has crossed from assistant to operator, which means red-teaming is becoming more automated at the same time the attack chain itself is becoming more automated.",
+        "title": "Agentic systems now need security boundaries, not just prompts",
+        "text": "The GPT-Red and Check Point signals together show that both defensive testing and offensive workflows are getting more automated, so release gates need telemetry, approvals, and rollback paths.",
         "sources": [
           "https://news.google.com/rss/articles/CBMie0FVX3lxTFBwQlQ5a1lBYTNpaVdnZ1R3QWpuQWpkd1Y1SmRDc283aklKajB3R2ttQUdyMFBKRVp3bUt6T1gyWC0tTkJONjM0ZThVQW5DNHFnRkFiTnpxQzI4VFZ0TmZNY19KcnRNeTVPMlMzQm02SHAxWmJNcW1mQlpzVQ?oc=5",
-          "https://news.google.com/rss/articles/CBMibkFVX3lxTE1XaTFQMzdkSHdhTlRHTkg4X1JtMkpYYThVM0VDU2tyQTBLRFI3M1o0amZhZnYtZlJjTG51OWRXTjd2MExsb0VOcTlwZFNUai1MWFNJa3h5UExqVmtYNFpRTUZfM3FlMkNVa2xDTGhn?oc=5"
+          "https://news.google.com/rss/articles/CBMibkFVX3lxTE1XaTFQMzdkSHdhTlRHTkg4X1JtMkpYYThVM0VDU2tyQTBLRFI3M1o0amZhZnYtZlJjTG51OWRXTjd2MExsb0VOcTlwZFNUai1MWFNJa3h5UExqVmtYNFpRTUZfM3FlMkNVa2xDTGhn?oc=5",
+          "https://news.google.com/rss/articles/CBMigAFBVV95cUxNMEJ4aDE3MWRtYWN0SGpJMlJJQjY2WXdhMlA0OVVZODg4YnI4VHlNOVMtc2h5Ny1DMUd1Y085YTFnVUhQa3ZpUmgxRWQwbTV1Z3VRLVNxakdsWHA1OUdzZThWWDJ4NjI5TkxlOHV0V2RiNFlaLVdhVnlkT25UNDJSZA?oc=5"
         ],
-        "soWhat": "Add telemetry, rollback, and automated prompt-injection tests to every agent rollout.",
-        "relatedIds": []
+        "soWhat": "If a system can take actions, it needs action-level controls and a safe stop path.",
+        "relatedIds": [
+          "agentic-prompt-injection-and-tool-abuse"
+        ]
       }
     ],
     "recommendedActions": {
       "boards": [
-        "Ask for an evidence pack showing how frontier-model audits, continuous monitoring, and rollback will work in practice.",
-        "Require a board-level view of EU AI Act timing risk and agentic-security residual risk before further rollout."
+        "Ask for evidence packs covering AI inventories, agent approvals, and privacy incident files.",
+        "Require a board view of EU AI Act timing risk and any Illinois-style frontier-audit exposure."
       ],
       "executives": [
-        "Assign clear owners for frontier-model compliance, AI security telemetry, and procurement evidence.",
-        "Treat AI governance platforms as control systems that must be validated, not as dashboards that can be trusted by default."
+        "Assign clear owners for AI disclosure, agent security, and privacy evidence.",
+        "Use current policy commentary as a trigger to harden controls, not as a substitute for formal law."
       ],
       "riskCompliance": [
-        "Refresh AI risk registers with frontier-audit, continuous-monitoring, and EU timeline-relief scenarios.",
-        "Map one control pack across AI, privacy, cyber, and procurement reviews so evidence is reusable."
+        "Refresh AI risk registers with agent-security and evidence-retention scenarios.",
+        "Map one reusable control pack across AI, privacy, cyber, and procurement reviews."
       ],
       "securityTeams": [
-        "Add prompt-injection and agent-action tests to CI, pre-merge review, and release gates.",
-        "Keep rollback paths, telemetry, and alerting ready for adaptive AI systems."
+        "Add prompt-injection, tool-use, and destructive-action tests to CI and release gates.",
+        "Keep telemetry, alerting, and rollback paths ready for adaptive AI systems."
       ],
       "productEngineering": [
-        "Make AI features, model states, and agent actions explicit in the UI and logs.",
-        "Design safe defaults and machine-readable actions for any web-facing or tool-using agent workflow."
+        "Make AI features and agent actions explicit in the UI and logs.",
+        "Design safe defaults for any web-facing or tool-using workflow."
       ],
       "procurement": [
         "Ask vendors for concrete audit evidence, customer references, and logging/rollback commitments.",
-        "Compare governance platforms on technical proof, not on marketecture or vague safety language."
+        "Prefer platforms that can show live control execution rather than just dashboards."
       ],
       "policymakers": [
-        "Use audit-ready and continuously monitored controls rather than abstract guardrail language.",
-        "Keep AI regulation aligned with implementation realities so organisations can evidence compliance once."
+        "Anchor AI policy in evidence, disclosure, and reviewable controls.",
+        "Keep implementation timelines realistic so organisations can evidence compliance once."
       ],
       "investors": [
-        "Look for portfolio companies that can evidence frontier-model readiness, AI telemetry, and governance controls.",
-        "Prefer vendors that show operational proof and customer traction, not only product claims."
+        "Look for portfolio companies that can evidence frontier-readiness, AI telemetry, and governance controls.",
+        "Prefer vendors with operational proof and customer traction, not just product claims."
       ]
     },
     "openQuestions": [
-      "How quickly will frontier-model audit requirements spread beyond Illinois?",
-      "Will EU simplification fully land before the original compliance timetable bites?",
-      "Which governance vendors can prove measurable outcome improvements in live production?"
+      "Will Australia turn the current commentary shift into formal guidance or law?",
+      "How quickly will EU simplification fully land in law and practice?",
+      "Which governance vendors can prove measurable control outcomes in live production?"
     ]
   },
   "trustDashboard": {
     "overallSignal": "Elevated and more operationalised",
-    "riskPosture": "Policy is shifting from principles to audits, continuous monitoring, and agent-specific security controls, while vendor tooling is increasingly pitched as executable governance rather than static documentation.",
+    "riskPosture": "AI governance is moving from principles to evidence packs, agent controls, and continuous monitoring, with Australia's policy conversation now leaning toward practical implementation.",
     "emergingRisks": [
-      "Frontier AI audits are becoming state-level statutory requirements",
-      "Prompt-injection and autonomous attack tooling are professionalising",
-      "AI governance vendors are promising executable controls that buyers still need to verify"
+      "Frontier AI audits are becoming statutory in some US states",
+      "Prompt-injection and autonomous attack tooling continue to mature",
+      "Australian AI policy discussion is shifting toward operational controls and evidence"
     ],
     "improvingAreas": [
-      "NIST and industry research are converging on lifecycle monitoring rather than one-time approvals",
-      "State-level laws are making frontier assurance more concrete",
-      "Governance platforms are moving toward live evidence and technical testing"
+      "NIST-style continuous monitoring is becoming a common security baseline",
+      "EU and US developments are making assurance more concrete",
+      "Governance vendors are moving toward live evidence and technical testing"
     ],
     "uncertainAreas": [
-      "How much continuous monitoring will be automated without drowning teams in false positives",
-      "Whether EU AI Act simplification fully lands on the current timetable",
+      "How much agent monitoring can be automated without overwhelming teams",
+      "Whether EU simplification fully lands before the original timetable bites",
       "Which vendor platforms can prove better outcomes rather than just better dashboards"
     ],
-    "australiaSignal": "Stable but tightening; no fresh AU AI-specific release surfaced this run, but the APRA/DTA/OAIC convergence remains the practical benchmark",
-    "globalSignal": "High and operationalising, with audits and continuous monitoring outrunning policy novelty"
+    "australiaSignal": "Stable but tightening; formal regulator output was quiet, but commentary and enforcement signals now point toward disclosure, review gates, and evidence packs.",
+    "globalSignal": "High and operationalising, with audits, continuous monitoring, and agent-security automation outrunning policy novelty"
   },
   "risks": [
     {
@@ -2304,7 +2311,7 @@
     },
     {
       "name": "Agentic prompt injection and tool abuse",
-      "description": "AI systems that can browse, execute, or call tools can be steered by malicious prompts or poisoned context into unsafe actions or data exposure. The latest evidence now includes autonomous coding agents that accumulate security debt in pull requests and code-generation tests that reveal cross-cutting vulnerability clusters.",
+      "description": "AI systems that can browse, execute, or call tools can be steered by malicious prompts or poisoned context into unsafe actions or data exposure. The latest evidence now includes autonomous coding agents that accumulate security debt in pull requests, code-generation tests that reveal cross-cutting vulnerability clusters, and Australian reporting that frames rogue-agent prevention as a practical control problem.",
       "category": "Security",
       "likelihood": "High",
       "impact": "High",
@@ -2326,13 +2333,14 @@
       "examples": [
         "OpenAI prompt-injection defence release",
         "AIDev study of autonomous coding-agent pull requests",
-        "Metamorphic testing of LLM-generated code vulnerabilities"
+        "Metamorphic testing of LLM-generated code vulnerabilities",
+        "Australian reporting on preventing AI agents from going rogue"
       ],
       "trend": "increasing",
       "confidence": "High",
       "sources": [
         "https://openai.com/index/designing-agents-to-resist-prompt-injection/",
-        "https://news.google.com/rss/articles/CBMi1AFBVV95cUxPOEc3Ul94a1JmZWdWV01ONWlMS0c4MUJvdWJjSUhYVWhjZVBTM2htVFZfcS1oczZGS1RIMnJLYXNWM2NWYU1fMlVDMDM2aHVJQXdNWG5RZ2tTSkNxYU1LNXpwZk9qeUNYdTlOc2MxUFBDN2F6cThIUFNJRmNPRmVzQ21FQUFnZGVXYVQ3OHRId19zWFdEYnJXUTJIeHpEU0Fac0VzZjlBenVMTjJxOHlJLVVHSnlTcHpLdlk2X1dFOGFWTUxvN3lJc1prdEN3ZHRIVjNYNg?oc=5",
+        "https://news.google.com/rss/articles/CBMigAFBVV95cUxNMEJ4aDE3MWRtYWN0SGpJMlJJQjY2WXdhMlA0OVVZODg4YnI4VHlNOVMtc2h5Ny1DMUd1Y085YTFnVUhQa3ZpUmgxRWQwbTV1Z3VRLVNxakdsWHA1OUdzZThWWDJ4NjI5TkxlOHV0V2RiNFlaLVdhVnlkT25UNDJSZA?oc=5",
         "https://arxiv.org/abs/2607.12428",
         "https://arxiv.org/abs/2607.12089"
       ],
@@ -2350,7 +2358,7 @@
       "relatedIncidentIds": [],
       "statusFlag": "updated",
       "firstSeen": "2026-07-13",
-      "lastUpdated": "2026-07-16"
+      "lastUpdated": "2026-07-19"
     },
     {
       "name": "AI-enabled cyber abuse scaling",
@@ -2411,21 +2419,24 @@
       "examples": [
         "OpenAI GPT-5 safe completions",
         "OpenAI ChatGPT Enterprise spend controls",
-        "Anthropic policy proposals"
+        "Anthropic policy proposals",
+        "LatticeFlow executable AI governance pitch"
       ],
       "trend": "increasing",
       "confidence": "Medium",
       "sources": [
         "https://openai.com/index/gpt-5-safe-completions/",
         "https://openai.com/index/chatgpt-enterprise-spend-controls/",
-        "https://www.anthropic.com/policy-on-the-ai-exponential"
+        "https://www.anthropic.com/policy-on-the-ai-exponential",
+        "https://latticeflow.ai"
       ],
       "id": "vendor-control-claims-outrunning-evidence",
       "likelihoodLevel": "High",
       "impactLevel": "High",
       "direction": "increasing",
       "theme": "Other",
-      "status": "unchanged"
+      "status": "unchanged",
+      "lastUpdated": "2026-07-19"
     },
     {
       "name": "Agentic collaboration and tool access",
@@ -8557,7 +8568,7 @@
     }
   ],
   "securityWatch": {
-    "summary": "Security teams should treat prompt-injection testing and continuous monitoring as one control plane: AI systems need ongoing telemetry, while red-team automation is speeding up attack discovery.",
+    "summary": "Security teams should treat prompt-injection testing, continuous monitoring, and agent-action controls as one control plane: AI systems need telemetry, while red-team automation is speeding up attack discovery.",
     "items": [
       {
         "title": "NIST argues AI security needs continuous monitoring",
@@ -8573,6 +8584,13 @@
           "https://news.google.com/rss/articles/CBMie0FVX3lxTFBwQlQ5a1lBYTNpaVdnZ1R3QWpuQWpkd1Y1SmRDc283aklKajB3R2ttQUdyMFBKRVp3bUt6T1gyWC0tTkJONjM0ZThVQW5DNHFnRkFiTnpxQzI4VFZ0TmZNY19KcnRNeTVPMlMzQm02SHAxWmJNcW1mQlpzVQ?oc=5",
           "https://news.google.com/rss/articles/CBMibkFVX3lxTE1XaTFQMzdkSHdhTlRHTkg4X1JtMkpYYThVM0VDU2tyQTBLRFI3M1o0amZhZnYtZlJjTG51OWRXTjd2MExsb0VOcTlwZFNUai1MWFNJa3h5UExqVmtYNFpRTUZfM3FlMkNVa2xDTGhn?oc=5"
         ]
+      },
+      {
+        "title": "Australian coverage is framing rogue agents as a control problem",
+        "text": "IT Brief Australia asks how to prevent AI agents from going rogue, which is a useful shorthand for bounded tools, approval gates, telemetry, and recovery paths.",
+        "sources": [
+          "https://news.google.com/rss/articles/CBMigAFBVV95cUxNMEJ4aDE3MWRtYWN0SGpJMlJJQjY2WXdhMlA0OVVZODg4YnI4VHlNOVMtc2h5Ny1DMUd1Y085YTFnVUhQa3ZpUmgxRWQwbTV1Z3VRLVNxakdsWHA1OUdzZThWWDJ4NjI5TkxlOHV0V2RiNFlaLVdhVnlkT25UNDJSZA?oc=5"
+        ]
       }
     ],
     "advisories": [
@@ -8582,6 +8600,13 @@
         "sources": [
           "https://www.nist.gov/news-events/news/2026/06/nist-mathematical-proof-supports-transition-continuous-monitor-and-update",
           "https://news.google.com/rss/articles/CBMie0FVX3lxTFBwQlQ5a1lBYTNpaVdnZ1R3QWpuQWpkd1Y1SmRDc283aklKajB3R2ttQUdyMFBKRVp3bUt6T1gyWC0tTkJONjM0ZThVQW5DNHFnRkFiTnpxQzI4VFZ0TmZNY19KcnRNeTVPMlMzQm02SHAxWmJNcW1mQlpzVQ?oc=5"
+        ]
+      },
+      {
+        "title": "Add action-level approvals for agents",
+        "text": "Any tool-using agent should have explicit approval gates for destructive or external side effects, plus logs and rollback paths.",
+        "sources": [
+          "https://news.google.com/rss/articles/CBMigAFBVV95cUxNMEJ4aDE3MWRtYWN0SGpJMlJJQjY2WXdhMlA0OVVZODg4YnI4VHlNOVMtc2h5Ny1DMUd1Y085YTFnVUhQa3ZpUmgxRWQwbTV1Z3VRLVNxakdsWHA1OUdzZThWWDJ4NjI5TkxlOHV0V2RiNFlaLVdhVnlkT25UNDJSZA?oc=5"
         ]
       }
     ]
@@ -8608,11 +8633,11 @@
     ]
   },
   "australiaFocus": {
-    "summary": "Australia had no fresh AI-specific regulator release in this sweep, but the existing APRA/DTA/OAIC pattern remains the benchmark: named owners, transparency statements, review gates, and cyber controls.",
+    "summary": "Australia had no fresh APRA, ASIC, OAIC, or DTA AI-specific release in this sweep, but commentary and privacy-enforcement signals point toward disclosure, review gates, and evidence packs.",
     "regulatory": [
       "No fresh APRA, ASIC, OAIC or DTA AI-specific release surfaced in this run; the prior convergence still stands.",
-      "The DTA AI Review Committee remains the clearest public-sector pattern for review gating and incident escalation.",
-      "APRA and ASIC transparency statements remain useful accountability references for Australian regulated entities and suppliers."
+      "SBS and IAPP coverage suggest Australia is changing course on AI, with the debate moving toward implementation details and evidence.",
+      "The DTA AI Review Committee remains the clearest public-sector pattern for review gating and incident escalation."
     ],
     "publicSector": [
       "Keep AI inventories, transparency statements, and incident review paths current.",
@@ -8622,12 +8647,12 @@
     "enterprise": [
       "If your product is AU-facing, treat AI disclosure, moderation, and age gating as testable controls.",
       "For agentic workflows, add security gates, telemetry, and rollback paths.",
-      "Vendor due diligence should demand logged evaluations and audit trails."
+      "Procurement teams should demand audit evidence and customer references, not just dashboards."
     ],
     "legalCompliance": [
       "Map AI disclosure and age-gating controls to online-safety, privacy, and consumer-protection obligations.",
       "Keep dated evidence for model review, escalation, moderation, and rollback.",
-      "Treat AI agent side effects as governance and security obligations, not mere UX issues."
+      "The Qantas/OAIC coverage is a reminder that regulator outcomes still hinge on what the evidence file can prove."
     ],
     "standards": [
       "NIST-style continuous monitoring for adaptive systems",
@@ -8647,16 +8672,16 @@
   },
   "globalWatch": {
     "us": {
-      "summary": "The US signal moved from guidance to statutory frontier-model audits and lifecycle security: Illinois passed an audit-focused frontier AI law, while NIST argued static guardrails are inadequate.",
+      "summary": "The US signal remains audit- and security-centric: Illinois has statutory frontier-model audits while NIST continues to push continuous monitoring.",
       "developments": [
         "Illinois has pushed frontier-model audits into statute, according to secondary coverage.",
-        "NIST now frames AI security as a continuous-monitoring problem rather than a one-time approval problem."
+        "NIST frames AI security as a continuous-monitoring problem rather than a one-time approval problem."
       ]
     },
     "eu": {
       "summary": "EU AI Act simplification remains in motion, but the safe assumption is still conditional relief until formal adoption is complete.",
       "developments": [
-        "July coverage points to simplification and new AI Office powers, but not to a clean finished process.",
+        "July coverage points to simplification and new AI Office powers, but not to a finished process.",
         "Organisations should keep their existing AI Act control packs live until the legislative path is unambiguous."
       ]
     },
@@ -15864,9 +15889,95 @@
       "evidenceGrade": "C",
       "reviewDepth": "Skimmed via RSS",
       "summary": "Business Wire coverage says LatticeFlow has launched a platform aimed at controlling AI risk in the agentic world."
+    },
+    {
+      "id": "src-australia-ai-course-change-sbs",
+      "title": "Australia is changing course on AI — but key questions remain",
+      "author": "SBS",
+      "date": "2026-07-18",
+      "link": "https://news.google.com/rss/articles/CBMilgFBVV95cUxOSng4bzc3RjFaVHdYYjFnQUtObDRFYUxXNWlvdkFVc2Z4S01BRjQ0Mkc1U0k2YkJETHltSHdpcGFETkVoZnNyS0hGT0QwczhaLURfbjIxWjUyby1CYVItZlJWaDdCaTFLMmJjNlRTcGVaRGFyaWR3MmV1TkV3c3dyRXJ2cEQzR3dIWldnTlhyR0FTUlZvaEE?oc=5",
+      "sourceType": "News article",
+      "geography": "Australia",
+      "domain": "AI Governance",
+      "priority": "High",
+      "confidence": "Medium",
+      "evidenceGrade": "B",
+      "reviewDepth": "Skimmed",
+      "summary": "SBS says Australia is changing course on AI, but key implementation questions remain around scope, oversight, and how the policy shift will be operationalised.",
+      "practicalImplications": "Australian enterprises should prepare for more implementation-focused AI governance even before any new law lands.",
+      "auRelevance": "High",
+      "globalRelevance": "Medium",
+      "limitations": "Google News RSS wrapper used in this cycle; canonical publisher page was not directly fetched."
+    },
+    {
+      "id": "src-australia-agent-governance-itbrief",
+      "title": "How to prevent your AI agents from going rogue",
+      "author": "IT Brief Australia",
+      "date": "2026-07-17",
+      "link": "https://news.google.com/rss/articles/CBMigAFBVV95cUxNMEJ4aDE3MWRtYWN0SGpJMlJJQjY2WXdhMlA0OVVZODg4YnI4VHlNOVMtc2h5Ny1DMUd1Y085YTFnVUhQa3ZpUmgxRWQwbTV1Z3VRLVNxakdsWHA1OUdzZThWWDJ4NjI5TkxlOHV0V2RiNFlaLVdhVnlkT25UNDJSZA?oc=5",
+      "sourceType": "News article",
+      "geography": "Australia",
+      "domain": "AI Security",
+      "priority": "Medium",
+      "confidence": "Medium",
+      "evidenceGrade": "B",
+      "reviewDepth": "Skimmed",
+      "summary": "Australian IT coverage frames rogue-agent prevention as a practical governance and security problem, not just a theoretical risk.",
+      "practicalImplications": "Teams deploying tool-using agents should add bounded tools, approval gates, telemetry, and recovery paths.",
+      "auRelevance": "High",
+      "globalRelevance": "Medium",
+      "limitations": "Google News RSS wrapper used in this cycle; canonical publisher page was not directly fetched."
+    },
+    {
+      "id": "src-qantas-oaic-breach-mi3",
+      "title": "Qantas cleared of privacy law breach in 2025 data incident",
+      "author": "Mi-3.com.au",
+      "date": "2026-07-16",
+      "link": "https://news.google.com/rss/articles/CBMikAFBVV95cUxPRzdRbWd2Q213M2JtZm9RV3pDSlJKbndBVVdmaUdxTlMtenZ3QTlpVGdkTnY4dkdsbVlfeThCYnZrdkRNTW1DY0duSXFKMm1kU2VsNDlaUnpNVVc1WVRQbGhlODB6ZlNyblExQ1dFU28xZkV1Y2R6ZWlTS3RrNTVwWl9ReVFDTnZfeHU1czFoRE8?oc=5",
+      "sourceType": "News article",
+      "geography": "Australia",
+      "domain": "AI Governance / Privacy",
+      "priority": "Medium",
+      "confidence": "Medium",
+      "evidenceGrade": "B",
+      "reviewDepth": "Skimmed",
+      "summary": "Mi-3 reports that OAIC cleared Qantas in its 2025 data-incident inquiry, reinforcing how much privacy outcomes still depend on the evidence file.",
+      "practicalImplications": "Incident and privacy teams should keep decision logs, timelines, and remediation evidence audit-ready.",
+      "auRelevance": "High",
+      "globalRelevance": "Medium",
+      "limitations": "Google News RSS wrapper used in this cycle; canonical publisher page was not directly fetched."
+    },
+    {
+      "id": "src-iapp-asia-pacific-coordinated-oversight-australia",
+      "title": "Notes from the Asia-Pacific region: AI deployment, privacy protections and coordinated oversight converge in Australia",
+      "author": "IAPP",
+      "date": "2026-07-16",
+      "link": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxNS2hJdGUwblRBT3V3Vml0eGlpcWFUajRUbDlRTFlhUXc2dFlKTkMtZjhHQ1dyYnRHR1ZMSkl5QWN3QThManBram1WOHk1LURMZ01mZnpvYmdxbm4zQ21tbUYwSzRXR1RBMDhBeHY3YlhqOHRqREI3MGpwWkxUSGdVRDh1SEhSMUlhWm9BWmhMbzE2X01CWUhURUJaMXA5YmF5N1BxZ2U0LTd6T3NETjZ2MHhWWlhXdTl0OGlfWGhyOWM1ZUFIZEtNWjNtVUw1YjdYdnZONmVnTQ?oc=5",
+      "sourceType": "Analysis",
+      "geography": "Australia / Asia-Pacific",
+      "domain": "AI Governance / Privacy",
+      "priority": "Medium",
+      "confidence": "Medium",
+      "evidenceGrade": "B",
+      "reviewDepth": "Skimmed",
+      "summary": "IAPP says AI deployment, privacy protections, and coordinated oversight are converging in Australia, which aligns with the wider evidence-pack and disclosure trend.",
+      "practicalImplications": "Enterprises should expect privacy and AI governance to keep converging around disclosure, review, and evidence.",
+      "auRelevance": "High",
+      "globalRelevance": "Medium",
+      "limitations": "Google News RSS wrapper used in this cycle; canonical publisher page was not directly fetched."
     }
   ],
   "researchNotes": [
+    {
+      "date": "2026-07-19",
+      "title": "Agent security and automated red-teaming",
+      "content": "Sources reviewed: https://news.google.com/rss/articles/CBMie0FVX3lxTFBwQlQ5a1lBYTNpaVdnZ1R3QWpuQWpkd1Y1SmRDc283aklKajB3R2ttQUdyMFBKRVp3bUt6T1gyWC0tTkJONjM0ZThVQW5DNHFnRkFiTnpxQzI4VFZ0TmZNY19KcnRNeTVPMlMzQm02SHAxWmJNcW1mQlpzVQ?oc=5 ; https://news.google.com/rss/articles/CBMibkFVX3lxTE1XaTFQMzdkSHdhTlRHTkg4X1JtMkpYYThVM0VDU2tyQTBLRFI3M1o0amZhZnYtZlJjTG51OWRXTjd2MExsb0VOcTlwZFNUai1MWFNJa3h5UExqVmtYNFpRTUZfM3FlMkNVa2xDTGhn?oc=5 ; https://news.google.com/rss/articles/CBMigAFBVV95cUxNMEJ4aDE3MWRtYWN0SGpJMlJJQjY2WXdhMlA0OVVZODg4YnI4VHlNOVMtc2h5Ny1DMUd1Y085YTFnVUhQa3ZpUmgxRWQwbTV1Z3VRLVNxakdsWHA1OUdzZThWWDJ4NjI5TkxlOHV0V2RiNFlaLVdhVnlkT25UNDJSZA?oc=5. GPT-Red, Check Point, and Australian IT coverage all point to the same control lesson: tool-using agents need bounded permissions, approval gates, telemetry, and rollback paths before they are allowed to act."
+    },
+    {
+      "date": "2026-07-19",
+      "title": "Australia policy shift and Qantas privacy evidence",
+      "content": "Sources reviewed: https://news.google.com/rss/articles/CBMilgFBVV95cUxOSng4bzc3RjFaVHdYYjFnQUtObDRFYUxXNWlvdkFVc2Z4S01BRjQ0Mkc1U0k2YkJETHltSHdpcGFETkVoZnNyS0hGT0QwczhaLURfbjIxWjUyby1CYVItZlJWaDdCaTFLMmJjNlRTcGVaRGFyaWR3MmV1TkV3c3dyRXJ2cEQzR3dIWldnTlhyR0FTUlZvaEE?oc=5 ; https://news.google.com/rss/articles/CBMikAFBVV95cUxPRzdRbWd2Q213M2JtZm9RV3pDSlJKbndBVVdmaUdxTlMtenZ3QTlpVGdkTnY4dkdsbVlfeThCYnZrdkRNTW1DY0duSXFKMm1kU2VsNDlaUnpNVVc1WVRQbGhlODB6ZlNyblExQ1dFU28xZkV1Y2R6ZWlTS3RrNTVwWl9ReVFDTnZfeHU1czFoRE8?oc=5 ; https://news.google.com/rss/articles/CBMi1wFBVV95cUxNS2hJdGUwblRBT3V3Vml0eGlpcWFUajRUbDlRTFlhUXc2dFlKTkMtZjhHQ1dyYnRHR1ZMSkl5QWN3QThManBram1WOHk1LURMZ01mZnpvYmdxbm4zQ21tbUYwSzRXR1RBMDhBeHY3YlhqOHRqREI3MGpwWkxUSGdVRDh1SEhSMUlhWm9BWmhMbzE2X01CWUhURUJaMXA5YmF5N1BxZ2U0LTd6T3NETjZ2MHhWWlhXdTl0OGlfWGhyOWM1ZUFIZEtNWjNtVUw1YjdYdnZONmVnTQ?oc=5. Australia appears to be shifting from abstract principles to practical AI controls; Qantas/OAIC coverage shows privacy outcomes still hinge on incident evidence. Board takeaway: keep AI inventories, disclosure drafts, and incident files evidence-ready."
+    },
     {
       "date": "2026-07-18",
       "title": "LatticeFlow AI governance platform",
@@ -16375,6 +16486,11 @@
   ],
   "changelog": [
     {
+      "date": "2026-07-19",
+      "title": "AU policy shift and agent-security refresh",
+      "details": "Touched ids: src-australia-ai-course-change-sbs, src-australia-agent-governance-itbrief, src-qantas-oaic-breach-mi3, src-iapp-asia-pacific-coordinated-oversight-australia, agentic-prompt-injection-and-tool-abuse, vendor-control-claims-outrunning-evidence. Added 4 new sources (all B-grade; 3 AU-relevant), refreshed 2 risks, and kept EU/US watch items current. Source mix this run: 4 new sources, 0 vendor-grade C, no fresh AU regulator notice surfaced; known gap: no new APRA/ASIC/OAIC/DTA AI-specific release."
+    },
+    {
       "date": "2026-07-18",
       "title": "Frontier audits, continuous monitoring, and executable AI governance",
       "details": "Added Illinois frontier-model audit coverage, NIST continuous-monitoring security framing, prompt-injection automation signals from OpenAI and Check Point, an EU AI Act simplification update, and LatticeFlow's executable governance platform; refreshed executive brief, trust dashboard, security/assurance watch, Australia focus, global watch, vendor map, regulation tracker, and source ledger."
@@ -16685,6 +16801,18 @@
       },
       "newItems": 5,
       "updatedItems": 3
+    },
+    {
+      "date": "2026-07-19",
+      "riskPosture": "Moderately elevated",
+      "counts": {
+        "risks": 103,
+        "regulations": 28,
+        "incidents": 36,
+        "sources": 227
+      },
+      "newItems": 4,
+      "updatedItems": 2
     }
   ],
   "schemaVersion": 2
