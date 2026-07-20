@@ -1,196 +1,180 @@
 {
-  "lastUpdated": "2026-07-20 05:19 AEDT",
+  "lastUpdated": "2026-07-21 05:16 AEDT",
   "projectName": "AI Trust Intelligence",
   "projectDescription": "Living intelligence on AI trust, assurance, risk management, governance, regulation, safety, security, and the vendor ecosystem.",
   "executiveBrief": {
-    "date": "2026-07-20",
-    "oneLiner": "Australia's public-sector AI controls are tightening while agent-security and frontier-audit expectations keep hardening across the US and EU.",
+    "date": "2026-07-21",
+    "oneLiner": "AI governance is shifting toward measurable controls: GitHub is surfacing code-quality signals, while agent security, Gemini prompt injection, and EU transparency deadlines keep the risk surface hot.",
     "topDevelopments": [
       {
-        "title": "Australia is moving from AI principles to operational rules",
-        "text": "Reuters and ABC reporting says Canberra is preparing a government AI office while departments tighten AI use in decision-making, which aligns with the DTA policy baseline and the wider APRA/ASIC/OAIC convergence.",
-        "priority": "High",
-        "confidence": "Medium",
-        "australiaRelevance": "High",
-        "recommendedAction": "Treat the government AI-policy stack as operational now: keep inventories, approval paths, disclosure drafts, and escalation logs current.",
-        "sources": [
-          "https://news.google.com/rss/articles/CBMisAFBVV95cUxOZmk2ZUVGNUhZNFA5VDhlLTB4cmVIZ093NHVXd21aYURnaUIzZ0ZxbzVSNXhMYWE1UGN0NW03OVZSUXlna05OOGhCV0VXa0tQODg5Z0dMbUllWl9iM0hCOXhMLWtuczZVVHRycTBFbnhaQXl3aDAybTFYckYtazVSUEN6Njl0ZmtNa19VWElPNy04MkxkMFFiNm16SUFXNnFuV2VVV0dadlMxQ0lrdUZINQ?oc=5",
-          "https://news.google.com/rss/articles/CBMiogFBVV95cUxQcEtsTXBHaVFHal96c1g1TUJrbjdRbS1iZTdkTWU5OTh5MndKM3BVUndmSXNwRFVGX0c3eGsyNXNudVBOV1JsVlNGVG9xRm9wWnFtT1Vkcm1oWXdZVjViTy12dVpaR1dtVWNUU3czZndsOWIzZmt3RzluOVJpSzB0dUQ4bE1iYWpyZ1dnaEFERFhNUDZMNnMzdXpCbGEyTzdYVGc?oc=5",
-          "https://www.dta.gov.au/ai-transparency-statement"
-        ],
-        "soWhat": "Public-sector teams should prepare evidence-ready inventories and decision logs before any new formal rule lands.",
-        "relatedIds": [
-          "au-gov-ai-policy"
-        ]
-      },
-      {
-        "title": "eSafety's sexual-extortion report shows platform blind spots persist",
-        "text": "eSafety says major platforms still have significant gaps in tackling sexual extortion, reinforcing that transparency reporting does not by itself solve child-safety control gaps.",
-        "priority": "High",
-        "confidence": "High",
-        "australiaRelevance": "High",
-        "recommendedAction": "Trust-and-safety teams should test abuse reporting, age gating, and escalation paths as evidence-bearing controls.",
-        "sources": [
-          "https://esafety.gov.au/newsroom/media-releases/esafety-report-reveals-big-tech-blind-spots-in-protecting-children-and-young-adults-from-sexual-extortion"
-        ],
-        "soWhat": "Consumer AI and platform teams need age assurance, abuse reporting, and human escalation as core controls, not roadmap items.",
-        "relatedIds": [
-          "au-esafety-ai-companions"
-        ]
-      },
-      {
-        "title": "GitHub is baking AI prompt-injection detection into CodeQL",
-        "text": "CodeQL 2.26.0 adds AI prompt-injection detection, showing that static analysis and secure-code workflows are starting to absorb agent-era abuse patterns.",
+        "title": "GitHub Code Quality is turning AI-era coding into a governance and assurance problem",
+        "text": "GitHub Code Quality is now generally available, and secondary coverage says the release brings new costs and capabilities for teams using AI-accelerated development. That makes code-quality visibility part of the control stack, not just a developer nicety.",
         "priority": "High",
         "confidence": "High",
         "australiaRelevance": "Medium",
-        "recommendedAction": "Add prompt-injection regressions and tool-use checks to CI and release gates.",
+        "recommendedAction": "Track code-quality metrics and AI-assisted change rates before expanding copilots or auto-merge flows.",
         "sources": [
+          "https://github.blog/changelog/2026-07-20-github-code-quality-is-now-generally-available",
+          "https://news.google.com/rss/articles/CBMiqAFBVV95cUxOZUVzdXhBRnBFVm5sRHZGLXNhNlRaRXVKYmxuWW1yelF2STZEdXQwaWQ1UGxUczVNY2pjUFcxazMydG50MUtMY1h5U1dhRklQckxFVG5wRmZhUXZ6SXBuNW85ODM1WUFoaUdrT211RzNsSkdQOHUwdmpGWU5QaXB2Sm9VOHNaMGhNNDZydzV1dmVhem9LMFdrRlhoY25EZXZkMDItbUh4OXM?oc=5"
+        ],
+        "soWhat": "Engineering teams should treat code-quality telemetry as a governance control before AI-generated code volume grows further.",
+        "relatedIds": []
+      },
+      {
+        "title": "MCP secret sprawl is becoming a practical release blocker for agentic systems",
+        "text": "A 20 July security article frames MCP security as a secrets-management problem, which lines up with the wider prompt-injection and tool-abuse pattern already visible in CodeQL and incident reporting.",
+        "priority": "High",
+        "confidence": "High",
+        "australiaRelevance": "Medium",
+        "recommendedAction": "Treat shared credentials, tool scopes, and action approvals as release gates for any tool-using agent.",
+        "sources": [
+          "https://news.google.com/rss/articles/CBMivwFBVV95cUxOS01hMFI0WXJKallaV01lWWtjN2JfbTlPNmJJNFY0bll3aW9iTDlDZzlCRXN5LUphajdxVzhFT0owUFJwQUROa2tRdWZSY3I5RzBtNGFMWmxET25jeG0yMlhSZ0JkSmJyV3JJXzVWZEVRNzRSNjI3clltUWpIQmlRekRuc2x5OEI5SzVwbXVXY0dtUjk3QjdNaURuUE5iSEk2TS1qNTBaVEhOc0JhZFNWcnBlOTdRZ0JpY2ozT3ZIOA?oc=5",
           "https://github.blog/changelog/2026-07-10-codeql-2-26-0-adds-kotlin-2-4-0-support-and-ai-prompt-injection-detection"
         ],
-        "soWhat": "If an agent can act, it needs action-level approvals, credential scoping, and prompt-injection regression tests.",
+        "soWhat": "If an agent can act, it needs scoped identities, logged tool calls, and approval gates before production use.",
         "relatedIds": [
-          "agentic-prompt-injection-and-tool-abuse"
+          "agent-tool-parameter-injection-leading-to-code-execution"
         ]
       },
       {
-        "title": "Enterprise AI agent incidents are already common",
-        "text": "VentureBeat reports 54% of enterprises have already had an AI agent incident and most still let agents share credentials, which keeps identity scoping and blast-radius controls urgent.",
+        "title": "Gemini prompt-injection demos show consumer-model abuse is still live",
+        "text": "Digital Watch reports on research demonstrating prompt injection against Gemini, reinforcing that the issue is not limited to code assistants or internal tools.",
         "priority": "High",
         "confidence": "Medium",
         "australiaRelevance": "Medium",
-        "recommendedAction": "Scope agent credentials, add action-level approvals, and monitor for shared secrets before broader rollout.",
+        "recommendedAction": "Test consumer assistants for instruction-hijacking, data exfiltration, and unsafe tool execution before broad rollout.",
         "sources": [
-          "https://news.google.com/rss/articles/CBMi4wFBVV95cUxPOUtHdXBVdy12QmhUMzVUdEt0SHdwX2ZCbWhPY0JFTjEzUnZ4Rm5XX1FmdHNNMmNxY1ZOeF9rQWlIWWlNZlZNYURzdFFFZFhVb3ZfMTVJS001a00tR0VFRWNxakdWNUR5MzNnSVh0ZVFrY0QtcWV6NDZsVklGLUFQa0hjQXBhNjFBOTZtc1pZSUdVakZzZHZsOVA2YTVWWm0taXdZaEQyNXZHUmFNX1Q1NHNtYWlZRWNGMUM3em9lcmlXU0RWUjRySFJrUWYzanVGS01nWlVtU3J2ZllPeFVuSGRsQQ?oc=5"
+          "https://news.google.com/rss/articles/CBMijAFBVV95cUxPYkV6bmw3bENNUjZlSGwzcmFfVDJVM1A5ajhqWFY2MFZkME0wYzZnelJvZUd3XzhXbld0NDYzSVVoZERlcTRwT3Vya1RIQVBJT3ZKM1llcWFnVURVYmstajhjNV9VVXJ0VXdsbS1iNUhhdWlSUTdaN1ZsY2xqUTJWdF9sQ3NuMkpWUm1KMw?oc=5"
         ],
-        "soWhat": "Agent identity and credential sharing should be release blockers, not optional hardening.",
+        "soWhat": "Consumer AI teams should assume prompt injection is a product-safety issue, not a niche security bug.",
         "relatedIds": [
-          "agentic-prompt-injection-and-tool-abuse"
+          "agent-tool-parameter-injection-leading-to-code-execution"
         ]
       },
       {
-        "title": "EU and Illinois continue to normalize audit-style AI governance",
-        "text": "The EU AI Act simplification story remains conditional, while Illinois has already moved frontier-model audits into statute; together they show the compliance model is converging on evidence packs and timelines.",
+        "title": "Australia still looks governance-light relative to adoption pressure",
+        "text": "Recent Australian coverage says adoption is outrunning governance, and a separate AI report-card article says confidence is improving faster than data and governance maturity.",
         "priority": "High",
         "confidence": "Medium",
-        "australiaRelevance": "Medium",
-        "recommendedAction": "Keep EU AI Act controls live and build frontier audit evidence now if you sell into US states or the EU.",
+        "australiaRelevance": "High",
+        "recommendedAction": "Keep inventories, decision logs, and evidence packs current before the next wave of board or regulator scrutiny.",
         "sources": [
-          "https://news.google.com/rss/articles/CBMifEFVX3lxTE52aDQ3S0s4UHVnV2xjX1JnRnhQSkxsTV9MSGc0OXRYcjBrZTB3c2dScmx0ZUtCaTJyYml2RVpmREtUZnlVcE1PMEN4aDBfNDFlV3l1elJ5Z2FjQUowZEU2THItOFdvdklYb3lfVFJyMWR3Qnk2eXFTcmF6bks?oc=5",
-          "https://news.google.com/rss/articles/CBMieEFVX3lxTE1PTUI5WEpENWNRV1c0NHpiMWdjQ3JfdTRqU1ZqRGRvSnZTZ25QYTl2OG5DdTBsc0wwZklMN3BlSjBPRTFaVDh6cVB5Z1pMOUpqWWlTU0FKTjk2MmpvemplS0hXYjViTC1HRFFkT1JTZi1tRS0yZ25qRQ?oc=5"
+          "https://news.google.com/rss/articles/CBMijAFBVV95cUxQdG5qMjROSS1od2o5NjBBRHlTSWp0RlFWcC16N3FJdnhlSTBKM2kwRjBJQ0dtSU9fXzA5ZTBwYXNTcTNqOENLcWhqam1leWtFUGxLVXJWa2kwV21ldDEybGxsWkV1cENKQ3JzRS1xS2Z3cDlTZTk2RFREY3JKNkRHQ3hjRGxQUEVsRld1Vg?oc=5",
+          "https://news.google.com/rss/articles/CBMi0wFBVV95cUxNN1A0VFItUkowcnptSTBYY1A3VDFBdElMWnRKM2JxUVItVW44eFhKTXdoc1JIN1pyemhfY2V2UHRiX3FSeGtLQmdZMTdBMGo4SlRMeUI0MmdRclZobmFLcWFCeHdQV0VHWVJHcXBBNzRZNnhmYjRoMWo5YkNLZ2UtcV91VmNRcEc5dG5qa2UtVFhsaVpJWjlOSzdFdUh3bWxsSFQxd0xlWEk2elFSM2d4SW9NVy10ejR0cFlXNGFfc0VHT3BPT0hBTGR3Tm5kZHdVSVQw?oc=5"
         ],
-        "soWhat": "Keep AI Act readiness live until the legislative path is final, and build audit evidence as if the frontier-audit model will travel.",
+        "soWhat": "Australian boards and executives should demand usable evidence, not just AI enthusiasm, before scaling new systems.",
         "relatedIds": [
-          "eu-digital-omnibus-ai",
-          "us-il-frontier-ai-safety-measures-act"
+          "asic-ai-governance-supervisory-escalation-risk"
+        ]
+      },
+      {
+        "title": "EU transparency deadlines remain live even as simplification talks continue",
+        "text": "The EU AI Act’s transparency deadline is still the near-term pressure point, and existing official guidance keeps the Digital Omnibus story conditional rather than final.",
+        "priority": "High",
+        "confidence": "High",
+        "australiaRelevance": "Medium",
+        "recommendedAction": "Keep notices, machine-readable markings, and high-risk readiness on track until formal adoption and implementation are settled.",
+        "sources": [
+          "https://ai-act-service-desk.ec.europa.eu/en/ai-act/timeline/timeline-implementation-eu-ai-act",
+          "https://digital-strategy.ec.europa.eu/en/news/commission-opens-consultation-draft-guidelines-ai-transparency-obligations",
+          "https://www.consilium.europa.eu/en/press/press-releases/2026/05/07/artificial-intelligence-council-and-parliament-agree-to-simplify-and-streamline-rules"
+        ],
+        "soWhat": "Treat the EU AI Act as live compliance work, not as a paused project, until the formal path is unambiguous.",
+        "relatedIds": [
+          "eu-ai-act",
+          "eu-ai-act-deferral-misinterpretation-risk"
         ]
       }
     ],
     "criticalAlerts": [
       {
-        "title": "Do not let agent credential sharing persist",
-        "text": "VentureBeat's enterprise incident report and GitHub's new AI prompt-injection detection both point to the same control gap: shared credentials and weak tool boundaries remain the easiest way for agents to do damage.",
+        "title": "Do not let shared credentials survive into production agents",
+        "text": "The 20 July MCP-secrets story, the Gemini prompt-injection coverage, and the existing CodeQL signal all point at the same failure mode: ambiguous tool boundaries plus shared credentials are still the easiest path to damage.",
         "sources": [
-          "https://news.google.com/rss/articles/CBMi4wFBVV95cUxPOUtHdXBVdy12QmhUMzVUdEt0SHdwX2ZCbWhPY0JFTjEzUnZ4Rm5XX1FmdHNNMmNxY1ZOeF9rQWlIWWlNZlZNYURzdFFFZFhVb3ZfMTVJS001a00tR0VFRWNxakdWNUR5MzNnSVh0ZVFrY0QtcWV6NDZsVklGLUFQa0hjQXBhNjFBOTZtc1pZSUdVakZzZHZsOVA2YTVWWm0taXdZaEQyNXZHUmFNX1Q1NHNtYWlZRWNGMUM3em9lcmlXU0RWUjRySFJrUWYzanVGS01nWlVtU3J2ZllPeFVuSGRsQQ?oc=5",
+          "https://news.google.com/rss/articles/CBMivwFBVV95cUxOS01hMFI0WXJKallaV01lWWtjN2JfbTlPNmJJNFY0bll3aW9iTDlDZzlCRXN5LUphajdxVzhFT0owUFJwQUROa2tRdWZSY3I5RzBtNGFMWmxET25jeG0yMlhSZ0JkSmJyV3JJXzVWZEVRNzRSNjI3clltUWpIQmlRekRuc2x5OEI5SzVwbXVXY0dtUjk3QjdNaURuUE5iSEk2TS1qNTBaVEhOc0JhZFNWcnBlOTdRZ0JpY2ozT3ZIOA?oc=5",
+          "https://news.google.com/rss/articles/CBMijAFBVV95cUxPYkV6bmw3bENNUjZlSGwzcmFfVDJVM1A5ajhqWFY2MFZkME0wYzZnelJvZUd3XzhXbld0NDYzSVVoZERlcTRwT3Vya1RIQVBJT3ZKM1llcWFnVURVYmstajhjNV9VVXJ0VXdsbS1iNUhhdWlSUTdaN1ZsY2xqUTJWdF9sQ3NuMkpWUm1KMw?oc=5",
           "https://github.blog/changelog/2026-07-10-codeql-2-26-0-adds-kotlin-2-4-0-support-and-ai-prompt-injection-detection"
         ],
         "soWhat": "Scope identities, log tool calls, and make destructive actions approval-gated before rolling out more agents.",
         "relatedIds": [
-          "agentic-prompt-injection-and-tool-abuse"
+          "agent-tool-parameter-injection-leading-to-code-execution"
         ]
       },
       {
-        "title": "Do not interpret EU AI Act relief as finished",
-        "text": "July coverage still treats the Digital Omnibus as conditional. Organisations should keep AI Act readiness live until formal adoption is complete and the remaining obligations are clearly re-baselined.",
+        "title": "Do not interpret EU AI Act relief as final",
+        "text": "The Digital Omnibus is still a conditional political deal in the coverage and official guidance keeps the August deadline live, so organisations should not pause AI Act readiness.",
         "sources": [
-          "https://news.google.com/rss/articles/CBMifEFVX3lxTE52aDQ3S0s4UHVnV2xjX1JnRnhQSkxsTV9MSGc0OXRYcjBrZTB3c2dScmx0ZUtCaTJyYml2RVpmREtUZnlVcE1PMEN4aDBfNDFlV3l1elJ5Z2FjQUowZEU2THItOFdvdklYb3lfVFJyMWR3Qnk2eXFTcmF6bks?oc=5"
+          "https://news.google.com/rss/articles/CBMi2AFBVV95cUxOM3lFTTVtRTdBM1Q5b0FFTUVCUkhYZWRUNVoyTFZRb09qRzRJT3Y0U09SNmRoZVdua3RobFVDbGFiczVBaHVHbk8wUlUxclVyZG42MTlzSDBUQVdLdHp1cDJhQ3FjR29kby0tV1NGR3J6MkpRQUVBa2Z5b0o1NVJaM2hPTWw1Y19yX3ljUndqQ21oZEVuMnRGX0ZRbGhpalZLVFlMRTRRNEFMRVBSSk1kMWFsa2x6VEpKUFowUTg2N2FmLUtfdVBvcjVoTXg5d085ekFZX2VVU0s?oc=5",
+          "https://ai-act-service-desk.ec.europa.eu/en/ai-act/timeline/timeline-implementation-eu-ai-act"
         ],
-        "soWhat": "Do not pause AI Act controls on the assumption that the deferral is already final.",
+        "soWhat": "Re-baseline against the real dates rather than the political shorthand.",
         "relatedIds": [
-          "eu-digital-omnibus-ai"
-        ]
-      },
-      {
-        "title": "Public-sector AI policy in Australia is becoming more operational",
-        "text": "Reuters and ABC coverage suggests Australia is moving toward a coordination office and tighter decision-making rules; public-sector teams should assume evidence and escalation expectations will rise.",
-        "sources": [
-          "https://news.google.com/rss/articles/CBMisAFBVV95cUxOZmk2ZUVGNUhZNFA5VDhlLTB4cmVIZ093NHVXd21aYURnaUIzZ0ZxbzVSNXhMYWE1UGN0NW03OVZSUXlna05OOGhCV0VXa0tQODg5Z0dMbUllWl9iM0hCOXhMLWtuczZVVHRycTBFbnhaQXl3aDAybTFYckYtazVSUEN6Njl0ZmtNa19VWElPNy04MkxkMFFiNm16SUFXNnFuV2VVV0dadlMxQ0lrdUZINQ?oc=5",
-          "https://news.google.com/rss/articles/CBMiogFBVV95cUxQcEtsTXBHaVFHal96c1g1TUJrbjdRbS1iZTdkTWU5OTh5MndKM3BVUndmSXNwRFVGX0c3eGsyNXNudVBOV1JsVlNGVG9xRm9wWnFtT1Vkcm1oWXdZVjViTy12dVpaR1dtVWNUU3czZndsOWIzZmt3RzluOVJpSzB0dUQ4bE1iYWpyZ1dnaEFERFhNUDZMNnMzdXpCbGEyTzdYVGc?oc=5"
-        ],
-        "soWhat": "Agencies should harden inventories, owners, and decision logs now rather than waiting for the next formal policy update.",
-        "relatedIds": [
-          "au-gov-ai-policy"
+          "eu-ai-act",
+          "eu-ai-act-deferral-misinterpretation-risk"
         ]
       }
     ],
     "recommendedActions": {
       "boards": [
-        "Ask for evidence packs covering AI inventories, agent approvals, and privacy incident files.",
-        "Require a board view of EU AI Act timing risk and any Illinois-style frontier-audit exposure."
+        "Ask for evidence packs on code quality, prompt-injection testing, and AI inventory coverage.",
+        "Require a board view of AI tool spend, approval gates, and EU AI Act timing risk."
       ],
       "executives": [
-        "Assign clear owners for AI disclosure, agent security, and privacy evidence.",
-        "Use current policy commentary as a trigger to harden controls, not as a substitute for formal law."
+        "Assign a single owner for agent security, AI spend visibility, and regulatory readiness.",
+        "Fund evidence-bearing controls before scaling copilots or autonomous workflows."
       ],
       "riskCompliance": [
-        "Refresh AI risk registers with agent-security and evidence-retention scenarios.",
-        "Map one reusable control pack across AI, privacy, cyber, and procurement reviews."
+        "Refresh the AI register, control mapping, and deadline tracker this week.",
+        "Treat conditional EU relief as provisional until formal adoption lands."
       ],
       "securityTeams": [
-        "Add prompt-injection, tool-use, and destructive-action tests to CI and release gates.",
-        "Keep telemetry, alerting, and rollback paths ready for adaptive AI systems."
+        "Add prompt-injection, MCP secret-scoping, and destructive-action tests to CI and release gates.",
+        "Keep telemetry, alerting, and rollback paths ready for adaptive systems."
       ],
       "productEngineering": [
-        "Make AI features and agent actions explicit in the UI and logs.",
-        "Design safe defaults for any web-facing or tool-using workflow."
+        "Instrument code-quality and model-usage metrics so changes are observable.",
+        "Separate system instructions, user prompts, and tool credentials by design."
       ],
       "procurement": [
-        "Ask vendors for concrete audit evidence, customer references, and logging/rollback commitments.",
-        "Prefer platforms that can show live control execution rather than just dashboards."
+        "Ask vendors how they handle secret storage, audit logging, and AI usage visibility.",
+        "Require proof of code-quality and agent-safety controls, not just feature lists."
       ],
       "policymakers": [
-        "Anchor AI policy in evidence, disclosure, and reviewable controls.",
-        "Keep implementation timelines realistic so organisations can evidence compliance once."
+        "Keep transparency and contestability deadlines explicit and machine-readable.",
+        "Align guidance with actual implementation windows, not political shorthand."
       ],
       "investors": [
-        "Look for portfolio companies that can evidence frontier-readiness, AI telemetry, and governance controls.",
-        "Prefer vendors with operational proof and customer traction, not just product claims."
+        "Prefer portfolio companies that can show AI inventories, approval paths, and evidence packs.",
+        "Treat code-quality and security observability as part of AI operating maturity."
       ]
     },
     "openQuestions": [
-      "Will Australia's coordination office materially change procurement and approval flow?",
-      "How quickly will enterprise tooling convert prompt-injection detection into standard CI/CD checks?",
-      "Which regulators will be first to enforce audit-evidence expectations against AI agent deployments?"
-    ],
-    "sourcesReviewed": [
-      "https://news.google.com/rss/articles/CBMisAFBVV95cUxOZmk2ZUVGNUhZNFA5VDhlLTB4cmVIZ093NHVXd21aYURnaUIzZ0ZxbzVSNXhMYWE1UGN0NW03OVZSUXlna05OOGhCV0VXa0tQODg5Z0dMbUllWl9iM0hCOXhMLWtuczZVVHRycTBFbnhaQXl3aDAybTFYckYtazVSUEN6Njl0ZmtNa19VWElPNy04MkxkMFFiNm16SUFXNnFuV2VVV0dadlMxQ0lrdUZINQ?oc=5",
-      "https://news.google.com/rss/articles/CBMiogFBVV95cUxQcEtsTXBHaVFHal96c1g1TUJrbjdRbS1iZTdkTWU5OTh5MndKM3BVUndmSXNwRFVGX0c3eGsyNXNudVBOV1JsVlNGVG9xRm9wWnFtT1Vkcm1oWXdZVjViTy12dVpaR1dtVWNUU3czZndsOWIzZmt3RzluOVJpSzB0dUQ4bE1iYWpyZ1dnaEFERFhNUDZMNnMzdXpCbGEyTzdYVGc?oc=5",
-      "https://esafety.gov.au/newsroom/media-releases/esafety-report-reveals-big-tech-blind-spots-in-protecting-children-and-young-adults-from-sexual-extortion",
-      "https://github.blog/changelog/2026-07-10-codeql-2-26-0-adds-kotlin-2-4-0-support-and-ai-prompt-injection-detection",
-      "https://news.google.com/rss/articles/CBMi4wFBVV95cUxPOUtHdXBVdy12QmhUMzVUdEt0SHdwX2ZCbWhPY0JFTjEzUnZ4Rm5XX1FmdHNNMmNxY1ZOeF9rQWlIWWlNZlZNYURzdFFFZFhVb3ZfMTVJS001a00tR0VFRWNxakdWNUR5MzNnSVh0ZVFrY0QtcWV6NDZsVklGLUFQa0hjQXBhNjFBOTZtc1pZSUdVakZzZHZsOVA2YTVWWm0taXdZaEQyNXZHUmFNX1Q1NHNtYWlZRWNGMUM3em9lcmlXU0RWUjRySFJrUWYzanVGS01nWlVtU3J2ZllPeFVuSGRsQQ?oc=5",
-      "https://news.google.com/rss/articles/CBMifEFVX3lxTE52aDQ3S0s4UHVnV2xjX1JnRnhQSkxsTV9MSGc0OXRYcjBrZTB3c2dScmx0ZUtCaTJyYml2RVpmREtUZnlVcE1PMEN4aDBfNDFlV3l1elJ5Z2FjQUowZEU2THItOFdvdklYb3lfVFJyMWR3Qnk2eXFTcmF6bks?oc=5",
-      "https://news.google.com/rss/articles/CBMieEFVX3lxTE1PTUI5WEpENWNRV1c0NHpiMWdjQ3JfdTRqU1ZqRGRvSnZTZ25QYTl2OG5DdTBsc0wwZklMN3BlSjBPRTFaVDh6cVB5Z1pMOUpqWWlTU0FKTjk2MmpvemplS0hXYjViTC1HRFFkT1JTZi1tRS0yZ25qRQ?oc=5"
+      "Will AI tool spend visibility become a standard enterprise control like code scanning?",
+      "How quickly will MCP and agent frameworks converge on safer secret handling and approval patterns?",
+      "Will Australian organisations translate governance concern into measurable controls before the next regulator cycle?"
     ]
   },
   "trustDashboard": {
-    "overallSignal": "Moderately elevated — AI governance is becoming operational while agent-security and disclosure evidence remain the bottlenecks.",
+    "overallSignal": "Slightly more constructive on assurance, but still elevated on security and governance.",
     "riskPosture": "Moderately elevated",
     "emergingRisks": [
-      "Agent credential sharing and weak identity boundaries remain a high-probability failure mode.",
-      "Public-sector AI decision-making rules are tightening faster than some internal control stacks.",
-      "EU and US frontier-audit expectations are converging on evidence packs and timelines."
+      "AI tool spend and code-quality opacity",
+      "MCP secret sprawl and tool abuse",
+      "Consumer-model prompt injection",
+      "EU AI Act timing misreads"
     ],
     "improvingAreas": [
-      "Static-analysis tooling is beginning to detect AI prompt-injection patterns.",
-      "Australian public-sector policy is giving teams a clearer operating baseline for inventories and escalation."
+      "Code-quality visibility is becoming a mainstream platform feature.",
+      "Static-analysis tooling is starting to absorb prompt-injection checks.",
+      "Some AI governance discussions are shifting from principles to evidence."
     ],
     "uncertainAreas": [
-      "Formal adoption timing for EU simplification remains conditional.",
-      "How quickly agent-security checks will reach mainstream CI/CD remains unclear.",
-      "Whether Australian policy coordination becomes binding or remains an operating model is still open."
+      "How much governance lift the new GitHub quality tooling will deliver in practice.",
+      "Whether Australia’s adoption pressure will translate into faster formal guidance.",
+      "How quickly EU transparency clarifications will turn into operational playbooks."
     ],
-    "australiaSignal": "High — Canberra, eSafety, and the DTA are pushing AI toward implementation controls, transparency, and escalation discipline.",
-    "globalSignal": "Elevated — the US is moving toward statutory frontier audits, the EU's relief remains conditional, and security tooling is adapting to agent-era abuse."
+    "australiaSignal": "Australia is still playing catch-up on governance relative to adoption, which keeps inventories and evidence packs important.",
+    "globalSignal": "Global controls are converging on observability, secrets discipline, and deadline-aware compliance rather than abstract AI principles."
   },
   "risks": [
     {
@@ -711,23 +695,38 @@
         "Semantic Kernel CVE-2026-26030",
         "Semantic Kernel CVE-2026-25592",
         "CodeQL 2.26.0 prompt-injection detection",
-        "Ghostcommit multimodal prompt injection"
+        "Ghostcommit multimodal prompt injection",
+        "MCP security starts with secrets",
+        "Gemini prompt-injection demonstrations",
+        "Prompt-injection research on AI agents"
       ],
       "trend": "increasing",
       "confidence": "High",
       "sources": [
         "https://www.microsoft.com/en-us/security/blog/2026/05/07/prompts-become-shells-rce-vulnerabilities-ai-agent-frameworks",
         "https://github.blog/changelog/2026-07-10-codeql-2-26-0-adds-kotlin-2-4-0-support-and-ai-prompt-injection-detection",
-        "https://news.google.com/rss/articles/CBMixAFBVV95cUxPd05JLUhMTGlaZUFWdEJkTVZmZldRN1MzV1hheWhIc1dxRVBtUzBBQ2k3Mk1LZnFsTEIyLTJGamRHZ2I3NmFKYThZdllBZUdQNFIyeml3VGMwaG81MW1rd2dfV0ZJcjB1SVdPUVB6Ujd1TFJsQUJ2SGUyMXotbW44WURpV3lCSmxaM0sxTnlfRENiY2NXaTZjNEJORk5PaDN0cFNDQU9EOEdJWnk4WWw2b0FOMHRQYl9IdzZqVHpYUmhLTlBz?oc=5"
+        "https://news.google.com/rss/articles/CBMixAFBVV95cUxPd05JLUhMTGlaZUFWdEJkTVZmZldRN1MzV1hheWhIc1dxRVBtUzBBQ2k3Mk1LZnFsTEIyLTJGamRHZ2I3NmFKYThZdllBZUdQNFIyeml3VGMwaG81MW1rd2dfV0ZJcjB1SVdPUVB6Ujd1TFJsQUJ2SGUyMXotbW44WURpV3lCSmxaM0sxTnlfRENiY2NXaTZjNEJORk5PaDN0cFNDQU9EOEdJWnk4WWw2b0FOMHRQYl9IdzZqVHpYUmhLTlBz?oc=5",
+        "https://news.google.com/rss/articles/CBMivwFBVV95cUxOS01hMFI0WXJKallaV01lWWtjN2JfbTlPNmJJNFY0bll3aW9iTDlDZzlCRXN5LUphajdxVzhFT0owUFJwQUROa2tRdWZSY3I5RzBtNGFMWmxET25jeG0yMlhSZ0JkSmJyV3JJXzVWZEVRNzRSNjI3clltUWpIQmlRekRuc2x5OEI5SzVwbXVXY0dtUjk3QjdNaURuUE5iSEk2TS1qNTBaVEhOc0JhZFNWcnBlOTdRZ0JpY2ozT3ZIOA?oc=5",
+        "https://news.google.com/rss/articles/CBMijAFBVV95cUxPYkV6bmw3bENNUjZlSGwzcmFfVDJVM1A5ajhqWFY2MFZkME0wYzZnelJvZUd3XzhXbld0NDYzSVVoZERlcTRwT3Vya1RIQVBJT3ZKM1llcWFnVURVYmstajhjNV9VVXJ0VXdsbS1iNUhhdWlSUTdaN1ZsY2xqUTJWdF9sQ3NuMkpWUm1KMw?oc=5"
       ],
       "id": "agent-tool-parameter-injection-leading-to-code-execution",
       "likelihoodLevel": "High",
       "impactLevel": "High",
       "direction": "increasing",
       "theme": "Security",
-      "status": "unchanged",
-      "rationale": "Prompt injection is moving into mainstream code tooling, and CodeQL is now explicitly shipping detection for the class.",
+      "status": "updated",
+      "rationale": "Prompt injection is moving into mainstream code tooling, and new 20 July coverage shows MCP secrets management and consumer-model prompt injection still need explicit action boundaries.",
       "events": [
+        {
+          "date": "2026-07-21",
+          "what": "Coverage highlighted MCP security as a secrets-management problem and a practical agent-control issue",
+          "sourceUrl": "https://news.google.com/rss/articles/CBMivwFBVV95cUxOS01hMFI0WXJKallaV01lWWtjN2JfbTlPNmJJNFY0bll3aW9iTDlDZzlCRXN5LUphajdxVzhFT0owUFJwQUROa2tRdWZSY3I5RzBtNGFMWmxET25jeG0yMlhSZ0JkSmJyV3JJXzVWZEVRNzRSNjI3clltUWpIQmlRekRuc2x5OEI5SzVwbXVXY0dtUjk3QjdNaURuUE5iSEk2TS1qNTBaVEhOc0JhZFNWcnBlOTdRZ0JpY2ozT3ZIOA?oc=5"
+        },
+        {
+          "date": "2026-07-21",
+          "what": "Researchers demonstrated prompt injection attacks on Gemini",
+          "sourceUrl": "https://news.google.com/rss/articles/CBMijAFBVV95cUxPYkV6bmw3bENNUjZlSGwzcmFfVDJVM1A5ajhqWFY2MFZkME0wYzZnelJvZUd3XzhXbld0NDYzSVVoZERlcTRwT3Vya1RIQVBJT3ZKM1llcWFnVURVYmstajhjNV9VVXJ0VXdsbS1iNUhhdWlSUTdaN1ZsY2xqUTJWdF9sQ3NuMkpWUm1KMw?oc=5"
+        },
         {
           "date": "2026-07-10",
           "what": "GitHub added AI prompt injection detection to CodeQL 2.26.0",
@@ -2369,14 +2368,14 @@
       "impactLevel": "High",
       "direction": "increasing",
       "theme": "Security",
-      "status": "updated",
+      "status": "unchanged",
       "rationale": "Likelihood remains high because tool-using agents are entering production workflows, and the latest signals show defenders are still racing to instrument the same attack surface. Impact remains high because shared credentials and unsafe tool boundaries can turn one malicious prompt into a material action.",
       "relatedControlIds": [
         "prompt-injection-defence-in-depth",
         "adversarial-red-teaming-llm-and-agentic"
       ],
       "relatedIncidentIds": [],
-      "statusFlag": "updated",
+      "statusFlag": "unchanged",
       "firstSeen": "2026-07-13",
       "lastUpdated": "2026-07-20",
       "events": [
@@ -6243,12 +6242,12 @@
     {
       "jurisdiction": "European Union",
       "title": "EU Artificial Intelligence Act (Regulation 2024/1689)",
-      "status": "unchanged",
+      "status": "updated",
       "date": "2026-05-11",
-      "summary": "The AI Act now has a fresh transparency-guidelines consultation layered on top of the existing 2 August 2026 timeline; the Digital Omnibus relief story remains conditional on formal adoption.",
+      "summary": "The AI Act remains on a live 2 August timeline, while July coverage and Commission guidance keep transparency obligations and the Digital Omnibus deferral story conditional rather than final.",
       "affected": "Providers, deployers, importers and distributors of AI systems in or affecting the EU, including GPAI providers and users of high-risk AI systems.",
       "obligations": "Risk classification, prohibited practice compliance, high-risk risk management and documentation, transparency obligations and GPAI-related transparency/copyright/safety requirements as applicable.",
-      "timeline": "Prohibited-practice rules effective February 2025; further obligations phase in through 2026 and beyond.",
+      "timeline": "Prohibited-practice rules are in force; transparency and other phased obligations remain tied to August 2026 and the Digital Omnibus deferral remains conditional on formal adoption.",
       "enforcementRisk": "High for EU-facing providers/deployers as obligations mature.",
       "australiaRelevance": "Medium-High for Australian exporters, multinational compliance teams and benchmark regulatory design.",
       "sources": [
@@ -6258,10 +6257,16 @@
         "https://en.wikipedia.org/wiki/Artificial_Intelligence_Act",
         "https://en.wikipedia.org/wiki/Regulation_of_artificial_intelligence",
         "https://www.consilium.europa.eu/en/press/press-releases/2026/05/07/artificial-intelligence-council-and-parliament-agree-to-simplify-and-streamline-rules",
-        "https://digital-strategy.ec.europa.eu/en/news/commission-opens-consultation-draft-guidelines-ai-transparency-obligations"
+        "https://digital-strategy.ec.europa.eu/en/news/commission-opens-consultation-draft-guidelines-ai-transparency-obligations",
+        "https://news.google.com/rss/articles/CBMi2AFBVV95cUxOM3lFTTVtRTdBM1Q5b0FFTUVCUkhYZWRUNVoyTFZRb09qRzRJT3Y0U09SNmRoZVdua3RobFVDbGFiczVBaHVHbk8wUlUxclVyZG42MTlzSDBUQVdLdHp1cDJhQ3FjR29kby0tV1NGR3J6MkpRQUVBa2Z5b0o1NVJaM2hPTWw1Y19yX3ljUndqQ21oZEVuMnRGX0ZRbGhpalZLVFlMRTRRNEFMRVBSSk1kMWFsa2x6VEpKUFowUTg2N2FmLUtfdVBvcjVoTXg5d085ekFZX2VVU0s?oc=5"
       ],
       "id": "eu-ai-act",
       "events": [
+        {
+          "date": "2026-07-21",
+          "what": "July coverage and Commission guidance continued to treat AI Act transparency rules as the immediate deadline pressure point",
+          "sourceUrl": "https://news.google.com/rss/articles/CBMi2AFBVV95cUxOM3lFTTVtRTdBM1Q5b0FFTUVCUkhYZWRUNVoyTFZRb09qRzRJT3Y0U09SNmRoZVdua3RobFVDbGFiczVBaHVHbk8wUlUxclVyZG42MTlzSDBUQVdLdHp1cDJhQ3FjR29kby0tV1NGR3J6MkpRQUVBa2Z5b0o1NVJaM2hPTWw1Y19yX3ljUndqQ21oZEVuMnRGX0ZRbGhpalZLVFlMRTRRNEFMRVBSSk1kMWFsa2x6VEpKUFowUTg2N2FmLUtfdVBvcjVoTXg5d085ekFZX2VVU0s?oc=5"
+        },
         {
           "date": "2026-05-08",
           "what": "Commission opened consultation on draft guidelines for AI transparency obligations",
@@ -6314,9 +6319,9 @@
           "jurisdiction": "European Union"
         }
       ],
-      "soWhat": "Classify EU-touching systems now, and ship notices plus machine-readable content marking before the 2 August deadline.",
-      "lastUpdated": "2026-07-09",
-      "statusFlag": "unchanged"
+      "soWhat": "Keep AI Act notices, machine-readable markings, and high-risk readiness live until the deadline and any formal deferral are both fully settled.",
+      "lastUpdated": "2026-07-21",
+      "statusFlag": "updated"
     },
     {
       "jurisdiction": "United States",
@@ -6433,7 +6438,7 @@
     {
       "jurisdiction": "Australia",
       "title": "Policy for the responsible use of AI in government (DTA)",
-      "status": "updated",
+      "status": "unchanged",
       "date": "2025-12-15",
       "summary": "Australia's AI governance baseline remains the DTA policy/register architecture, while new ABC reporting suggests government departments are tightening AI use in decision-making.",
       "affected": "All non-corporate Commonwealth entities (mandatory); corporate Commonwealth entities (encouraged); excludes defence portfolio and national intelligence community",
@@ -7230,7 +7235,7 @@
       "stage": "in-force",
       "soWhat": "Consumer AI products need age assurance, abuse reporting, and human escalation as core controls, not roadmap items.",
       "lastUpdated": "2026-07-16",
-      "statusFlag": "updated"
+      "statusFlag": "unchanged"
     },
     {
       "jurisdiction": "Australia",
@@ -8576,79 +8581,81 @@
     }
   ],
   "securityWatch": {
-    "summary": "Agent security and platform safety controls are hardening, but enterprise incident data and child-safety blind spots show the exposure is still moving faster than assurance.",
+    "summary": "Security reporting keeps converging on the same control plane: prompt injection, secrets handling, and tool boundaries. GitHub CodeQL remains the anchor example, while new coverage on MCP security and Gemini shows the attack surface is still expanding.",
     "items": [
       {
-        "title": "CodeQL is learning to spot AI prompt injection",
-        "text": "GitHub's CodeQL 2.26.0 adds AI prompt-injection detection, which is a useful signal that secure-code tooling is beginning to absorb agent-era abuse patterns.",
+        "title": "MCP security starts with secrets",
+        "text": "The 20 July Cybersecurity Dive piece frames MCP as a secrets-management problem, which makes credential scoping and tool-specific identities non-negotiable.",
         "sources": [
-          "https://github.blog/changelog/2026-07-10-codeql-2-26-0-adds-kotlin-2-4-0-support-and-ai-prompt-injection-detection"
+          "https://news.google.com/rss/articles/CBMivwFBVV95cUxOS01hMFI0WXJKallaV01lWWtjN2JfbTlPNmJJNFY0bll3aW9iTDlDZzlCRXN5LUphajdxVzhFT0owUFJwQUROa2tRdWZSY3I5RzBtNGFMWmxET25jeG0yMlhSZ0JkSmJyV3JJXzVWZEVRNzRSNjI3clltUWpIQmlRekRuc2x5OEI5SzVwbXVXY0dtUjk3QjdNaURuUE5iSEk2TS1qNTBaVEhOc0JhZFNWcnBlOTdRZ0JpY2ozT3ZIOA?oc=5"
         ]
       },
       {
-        "title": "Enterprise agent incidents are already common",
-        "text": "VentureBeat's July coverage says 54% of enterprises have already had an AI agent incident and many still let agents share credentials, keeping identity scoping and blast-radius controls urgent.",
+        "title": "Prompt injection is still a live model-abuse class",
+        "text": "Digital Watch’s Gemini coverage reinforces that prompt injection remains practical outside coding copilots and internal agents.",
         "sources": [
-          "https://news.google.com/rss/articles/CBMi4wFBVV95cUxPOUtHdXBVdy12QmhUMzVUdEt0SHdwX2ZCbWhPY0JFTjEzUnZ4Rm5XX1FmdHNNMmNxY1ZOeF9rQWlIWWlNZlZNYURzdFFFZFhVb3ZfMTVJS001a00tR0VFRWNxakdWNUR5MzNnSVh0ZVFrY0QtcWV6NDZsVklGLUFQa0hjQXBhNjFBOTZtc1pZSUdVakZzZHZsOVA2YTVWWm0taXdZaEQyNXZHUmFNX1Q1NHNtYWlZRWNGMUM3em9lcmlXU0RWUjRySFJrUWYzanVGS01nWlVtU3J2ZllPeFVuSGRsQQ?oc=5"
+          "https://news.google.com/rss/articles/CBMijAFBVV95cUxPYkV6bmw3bENNUjZlSGwzcmFfVDJVM1A5ajhqWFY2MFZkME0wYzZnelJvZUd3XzhXbld0NDYzSVVoZERlcTRwT3Vya1RIQVBJT3ZKM1llcWFnVURVYmstajhjNV9VVXJ0VXdsbS1iNUhhdWlSUTdaN1ZsY2xqUTJWdF9sQ3NuMkpWUm1KMw?oc=5",
+          "https://github.blog/changelog/2026-07-10-codeql-2-26-0-adds-kotlin-2-4-0-support-and-ai-prompt-injection-detection"
         ]
       }
     ],
     "advisories": [
       {
-        "title": "Treat shared credentials for agents as a release blocker",
-        "text": "Any tool-using agent should have explicit identity scoping, approval gates, logs, and rollback paths before it reaches production.",
+        "title": "Treat shared agent credentials as a release blocker",
+        "text": "Any tool-using agent should have explicit identity scoping, approval gates, logs, and rollback paths before production use.",
         "sources": [
-          "https://news.google.com/rss/articles/CBMi4wFBVV95cUxPOUtHdXBVdy12QmhUMzVUdEt0SHdwX2ZCbWhPY0JFTjEzUnZ4Rm5XX1FmdHNNMmNxY1ZOeF9rQWlIWWlNZlZNYURzdFFFZFhVb3ZfMTVJS001a00tR0VFRWNxakdWNUR5MzNnSVh0ZVFrY0QtcWV6NDZsVklGLUFQa0hjQXBhNjFBOTZtc1pZSUdVakZzZHZsOVA2YTVWWm0taXdZaEQyNXZHUmFNX1Q1NHNtYWlZRWNGMUM3em9lcmlXU0RWUjRySFJrUWYzanVGS01nWlVtU3J2ZllPeFVuSGRsQQ?oc=5",
+          "https://news.google.com/rss/articles/CBMivwFBVV95cUxOS01hMFI0WXJKallaV01lWWtjN2JfbTlPNmJJNFY0bll3aW9iTDlDZzlCRXN5LUphajdxVzhFT0owUFJwQUROa2tRdWZSY3I5RzBtNGFMWmxET25jeG0yMlhSZ0JkSmJyV3JJXzVWZEVRNzRSNjI3clltUWpIQmlRekRuc2x5OEI5SzVwbXVXY0dtUjk3QjdNaURuUE5iSEk2TS1qNTBaVEhOc0JhZFNWcnBlOTdRZ0JpY2ozT3ZIOA?oc=5",
           "https://github.blog/changelog/2026-07-10-codeql-2-26-0-adds-kotlin-2-4-0-support-and-ai-prompt-injection-detection"
         ]
       },
       {
-        "title": "eSafety's blind-spot warning belongs in security and trust-and-safety playbooks",
-        "text": "The new eSafety report says major platforms still have gaps around sexual extortion; user reporting and escalation controls need to be evidence-ready.",
+        "title": "Run prompt-injection tests against consumer assistants too",
+        "text": "Gemini prompt-injection research suggests the security team should test non-code assistants for hijacking and exfiltration behaviors before scale-up.",
         "sources": [
-          "https://esafety.gov.au/newsroom/media-releases/esafety-report-reveals-big-tech-blind-spots-in-protecting-children-and-young-adults-from-sexual-extortion"
+          "https://news.google.com/rss/articles/CBMijAFBVV95cUxPYkV6bmw3bENNUjZlSGwzcmFfVDJVM1A5ajhqWFY2MFZkME0wYzZnelJvZUd3XzhXbld0NDYzSVVoZERlcTRwT3Vya1RIQVBJT3ZKM1llcWFnVURVYmstajhjNV9VVXJ0VXdsbS1iNUhhdWlSUTdaN1ZsY2xqUTJWdF9sQ3NuMkpWUm1KMw?oc=5"
         ]
       }
     ]
   },
   "assuranceWatch": {
-    "summary": "Assurance work is shifting toward executable controls: audit-style regulation, static-analysis support for prompt injection, and platform transparency evidence.",
+    "summary": "Assurance is moving from paper controls to executable controls: code-quality visibility, static-analysis support for prompt injection, and deadline-aware compliance evidence all matter more this cycle.",
     "items": [
       {
-        "title": "Static analysis is starting to absorb prompt injection",
-        "text": "CodeQL 2.26.0 now includes AI prompt-injection detection, which makes AI-specific checks more like ordinary secure-development controls.",
+        "title": "GitHub Code Quality is now a governance signal",
+        "text": "The GA release and secondary coverage together make code-quality telemetry useful for AI-accelerated engineering oversight.",
+        "sources": [
+          "https://github.blog/changelog/2026-07-20-github-code-quality-is-now-generally-available",
+          "https://news.google.com/rss/articles/CBMiqAFBVV95cUxOZUVzdXhBRnBFVm5sRHZGLXNhNlRaRXVKYmxuWW1yelF2STZEdXQwaWQ1UGxUczVNY2pjUFcxazMydG50MUtMY1h5U1dhRklQckxFVG5wRmZhUXZ6SXBuNW85ODM1WUFoaUdrT211RzNsSkdQOHUwdmpGWU5QaXB2Sm9VOHNaMGhNNDZydzV1dmVhem9LMFdrRlhoY25EZXZkMDItbUh4OXM?oc=5"
+        ]
+      },
+      {
+        "title": "Static analysis remains the clearest appsec response to prompt injection",
+        "text": "CodeQL’s prompt-injection detection continues to be the cleanest sign that AI-specific abuse is being translated into ordinary secure-development checks.",
         "sources": [
           "https://github.blog/changelog/2026-07-10-codeql-2-26-0-adds-kotlin-2-4-0-support-and-ai-prompt-injection-detection"
         ]
       },
       {
-        "title": "eSafety reporting shows why transparency evidence matters",
-        "text": "The eSafety sexual-extortion report underscores that reporting obligations are only useful if the evidence file shows what was done with the reports.",
+        "title": "EU transparency obligations still need evidence packs",
+        "text": "The AI Act timeline and transparency guidance mean organisations should keep machine-readable marking and notice evidence current.",
         "sources": [
-          "https://esafety.gov.au/newsroom/media-releases/esafety-report-reveals-big-tech-blind-spots-in-protecting-children-and-young-adults-from-sexual-extortion"
-        ]
-      },
-      {
-        "title": "Audit-style AI governance remains the benchmark in the US and EU",
-        "text": "Illinois frontier audits and the conditional EU AI Act simplification story both reinforce that assurance is becoming a standing compliance artefact rather than a one-off review.",
-        "sources": [
-          "https://news.google.com/rss/articles/CBMieEFVX3lxTE1PTUI5WEpENWNRV1c0NHpiMWdjQ3JfdTRqU1ZqRGRvSnZTZ25QYTl2OG5DdTBsc0wwZklMN3BlSjBPRTFaVDh6cVB5Z1pMOUpqWWlTU0FKTjk2MmpvemplS0hXYjViTC1HRFFkT1JTZi1tRS0yZ25qRQ?oc=5",
-          "https://news.google.com/rss/articles/CBMifEFVX3lxTE52aDQ3S0s4UHVnV2xjX1JnRnhQSkxsTV9MSGc0OXRYcjBrZTB3c2dScmx0ZUtCaTJyYml2RVpmREtUZnlVcE1PMEN4aDBfNDFlV3l1elJ5Z2FjQUowZEU2THItOFdvdklYb3lfVFJyMWR3Qnk2eXFTcmF6bks?oc=5"
+          "https://ai-act-service-desk.ec.europa.eu/en/ai-act/timeline/timeline-implementation-eu-ai-act",
+          "https://digital-strategy.ec.europa.eu/en/news/commission-opens-consultation-draft-guidelines-ai-transparency-obligations"
         ]
       }
     ]
   },
   "australiaFocus": {
-    "summary": "Australia is shifting from broad AI principles to implementation controls: DTA coordination, eSafety child-safety expectations, and public-sector decision-making rules are all moving toward evidence and escalation.",
+    "summary": "Australia remains a governance-catchup story: adoption pressure is visible, but the evidence file, decision logs, and board ownership still need to improve.",
     "regulatory": [
-      "The DTA AI policy remains the operational baseline, and ABC/Reuters coverage suggests public-sector AI coordination may tighten further.",
-      "eSafety's sexual-extortion report shows the online-safety side of AI governance now expects stronger reporting and escalation evidence.",
-      "APRA, ASIC, OAIC and DTA signals still converge around inventories, accountability, and proof of controls rather than slogans."
+      "APRA, ASIC, OAIC and DTA signals still converge around inventories, accountability, and proof of controls rather than slogans.",
+      "The latest coverage says Australia is still lagging on AI governance as adoption races ahead.",
+      "A separate AI report-card article says confidence is improving faster than data and governance maturity."
     ],
     "publicSector": [
       "Keep AI inventories, transparency statements, and decision logs current.",
       "Treat review committees and escalation paths as evidence-producing controls, not advisory paperwork.",
-      "Assume the AI office proposal will push agencies toward more consistent governance documentation."
+      "Assume public-sector scrutiny will focus on proof of control operation, not policy language alone."
     ],
     "enterprise": [
       "If your product is AU-facing, treat AI disclosure, moderation, and age gating as testable controls.",
@@ -8658,7 +8665,7 @@
     "legalCompliance": [
       "Map AI disclosure and age-gating controls to online-safety, privacy, and consumer-protection obligations.",
       "Keep dated evidence for model review, escalation, moderation, and rollback.",
-      "The Qantas/OAIC coverage is a reminder that regulator outcomes still hinge on what the evidence file can prove."
+      "Do not wait for a formal AI law to start collecting proof of how systems behave."
     ],
     "standards": [
       "NIST-style continuous monitoring for adaptive systems",
@@ -8678,21 +8685,21 @@
   },
   "globalWatch": {
     "us": {
-      "summary": "The US signal remains audit- and security-centric: Illinois has statutory frontier-model audits while enterprise incident reporting shows agent risk is moving into live operations.",
+      "summary": "The US signal this cycle was tooling-heavy rather than frontier-lab-heavy: GitHub is pushing code-quality governance while security reporting keeps hammering prompt injection and secrets management.",
       "developments": [
-        "Illinois frontier-model audits remain the US bellwether for evidence-pack compliance.",
-        "VentureBeat's enterprise incident data suggests agent governance is now a production risk, not a lab-only issue."
+        "GitHub Code Quality is now GA and is being framed as a response to AI-accelerated output.",
+        "Security reporting continues to treat tool boundaries, MCP secrets, and prompt injection as live issues."
       ]
     },
     "eu": {
-      "summary": "EU AI Act simplification remains conditional, but the practical assumption is still to keep the existing control pack live until formal adoption is complete.",
+      "summary": "EU AI Act implementation remains the anchor regulatory story, with transparency obligations and the conditional Digital Omnibus still the practical focus.",
       "developments": [
-        "The Digital Omnibus on AI remains provisional rather than finished law.",
-        "Organisations should keep high-risk, transparency, and incident-readiness work live until the legislative path is unambiguous."
+        "Transparency obligations remain a near-term operational deadline.",
+        "The simplification/deferral story is still conditional rather than final law."
       ]
     },
     "uk": {
-      "summary": "No new UK AI regulatory text was reviewed in this run.",
+      "summary": "No fresh UK AI regulatory text was reviewed in this run.",
       "developments": [
         "No fresh ICO or DSIT item surfaced in the current cycle.",
         "Consumer AI transparency and online-safety controls remain the practical benchmark."
@@ -8717,10 +8724,10 @@
       ]
     },
     "labs": {
-      "summary": "Lab and security-research signals are converging on automated red-teaming and operator-like attack chains, while the most concrete near-term tool signal came from GitHub rather than a frontier lab release.",
+      "summary": "No new frontier-lab safety artifact dominated this cycle; the strongest signals came from security tooling and abuse research rather than a fresh model release.",
       "developments": [
-        "GitHub is adding AI prompt-injection detection to CodeQL.",
-        "No fresh frontier-lab safety artifact was the dominant signal in this cycle."
+        "GitHub CodeQL continues to absorb prompt-injection detection.",
+        "Gemini prompt-injection research and MCP-secrets coverage kept the abuse surface front and center."
       ]
     }
   },
@@ -8772,7 +8779,7 @@
       ],
       "limitations": "Official guidance page rather than binding law; product details can change quickly.",
       "firstSeen": "2026-07-16",
-      "status": "new"
+      "status": "unchanged"
     },
     {
       "id": "src-esafety-ai-companions-information-sheet",
@@ -8821,7 +8828,7 @@
       ],
       "limitations": "Guidance is partly forward-looking and does not itself define binding obligations.",
       "firstSeen": "2026-07-16",
-      "status": "new"
+      "status": "unchanged"
     },
     {
       "id": "src-arxiv-trust-but-verify-autonomous-coding-agents",
@@ -8869,7 +8876,7 @@
       ],
       "limitations": "Preprint, not yet peer reviewed.",
       "firstSeen": "2026-07-16",
-      "status": "new"
+      "status": "unchanged"
     },
     {
       "id": "src-arxiv-cross-cutting-security-analysis-llm-generated-code",
@@ -8916,7 +8923,7 @@
       ],
       "limitations": "Preprint, not yet peer reviewed.",
       "firstSeen": "2026-07-16",
-      "status": "new"
+      "status": "unchanged"
     },
     {
       "id": "src-arxiv-agent-ready-websites-ai-web-agents",
@@ -8963,7 +8970,7 @@
       ],
       "limitations": "Preprint, not yet peer reviewed.",
       "firstSeen": "2026-07-16",
-      "status": "new"
+      "status": "unchanged"
     },
     {
       "title": "Regulation of artificial intelligence",
@@ -16009,9 +16016,266 @@
       "auRelevance": "Medium",
       "globalRelevance": "High",
       "limitations": "Google News RSS wrapper used in this cycle; canonical publisher page was not directly fetched."
+    },
+    {
+      "id": "src-github-code-quality-is-now-generally-available",
+      "title": "GitHub Code Quality is now generally available",
+      "author": "GitHub",
+      "institution": "GitHub",
+      "date": "2026-07-20",
+      "link": "https://github.blog/changelog/2026-07-20-github-code-quality-is-now-generally-available",
+      "sourceType": "Changelog / product update",
+      "geography": "United States / Global",
+      "domain": "Enterprise Adoption / AI Assurance",
+      "priority": "High",
+      "confidence": "High",
+      "evidenceGrade": "C",
+      "reviewDepth": "Skimmed",
+      "summary": "GitHub says Code Quality is now generally available on GitHub Enterprise Cloud and GitHub Team, positioning code-quality checks as a response to AI-accelerated output.",
+      "keyFacts": [
+        "Published on 20 July 2026",
+        "Available on GitHub Enterprise Cloud and GitHub Team",
+        "Explicitly frames AI-generated code volume as a quality challenge"
+      ],
+      "keyClaims": [
+        "Code-quality tooling is becoming a governance control for AI-accelerated development."
+      ],
+      "evidenceBase": "Vendor changelog announcement; headline-level review",
+      "methodology": "Product release note",
+      "practicalImplications": "Engineering and assurance teams can treat code-quality visibility as part of AI governance, not just developer hygiene.",
+      "whoAffected": "Platform engineering, AppSec, software quality, AI product teams",
+      "auRelevance": "Medium",
+      "globalRelevance": "High",
+      "risksIdentified": [
+        "Quality drift",
+        "AI-accelerated code review gaps",
+        "False confidence in automated review"
+      ],
+      "controls": [
+        "Add code-quality gates to CI",
+        "Track AI-assisted code change rates",
+        "Require human approval for risky diffs"
+      ],
+      "limitations": "Vendor release note; independent effectiveness data was not available in this cycle.",
+      "status": "new"
+    },
+    {
+      "id": "src-devops-github-code-quality-ga-new-costs-and-capabilities",
+      "title": "GitHub Code Quality Moves to General Availability, Bringing New Costs and Capabilities",
+      "author": "DevOps.com",
+      "institution": "DevOps.com",
+      "date": "2026-06-22",
+      "link": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxOZUVzdXhBRnBFVm5sRHZGLXNhNlRaRXVKYmxuWW1yelF2STZEdXQwaWQ1UGxUczVNY2pjUFcxazMydG50MUtMY1h5U1dhRklQckxFVG5wRmZhUXZ6SXBuNW85ODM1WUFoaUdrT211RzNsSkdQOHUwdmpGWU5QaXB2Sm9VOHNaMGhNNDZydzV1dmVhem9LMFdrRlhoY25EZXZkMDItbUh4OXM?oc=5",
+      "sourceType": "News article",
+      "geography": "United States / Global",
+      "domain": "AI Assurance / Vendor Landscape",
+      "priority": "High",
+      "confidence": "Medium-High",
+      "evidenceGrade": "B",
+      "reviewDepth": "Skimmed",
+      "summary": "DevOps.com says GitHub Code Quality GA adds both new capability and new cost considerations for teams adopting AI-accelerated development.",
+      "keyFacts": [
+        "The article focuses on cost and capability implications rather than marketing copy.",
+        "It frames code-quality tooling as a response to AI-accelerated output.",
+        "It is useful buyer-side context for procurement and governance teams."
+      ],
+      "keyClaims": [
+        "AI coding tool adoption now brings a cost-and-quality trade-off that buyers must manage."
+      ],
+      "evidenceBase": "Secondary coverage of the GitHub release; headline-level review",
+      "methodology": "News coverage summary",
+      "practicalImplications": "Budget owners should compare code-quality spend against review-efficiency gains and quality outcomes.",
+      "whoAffected": "Engineering leaders, procurement, finance, AppSec, AI governance teams",
+      "auRelevance": "Medium",
+      "globalRelevance": "High",
+      "risksIdentified": [
+        "Budget creep",
+        "Tool sprawl",
+        "Over-reliance on automated quality signals"
+      ],
+      "controls": [
+        "Track AI tool cost visibility",
+        "Require quality metrics before scale-up",
+        "Review vendor ROI on a fixed cadence"
+      ],
+      "limitations": "Secondary article and not a benchmark study.",
+      "status": "new"
+    },
+    {
+      "id": "src-cybersecurity-dive-mcp-security-starts-with-secrets",
+      "title": "The secret problem in AI infrastructure: Why MCP security starts with secrets",
+      "author": "Cybersecurity Dive",
+      "institution": "Cybersecurity Dive",
+      "date": "2026-07-20",
+      "link": "https://news.google.com/rss/articles/CBMivwFBVV95cUxOS01hMFI0WXJKallaV01lWWtjN2JfbTlPNmJJNFY0bll3aW9iTDlDZzlCRXN5LUphajdxVzhFT0owUFJwQUROa2tRdWZSY3I5RzBtNGFMWmxET25jeG0yMlhSZ0JkSmJyV3JJXzVWZEVRNzRSNjI3clltUWpIQmlRekRuc2x5OEI5SzVwbXVXY0dtUjk3QjdNaURuUE5iSEk2TS1qNTBaVEhOc0JhZFNWcnBlOTdRZ0JpY2ozT3ZIOA?oc=5",
+      "sourceType": "News article",
+      "geography": "United States / Global",
+      "domain": "AI Security",
+      "priority": "High",
+      "confidence": "Medium-High",
+      "evidenceGrade": "B",
+      "reviewDepth": "Skimmed",
+      "summary": "The headline frames MCP security as a secrets-management problem, reinforcing that tool-using agents need credential scoping before they go live.",
+      "keyFacts": [
+        "Published on 20 July 2026",
+        "Focuses on the MCP layer and secrets handling",
+        "Maps directly to agent identity and permission controls"
+      ],
+      "keyClaims": [
+        "Secrets management is a first-order control for MCP-connected agents."
+      ],
+      "evidenceBase": "Headline and short-form news coverage; no full-text extraction in this cycle",
+      "methodology": "News headline review",
+      "practicalImplications": "Security teams should treat shared secrets and ambient credentials as release blockers for tool-using agents.",
+      "whoAffected": "Security engineering, platform engineering, AI app teams",
+      "auRelevance": "Medium",
+      "globalRelevance": "High",
+      "risksIdentified": [
+        "Prompt injection",
+        "Secret sprawl",
+        "Unauthorized tool invocation"
+      ],
+      "controls": [
+        "Store secrets outside prompts",
+        "Scope credentials per tool action",
+        "Log tool calls for audit"
+      ],
+      "limitations": "Headline-level review only.",
+      "status": "new"
+    },
+    {
+      "id": "src-digital-watch-researchers-demonstrate-prompt-injection-attacks-on-gemini",
+      "title": "Researchers demonstrate prompt injection attacks on Gemini",
+      "author": "Digital Watch Observatory",
+      "institution": "Digital Watch Observatory",
+      "date": "2026-07-20",
+      "link": "https://news.google.com/rss/articles/CBMijAFBVV95cUxPYkV6bmw3bENNUjZlSGwzcmFfVDJVM1A5ajhqWFY2MFZkME0wYzZnelJvZUd3XzhXbld0NDYzSVVoZERlcTRwT3Vya1RIQVBJT3ZKM1llcWFnVURVYmstajhjNV9VVXJ0VXdsbS1iNUhhdWlSUTdaN1ZsY2xqUTJWdF9sQ3NuMkpWUm1KMw?oc=5",
+      "sourceType": "News analysis",
+      "geography": "Global",
+      "domain": "AI Security",
+      "priority": "High",
+      "confidence": "Medium",
+      "evidenceGrade": "B",
+      "reviewDepth": "Skimmed",
+      "summary": "Digital Watch reports on research showing that prompt injection against Gemini remains a practical concern outside the code-review context.",
+      "keyFacts": [
+        "Published on 20 July 2026",
+        "Focuses on consumer-model prompt injection rather than code tooling",
+        "Reinforces that prompt injection remains a live abuse class"
+      ],
+      "keyClaims": [
+        "Prompt injection is not limited to code copilots; it remains a broad model-usage risk."
+      ],
+      "evidenceBase": "Headline-level secondary coverage",
+      "methodology": "News analysis review",
+      "practicalImplications": "Product teams should test non-code assistants for instruction-hijacking and data-exfiltration behaviors.",
+      "whoAffected": "Consumer AI teams, trust-and-safety, product security, red teams",
+      "auRelevance": "Medium",
+      "globalRelevance": "High",
+      "risksIdentified": [
+        "Prompt injection",
+        "Instruction hijacking",
+        "Unsafe tool output"
+      ],
+      "controls": [
+        "Run prompt-injection tests",
+        "Separate system and user instructions",
+        "Restrict tool access on consumer assistants"
+      ],
+      "limitations": "Headline-level review only.",
+      "status": "new"
+    },
+    {
+      "id": "src-australia-lags-on-ai-governance-as-adoption-races-ahead",
+      "title": "Australia lags on AI governance as adoption races ahead",
+      "author": "CFOtech Australia",
+      "institution": "CFOtech Australia",
+      "date": "2026-07-20",
+      "link": "https://news.google.com/rss/articles/CBMijAFBVV95cUxQdG5qMjROSS1od2o5NjBBRHlTSWp0RlFWcC16N3FJdnhlSTBKM2kwRjBJQ0dtSU9fXzA5ZTBwYXNTcTNqOENLcWhqam1leWtFUGxLVXJWa2kwV21ldDEybGxsWkV1cENKQ3JzRS1xS2Z3cDlTZTk2RFREY3JKNkRHQ3hjRGxQUEVsRld1Vg?oc=5",
+      "sourceType": "News article",
+      "geography": "Australia",
+      "domain": "AI Governance",
+      "priority": "High",
+      "confidence": "Medium",
+      "evidenceGrade": "B",
+      "reviewDepth": "Skimmed",
+      "summary": "Australian coverage says AI adoption is outrunning governance, reinforcing the need for inventories, approval paths, and visible ownership.",
+      "keyFacts": [
+        "Published on 20 July 2026",
+        "Focuses on Australia’s governance gap",
+        "Signals that adoption is outrunning formal controls"
+      ],
+      "keyClaims": [
+        "Australian organisations are still catching up on governance relative to adoption."
+      ],
+      "evidenceBase": "Secondary coverage and headline-level review",
+      "methodology": "News coverage review",
+      "practicalImplications": "Boards and executives should demand evidence packs and ownership before broader AI rollout.",
+      "whoAffected": "Boards, executives, risk and compliance, public sector, enterprise buyers",
+      "auRelevance": "Direct and high",
+      "globalRelevance": "Medium",
+      "risksIdentified": [
+        "Governance lag",
+        "Shadow AI",
+        "Poor evidence quality"
+      ],
+      "controls": [
+        "Maintain AI inventory",
+        "Approve use cases before rollout",
+        "Track governance KPIs at board level"
+      ],
+      "limitations": "Headline-level review only.",
+      "status": "new"
+    },
+    {
+      "id": "src-australias-ai-report-card-confidence-improving-for-data-and-governance-needs-to-do-better",
+      "title": "Australia’s AI report card: Confidence improving. For data and governance, needs to do better.",
+      "author": "iTWire",
+      "institution": "iTWire",
+      "date": "2026-07-20",
+      "link": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxNN1A0VFItUkowcnptSTBYY1A3VDFBdElMWnRKM2JxUVItVW44eFhKTXdoc1JIN1pyemhfY2V2UHRiX3FSeGtLQmdZMTdBMGo4SlRMeUI0MmdRclZobmFLcWFCeHdQV0VHWVJHcXBBNzRZNnhmYjRoMWo5YkNLZ2UtcV91VmNRcEc5dG5qa2UtVFhsaVpJWjlOSzdFdUh3bWxsSFQxd0xlWEk2elFSM2d4SW9NVy10ejR0cFlXNGFfc0VHT3BPT0hBTGR3Tm5kZHdVSVQw?oc=5",
+      "sourceType": "News article",
+      "geography": "Australia",
+      "domain": "AI Governance / Enterprise Adoption",
+      "priority": "Medium",
+      "confidence": "Medium",
+      "evidenceGrade": "B",
+      "reviewDepth": "Skimmed",
+      "summary": "iTWire frames Australia’s AI report-card story as improving confidence but weaker data and governance maturity.",
+      "keyFacts": [
+        "Published on 20 July 2026",
+        "Highlights the governance and data side of AI maturity",
+        "Supports the view that controls are still catching up"
+      ],
+      "keyClaims": [
+        "Australian organisations are improving confidence faster than their governance/data discipline."
+      ],
+      "evidenceBase": "Secondary reporting; headline-level review",
+      "methodology": "News coverage review",
+      "practicalImplications": "Teams should use this as a reminder to invest in data governance, model documentation, and evidence files.",
+      "whoAffected": "Australian enterprises, data teams, governance leads, boards",
+      "auRelevance": "Direct and high",
+      "globalRelevance": "Medium",
+      "risksIdentified": [
+        "Weak data governance",
+        "Evidence gaps",
+        "Overconfidence"
+      ],
+      "controls": [
+        "Strengthen data lineage",
+        "Document model limitations",
+        "Run governance reviews before scale-up"
+      ],
+      "limitations": "Headline-level review only.",
+      "status": "new"
     }
   ],
   "researchNotes": [
+    {
+      "date": "2026-07-21",
+      "title": "GitHub Code Quality GA and AI governance signals",
+      "content": "GitHub's 2026-07-20 Code Quality GA is a useful marker that AI-accelerated engineering is being pulled into the normal assurance stack. Pairing the GitHub changelog (https://github.blog/changelog/2026-07-20-github-code-quality-is-now-generally-available) with the DevOps.com coverage (https://news.google.com/rss/articles/CBMiqAFBVV95cUxOZUVzdXhBRnBFVm5sRHZGLXNhNlRaRXVKYmxuWW1yelF2STZEdXQwaWQ1UGxUczVNY2pjUFcxazMydG50MUtMY1h5U1dhRklQckxFVG5wRmZhUXZ6SXBuNW85ODM1WUFoaUdrT211RzNsSkdQOHUwdmpGWU5QaXB2Sm9VOHNaMGhNNDZydzV1dmVhem9LMFdrRlhoY25EZXZkMDItbUh4OXM?oc=5) shows the buyer-side implication: code-quality telemetry and AI code output costs should be governed together. The practical takeaway is to treat code-quality signals, cost visibility, and human approval gates as a single control family before scaling copilots or autonomous coding workflows."
+    },
     {
       "date": "2026-07-20",
       "title": "eSafety sexual-extortion transparency report",
@@ -16545,6 +16809,11 @@
   ],
   "changelog": [
     {
+      "date": "2026-07-21",
+      "title": "Nightly Research Run — July 21, 2026",
+      "details": "Updated eu-ai-act and agent-tool-parameter-injection-leading-to-code-execution; added 6 sources covering GitHub Code Quality, MCP secrets, Gemini prompt injection, and Australian governance reporting. Source mix this run: 1 C / 5 B, with 33% AU-relevant new sources. No entities were merged or archived; no compliance deadlines were deferred beyond updating the EU AI Act record."
+    },
+    {
       "date": "2026-07-20",
       "title": "Nightly research update 2026-07-20 — au-gov-ai-policy, agentic-prompt-injection-and-tool-abuse, ai-transparency-and-contestability-gap, au-esafety-ai-companions, eu-digital-omnibus-ai, us-il-frontier-ai-safety-measures-act, v-latticeflow-ai",
       "details": "Reset entity statuses to unchanged, updated au-gov-ai-policy and agentic-prompt-injection-and-tool-abuse, added src-australia-ai-decision-making-rules-abc and src-venturebeat-ai-agent-security-gap-2026, and reset ai-transparency-and-contestability-gap, au-esafety-ai-companions, eu-digital-omnibus-ai, us-il-frontier-ai-safety-measures-act, and v-latticeflow-ai to unchanged. Source mix this run: 2 B-grade secondary news items, 0 vendor-heavy additions, AU coverage centered on public-sector governance and eSafety. Merged in place with no sibling entities created. Known gaps: no fresh official APRA, ASIC, OAIC, or DTA release surfaced; canonical publisher pages for the two new news items were not directly fetched."
@@ -16781,6 +17050,18 @@
       },
       "newItems": 2,
       "updatedItems": 7
+    },
+    {
+      "date": "2026-07-21",
+      "riskPosture": "Moderately elevated",
+      "counts": {
+        "risks": 103,
+        "regulations": 27,
+        "incidents": 36,
+        "sources": 235
+      },
+      "newItems": 6,
+      "updatedItems": 2
     }
   ],
   "schemaVersion": 2
